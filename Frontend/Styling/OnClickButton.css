@@ -1,0 +1,6 @@
+.OnClickButton {
+  background-color: #c9a66b;
+  -webkit-box-shadow: 20px -14px 12px 8px #ebdcb2;
+  box-shadow: 20px -14px 12px 8px #ebdcb2;
+  border-radius: 10px;
+}
