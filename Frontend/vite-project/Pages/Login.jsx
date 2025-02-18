@@ -1,5 +1,5 @@
 /**
- * @descriptionfür Loginformular
+ * @description für Loginformular
  * Sprachübersetzer auf deutsch, default Sprache Englisch
  * Logo rechts in der Ecke
  * h1
@@ -17,6 +17,7 @@ import {
   LoginButton,
   ToRegisterPage,
 } from '../Components/Buttons/OnClickButtons.jsx';
+
 import '../src/index.css';
 
 const Login = () => {
@@ -27,8 +28,7 @@ const Login = () => {
           src="Frontend/vite-project/Upload/Logo Cayenne.png"
           alt="logo"
           className="logo"
-        />{' '}
-        {/*Mikihana Logo */}
+        />
         <h1>
           Welcome to Mikihana, your App for Books,Audiobooks,Movies and more!
         </h1>
@@ -38,8 +38,7 @@ const Login = () => {
           src="Frontend/vite-project/Upload/Äffchen.png"
           alt="profilpicture"
           className="profilPicture"
-        />{' '}
-        {/*Profilbild */}
+        />
         <h2>USER LOGIN</h2>
         <input type="text" placeholder="USERNAME" />
         <input type="password" placeholder="PASSWORD" />
@@ -48,6 +47,10 @@ const Login = () => {
       <footer>
         <p>Forgot password? Click here!</p>
         <ToRegisterPage />
+        <p>
+          <FontAwesomeIcon icon="fa-regular fa-copyright" />
+          Copyright 2025 Mikihana
+        </p>
       </footer>
     </div>
   );

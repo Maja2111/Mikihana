@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Nanum+Gothic&family=Tilt+Neon&display=swap');
 
-#root {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
