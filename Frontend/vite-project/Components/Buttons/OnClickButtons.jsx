@@ -3,37 +3,46 @@
  */
 
 import React from 'react';
-import { useNavigate } from 'react';
-import '../../../Styling/OnClickButton.css';
+import { useNavigate } from 'react-router-dom';
+import '../../../Styling/OnClickButton.scss';
 
 // Login Button auf der LandingPage
-export function LoginButton() {
+export const LoginButton = () => {
   const navigate = useNavigate();
   return (
-    <button className="OnClickButton" onClick={() => navigate('/')}>
-      LOGIN
+    <button
+      className="OnClickButton"
+      onClick={() => {
+        navigate('/login');
+      }}
+    >
+      Login
     </button>
   );
-}
+};
+
+// Register Button auf der LandingPage
+export const RegisterButton = () => {
+  const navigate = useNavigate();
+  return (
+    <button
+      className="OnClickButton"
+      onClick={() => {
+        navigate('/register');
+      }}
+    >
+      Register
+    </button>
+  );
+};
 
 //Button der von der LandingPage zur Registerung führt
 
 export function ToRegisterPage() {
   const navigate = useNavigate();
   return (
-    <button className="OnClickButton" onClick={() => navigate('/')}>
+    <button className="OnClickButton" onClick={() => navigate('/register')}>
       Don't have an account? Register here!
-    </button>
-  );
-}
-
-//RegisterButton auf der Registerungspage
-
-export function RegisterButton() {
-  const navigate = useNavigate();
-  return (
-    <button className="OnClickButton" onClick={() => navigate('/')}>
-      Register now!
     </button>
   );
 }

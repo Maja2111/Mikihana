@@ -1,17 +1,24 @@
-import './index.css';
+import './index.scss';
 import React from 'react';
-import Login from '../Pages/Login';
-import Registeration from '../Pages/Registration';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from '../Pages/Login.jsx';
+import Registeration from '../Pages/Registration.jsx';
+import Home from '../Pages/Home.jsx';
+//import Profil from '../Pages/Profil.jsx';
+//import AllSearch from '../Pages/AllSearch.jsx';
 
-function App() {
+const App = () => {
   return (
-    <div className="app">
-      <nav>
-        <Login />
-        <Registeration />
-      </nav>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Registeration />} />
+        <Route path="/home" element={<Home />} />
+        {/* <Route path="/profil" element={<Profil />} />*/}
+        {/*<Route path="/allsearch" element={<AllSearch />} */}
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -5,25 +5,21 @@
  */
 
 import React from 'react';
-import '../src/index.css';
-import { RegisterButton } from '../Components/Buttons/OnClickButtons';
+import '../src/index.scss';
+import { RegisterButton } from '../Components/Buttons/OnClickButtons.jsx';
 
 const Registeration = () => {
   return (
     <div className="container">
       <header className="header">
-        <img
-          src="Frontend/vite-project/Upload/Logo Cayenne.png"
-          alt="logo"
-          className="logo"
-        />
+        <img src="/Upload/Logo Cayenne.png" alt="logo" className="logo" />
         <h1>
           Welcome to Mikihana, your App for Books,Audiobooks,Movies and more!
         </h1>
       </header>
       <main>
         <img
-          src="Frontend/vite-project/Upload/Äffchen.png"
+          src="/Upload/Äffchen.png"
           alt="profilpicture"
           className="profilPicture"
         />
