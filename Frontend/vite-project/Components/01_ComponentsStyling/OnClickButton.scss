@@ -1,0 +1,30 @@
+// Button Variablen
+$button-width: 100px;
+$button-height: 20px;
+$button-font-size: 9px;
+$button-color: #fff;
+$button-hover-color: #000;
+$button-gradient: linear-gradient(to right, #ebdcb2, #c9a66b);
+$button-border-radius: 10px;
+$button-transition: all 0.25s ease;
+$button-padding: 5px;
+$button-margin: 5px;
+
+.OnClickButton {
+  width: $button-width;
+  height: $button-height;
+  font-size: $button-font-size;
+  color: $button-color;
+  background: $button-gradient;
+  border: none;
+  border-radius: $button-border-radius;
+  transition: $button-transition;
+  padding: $button-padding;
+  margin: $button-margin;
+
+  &:hover {
+    color: $button-hover-color;
+    background: $button-gradient;
+    border-color: none;
+  }
+}

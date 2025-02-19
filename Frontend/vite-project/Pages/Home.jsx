@@ -132,7 +132,7 @@ const Home = () => {
       </main>
 
       <footer>
-        <nav>
+        <nav className="Iconbar">
           <FontAwesomeIcon icon="fa-solid fa-house-chimney" />
           <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
           <img src="Frontend/vite-project/Upload/Äffchen.png" alt="Profile" />
