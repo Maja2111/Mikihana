@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import '../src/index.scss';
 import '../../Styling/Chart.scss';
+import { Header } from '../Components/Header.jsx';
+import { Footer } from '../Components/Footer.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopyright, faSquarePlus } from '@fortawesome/free-regular-svg-icons';
+import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 // TODO: API-Endpunkte definieren
@@ -68,7 +70,7 @@ const Home = () => {
   return (
     <div className="container">
       <header className="header">
-        <img src="/Upload/Logo Cayenne.png" alt="logo" className="logo" />
+        <Header />
         <nav>
           <ul>Bibilothek</ul>
           <ul>Videothek</ul>
@@ -132,16 +134,7 @@ const Home = () => {
       </main>
 
       <footer>
-        <nav className="Iconbar">
-          <FontAwesomeIcon icon="fa-solid fa-house-chimney" />
-          <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-          <img src="Frontend/vite-project/Upload/Äffchen.png" alt="Profile" />
-        </nav>
-
-        <p>
-          <FontAwesomeIcon icon={faCopyright} />
-          Copyright 2025 Mikihana
-        </p>
+        <Footer />
       </footer>
     </div>
   );

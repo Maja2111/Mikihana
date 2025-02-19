@@ -9,8 +9,9 @@
 
 import React from 'react';
 import '../src/index.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopyright } from '@fortawesome/free-regular-svg-icons';
+import { Gallery } from '../Components/Gallery.jsx';
+import { Header } from '../Components/Header.jsx';
+import { Footer } from '../Components/Footer.jsx';
 
 const ProfilPage = () => {
   function handleClick(event) {
@@ -18,20 +19,23 @@ const ProfilPage = () => {
   }
   return (
     <div className="container">
-      <header className="header">
-        <img src="/Upload/Logo Cayenne.png" alt="logo" className="logo" />
+      <header>
+        <Header />
       </header>
       <main>
         <section className="library" onClick={handleClick}>
           <h2>Bibilothek</h2>
+          <Gallery />
         </section>
 
         <section className="videoLibrary" onClick={handleClick}>
           <h2>Videothek</h2>
+          <Gallery />
         </section>
 
         <section className="discotheque" onClick={handleClick}>
           <h2>Diskothek</h2>
+          <Gallery />
         </section>
 
         <section className="editProfile" onClick={handleClick}>
@@ -41,16 +45,7 @@ const ProfilPage = () => {
       </main>
 
       <footer>
-        <nav className="Iconbar">
-          <FontAwesomeIcon icon="fa-solid fa-house-chimney" />
-          <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-          <img src="Frontend/vite-project/Upload/Äffchen.png" alt="Profile" />
-        </nav>
-
-        <p>
-          <FontAwesomeIcon icon={faCopyright} />
-          Copyright 2025 Mikihana
-        </p>
+        <Footer />
       </footer>
     </div>
   );
