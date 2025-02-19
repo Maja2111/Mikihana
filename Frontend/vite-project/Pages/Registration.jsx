@@ -6,13 +6,14 @@
 
 import React from 'react';
 import '../src/index.scss';
-import { RegisterButton } from '../Components/Buttons/OnClickButtons.jsx';
+import { RegisterButton } from '../Components/OnClickButtons.jsx';
+import { Header } from '../Components/Header.jsx';
 
 const Registeration = () => {
   return (
     <div className="container">
-      <header className="header">
-        <img src="/Upload/Logo Cayenne.png" alt="logo" className="logo" />
+      <header>
+        <Header />
         <h1>
           Welcome to Mikihana, your App for Books,Audiobooks,Movies and more!
         </h1>

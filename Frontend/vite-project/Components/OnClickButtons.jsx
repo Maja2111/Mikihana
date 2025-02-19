@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../../Styling/OnClickButton.scss';
+import './01_ComponentsStyling/OnClickButton.scss';
 
 // Login Button auf der LandingPage
 export const LoginButton = () => {

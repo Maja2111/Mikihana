@@ -13,10 +13,7 @@
  */
 
 import React from 'react';
-import {
-  LoginButton,
-  ToRegisterPage,
-} from '../Components/Buttons/OnClickButtons.jsx';
+import { LoginButton, ToRegisterPage } from '../Components/OnClickButtons.jsx';
 import '../src/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';

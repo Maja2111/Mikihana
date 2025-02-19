@@ -12,11 +12,9 @@ import '../src/index.scss';
 import { Gallery } from '../Components/Gallery.jsx';
 import { Header } from '../Components/Header.jsx';
 import { Footer } from '../Components/Footer.jsx';
+import { handleClick } from '../Components/Function.jsx';
 
 const ProfilPage = () => {
-  function handleClick(event) {
-    event.preventDefault();
-  }
   return (
     <div className="container">
       <header>

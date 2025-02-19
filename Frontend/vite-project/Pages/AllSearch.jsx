@@ -7,9 +7,9 @@
  */
 
 import React from 'react';
-import Cards from './Cards.jsx';
+import { Cards } from '../Components/Cards.jsx';
 import { Header } from '../Components/Header.jsx';
-import { Footer } from './Footer.jsx';
+import { Footer } from '../Components/Footer.jsx';
 
 const SearchPage = () => {
   return (

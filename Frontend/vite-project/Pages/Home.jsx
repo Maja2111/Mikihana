@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../src/index.scss';
-import '../../Styling/Chart.scss';
+import '../Components/01_ComponentsStyling/Chart.scss';
 import { Header } from '../Components/Header.jsx';
 import { Footer } from '../Components/Footer.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
