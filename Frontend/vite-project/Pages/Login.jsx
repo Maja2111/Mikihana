@@ -13,12 +13,20 @@
  */
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { LoginButton, ToRegisterPage } from '../Components/OnClickButtons.jsx';
 import '../src/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    // TODO: Implementiere die tatsächliche Anmeldelogik
+    navigate('/home');
+  };
+
   return (
     <div className="container">
       <header className="header">
@@ -36,7 +44,7 @@ const Login = () => {
         <h2>USER LOGIN</h2>
         <input type="text" placeholder="USERNAME" />
         <input type="password" placeholder="PASSWORD" />
-        <LoginButton />
+        <LoginButton onClick={handleLogin} />
       </main>
       <footer>
         <p>Forgot password? Click here!</p>
@@ -49,4 +57,4 @@ const Login = () => {
     </div>
   );
 };
-export default Login; //exportiere Login als default
+export default Login;

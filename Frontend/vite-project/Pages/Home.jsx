@@ -5,7 +5,12 @@ import { Header } from '../Components/Header.jsx';
 import { Footer } from '../Components/Footer.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChevronRight,
+  faShareNodes,
+} from '@fortawesome/free-solid-svg-icons';
+import ChartSelector from '../Components/ChartSelector';
+import { pageStats, bookStats } from '../src/mockData';
 
 // TODO: API-Endpunkte definieren
 // const API_URL = process.env.REACT_APP_API_URL;
@@ -35,37 +40,12 @@ const Chart = ({ data, maxValue }) => {
 };
 
 const Home = () => {
-  // TODO: Ersetzen durch API-Aufruf für Seitenstatistiken
-  const [pageStats, setPageStats] = useState([
-    { month: 'Jan', value: 200 },
-    { month: 'Feb', value: 400 },
-    { month: 'März', value: 540 },
-    { month: 'April', value: 800 },
-    { month: 'Mai', value: 980 },
-    { month: 'Juni', value: 745 },
-    { month: 'Juli', value: 0 },
-    { month: 'Aug', value: 0 },
-    { month: 'Sept', value: 0 },
-    { month: 'Okt', value: 0 },
-    { month: 'Nov', value: 0 },
-    { month: 'Dez', value: 0 },
-  ]);
+  const [view, setView] = useState('year');
 
-  // TODO: Ersetzen durch API-Aufruf für Buchstatistiken
-  const [bookStats, setBooksStats] = useState([
-    { month: 'Jan', value: 0.5 },
-    { month: 'Feb', value: 0.5 },
-    { month: 'März', value: 1 },
-    { month: 'April', value: 1.5 },
-    { month: 'Mai', value: 2 },
-    { month: 'Juni', value: 0.2 },
-    { month: 'Juli', value: 0 },
-    { month: 'Aug', value: 0 },
-    { month: 'Sept', value: 0 },
-    { month: 'Okt', value: 0 },
-    { month: 'Nov', value: 0 },
-    { month: 'Dez', value: 0 },
-  ]);
+  const handleViewChange = (selectedView) => {
+    setView(selectedView);
+    // TODO: Daten für die ausgewählte Ansicht laden
+  };
 
   return (
     <div className="container">
@@ -90,18 +70,20 @@ const Home = () => {
             <FontAwesomeIcon icon={faShareNodes} />
           </button>
           <img src="" alt="cover" />
-          <FontAwesomeIcon icon={faSquarePlus} />
-          <FontAwesomeIcon icon={faChevronRight} />
+          <FontAwesomeIcon icon={faSquarePlus} /> {/*führt zur Subpage Target*/}
+          <FontAwesomeIcon icon={faChevronRight} />{' '}
+          {/*führt zur Subpage GetTraget*/}
         </section>
 
         <section className="target">
-          <h2>Your Readtarget</h2>
+          <h2>Your Reading Goal</h2>
           <FontAwesomeIcon icon={faSquarePlus} />
           <FontAwesomeIcon icon={faChevronRight} />
         </section>
 
         <section className="pageStatistic">
           <h2>Page Statistics</h2>
+          <ChartSelector onViewChange={handleViewChange} />
           {/* TODO: Loading State hinzufügen während Daten geladen werden */}
           {/* TODO: Pagination für große Datensätze implementieren */}
           {/* TODO: Filteroptionen für Zeiträume hinzufügen */}
@@ -110,6 +92,7 @@ const Home = () => {
 
         <section className="booksStatistic">
           <h2>Books Statistics</h2>
+          <ChartSelector onViewChange={handleViewChange} />
           {/* TODO: Loading State hinzufügen während Daten geladen werden */}
           {/* TODO: Tooltips für detaillierte Informationen hinzufügen */}
           {/* TODO: Export-Funktion für Statistiken implementieren */}

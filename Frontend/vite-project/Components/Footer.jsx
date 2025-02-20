@@ -1,18 +1,18 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopyright } from '@fortawesome/free-regular-svg-icons';
+import { faHouse, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 export const Footer = () => {
   return (
     <div className="footer">
       <nav className="Iconbar">
-        <FontAwesomeIcon icon="fa-solid fa-house-chimney" />
-        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+        <FontAwesomeIcon icon={faHouse} />
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
         <img src="Frontend/vite-project/Upload/Äffchen.png" alt="Profile" />
       </nav>
 
       <p>
-        <FontAwesomeIcon icon={faCopyright} />
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
         Copyright 2025 Mikihana
       </p>
     </div>

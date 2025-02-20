@@ -13,7 +13,7 @@ export const LoginButton = () => {
     <button
       className="OnClickButton"
       onClick={() => {
-        navigate('/login');
+        navigate('/home');
       }}
     >
       Login
