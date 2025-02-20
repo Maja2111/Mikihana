@@ -1,14 +1,21 @@
-const express = require('express');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../Models/User');
-const authMiddleware = require('../Middelware/middelware');
-const { ByteLengthQueuingStrategy } = require('node:stream/web');
+import express from 'express';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import User from '../Models/User';
+import authMiddleware from '../Middleware/middleware';
+import { ByteLengthQueuingStrategy } from 'node:stream/web';
+
+//const express = require('express');
+//const bcrypt = require('bcryptjs');
+//const jwt = require('jsonwebtoken');
+//const User = require('../Models/User');
+//const authMiddleware = require('../Middleware/middleware');
+//const { ByteLengthQueuingStrategy } = require('node:stream/web');
 
 const router = express.Router();
 
 //Registierung (Register)
-router.post('/resgister', async (req, res) => {
+router.post('/register', async (req, res) => {
     try {
       const { firstName, lastName, username, email, password, passwordRepeat, birthday, gender} = req.body;
       
@@ -70,7 +77,8 @@ router.post('/login', async (req, res) =>{
     }
 })
 
-module.exports = router;
+//module.exports = router;
+export default router;
 
 
 
