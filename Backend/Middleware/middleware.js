@@ -1,4 +1,6 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
+//const jwt = require('jsonwebtoken');
+
 
 //Middleware zur Überprüfung von JWT-Token
 const authMiddleware = (req, res, next) => {
@@ -17,4 +19,5 @@ const authMiddleware = (req, res, next) => {
     }
 };
 
-module.exports = authMiddleware;
+//module.exports = authMiddleware;
+export default authMiddleware;
