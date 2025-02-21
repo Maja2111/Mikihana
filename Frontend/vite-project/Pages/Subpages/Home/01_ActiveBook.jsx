@@ -8,7 +8,7 @@ import {
   faCalendarDays,
 } from '@fortawesome/free-solid-svg-icons';
 import ActiveBook from '../../../Components/ActiveBook.jsx';
-import { UpdateButton } from '../../../Components/OnClickButtons.jsx';
+import { UpdateButton } from '../../../Components/MainButtons.jsx';
 
 const ActiveBookPage = () => {
   return (

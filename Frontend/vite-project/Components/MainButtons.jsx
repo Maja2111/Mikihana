@@ -1,17 +1,17 @@
 /**
- * @description: Buttons mit onclick
+ * @description: MainButtons mit onclick
  */
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './01_ComponentsStyling/OnClickButton.scss';
+import './01_ComponentsStyling/MainButtons.scss';
 
 // Login Button auf der LandingPage
 export const LoginButton = () => {
   const navigate = useNavigate();
   return (
     <button
-      className="OnClickButton"
+      className="MainButtons"
       onClick={() => {
         navigate('/home');
       }}
@@ -26,7 +26,7 @@ export const RegisterButton = () => {
   const navigate = useNavigate();
   return (
     <button
-      className="OnClickButton"
+      className="MainButtons"
       onClick={() => {
         navigate('/register');
       }}
@@ -41,7 +41,7 @@ export const RegisterButton = () => {
 export function ToRegisterPage() {
   const navigate = useNavigate();
   return (
-    <button className="OnClickButton" onClick={() => navigate('/register')}>
+    <button className="MainButtons" onClick={() => navigate('/register')}>
       Don't have an account? Register here!
     </button>
   );
@@ -52,7 +52,7 @@ export function ToRegisterPage() {
 export function UpdateButton() {
   const navigate = useNavigate();
   return (
-    <button className="OnClickButton" onClick={() => navigate('/')}>
+    <button className="MainButtons" onClick={() => navigate('/')}>
       Update
     </button>
   );
@@ -63,7 +63,7 @@ export function UpdateButton() {
 export function SaveButton() {
   const navigate = useNavigate();
   return (
-    <button className="OnClickButton" onClick={() => navigate('/')}>
+    <button className="MainButtons" onClick={() => navigate('/')}>
       Save
     </button>
   );
@@ -74,7 +74,7 @@ export function SaveButton() {
 export function EditButton() {
   const navigate = useNavigate();
   return (
-    <button className="OnClickButton" onClick={() => navigate('/')}>
+    <button className="MainButtons" onClick={() => navigate('/')}>
       Save Change
     </button>
   );
