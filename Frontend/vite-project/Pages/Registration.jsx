@@ -6,7 +6,7 @@
 
 import React from 'react';
 import '../src/index.scss';
-import { RegisterButton } from '../Components/OnClickButtons.jsx';
+import { RegisterButton } from '../Components/MainButtons.jsx';
 import { Header } from '../Components/Header.jsx';
 
 const Registeration = () => {

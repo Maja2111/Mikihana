@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../src/index.scss';
 import '../Components/01_ComponentsStyling/Chart.scss';
 import { Header } from '../Components/Header.jsx';
@@ -41,10 +42,15 @@ const Chart = ({ data, maxValue }) => {
 
 const Home = () => {
   const [view, setView] = useState('year');
+  const navigate = useNavigate();
 
   const handleViewChange = (selectedView) => {
     setView(selectedView);
     // TODO: Daten für die ausgewählte Ansicht laden
+  };
+
+  const handleNavigateToGetTarget = () => {
+    navigate('/get-target');
   };
 
   return (
@@ -71,8 +77,12 @@ const Home = () => {
           </button>
           <img src="" alt="cover" />
           <FontAwesomeIcon icon={faSquarePlus} /> {/*führt zur Subpage Target*/}
-          <FontAwesomeIcon icon={faChevronRight} />{' '}
-          {/*führt zur Subpage GetTraget*/}
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            onClick={handleNavigateToGetTarget}
+            style={{ cursor: 'pointer' }}
+          />{' '}
+          {/*führt zur Subpage GetTarget*/}
         </section>
 
         <section className="target">

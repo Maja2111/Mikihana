@@ -14,7 +14,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LoginButton, ToRegisterPage } from '../Components/OnClickButtons.jsx';
+import { LoginButton, ToRegisterPage } from '../Components/MainButtons.jsx';
 import '../src/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
