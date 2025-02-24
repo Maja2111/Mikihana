@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../src/index.scss';
-import '../Components/01_ComponentsStyling/Chart.scss';
-import { Header } from '../Components/Header.jsx';
-import { Footer } from '../Components/Footer.jsx';
+import '@/index.scss';
+import '@components/01_ComponentsStyling/Chart.scss';
+import { Header } from '@components/Header.jsx';
+import { Footer } from '@components/Footer.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
 import {
   faChevronRight,
   faShareNodes,
 } from '@fortawesome/free-solid-svg-icons';
-import ChartSelector from '../Components/ChartSelector';
-import { pageStats, bookStats } from '../src/mockData';
+import ChartSelector from '@components/ChartSelector';
+import { pageStats, bookStats } from '@/mockData';
+import { handleViewChange } from '@components/Function.jsx';
 
 // TODO: API-Endpunkte definieren
 // const API_URL = process.env.REACT_APP_API_URL;
@@ -43,16 +44,12 @@ const Chart = ({ data, maxValue }) => {
 const Home = () => {
   const [view, setView] = useState('year');
   const navigate = useNavigate();
-
-  const handleViewChange = (selectedView) => {
-    setView(selectedView);
-    // TODO: Daten für die ausgewählte Ansicht laden
-  };
-
-  const handleNavigateToGetTarget = () => {
+  const handleNavigateToGetTarget = (navigate) => {
     navigate('/get-target');
   };
-
+  const handleNavigateToTarget = (navigate) => {
+    navigate('/target');
+  };
   return (
     <div className="container">
       <header className="header">
@@ -79,7 +76,7 @@ const Home = () => {
           <FontAwesomeIcon icon={faSquarePlus} /> {/*führt zur Subpage Target*/}
           <FontAwesomeIcon
             icon={faChevronRight}
-            onClick={handleNavigateToGetTarget}
+            onClick={() => handleNavigateToGetTarget(navigate)}
             style={{ cursor: 'pointer' }}
           />{' '}
           {/*führt zur Subpage GetTarget*/}
@@ -88,12 +85,20 @@ const Home = () => {
         <section className="target">
           <h2>Your Reading Goal</h2>
           <FontAwesomeIcon icon={faSquarePlus} />
-          <FontAwesomeIcon icon={faChevronRight} />
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            onClick={() => handleNavigateToTarget(navigate)}
+            style={{ cursor: 'pointer' }}
+          />
         </section>
 
         <section className="pageStatistic">
           <h2>Page Statistics</h2>
-          <ChartSelector onViewChange={handleViewChange} />
+          <ChartSelector
+            onViewChange={(selectedView) =>
+              handleViewChange(setView, selectedView)
+            }
+          />
           {/* TODO: Loading State hinzufügen während Daten geladen werden */}
           {/* TODO: Pagination für große Datensätze implementieren */}
           {/* TODO: Filteroptionen für Zeiträume hinzufügen */}
@@ -102,7 +107,11 @@ const Home = () => {
 
         <section className="booksStatistic">
           <h2>Books Statistics</h2>
-          <ChartSelector onViewChange={handleViewChange} />
+          <ChartSelector
+            onViewChange={(selectedView) =>
+              handleViewChange(setView, selectedView)
+            }
+          />
           {/* TODO: Loading State hinzufügen während Daten geladen werden */}
           {/* TODO: Tooltips für detaillierte Informationen hinzufügen */}
           {/* TODO: Export-Funktion für Statistiken implementieren */}

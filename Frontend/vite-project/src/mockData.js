@@ -27,3 +27,18 @@ export const bookStats = [
   { month: 'Nov', value: 0 },
   { month: 'Dec', value: 0 },
 ];
+
+export const libraryResults = [
+  { id: 1, title: 'Buch 1', image: 'path/to/image1.jpg' },
+  { id: 2, title: 'Buch 2', image: 'path/to/image2.jpg' },
+];
+
+export const videoLibraryResults = [
+  { id: 1, title: 'Video 1', image: 'path/to/image3.jpg' },
+  { id: 2, title: 'Video 2', image: 'path/to/image4.jpg' },
+];
+
+export const discothequeResults = [
+  { id: 1, title: 'Musik 1', image: 'path/to/image5.jpg' },
+  { id: 2, title: 'Musik 2', image: 'path/to/image6.jpg' },
+];

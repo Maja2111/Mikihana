@@ -7,11 +7,22 @@
  */
 
 import React from 'react';
-import { Cards } from '../Components/Cards.jsx';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '../Components/Header.jsx';
+import { Cards } from '../Components/Cards.jsx';
 import { Footer } from '../Components/Footer.jsx';
 
 const SearchPage = () => {
+  const navigate = useNavigate();
+
+  const handleNavigateToBrandNew = () => {
+    navigate('/brandnew');
+  };
+
+  const handleNavigateToMustRead = () => {
+    navigate('/mustread');
+  };
+
   return (
     <div className="container">
       <header className="header">
@@ -21,13 +32,21 @@ const SearchPage = () => {
       <main>
         <section>
           <h1>Brandnew</h1>
-          <Cards />
+          <Cards
+            onClickHandler={handleNavigateToBrandNew}
+            title="Brandnew"
+            text="Discover our newest books"
+          />
           <Cards />
           <Cards />
         </section>
         <section>
           <h1>Must Have</h1>
-          <Cards />
+          <Cards
+            onClickHandler={handleNavigateToMustRead}
+            title="Must Reads"
+            text="Our recommendations for you"
+          />
           <Cards />
           <Cards />
         </section>
@@ -38,4 +57,5 @@ const SearchPage = () => {
     </div>
   );
 };
+
 export default SearchPage;

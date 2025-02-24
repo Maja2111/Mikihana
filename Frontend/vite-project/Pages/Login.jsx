@@ -31,9 +31,7 @@ const Login = () => {
     <div className="container">
       <header className="header">
         <img src="/Upload/Logo Cayenne.png" alt="logo" className="logo" />
-        <h1>
-          Welcome to Mikihana, your App for Books,Audiobooks,Movies and more!
-        </h1>
+        <h1>Welcome to Mikihana, your App for Books and more!</h1>
       </header>
       <main>
         <img
@@ -47,7 +45,8 @@ const Login = () => {
         <LoginButton onClick={handleLogin} />
       </main>
       <footer>
-        <p>Forgot password? Click here!</p>
+        <p>Forgot password? Click here!</p>{' '}
+        {'Clickbar machen Alert Fenster, email'}
         <ToRegisterPage />
         <p>
           <FontAwesomeIcon icon={faCopyright} />
