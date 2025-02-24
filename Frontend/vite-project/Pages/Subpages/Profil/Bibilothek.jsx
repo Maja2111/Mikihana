@@ -2,20 +2,16 @@
 //Bibilothek
 
 import React from 'react';
-import ''index.scss'' (see below for file content);
+import '@/index.scss';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
-import { GalleryWithPlaceholder } from '@components/GalleryWithPlaceholder.jsx';
+import { Gallery } from '@components/Gallery.jsx';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Library = () => {
   const navigate = useNavigate();
-  
-  const handleAddBook = () => {
-    // Hier kann die Logik für das Hinzufügen eines neuen Buches implementiert werden
-    console.log('Neues Buch hinzufügen');
-    // Zum Beispiel: navigate('/add-book');
-  };
 
   const handleNavigateToWishList = (navigate) => {
     navigate('/wishlist');
@@ -38,7 +34,7 @@ const Library = () => {
       <main>
         <section className="wishlist">
           <h1>Wishlist</h1>
-          <GalleryWithPlaceholder onAddBook={handleAddBook} />
+          <Gallery />
           <FontAwesomeIcon
             icon={faChevronRight}
             onClick={() => handleNavigateToWishList(navigate)}
@@ -47,7 +43,7 @@ const Library = () => {
         </section>
         <section className="favourites">
           <h1>Favourites</h1>
-          <GalleryWithPlaceholder onAddBook={handleAddBook} />
+          <Gallery />
           <FontAwesomeIcon
             icon={faChevronRight}
             onClick={() => handleNavigateToFavourites(navigate)}
@@ -56,7 +52,7 @@ const Library = () => {
         </section>
         <section className="unreadBooks">
           <h1>Unread Books</h1>
-          <GalleryWithPlaceholder onAddBook={handleAddBook} />
+          <Gallery />
           <FontAwesomeIcon
             icon={faChevronRight}
             onClick={() => handleNavigateToUnreadingBooks(navigate)}
@@ -65,7 +61,7 @@ const Library = () => {
         </section>
         <section className="userlist">
           <h1>Userlist</h1>
-          <GalleryWithPlaceholder onAddBook={handleAddBook} />
+          <Gallery />
           <FontAwesomeIcon
             icon={faChevronRight}
             onClick={() => handleNavigateToUserList(navigate)}

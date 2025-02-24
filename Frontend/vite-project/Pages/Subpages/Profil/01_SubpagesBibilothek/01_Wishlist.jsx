@@ -2,7 +2,8 @@ import React from 'react';
 import '@/index.scss';
 import { Header } from '@/Components/Header';
 import { Footer } from '@/Components/Footer';
-import { Gallery } from '@/Components/Gallery';
+import { handleAddBook } from '@/Components/Function';
+import { GalleryWithPlaceholder } from '@/Components/GalleryWithPlaceholder';
 
 const Wishlist = () => {
   return (
@@ -12,7 +13,7 @@ const Wishlist = () => {
         <h1>Your Wishlist</h1>
       </header>
       <main>
-        <Gallery />
+        <GalleryWithPlaceholder onAddBook={handleAddBook} />
       </main>
       <footer>
         <Footer />

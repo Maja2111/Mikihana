@@ -1,12 +1,12 @@
 // subpage von der Homepage aus
 
 import React from 'react';
-import '../../../src/index.scss';
-import { Header } from '../../../Components/Header.jsx';
-import { Footer } from '../../../Components/Footer.jsx';
+import '@/index.scss';
+import { Header } from '@components/Header.jsx';
+import { Footer } from '@components/Footer.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
-import { EditButton } from '../../../Components/OnClickButtons.jsx';
+import { EditButton } from '@components/MainButtons.jsx';
 
 const EditProfile = () => {
   return (

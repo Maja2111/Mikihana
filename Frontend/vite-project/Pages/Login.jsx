@@ -12,7 +12,7 @@
  * weiterführung zur Registrierung
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoginButton, ToRegisterPage } from '../Components/MainButtons.jsx';
 import '../src/index.scss';
@@ -21,10 +21,22 @@ import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 const Login = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
 
   const handleLogin = () => {
     // TODO: Implementiere die tatsächliche Anmeldelogik
     navigate('/home');
+  };
+
+  const handleForgotPassword = () => {
+    const userEmail = prompt('Please enter your e-mail address:');
+    if (userEmail) {
+      setEmail(userEmail);
+      // Hier wird die E-Mail an das Backend gesendet
+      console.log('E-mail for password recovery sent to:', userEmail);
+      // TODO: Implementiere die Logik zum Senden der E-Mail an das Backend
+      alert('An email has been sent to reset your password.');
+    }
   };
 
   return (
@@ -45,8 +57,17 @@ const Login = () => {
         <LoginButton onClick={handleLogin} />
       </main>
       <footer>
-        <p>Forgot password? Click here!</p>{' '}
-        {'Clickbar machen Alert Fenster, email'}
+        <p
+          onClick={handleForgotPassword}
+          style={{
+            cursor: 'pointer',
+            color: 'blue',
+            textDecoration: 'underline',
+            marginBottom: '1rem',
+          }}
+        >
+          Forgot password? Click here!
+        </p>
         <ToRegisterPage />
         <p>
           <FontAwesomeIcon icon={faCopyright} />
