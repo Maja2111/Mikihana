@@ -1,16 +1,20 @@
 import './index.scss';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from '../Pages/Login.jsx';
-import Registeration from '../Pages/Registration.jsx';
-import Home from '../Pages/Home.jsx';
-import Profil from '../Pages/Profil.jsx';
-import AllSearch from '../Pages/AllSearch.jsx';
-import Target from '../Pages/Subpages/Home/Target.jsx';
-import Bibilothek from '../Pages/Subpages/Profil/Bibilothek.jsx';
-import EditProfile from '../Pages/Subpages/Profil/EditProfile.jsx';
-import BrandNew from '../Pages/Subpages/AllSearch/BrandNew.jsx';
-import MustRead from '../Pages/Subpages/AllSearch/MustRead.jsx';
+import Login from '@pages/Login';
+import Registeration from '@pages/Registration';
+import Home from '@pages/Home';
+import Profil from '@pages/Profil';
+import AllSearch from '@pages/AllSearch';
+import Target from '@pages/Subpages/Home/Target';
+import Bibilothek from '@pages/Subpages/Profil/Bibilothek';
+import EditProfile from '@pages/Subpages/Profil/EditProfile';
+import BrandNew from '@pages/Subpages/AllSearch/BrandNew';
+import MustRead from '@pages/Subpages/AllSearch/MustRead';
+import Wishlist from '@pages/Subpages/Profil/01_SubpagesBibilothek/01_Wishlist';
+import Favourites from '@pages/Subpages/Profil/01_SubpagesBibilothek/02_Favourites';
+import UnreadingBooks from '@pages/Subpages/Profil/01_SubpagesBibilothek/03_UnreadingBooks';
+import Userlist from '@pages/Subpages/Profil/01_SubpagesBibilothek/04_Userlist';
 
 const App = () => {
   return (
@@ -21,7 +25,14 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/home/target" element={<Target />} />
         <Route path="/profil" element={<Profil />} />
-        <Route path="/profil/bibliothek" element={<Bibilothek />} />
+        <Route path="/profil/bibilothek" element={<Bibilothek />} />
+        <Route path="/profil/bibilothek/wishlist" element={<Wishlist />} />
+        <Route path="/profil/bibilothek/favourites" element={<Favourites />} />
+        <Route
+          path="/profil/bibilothek/unreadingbooks"
+          element={<UnreadingBooks />}
+        />
+        <Route path="/profil/bibilothek/userlist" element={<Userlist />} />
         <Route path="/profil/edit-profile" element={<EditProfile />} />
         <Route path="/allsearch" element={<AllSearch />} />
         <Route path="/allsearch/brandnew" element={<BrandNew />} />

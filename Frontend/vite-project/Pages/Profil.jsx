@@ -9,7 +9,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../src/index.scss';
+import '@/index.scss';
 import { Gallery } from '../Components/Gallery.jsx';
 import { Header } from '../Components/Header.jsx';
 import { Footer } from '../Components/Footer.jsx';
@@ -18,7 +18,7 @@ import { handleClick } from '../Components/Function.jsx';
 const ProfilPage = () => {
   const navigate = useNavigate();
   const handleNavigateToLibrary = (navigate) => {
-    navigate('/profil/bibliothek');
+    navigate('/profil/bibilothek');
   };
   const handleNavigateToEditProfile = (navigate) => {
     navigate('/profil/edit-profile');

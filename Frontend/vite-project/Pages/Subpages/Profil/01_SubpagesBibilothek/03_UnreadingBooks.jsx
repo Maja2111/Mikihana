@@ -1,9 +1,9 @@
 import React from 'react';
 import '@/index.scss';
-import { Header } from '@/Components/Header';
-import { Footer } from '@/Components/Footer';
-import { handleAddBook } from '@/Components/Function';
-import { GalleryWithPlaceholder } from '@/Components/GalleryWithPlaceholder';
+import { Header } from '@components/Header.jsx';
+import { Footer } from '@components/Footer.jsx';
+import { handleAddBook } from '@components/Function.jsx';
+import { GalleryWithPlaceholder } from '@components/GalleryWithPlaceholder.jsx';
 
 const UnreadingBooks = () => {
   return (

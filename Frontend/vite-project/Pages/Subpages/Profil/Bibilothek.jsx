@@ -3,9 +3,9 @@
 
 import React from 'react';
 import '@/index.scss';
-import { Header } from '@components/Header.jsx';
-import { Footer } from '@components/Footer.jsx';
-import { Gallery } from '@components/Gallery.jsx';
+import { Header } from '@components/Header';
+import { Footer } from '@components/Footer';
+import { Gallery } from '@components/Gallery';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -13,18 +13,19 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 const Library = () => {
   const navigate = useNavigate();
 
-  const handleNavigateToWishList = (navigate) => {
-    navigate('/wishlist');
+  const handleNavigateToWishList = () => {
+    navigate('/profil/bibilothek/wishlist');
   };
-  const handleNavigateToFavourites = (navigate) => {
-    navigate('/favourites');
+  const handleNavigateToFavourites = () => {
+    navigate('/profil/bibilothek/favourites');
   };
-  const handleNavigateToUnreadingBooks = (navigate) => {
-    navigate('/unreadingbooks');
+  const handleNavigateToUnreadingBooks = () => {
+    navigate('/profil/bibilothek/unreadingbooks');
   };
-  const handleNavigateToUserList = (navigate) => {
-    navigate('/userlist');
+  const handleNavigateToUserList = () => {
+    navigate('/profil/bibilothek/userlist');
   };
+
   return (
     <div className="container">
       <header>
@@ -37,7 +38,7 @@ const Library = () => {
           <Gallery />
           <FontAwesomeIcon
             icon={faChevronRight}
-            onClick={() => handleNavigateToWishList(navigate)}
+            onClick={handleNavigateToWishList}
             style={{ cursor: 'pointer' }}
           />
         </section>
@@ -46,7 +47,7 @@ const Library = () => {
           <Gallery />
           <FontAwesomeIcon
             icon={faChevronRight}
-            onClick={() => handleNavigateToFavourites(navigate)}
+            onClick={handleNavigateToFavourites}
             style={{ cursor: 'pointer' }}
           />
         </section>
@@ -55,7 +56,7 @@ const Library = () => {
           <Gallery />
           <FontAwesomeIcon
             icon={faChevronRight}
-            onClick={() => handleNavigateToUnreadingBooks(navigate)}
+            onClick={handleNavigateToUnreadingBooks}
             style={{ cursor: 'pointer' }}
           />
         </section>
@@ -64,7 +65,7 @@ const Library = () => {
           <Gallery />
           <FontAwesomeIcon
             icon={faChevronRight}
-            onClick={() => handleNavigateToUserList(navigate)}
+            onClick={handleNavigateToUserList}
             style={{ cursor: 'pointer' }}
           />
         </section>
@@ -75,4 +76,5 @@ const Library = () => {
     </div>
   );
 };
+
 export default Library;
