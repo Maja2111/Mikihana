@@ -1,24 +1,20 @@
 import React from 'react';
-import '../../../src/index.scss';
-import { Header } from '../../../Components/Header.jsx';
-import { Carousel } from '../../../Components/carousel.jsx';
-import { Footer } from '../../../Components/Footer.jsx';
+import '@/index.scss';
+import { Header } from '@components/Header';
+import Carousel from '@components/Carousel';
+import { Footer } from '@components/Footer';
 
 const MustRead = () => {
   return (
     <div className="container">
       <header>
         <Header />
-        <h1>Hello ${User}, Welcome to Must Reads</h1>
+        <h1>Must Read Books</h1>
       </header>
       <main>
-        <h1>Must Reads</h1>
-        <input type="search" name="mustReadSearch" id="mustReadSearch" />
+        <p>Here you will find our must-read recommendations.</p>
+        <input type="search" name="mustRead" id="mustRead" />
         <Carousel />
-        <img
-          src="/Upload/symbol-fuer-offenes-buch-buchmodell-mit-weissen-seiten_165079-2511.avif"
-          alt="openBook"
-        />
       </main>
       <footer>
         <Footer />
@@ -26,4 +22,5 @@ const MustRead = () => {
     </div>
   );
 };
+
 export default MustRead;

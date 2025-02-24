@@ -9,9 +9,10 @@ export const handleViewChange = (setView, selectedView) => {
   // TODO: Daten für die ausgewählte Ansicht laden
 };
 
+import { useNavigate } from 'react-router-dom';
+
 //funktion zum hinzufügen eines Buches
 export const handleAddBook = () => {
-  // Hier kann die Logik für das Hinzufügen eines neuen Buches implementiert werden
-  console.log('Neues Buch hinzufügen');
-  // Zum Beispiel: navigate('/add-book');
+  const navigate = useNavigate();
+  navigate('/added-book');
 };

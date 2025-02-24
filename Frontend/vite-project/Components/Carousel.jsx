@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import './carousel.scss';
+import './01_ComponentsStyling/Carousel.scss';
 
 // TODO: Replace hardcoded images with data from backend API
 // Expected API response structure:
@@ -13,24 +13,28 @@ import './carousel.scss';
 // ]
 const images = [
   {
-    url: 'https://www.designagogo.co.uk/wp-content/uploads/2022/08/blog-tailwind-1920x1920.jpg',
+    url: '/Upload/die-fluesse-von-london-graphic-novel-taschenbuch-ben-aaronovitch.jpeg',
     alt: 'Tailwind CSS Design Example',
   },
   {
-    url: 'https://absarcs.info/how-to/install-tailwind-css//c1090e2c651cce9c7b348fd3d5155914.png',
+    url: '/Upload/onyx-storm-gebundene-ausgabe-rebecca-yarros-englisch.jpeg',
     alt: 'Tailwind CSS Installation Guide',
   },
   {
-    url: 'https://stackdiary.com/wp-content/uploads/2022/10/Tailwind-CSS-15-Component-Libraries-UI-Kits.png',
+    url: '/Upload/iron-flame-taschenbuch-rebecca-yarros-englisch.jpeg',
     alt: 'Tailwind CSS Component Libraries',
   },
   {
-    url: 'https://s3-alpha.figma.com/hub/file/2603959525/8e909c88-4e83-4af4-b5b2-4a50a9b571f7-cover.png',
+    url: '/Upload/fourth-wing-taschenbuch-rebecca-yarros-englisch.jpeg',
+    alt: 'Tailwind CSS Figma Integration',
+  },
+  {
+    url: '/Upload/when-the-moon-hatched-taschenbuch-sarah-a-parker-englisch.jpeg',
     alt: 'Tailwind CSS Figma Integration',
   },
 ];
 
-export default function Carousel() {
+const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNavigation = (direction) => {
@@ -93,4 +97,5 @@ export default function Carousel() {
       </div>
     </div>
   );
-}
+};
+export default Carousel;

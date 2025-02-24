@@ -28,7 +28,7 @@ export const RegisterButton = () => {
     <button
       className="MainButtons"
       onClick={() => {
-        navigate('/register');
+        navigate('/home');
       }}
     >
       Register

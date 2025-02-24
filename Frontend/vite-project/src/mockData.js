@@ -42,3 +42,27 @@ export const discothequeResults = [
   { id: 1, title: 'Musik 1', image: 'path/to/image5.jpg' },
   { id: 2, title: 'Musik 2', image: 'path/to/image6.jpg' },
 ];
+
+export const mediaCards = [
+  {
+    id: 1,
+    title: 'Buchcover',
+    text: 'Das ist ein Buch.',
+    imageUrl:
+      '/Upload/symbol-fuer-offenes-buch-buchmodell-mit-weissen-seiten_165079-2511.avif',
+  },
+  {
+    id: 2,
+    title: 'Filmcover',
+    text: 'Das ist ein Film.',
+    imageUrl:
+      '/Upload/83987435-filmstreifen-mit-der-filmrolle-und-popcorn-lokalisiert-auf-weißem-hintergrund.jpg',
+  },
+  {
+    id: 3,
+    title: 'Musik LP',
+    text: 'Das ist eine Musik-LP.',
+    imageUrl:
+      '/Upload/vinyl-schallplatte-square-nussbaum-schwarz_madeindesign_399685_original.webp',
+  },
+];

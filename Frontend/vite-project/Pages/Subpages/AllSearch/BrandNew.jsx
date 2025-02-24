@@ -1,15 +1,15 @@
 import React from 'react';
-import '../../../src/index.scss';
-import { Header } from '../../../Components/Header';
-import { Carousel } from '../../../Components/carousel';
-import { Footer } from '../../../Components/Footer';
+import '@/index.scss';
+import { Header } from '@components/Header';
+import Carousel from '@components/Carousel';
+import { Footer } from '@components/Footer';
 
 const BrandNew = () => {
   return (
     <div className="container">
       <header>
         <Header />
-        <h1>Hello ${User}, books new publications</h1>
+        <h1>Hello User, books new publications</h1>
       </header>
       <main>
         <h1>Brandnew</h1>
@@ -26,4 +26,5 @@ const BrandNew = () => {
     </div>
   );
 };
+
 export default BrandNew;

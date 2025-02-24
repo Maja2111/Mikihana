@@ -3,20 +3,21 @@
  * search page
  * header: Logo und suchleiste
  * main: 2 sections
- * footer: Iconbar, copyright
  */
 
 import React from 'react';
+import '@/index.scss';
 import { useNavigate } from 'react-router-dom';
-import { Header } from '../Components/Header.jsx';
-import { Cards } from '../Components/Cards.jsx';
-import { Footer } from '../Components/Footer.jsx';
+import { Header } from '@components/Header';
+import { Cards } from '@components/Cards';
+import { Footer } from '@components/Footer';
+import { mediaCards } from '@/mockData';
 
 const SearchPage = () => {
   const navigate = useNavigate();
 
   const handleNavigateToBrandNew = () => {
-    navigate('/brandnew');
+    navigate('/allsearch/brandnew');
   };
 
   const handleNavigateToMustRead = () => {
@@ -31,24 +32,28 @@ const SearchPage = () => {
       </header>
       <main>
         <section>
-          <h1>Brandnew</h1>
-          <Cards
-            onClickHandler={handleNavigateToBrandNew}
-            title="Brandnew"
-            text="Discover our newest books"
-          />
-          <Cards />
-          <Cards />
+          <h1>BRANDNEW</h1>
+          {mediaCards.map((card) => (
+            <Cards
+              key={card.id}
+              onClickHandler={handleNavigateToBrandNew}
+              title={card.title}
+              text={card.text}
+              imageUrl={card.imageUrl}
+            />
+          ))}
         </section>
         <section>
-          <h1>Must Have</h1>
-          <Cards
-            onClickHandler={handleNavigateToMustRead}
-            title="Must Reads"
-            text="Our recommendations for you"
-          />
-          <Cards />
-          <Cards />
+          <h1>MUST HAVE</h1>
+          {mediaCards.map((card) => (
+            <Cards
+              key={card.id}
+              onClickHandler={handleNavigateToMustRead}
+              title={card.title}
+              text={card.text}
+              imageUrl={card.imageUrl}
+            />
+          ))}
         </section>
       </main>
       <footer>
