@@ -12,10 +12,16 @@
  * weiterführung zur Registrierung
  */
 
+//Entwicklerimporte
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LoginButton, ToRegisterPage } from '../Components/MainButtons.jsx';
-import '../src/index.scss';
+
+//Componentsimporte
+import { LoginButton, ToRegisterPage } from '@components/MainButtons.jsx';
+import { Header } from '@components/Header.jsx';
+
+//Styingimporte
+import '@/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
@@ -42,12 +48,12 @@ const Login = () => {
   return (
     <div className="container">
       <header className="header">
-        <img src="/Upload/Logo Cayenne.png" alt="logo" className="logo" />
-        <h1>Welcome to Mikihana, your App for Books and more!</h1>
+        <Header />
       </header>
       <main>
+        <h1>Welcome to Mikihana, your App for Books and more!</h1>
         <img
-          src="/Upload/Äffchen.png"
+          src="@assets/Äffchen.png"
           alt="profilpicture"
           className="profilPicture"
         />

@@ -10,10 +10,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '@/index.scss';
-import { Gallery } from '../Components/Gallery.jsx';
-import { Header } from '../Components/Header.jsx';
-import { Footer } from '../Components/Footer.jsx';
-import { handleClick } from '../Components/Function.jsx';
+import { Gallery } from '@components/Gallery.jsx';
+import { Header } from '@components/Header.jsx';
+import { Footer } from '@components/Footer.jsx';
+import { handleClick } from '@components/Function.jsx';
 
 const ProfilPage = () => {
   const navigate = useNavigate();

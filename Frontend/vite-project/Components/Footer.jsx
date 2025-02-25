@@ -1,4 +1,5 @@
 import React from 'react';
+import './01_ComponentsStyling/Footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHouse,
@@ -24,14 +25,13 @@ export const Footer = () => {
           style={{ cursor: 'pointer' }}
         />
         <img
+          className="monkey"
           src="/Upload/Äffchen.png"
           alt="Profile"
           onClick={() => navigate('/Profil')}
           style={{ cursor: 'pointer' }}
         />
       </nav>
-      <FontAwesomeIcon icon={faCopyright} />
-      <p>Copyright 2025 Mikihana</p>
     </div>
   );
 };

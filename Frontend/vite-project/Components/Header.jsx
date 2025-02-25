@@ -1,4 +1,5 @@
 import React from 'react';
+import './01_ComponentsStyling/Header.scss';
 
 export const Header = () => {
   return (

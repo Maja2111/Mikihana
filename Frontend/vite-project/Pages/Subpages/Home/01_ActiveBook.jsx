@@ -1,14 +1,19 @@
+//Entwicklerimporte
 import React from 'react';
-import '../../../src/index.scss';
-import { Header } from '../../../Components/Header.jsx';
-import { Footer } from '../../../Components/Footer.jsx';
+
+//Componentsimporte
+import { Header } from '@components/Header.jsx';
+import { Footer } from '@components/Footer.jsx';
+import ActiveBook from '@components/ActiveBook.jsx';
+import { UpdateButton } from '@components/MainButtons.jsx';
+
+//Stylingimpore
+import '@/index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faRectangleXmark,
   faCalendarDays,
 } from '@fortawesome/free-solid-svg-icons';
-import ActiveBook from '../../../Components/ActiveBook.jsx';
-import { UpdateButton } from '../../../Components/MainButtons.jsx';
 
 const ActiveBookPage = () => {
   return (

@@ -4,6 +4,7 @@
 $primary-color: #662e1c;
 $secondary-color: #ebdcb2;
 $tertiary-color: #c9a66b;
+$iconbar-color: #a58463;
 
 * {
   margin: 0;
@@ -11,28 +12,49 @@ $tertiary-color: #c9a66b;
   box-sizing: border-box;
 }
 
+// Container für das Layout
 .container {
   font-family: 'Manjari', sans-serif;
   color: $primary-color;
   background-color: $secondary-color;
   width: 100%;
-  height: 350px;
-  position: relative;
+  height: 100vh; // Volle Höhe des Viewports
+  display: flex;
+  flex-direction: column;
 }
 
-main,
+// Header: 1/6 der Höhe
+header {
+  height: 16.6667%; // 1/6 der Höhe
+}
+
+// Main: 4/6 der Höhe
+main {
+  height: 75%; // 4/6 der Höhe + 1/12 der Höhe für den Footer
+}
+
+// Footer: 1/12 der Höhe (Hälfte der ursprünglichen Höhe)
 footer {
-  background-color: $tertiary-color;
+  height: 8.3333%; // 1/12 der Höhe
+  background-color: $iconbar-color;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-img {
-  width: 50px;
-  height: 50px;
+// Sektionen mit border-radius und Abstand
+section {
+  margin: 20px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: $tertiary-color;
 }
 
 h1 {
   font-family: 'Nanum Gothic', sans-serif;
-  font-size: 14px;
+  font-size: 3rem;
+  text-align: center;
 }
 
 p {
@@ -40,6 +62,33 @@ p {
   padding: 5px;
 }
 
-section {
-  margin: 20px;
+// Responsive Design
+@media (max-width: 768px) {
+  // Anpassungen für Tablets und kleinere Bildschirme
+  header {
+    height: 10%; // Reduzierte Höhe für den Header
+  }
+
+  main {
+    height: 85%; // Erhöhte Höhe für das Main
+  }
+
+  footer {
+    height: 5%; // Reduzierte Höhe für den Footer
+  }
+}
+
+@media (max-width: 480px) {
+  // Anpassungen für Mobilgeräte
+  header {
+    height: 8%; // Weitere Reduzierung der Höhe für den Header
+  }
+
+  main {
+    height: 88%; // Weitere Erhöhung der Höhe für das Main
+  }
+
+  footer {
+    height: 4%; // Weitere Reduzierung der Höhe für den Footer
+  }
 }
