@@ -1,18 +1,23 @@
+//Entwicklerimporte
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '@/index.scss';
-import './02_PageStyling/Home.scss';
+
+//Componetensimporte
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
+import ChartSelector from '@components/ChartSelector';
+import { pageStats, bookStats } from '@/mockData';
+import { handleViewChange } from '@components/Function.jsx';
+
+//Stylingimporte
+import '@/index.scss';
+import './02_PageStyling/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
 import {
   faChevronRight,
   faShareNodes,
 } from '@fortawesome/free-solid-svg-icons';
-import ChartSelector from '@components/ChartSelector';
-import { pageStats, bookStats } from '@/mockData';
-import { handleViewChange } from '@components/Function.jsx';
 
 const Chart = ({ data, maxValue }) => {
   return (
@@ -35,13 +40,13 @@ const Home = () => {
   const [view, setView] = useState('year');
   const navigate = useNavigate();
   const handleNavigateToActiveBook = () => {
-    navigate('/subpages/home/activeBook');
+    navigate('/home/activeBook');
   };
   const handleNavigateToTarget = () => {
-    navigate('/subpages/home/target');
+    navigate('/home/target');
   };
   const handleNavigateToGetTarget = () => {
-    navigate('/subpages/home/getTarget');
+    navigate('/home/getTarget');
   };
 
   return (
@@ -52,19 +57,19 @@ const Home = () => {
           <ul>
             <li>
               <img
-                src="/Upload/symbol-fuer-offenes-buch-buchmodell-mit-weissen-seiten_165079-2511.avif"
+                src="./Upload/symbol-fuer-offenes-buch-buchmodell-mit-weissen-seiten_165079-2511.avif"
                 alt="Bibilothek"
               />
             </li>
             <li>
               <img
-                src="/Upload/83987435-filmstreifen-mit-der-filmrolle-und-popcorn-lokalisiert-auf-weißem-hintergrund.jpg"
+                src="./Upload/83987435-filmstreifen-mit-der-filmrolle-und-popcorn-lokalisiert-auf-weißem-hintergrund.jpg"
                 alt="Videothek"
               />
             </li>
             <li>
               <img
-                src="/Upload/vinyl-schallplatte-square-nussbaum-schwarz_madeindesign_399685_original.webp"
+                src="./Upload/vinyl-schallplatte-square-nussbaum-schwarz_madeindesign_399685_original.webp"
                 alt="Discothek"
               />
             </li>
@@ -84,7 +89,7 @@ const Home = () => {
             <FontAwesomeIcon icon={faShareNodes} />
           </button>
           <img
-            src="/Upload/iron-flame-taschenbuch-rebecca-yarros-englisch.jpeg"
+            src="./Upload/iron-flame-taschenbuch-rebecca-yarros-englisch.jpeg"
             alt="cover"
           />
           <FontAwesomeIcon

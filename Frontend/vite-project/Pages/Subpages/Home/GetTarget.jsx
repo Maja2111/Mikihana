@@ -1,7 +1,7 @@
 // Subpage die die Ziele anzeigt
 import React from 'react';
-import { Header } from '../../../Components/Header.jsx';
-import { Footer } from '../../../Components/Footer.jsx';
+import { Header } from '@components/Header.jsx';
+import { Footer } from '@components/Footer.jsx';
 
 const GetTarget = () => {
   // Beispielziele (später dynamisch aus einem State oder Backend laden)

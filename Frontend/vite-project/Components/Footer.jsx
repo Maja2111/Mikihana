@@ -1,11 +1,7 @@
 import React from 'react';
 import './01_ComponentsStyling/Footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHouse,
-  faMagnifyingGlass,
-  faCopyright,
-} from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
 export const Footer = () => {
@@ -28,7 +24,7 @@ export const Footer = () => {
           className="monkey"
           src="/Upload/Äffchen.png"
           alt="Profile"
-          onClick={() => navigate('/Profil')}
+          onClick={() => navigate('/Profile')}
           style={{ cursor: 'pointer' }}
         />
       </nav>

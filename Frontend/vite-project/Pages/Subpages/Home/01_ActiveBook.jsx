@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faRectangleXmark,
   faCalendarDays,
+  faPen,
 } from '@fortawesome/free-solid-svg-icons';
 
 const ActiveBookPage = () => {
@@ -35,7 +36,8 @@ const ActiveBookPage = () => {
           <label htmlFor="progress">progress</label>
           <input type="number" name="pages" id="pages" placeholder="0" />
           <p>
-            pages out of ${API} <FontAwesomeIcon icon={faPen} />
+            pages out of API
+            <FontAwesomeIcon icon={faPen} />
           </p>
           <label htmlFor="privatenote">private note</label>
           <textarea

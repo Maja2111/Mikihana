@@ -14,16 +14,16 @@ const Library = () => {
   const navigate = useNavigate();
 
   const handleNavigateToWishList = () => {
-    navigate('/profil/bibilothek/wishlist');
+    navigate('/profile/bibilothek/wishlist');
   };
   const handleNavigateToFavourites = () => {
-    navigate('/profil/bibilothek/favourites');
+    navigate('/profile/bibilothek/favourites');
   };
   const handleNavigateToUnreadingBooks = () => {
-    navigate('/profil/bibilothek/unreadingbooks');
+    navigate('/profile/bibilothek/unreadingbooks');
   };
   const handleNavigateToUserList = () => {
-    navigate('/profil/bibilothek/userlist');
+    navigate('/profile/bibilothek/userlist');
   };
 
   return (

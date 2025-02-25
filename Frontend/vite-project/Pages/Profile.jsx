@@ -18,10 +18,10 @@ import { handleClick } from '@components/Function.jsx';
 const ProfilPage = () => {
   const navigate = useNavigate();
   const handleNavigateToLibrary = (navigate) => {
-    navigate('/profil/bibilothek');
+    navigate('/profile/bibilothek');
   };
   const handleNavigateToEditProfile = (navigate) => {
-    navigate('/profil/edit-profile');
+    navigate('/profile/edit-profile');
   };
 
   return (
