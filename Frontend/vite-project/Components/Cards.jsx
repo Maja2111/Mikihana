@@ -1,15 +1,12 @@
 import React from 'react';
 import './01_ComponentsStyling/Card.scss';
-import { handleClick } from './Function';
 
-export function Cards() {
+export function Cards({ onClickHandler, title, text, imageUrl }) {
   return (
-    <a href="#" className="card" onClick={handleClick}>
-      <h5 className="card__title">Noteworthy technology acquisitions 2021</h5>
-      <p className="card__text">
-        Here are the biggest enterprise technology acquisitions of 2021 so far,
-        in reverse chronological order.
-      </p>
-    </a>
+    <div className="card" onClick={onClickHandler}>
+      {imageUrl && <img src={imageUrl} alt={title} className="card__image" />}
+      <h5 className="card__title">{title}</h5>
+      <p className="card__text">{text}</p>
+    </div>
   );
 }

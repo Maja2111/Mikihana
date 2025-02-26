@@ -1,26 +1,28 @@
+//Entwicklerimporte
 import React, { useState } from 'react';
-import '../src/index.scss';
-import '../Components/01_ComponentsStyling/Chart.scss';
-import { Header } from '../Components/Header.jsx';
-import { Footer } from '../Components/Footer.jsx';
+import { useNavigate } from 'react-router-dom';
+
+//Componetensimporte
+import { Header } from '@components/Header.jsx';
+import { Footer } from '@components/Footer.jsx';
+import ChartSelector from '@components/ChartSelector';
+import { pageStats, bookStats } from '@/mockData';
+import { handleViewChange } from '@components/Function.jsx';
+
+//Stylingimporte
+import '@/index.scss';
+import './02_PageStyling/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChevronRight,
+  faShareNodes,
+} from '@fortawesome/free-solid-svg-icons';
 
-// TODO: API-Endpunkte definieren
-// const API_URL = process.env.REACT_APP_API_URL;
-// const PAGE_STATS_ENDPOINT = '/statistics/pages';
-// const BOOK_STATS_ENDPOINT = '/statistics/books';
-
-// TODO: Datenvalidierung hinzufügen
-// if (!data || data.length === 0) return <div>Keine Daten verfügbar</div>;
 const Chart = ({ data, maxValue }) => {
   return (
     <div className="chart-container">
-      <div className="chart-axis">
-        <div className="x-axis"></div>
-        <div className="y-axis"></div>
-      </div>
+      <div className="chart-axis"></div>
       {data.map((item, index) => (
         <div
           key={index}
@@ -35,46 +37,43 @@ const Chart = ({ data, maxValue }) => {
 };
 
 const Home = () => {
-  // TODO: Ersetzen durch API-Aufruf für Seitenstatistiken
-  const [pageStats, setPageStats] = useState([
-    { month: 'Jan', value: 200 },
-    { month: 'Feb', value: 400 },
-    { month: 'März', value: 540 },
-    { month: 'April', value: 800 },
-    { month: 'Mai', value: 980 },
-    { month: 'Juni', value: 745 },
-    { month: 'Juli', value: 0 },
-    { month: 'Aug', value: 0 },
-    { month: 'Sept', value: 0 },
-    { month: 'Okt', value: 0 },
-    { month: 'Nov', value: 0 },
-    { month: 'Dez', value: 0 },
-  ]);
-
-  // TODO: Ersetzen durch API-Aufruf für Buchstatistiken
-  const [bookStats, setBooksStats] = useState([
-    { month: 'Jan', value: 0.5 },
-    { month: 'Feb', value: 0.5 },
-    { month: 'März', value: 1 },
-    { month: 'April', value: 1.5 },
-    { month: 'Mai', value: 2 },
-    { month: 'Juni', value: 0.2 },
-    { month: 'Juli', value: 0 },
-    { month: 'Aug', value: 0 },
-    { month: 'Sept', value: 0 },
-    { month: 'Okt', value: 0 },
-    { month: 'Nov', value: 0 },
-    { month: 'Dez', value: 0 },
-  ]);
+  const [view, setView] = useState('year');
+  const navigate = useNavigate();
+  const handleNavigateToActiveBook = () => {
+    navigate('/home/activeBook');
+  };
+  const handleNavigateToTarget = () => {
+    navigate('/home/target');
+  };
+  const handleNavigateToGetTarget = () => {
+    navigate('/home/getTarget');
+  };
 
   return (
     <div className="container">
       <header className="header">
         <Header />
-        <nav>
-          <ul>Bibilothek</ul>
-          <ul>Videothek</ul>
-          <ul>Discothek</ul>
+        <nav className="navbar">
+          <ul>
+            <li>
+              <img
+                src="./Upload/symbol-fuer-offenes-buch-buchmodell-mit-weissen-seiten_165079-2511.avif"
+                alt="Bibilothek"
+              />
+            </li>
+            <li>
+              <img
+                src="./Upload/83987435-filmstreifen-mit-der-filmrolle-und-popcorn-lokalisiert-auf-weißem-hintergrund.jpg"
+                alt="Videothek"
+              />
+            </li>
+            <li>
+              <img
+                src="./Upload/vinyl-schallplatte-square-nussbaum-schwarz_madeindesign_399685_original.webp"
+                alt="Discothek"
+              />
+            </li>
+          </ul>
         </nav>
         <h1>Your main area</h1>
       </header>
@@ -82,37 +81,60 @@ const Home = () => {
       <main>
         <section className="activeBook">
           <h2>Active Book</h2>
-          <p>{/* TODO: Buchtitel vom Backend einfügen */}Title</p>
-          <p>{/* TODO: Autor vom Backend einfügen */}Author</p>
+          <p>Title</p>
+          <p>Author</p>
           <div className="progress">Progress</div>
           <button>Update</button>
           <button>
             <FontAwesomeIcon icon={faShareNodes} />
           </button>
-          <img src="" alt="cover" />
-          <FontAwesomeIcon icon={faSquarePlus} />
-          <FontAwesomeIcon icon={faChevronRight} />
+          <img
+            src="./Upload/iron-flame-taschenbuch-rebecca-yarros-englisch.jpeg"
+            alt="cover"
+          />
+          <FontAwesomeIcon
+            icon={faSquarePlus}
+            onClick={handleNavigateToActiveBook}
+            style={{ cursor: 'pointer' }}
+          />
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            onClick={handleNavigateToActiveBook}
+            style={{ cursor: 'pointer' }}
+          />
         </section>
 
         <section className="target">
-          <h2>Your Readtarget</h2>
-          <FontAwesomeIcon icon={faSquarePlus} />
-          <FontAwesomeIcon icon={faChevronRight} />
+          <h2>Your Reading Goal</h2>
+          <FontAwesomeIcon
+            icon={faSquarePlus}
+            onClick={() => handleNavigateToTarget()}
+            style={{ cursor: 'pointer' }}
+          />
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            onClick={() => handleNavigateToGetTarget(navigate)}
+            style={{ cursor: 'pointer' }}
+          />
         </section>
 
         <section className="pageStatistic">
           <h2>Page Statistics</h2>
-          {/* TODO: Loading State hinzufügen während Daten geladen werden */}
-          {/* TODO: Pagination für große Datensätze implementieren */}
-          {/* TODO: Filteroptionen für Zeiträume hinzufügen */}
+          <ChartSelector
+            onViewChange={(selectedView) =>
+              handleViewChange(setView, selectedView)
+            }
+          />
           <Chart data={pageStats} maxValue={1000} />
         </section>
 
         <section className="booksStatistic">
           <h2>Books Statistics</h2>
-          {/* TODO: Loading State hinzufügen während Daten geladen werden */}
-          {/* TODO: Tooltips für detaillierte Informationen hinzufügen */}
-          {/* TODO: Export-Funktion für Statistiken implementieren */}
+          <ChartSelector
+            onViewChange={(selectedView) =>
+              handleViewChange(setView, selectedView)
+            }
+          />
           <Chart data={bookStats} maxValue={2} />
         </section>
 
@@ -120,13 +142,11 @@ const Home = () => {
           <h2>Series</h2>
           <p>days in a row </p>
           <div>
-            {' '}
-            {/*Daten kommen aus dem Backend, hier wird nur ein Platzhalter verwendet */}
-            <p>{/* TODO: Serieninformationen vom Backend einfügen */}20</p>
+            <p>20</p>
             <p>current series</p>
           </div>
           <div>
-            <p>{/* TODO: Serieninformationen vom Backend einfügen */}52</p>
+            <p>52</p>
             <p>longest series</p>
           </div>
           <FontAwesomeIcon icon={faChevronRight} />

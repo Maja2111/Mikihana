@@ -1,21 +1,28 @@
-import './index.scss';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from '../Pages/Login.jsx';
-import Registeration from '../Pages/Registration.jsx';
-import Home from '../Pages/Home.jsx';
-import Profil from '../Pages/Profil.jsx';
-import AllSearch from '../Pages/AllSearch.jsx';
+
+// Pageimporte
+import Login from '@pages/Login';
+import Registeration from '@pages/Registration';
+
+//  Routerimporte
+import HomeRouter from '@/Router/HomeRouter';
+import ProfileRouter from '@/Router/ProfileRouter';
+import AllSearchRouter from '@/Router/AllSearchRouter';
+
+// Stylingimporte
+import '@/index.scss';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Hauptseiten */}
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Registeration />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/profil" element={<Profil />} />
-        <Route path="/allsearch" element={<AllSearch />} />
+        <Route path="/home/*" element={<HomeRouter />} />
+        <Route path="/profile/*" element={<ProfileRouter />} />
+        <Route path="/allsearch/*" element={<AllSearchRouter />} />
       </Routes>
     </BrowserRouter>
   );
