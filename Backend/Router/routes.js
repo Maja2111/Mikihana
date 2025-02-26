@@ -67,6 +67,7 @@ router.post("/register", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+//Test
 
 //Authentifiziert einen Benutzer und gibt ein JWT-TOKEN zurückt
 router.post("/login", async (req, res) => {
