@@ -20,7 +20,9 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     birthday: Number,
-    gender: String
+    gender: String,
+    profilePhoto: String,
+    
 },
 { timestamps: true }
 );

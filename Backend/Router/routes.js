@@ -2,6 +2,9 @@ import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../Models/User.js";
+import upload from "../uploads/multerConfig.js";
+
+
 
 const router = express.Router();
 
@@ -44,6 +47,9 @@ router.post("/register", async (req, res) => {
       return res.status(400).json({ message: "E-mail is already registered." });
     }
 
+    //Save URL 
+    const profilePhoto = req.file ? `/uplaods/${req.file.filename}` : null;
+
     //Neuen Benutzer erstellen
     const newUser = await User.create({
       firstName,
@@ -53,6 +59,7 @@ router.post("/register", async (req, res) => {
       password,
       birthday,
       gender,
+      profilePhoto,
     });
 
     res.status(201).json({ message: "Registration successful!", newUser });

@@ -1,0 +1,9 @@
+#Node Modules
+node_modules
+packsge-lock.json
+
+#Enviroment Variables
+.env
+
+#Uplaods
+uploads
