@@ -1,0 +1,35 @@
+//Headerstyling und das styling für den Header und der Chart kommt aus en jeweiligen Componenten
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+
+    li {
+      position: relative;
+
+      img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+}
+
+//main Styling
+.activeBook {
+  display: flex;
+  justify-content: space-between;
+}
