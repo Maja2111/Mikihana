@@ -18,10 +18,10 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './Pages/01_PagesJSX'),
 
       //@pagestyle/ verweist auf das pagestyle-Verzeichnis
-      '@pagestyle': path.resolve(__dirname, '.Pages/02_PageStyling'),
+      '@pagestyle': path.resolve(__dirname, './Pages/02_PageStyling'),
 
       // @assets/ verweist auf das Upload-Verzeichnis
-      '@assets': path.resolve(__dirname, './Upload'),
+      '@assets': path.resolve(__dirname, './Upload/'),
     },
   },
 });

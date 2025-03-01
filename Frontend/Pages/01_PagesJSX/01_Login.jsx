@@ -17,11 +17,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //Componentsimporte
-import { LoginButton, ToRegisterPage } from '@components/MainButtons.jsx';
 import { Header } from '@components/Header.jsx';
 
 //Styingimporte
 import '@/index.scss';
+import '@pagestyle/Login.scss';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
@@ -32,6 +33,10 @@ const Login = () => {
   const handleLogin = () => {
     // TODO: Implementiere die tatsächliche Anmeldelogik
     navigate('/home');
+  };
+
+  const handleToRegisterPage = () => {
+    navigate('/register');
   };
 
   const handleForgotPassword = () => {
@@ -52,17 +57,23 @@ const Login = () => {
       </header>
       <main>
         <h1>Welcome to Mikihana, your App for Books and more!</h1>
-        <img
-          src="@assets/Äffchen.png"
-          alt="profilpicture"
-          className="profilPicture"
-        />
-        <h2>USER LOGIN</h2>
-        <input type="text" placeholder="USERNAME" />
-        <input type="password" placeholder="PASSWORD" />
-        <LoginButton onClick={handleLogin} />
-      </main>
-      <footer>
+        <section>
+          <h2>USER LOGIN</h2>
+          <p>
+            <img
+              src="/Upload/Äffchen.png"
+              alt="profilepicture"
+              className="profilePicture"
+            />
+          </p>
+          <form action="">
+            <input type="text" placeholder="USERNAME" />
+            <input type="password" placeholder="PASSWORD" />
+          </form>
+          <button className="clickButton" onClick={handleLogin}>
+            LOGIN
+          </button>
+        </section>
         <p
           onClick={handleForgotPassword}
           style={{
@@ -74,7 +85,11 @@ const Login = () => {
         >
           Forgot password? Click here!
         </p>
-        <ToRegisterPage />
+        <button className="clickButton" onClick={handleToRegisterPage}>
+          Don't have an account? Register here!
+        </button>
+      </main>
+      <footer>
         <p>
           <FontAwesomeIcon icon={faCopyright} />
           Copyright 2025 Mikihana

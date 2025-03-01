@@ -18,19 +18,23 @@ $iconbar-color: #a58463;
   color: $primary-color;
   background-color: $secondary-color;
   width: 100%;
-  height: 100vh; // Volle Höhe des Viewports
+  min-height: 100vh; // Statt height für bessere Browser-Kompatibilität
   display: flex;
   flex-direction: column;
+  overflow: hidden; // Verhindert Scrollbalken bei festen Elementen
 }
 
 // Header: 1/6 der Höhe
 header {
   height: 16.6667%; // 1/6 der Höhe
+  background-color: $secondary-color; // Explizite Hintergrundfarbe
 }
 
-// Main: 4/6 der Höhe
+// Main: 2/3 der Höhe
 main {
-  height: 75%; // 4/6 der Höhe + 1/12 der Höhe für den Footer
+  height: 66.6667%; // 2/3 der Höhe
+  background-color: $secondary-color; // Explizite Hintergrundfarbe
+  overflow-y: auto; // Scrollen bei Bedarf
 }
 
 // Footer: 1/12 der Höhe (Hälfte der ursprünglichen Höhe)
@@ -64,6 +68,38 @@ h2 {
 p {
   font-size: 1rem;
   padding: 5px;
+}
+
+// Button Variablen
+$secondary-color: #ebdcb2;
+$button-width: 95%;
+$button-height: 20px;
+$button-font-size: 12px;
+$button-color: #fff;
+$button-hover-color: #000;
+$button-gradient: linear-gradient(to bottom, #ebdcb2, #c9a66b);
+$button-border-radius: 10px;
+$button-transition: all 0.25s ease;
+$button-padding: 5px;
+$button-margin: 10px;
+
+.clickButton {
+  width: $button-width;
+  height: $button-height;
+  font-size: $button-font-size;
+  color: $button-color;
+  background: $button-gradient;
+  border: none;
+  border-radius: $button-border-radius;
+  transition: $button-transition;
+  padding: $button-padding;
+  margin: $button-margin;
+
+  &:hover {
+    color: $button-hover-color;
+    background: $button-gradient;
+    border-color: none;
+  }
 }
 
 // Responsive Design

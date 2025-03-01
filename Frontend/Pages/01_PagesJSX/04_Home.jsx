@@ -8,6 +8,7 @@ import { Footer } from '@components/Footer.jsx';
 import ChartSelector from '@components/ChartSelector';
 import { handleViewChange } from '@components/Function.jsx';
 import { LoadingBar } from '@components/LoadingBar.jsx';
+import { LoadingCircle } from '@components/LoadingCircle';
 import { pageStats, bookStats } from '@/mockData';
 
 //Stylingimporte
@@ -80,12 +81,12 @@ const Home = () => {
         <section className="activeBook">
           <div>
             <h2>Active Book</h2>
-            <p>Title</p>
-            <p>Author</p>
+            <p>Title: When the moon hatched</p>
+            <p>Author: Sarah A. Parker</p>
             <LoadingBar />
           </div>
           <img
-            src="./Upload/iron-flame-taschenbuch-rebecca-yarros-englisch.jpeg"
+            src="/Upload/when-the-moon-hatched-taschenbuch-sarah-a-parker-englisch.jpeg"
             alt="cover"
           />
           <FontAwesomeIcon
@@ -102,6 +103,7 @@ const Home = () => {
 
         <section className="target">
           <h2>Your Reading Goal</h2>
+
           <FontAwesomeIcon
             icon={faSquarePlus}
             onClick={() => handleNavigateToTarget()}
@@ -112,6 +114,7 @@ const Home = () => {
             onClick={() => handleNavigateToGetTarget(navigate)}
             style={{ cursor: 'pointer' }}
           />
+          <LoadingCircle />
         </section>
 
         <section className="pageStatistic">

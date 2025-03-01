@@ -1,5 +1,6 @@
 //Entwicklerimporte
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
@@ -18,6 +19,7 @@ const Wishlist = () => {
       </header>
       <main>
         <GalleryWithPlaceholder />
+        <Outlet />
       </main>
       <footer>
         <Footer />

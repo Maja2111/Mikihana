@@ -94,3 +94,12 @@ export const goals = [
   { id: 1, type: 'Buch', target: 5, interval: 'Monatlich' },
   { id: 2, type: 'Seite', target: 100, interval: 'Jährlich' },
 ];
+
+export const loadingData = {
+  bar: {
+    progress: 75,
+  },
+  circle: {
+    progress: 45,
+  },
+};

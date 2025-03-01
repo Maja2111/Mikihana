@@ -4,7 +4,6 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '@style/MainButtons.scss';
 
 // Login Button auf der LandingPage
 export const LoginButton = () => {
@@ -35,17 +34,6 @@ export const RegisterButton = () => {
     </button>
   );
 };
-
-//Button der von der LandingPage zur Registerung führt
-
-export function ToRegisterPage() {
-  const navigate = useNavigate();
-  return (
-    <button className="MainButtons" onClick={() => navigate('/register')}>
-      Don't have an account? Register here!
-    </button>
-  );
-}
 
 //Aktualisieren Button auf der Subpage activeBook
 

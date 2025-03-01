@@ -29,7 +29,20 @@
 }
 
 //main Styling
-.activeBook {
+
+.activeBook,
+.target {
   display: flex;
   justify-content: space-between;
+}
+.activeBook {
+  img {
+    width: 60px;
+    height: 100px;
+    border-radius: 10px;
+  }
+}
+
+.target {
+  flex-direction: column;
 }

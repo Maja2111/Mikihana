@@ -1,26 +1,31 @@
 .loading-bar {
   width: 100%;
-  height: 4px;
-  background-color: #e0e0e0;
-  border-radius: 2px;
+  height: 15px;
+  background-color: #f0c688;
+  border-radius: 4px;
   overflow: hidden;
-}
 
-.loading-bar__progress {
-  height: 100%;
-  width: 0;
-  background-color: #007bff;
-  animation: loading 2s infinite;
-}
+  &__progress {
+    height: 100%;
+    background-color: grey;
+    transition: width 0.3s ease;
+  }
 
-@keyframes loading {
-  0% {
-    width: 0;
+  &--bars {
+    display: flex;
+    gap: 4px;
+    background-color: transparent;
   }
-  50% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
+
+  &__bar {
+    flex: 1;
+    height: 100%;
+    background-color: #f0c688;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &--active {
+      background-color: grey;
+    }
   }
 }
