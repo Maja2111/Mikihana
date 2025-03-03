@@ -59,7 +59,7 @@ const Registeration = () => {
           email: formData.email,
           password: formData.password,
           passwordRepeat: formData.passwordRepeat,
-          birthday: formData.birthday,
+          birthday: new Date(formData.birthday).getTime(),
           gender: formData.gender,
         }),
       });
@@ -74,10 +74,11 @@ const Registeration = () => {
         'Registration successful! You will be redirected to the login page.'
       );
       setTimeout(() => {
-        navigate('/login');
+        navigate('/');
       }, 2000);
     } catch (error) {
-      alert('Registration failed. Please try again.');
+      const errorMessage = error.message || 'Please try again.';
+      alert(`Registration failed: ${errorMessage}`);
     }
   };
 
@@ -140,7 +141,7 @@ const Registeration = () => {
             />
             <input
               type="password"
-              name="confirmPassword"
+              name="passwordRepeat"
               placeholder="REPEAT PASSWORD"
               value={formData.passwordRepeat}
               onChange={handleInputChange}
@@ -148,7 +149,7 @@ const Registeration = () => {
             />
             <input
               type="date"
-              name="dob"
+              name="birthday"
               placeholder="TT.MM.JJJJ"
               value={formData.birthday}
               onChange={handleInputChange}

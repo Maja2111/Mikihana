@@ -46,7 +46,7 @@ router.post('/register', async (req, res) => {
     }
 
     //Save URL
-    const profilePhoto = req.file ? `/uplaods/${req.file.filename}` : null;
+    const profilePhoto = req.file ? `/uploads/${req.file.filename}` : null;
 
     //Neuen Benutzer erstellen
     const newUser = await User.create({
@@ -60,7 +60,7 @@ router.post('/register', async (req, res) => {
       profilePhoto,
     });
 
-    res.status(201).json({ message: 'Registration successful!', newUser });
+    res.status(201).json({ message: 'Registration successful!', newUser: { ...newUser, password: undefined } });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
