@@ -30,9 +30,31 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
 
-  const handleLogin = () => {
-    // TODO: Implementiere die tatsächliche Anmeldelogik
-    navigate('/home');
+    const handleLogin = async () => {
+        const username = document.querySelector('input[placeholder="USERNAME"]').value;
+        const password = document.querySelector('input[placeholder="PASSWORD"]').value;
+
+        try {
+            const response = await fetch('http://localhost:4001/api/users/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Login failed');
+            }
+
+            alert('Login successful! Redirecting to home page.');
+            navigate('/home');
+        } catch (error) {
+            alert(`Error: ${error.message}`);
+        }
+
   };
 
   const handleToRegisterPage = () => {
@@ -66,7 +88,7 @@ const Login = () => {
               className="profilePicture"
             />
           </p>
-          <form action="">
+          <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
             <input type="text" placeholder="USERNAME" />
             <input type="password" placeholder="PASSWORD" />
           </form>
