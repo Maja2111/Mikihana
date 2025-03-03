@@ -32,7 +32,6 @@
 
 .activeBook {
   display: flex;
-
   gap: 20px;
   position: relative;
 
@@ -43,17 +42,18 @@
   }
 
   img {
-    width: 60px;
-    height: 100px;
+    width: 20%;
+    height: 80%;
     border-radius: 10px;
     margin-left: 20px;
     position: absolute;
+    top: 10%;
     right: 10%;
   }
 
   .fa-square-plus {
     position: absolute;
-    top: 10%;
+    top: 15%;
     right: 5%;
     cursor: pointer;
     z-index: 1;
@@ -62,7 +62,7 @@
 
   .fa-chevron-right {
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     right: 5%;
     cursor: pointer;
     z-index: 1;
@@ -71,5 +71,152 @@
 }
 
 .target {
-  flex-direction: column;
+  display: flex;
+  gap: 20px;
+  position: relative;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  img {
+    width: 25%;
+    height: 60%;
+    border-radius: 10px;
+    margin-left: 20px;
+    position: absolute;
+    top: 25%;
+    right: 10%;
+  }
+
+  .fa-square-plus {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    cursor: pointer;
+    z-index: 1;
+    transform: translate(50%, -50%);
+  }
+
+  .fa-chevron-right {
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    cursor: pointer;
+    z-index: 1;
+    transform: translate(50%, 50%);
+  }
 }
+
+/* Responsive Design
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+
+    ul {
+      flex-direction: column;
+      gap: 10px;
+
+      li img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .activeBook {
+    flex-direction: column;
+
+    img {
+      width: 50px;
+      height: 80px;
+      top: 5%;
+      right: 5%;
+    }
+
+    .fa-square-plus {
+      top: 10%;
+      right: 3%;
+    }
+
+    .fa-chevron-right {
+      bottom: 10%;
+      right: 3%;
+    }
+  }
+
+  .target {
+    flex-direction: column;
+
+    img {
+      width: 50px;
+      height: 80px;
+      top: 5%;
+      right: 5%;
+    }
+
+    .fa-square-plus {
+      top: 10%;
+      right: 3%;
+    }
+
+    .fa-chevron-right {
+      bottom: 10%;
+      right: 3%;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 15px;
+
+    ul li img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .activeBook {
+    img {
+      width: 55px;
+      height: 90px;
+    }
+  }
+
+  .target {
+    img {
+      width: 55px;
+      height: 90px;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .navbar {
+    padding: 20px;
+
+    ul li img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .activeBook {
+    img {
+      width: 60px;
+      height: 100px;
+    }
+  }
+
+  .target {
+    img {
+      width: 60px;
+      height: 100px;
+    }
+  }
+}
+*/

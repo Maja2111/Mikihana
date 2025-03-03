@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom';
 //Componetensimporte
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
-import ChartSelector from '@components/ChartSelector';
-import { handleViewChange } from '@components/Function.jsx';
+import Chart from '@components/Chart.jsx';
 import { LoadingBar } from '@components/LoadingBar.jsx';
 import { LoadingCircle } from '@components/LoadingCircle';
 import { pageStats, bookStats } from '@/mockData';
@@ -17,23 +16,6 @@ import '@pagestyle/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-
-const Chart = ({ data, maxValue }) => {
-  return (
-    <div className="chart-container">
-      <div className="chart-axis"></div>
-      {data.map((item, index) => (
-        <div
-          key={index}
-          className="chart-bar"
-          style={{ height: `${(item.value / maxValue) * 100}%` }}
-        >
-          <div className="chart-label">{item.month}</div>
-        </div>
-      ))}
-    </div>
-  );
-};
 
 const Home = () => {
   const [view, setView] = useState('year');
@@ -55,22 +37,13 @@ const Home = () => {
         <nav className="navbar">
           <ul>
             <li>
-              <img
-                src="./Upload/symbol-fuer-offenes-buch-buchmodell-mit-weissen-seiten_165079-2511.avif"
-                alt="Bibilothek"
-              />
+              <img src="/Upload/Buch.avif" alt="Liberary" />
             </li>
             <li>
-              <img
-                src="./Upload/83987435-filmstreifen-mit-der-filmrolle-und-popcorn-lokalisiert-auf-weißem-hintergrund.jpg"
-                alt="Videothek"
-              />
+              <img src="/Upload/Movie.jpg" alt="VideoLiberary" />
             </li>
             <li>
-              <img
-                src="./Upload/vinyl-schallplatte-square-nussbaum-schwarz_madeindesign_399685_original.webp"
-                alt="Discothek"
-              />
+              <img src="/Upload/Schallplatte.webp" alt="Discotheque" />
             </li>
           </ul>
         </nav>
@@ -81,10 +54,7 @@ const Home = () => {
         <section className="activeBook">
           <div>
             <h2>Active Book</h2>
-            <img
-              src="/Upload/when-the-moon-hatched-taschenbuch-sarah-a-parker-englisch.jpeg"
-              alt="cover"
-            />
+            <img src="/Upload/wtmh.jpeg" alt="cover" />
             <p>Title: When the moon hatched</p>
             <p>Author: Sarah A. Parker</p>
             <LoadingBar />
@@ -104,10 +74,10 @@ const Home = () => {
 
         <section className="target">
           <h2>Your Reading Goal</h2>
-
+          <img src="/Upload/Placeholder.webp" alt="placeholder" />
           <FontAwesomeIcon
             icon={faSquarePlus}
-            onClick={() => handleNavigateToTarget()}
+            onClick={handleNavigateToTarget}
             style={{ cursor: 'pointer' }}
           />
           <FontAwesomeIcon
@@ -120,20 +90,22 @@ const Home = () => {
 
         <section className="pageStatistic">
           <h2>Page Statistics</h2>
-          <ChartSelector
-            onViewChange={(selectedView) =>
-              handleViewChange(setView, selectedView)
-            }
+          <Chart
+            onViewChange={(selectedView) => {
+              setView(selectedView);
+              // TODO: Daten für die ausgewählte Ansicht laden
+            }}
           />
           <Chart data={pageStats} maxValue={1000} />
         </section>
 
         <section className="booksStatistic">
           <h2>Books Statistics</h2>
-          <ChartSelector
-            onViewChange={(selectedView) =>
-              handleViewChange(setView, selectedView)
-            }
+          <Chart
+            onViewChange={(selectedView) => {
+              setView(selectedView);
+              // TODO: Daten für die ausgewählte Ansicht laden
+            }}
           />
           <Chart data={bookStats} maxValue={2} />
         </section>

@@ -34,7 +34,8 @@ header {
 main {
   height: 66.6667%; // 2/3 der Höhe
   background-color: $secondary-color; // Explizite Hintergrundfarbe
-  overflow-y: auto; // Scrollen bei Bedarf
+  overflow-y: scroll; // Scrollen bei Bedarf
+  padding-bottom: 20px;
 }
 
 // Footer: 1/12 der Höhe (Hälfte der ursprünglichen Höhe)

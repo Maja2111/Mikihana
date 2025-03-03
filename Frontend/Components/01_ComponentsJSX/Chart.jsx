@@ -1,12 +1,12 @@
 import React from 'react';
 import '@style/Chart.scss';
-import { pageStats } from '../../src/mockData';
+import { pageStats } from '@/mockData';
 import ChartSelector from './ChartSelector';
 
-const Chart = () => {
+const Chart = ({ onViewChange }) => {
   return (
     <div className="chart-wrapper">
-      <ChartSelector onViewChange={(view) => console.log(view)} />
+      <ChartSelector onViewChange={onViewChange} />
       <div className="chart-container">
         <div className="y-axis-labels">
           {[0, 25, 50, 75, 100].map((value) => (

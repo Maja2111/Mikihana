@@ -21,7 +21,7 @@ export default defineConfig({
       '@pagestyle': path.resolve(__dirname, './Pages/02_PageStyling'),
 
       // @assets/ verweist auf das Upload-Verzeichnis
-      '@assets': path.resolve(__dirname, './Upload/'),
+      '@img': path.resolve(__dirname, './Upload/'),
     },
   },
 });
