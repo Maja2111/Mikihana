@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../Models/User.js";
 import upload from "../uploads/multerConfig.js";
+import { error } from "console";
 
 
 
@@ -20,6 +21,7 @@ router.post("/register", async (req, res) => {
       passwordRepeat,
       birthday,
       gender,
+      profilePhoto,
     } = req.body;
     console.log(req.body);
 
@@ -48,7 +50,7 @@ router.post("/register", async (req, res) => {
     }
 
     //Save URL 
-    const profilePhoto = req.file ? `/uplaods/${req.file.filename}` : null;
+    const photo = req.file ? `/uplaods/${req.file.filename}` : null;
 
     //Neuen Benutzer erstellen
     const newUser = await User.create({
@@ -59,7 +61,7 @@ router.post("/register", async (req, res) => {
       password,
       birthday,
       gender,
-      profilePhoto,
+      profilePhoto: photo,
     });
 
     res.status(201).json({ message: "Registration successful!", newUser });
@@ -67,18 +69,18 @@ router.post("/register", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-//Test
+
 
 //Authentifiziert einen Benutzer und gibt ein JWT-TOKEN zurückt
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
-
+ console.log(req.body)
   try {
     const user = await User.findOne({ username });
-    if (!user) return res.status(400).json({ error: "Invalid credentials" });
+    if (!user) return res.status(400).json({error: "username missed" });
 
-    const isMatch = await bcrypt.compare(password.user.password);
-    if (!isMatch) return res.status(400).json({ error: "Invalid credentials" });
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(400).json({ error: "Password or Username missed" });
 
     //Erstellen Authentifizierungstokens
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
