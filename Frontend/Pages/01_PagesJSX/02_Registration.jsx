@@ -13,7 +13,6 @@ import { Header } from '@components/Header.jsx';
 
 //Stylingimporte
 import '@/index.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
@@ -25,8 +24,8 @@ const Registeration = () => {
     username: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    dob: '',
+    passwordRepeat: '',
+    birthday: '',
     gender: '',
   });
 
@@ -42,21 +41,38 @@ const Registeration = () => {
     event.preventDefault();
 
     // Basic validation
-    if (formData.password !== formData.confirmPassword) {
+    if (formData.password !== formData.passwordRepeat) {
       alert('Passwords do not match');
       return;
     }
 
     try {
-      // Here you would typically make an API call to register the user
-      // For now, we'll simulate a successful registration
+      const response = await fetch('http://localhost:4001/api/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+          passwordRepeat: formData.passwordRepeat,
+          birthday: formData.birthday,
+          gender: formData.gender,
+        }),
+      });
 
-      // Show success alert
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Registration failed');
+      }
+
       alert(
         'Registration successful! You will be redirected to the login page.'
       );
-
-      // Wait 2 seconds before redirecting
       setTimeout(() => {
         navigate('/login');
       }, 2000);
@@ -126,7 +142,7 @@ const Registeration = () => {
               type="password"
               name="confirmPassword"
               placeholder="REPEAT PASSWORD"
-              value={formData.confirmPassword}
+              value={formData.passwordRepeat}
               onChange={handleInputChange}
               required
             />
@@ -134,7 +150,7 @@ const Registeration = () => {
               type="date"
               name="dob"
               placeholder="TT.MM.JJJJ"
-              value={formData.dob}
+              value={formData.birthday}
               onChange={handleInputChange}
               required
             />

@@ -13,7 +13,7 @@ import { pageStats, bookStats } from '@/mockData';
 
 //Stylingimporte
 import '@/index.scss';
-import './../02_PageStyling/Home.scss';
+import '@pagestyle/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -81,14 +81,15 @@ const Home = () => {
         <section className="activeBook">
           <div>
             <h2>Active Book</h2>
+            <img
+              src="/Upload/when-the-moon-hatched-taschenbuch-sarah-a-parker-englisch.jpeg"
+              alt="cover"
+            />
             <p>Title: When the moon hatched</p>
             <p>Author: Sarah A. Parker</p>
             <LoadingBar />
           </div>
-          <img
-            src="/Upload/when-the-moon-hatched-taschenbuch-sarah-a-parker-englisch.jpeg"
-            alt="cover"
-          />
+
           <FontAwesomeIcon
             icon={faSquarePlus}
             onClick={handleNavigateToActiveBook}

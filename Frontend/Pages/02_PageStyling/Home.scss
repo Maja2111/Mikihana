@@ -30,16 +30,43 @@
 
 //main Styling
 
-.activeBook,
-.target {
-  display: flex;
-  justify-content: space-between;
-}
 .activeBook {
+  display: flex;
+
+  gap: 20px;
+  position: relative;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
   img {
     width: 60px;
     height: 100px;
     border-radius: 10px;
+    margin-left: 20px;
+    position: absolute;
+    right: 10%;
+  }
+
+  .fa-square-plus {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    cursor: pointer;
+    z-index: 1;
+    transform: translate(50%, -50%);
+  }
+
+  .fa-chevron-right {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    cursor: pointer;
+    z-index: 1;
+    transform: translate(50%, 50%);
   }
 }
 
