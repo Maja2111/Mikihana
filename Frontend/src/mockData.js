@@ -1,33 +1,64 @@
-export const pageStats = [
-  { month: 'Jan', value: 200 },
-  { month: 'Feb', value: 400 },
-  { month: 'Mar', value: 540 },
-  { month: 'Apr', value: 800 },
-  { month: 'May', value: 980 },
-  { month: 'Jun', value: 745 },
-  { month: 'Jul', value: 0 },
-  { month: 'Aug', value: 0 },
-  { month: 'Sep', value: 0 },
-  { month: 'Oct', value: 0 },
-  { month: 'Nov', value: 0 },
-  { month: 'Dec', value: 0 },
-];
+export const pageStats = {
+  year: [
+    { month: 'Jan', value: 200 },
+    { month: 'Feb', value: 400 },
+    { month: 'Mar', value: 540 },
+    { month: 'Apr', value: 800 },
+    { month: 'May', value: 980 },
+    { month: 'Jun', value: 1200 },
+    { month: 'Jul', value: 800 },
+    { month: 'Aug', value: 600 },
+    { month: 'Sep', value: 400 },
+    { month: 'Oct', value: 300 },
+    { month: 'Nov', value: 200 },
+    { month: 'Dec', value: 100 },
+  ],
+  month: (() => {
+    const days = [];
+    const currentDate = new Date();
+    const daysInMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth() + 1,
+      0
+    ).getDate();
 
-export const bookStats = [
-  { month: 'Jan', value: 0.5 },
-  { month: 'Feb', value: 0.5 },
-  { month: 'Mar', value: 1 },
-  { month: 'Apr', value: 1.5 },
-  { month: 'May', value: 2 },
-  { month: 'Jun', value: 0.2 },
-  { month: 'Jul', value: 0 },
-  { month: 'Aug', value: 0 },
-  { month: 'Sep', value: 0 },
-  { month: 'Oct', value: 0 },
-  { month: 'Nov', value: 0 },
-  { month: 'Dec', value: 0 },
-];
+    for (let i = 1; i <= daysInMonth; i++) {
+      days.push({ day: i, value: Math.floor(Math.random() * 100) });
+    }
+    return days;
+  })(),
+};
 
+export const bookStats = {
+  year: [
+    { month: 'Jan', value: 1 },
+    { month: 'Feb', value: 2 },
+    { month: 'Mar', value: 1 },
+    { month: 'Apr', value: 3 },
+    { month: 'May', value: 2 },
+    { month: 'Jun', value: 4 },
+    { month: 'Jul', value: 3 },
+    { month: 'Aug', value: 2 },
+    { month: 'Sep', value: 1 },
+    { month: 'Oct', value: 2 },
+    { month: 'Nov', value: 3 },
+    { month: 'Dec', value: 4 },
+  ],
+  month: (() => {
+    const days = [];
+    const currentDate = new Date();
+    const daysInMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth() + 1,
+      0
+    ).getDate();
+
+    for (let i = 1; i <= daysInMonth; i++) {
+      days.push({ day: i, value: Math.floor(Math.random() * 2) });
+    }
+    return days;
+  })(),
+};
 export const libraryResults = [
   { id: 1, title: 'Buch 1', image: 'path/to/image1.jpg' },
   { id: 2, title: 'Buch 2', image: 'path/to/image2.jpg' },
@@ -103,3 +134,9 @@ export const loadingData = {
     progress: 45,
   },
 };
+
+export const readingBooks = [
+  '/Upload/die-fluesse-von-london-graphic-novel-taschenbuch-ben-aaronovitch.jpeg',
+  '/Upload/fourth-wing-taschenbuch-rebecca-yarros-englisch.jpeg',
+  '/Upload/iron-flame-taschenbuch-rebecca-yarros-englisch.jpeg',
+];

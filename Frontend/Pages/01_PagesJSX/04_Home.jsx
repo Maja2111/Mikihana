@@ -8,7 +8,8 @@ import { Footer } from '@components/Footer.jsx';
 import Chart from '@components/Chart.jsx';
 import { LoadingBar } from '@components/LoadingBar.jsx';
 import { LoadingCircle } from '@components/LoadingCircle';
-import { pageStats, bookStats } from '@/mockData';
+import { GalleryForReadingBooks } from '@components/GalleryForReadingBooks';
+import { pageStats, bookStats } from '@/mockData.js';
 
 //Stylingimporte
 import '@/index.scss';
@@ -20,12 +21,15 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 const Home = () => {
   const [view, setView] = useState('year');
   const navigate = useNavigate();
+
   const handleNavigateToActiveBook = () => {
     navigate('/home/activeBook');
   };
+
   const handleNavigateToTarget = () => {
     navigate('/home/target');
   };
+
   const handleNavigateToGetTarget = () => {
     navigate('/home/getTarget');
   };
@@ -91,37 +95,33 @@ const Home = () => {
         <section className="pageStatistic">
           <h2>Page Statistics</h2>
           <Chart
-            onViewChange={(selectedView) => {
-              setView(selectedView);
-              // TODO: Daten für die ausgewählte Ansicht laden
-            }}
+            onViewChange={(selectedView) => setView(selectedView)}
+            data={pageStats[view]}
+            maxValue={view === 'year' ? 1000 : 100}
           />
-          <Chart data={pageStats} maxValue={1000} />
+          <GalleryForReadingBooks />
         </section>
 
         <section className="booksStatistic">
           <h2>Books Statistics</h2>
           <Chart
-            onViewChange={(selectedView) => {
-              setView(selectedView);
-              // TODO: Daten für die ausgewählte Ansicht laden
-            }}
+            onViewChange={(selectedView) => setView(selectedView)}
+            data={bookStats[view]}
+            maxValue={view === 'year' ? 4 : 2}
           />
-          <Chart data={bookStats} maxValue={2} />
         </section>
 
         <section className="series">
           <h2>Series</h2>
-          <p>days in a row </p>
+          <h3>days in a row </h3>
           <div>
-            <p>20</p>
+            <p className="number">20</p>
             <p>current series</p>
           </div>
           <div>
-            <p>52</p>
+            <p className="number">52</p>
             <p>longest series</p>
           </div>
-          <FontAwesomeIcon icon={faChevronRight} />
         </section>
       </main>
 

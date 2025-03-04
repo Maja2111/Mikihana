@@ -4,31 +4,25 @@ import '@style/Chart.scss';
 const ChartSelector = ({ onViewChange }) => {
   const [selectedView, setSelectedView] = useState('year');
 
-  const handleViewChange = (view) => {
+  const handleChange = (event) => {
+    const view = event.target.value;
     setSelectedView(view);
     onViewChange(view);
   };
 
   return (
     <div className="chart-selector">
-      <button
-        className={selectedView === 'year' ? 'active' : ''}
-        onClick={() => handleViewChange('year')}
-      >
-        Year
-      </button>
-      <button
-        className={selectedView === 'month' ? 'active' : ''}
-        onClick={() => handleViewChange('month')}
-      >
-        Month
-      </button>
-      <button
-        className={selectedView === 'day' ? 'active' : ''}
-        onClick={() => handleViewChange('day')}
-      >
-        Day
-      </button>
+      <div className="chart-selector__item">
+        <select
+          name="changeView"
+          id="changeView"
+          value={selectedView}
+          onChange={handleChange}
+        >
+          <option value="year">Year</option>
+          <option value="month">Month</option>
+        </select>
+      </div>
     </div>
   );
 };

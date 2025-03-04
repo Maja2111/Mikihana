@@ -1,28 +1,33 @@
 import React from 'react';
 import '@style/Chart.scss';
-import { pageStats } from '@/mockData';
-import ChartSelector from './ChartSelector';
+import ChartSelector from '@components/ChartSelector';
 
-const Chart = ({ onViewChange }) => {
+const Chart = ({ onViewChange, data, maxValue }) => {
+  const isMonthlyView = Array.isArray(data) && data[0]?.day !== undefined;
+  const xAxisLabels = isMonthlyView ? 'Day' : 'Month';
+
   return (
     <div className="chart-wrapper">
-      <ChartSelector onViewChange={onViewChange} />
+      {onViewChange && <ChartSelector onViewChange={onViewChange} />}
       <div className="chart-container">
         <div className="y-axis-labels">
           {[0, 25, 50, 75, 100].map((value) => (
             <span key={value}>{value}%</span>
           ))}
         </div>
-        {pageStats.map((stat, index) => (
+        {data.map((stat, index) => (
           <div
             key={index}
             className="chart-bar"
-            style={{ height: `${stat.value / 10}%` }}
+            style={{ height: `${(stat.value / maxValue) * 100}%` }}
           >
-            <div className="chart-label">{stat.month}</div>
+            <div className="chart-label">
+              {isMonthlyView ? stat.day : stat.month}
+            </div>
           </div>
         ))}
       </div>
+      <div className="x-axis-label"></div>
     </div>
   );
 };
