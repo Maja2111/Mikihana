@@ -99,7 +99,6 @@ const Home = () => {
             data={pageStats[view]}
             maxValue={view === 'year' ? 1000 : 100}
           />
-          <GalleryForReadingBooks />
         </section>
 
         <section className="booksStatistic">
@@ -109,6 +108,7 @@ const Home = () => {
             data={bookStats[view]}
             maxValue={view === 'year' ? 4 : 2}
           />
+          <GalleryForReadingBooks />
         </section>
 
         <section className="series">
