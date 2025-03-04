@@ -1,6 +1,6 @@
 #Node Modules
 node_modules
-packsge-lock.json
+package-lock.json
 
 #Enviroment Variables
 .env

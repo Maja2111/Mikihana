@@ -1,8 +1,13 @@
-import express from 'express';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import User from '../Models/User.js';
-//import upload from "../uploads/multerConfig.js";
+
+import express from "express";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import User from "../Models/User.js";
+import upload from "../uploads/multerConfig.js";
+
+
+
+
 
 const router = express.Router();
 
@@ -18,6 +23,7 @@ router.post('/register', async (req, res) => {
       passwordRepeat,
       birthday,
       gender,
+      profilePhoto,
     } = req.body;
     console.log(req.body);
 
@@ -45,8 +51,10 @@ router.post('/register', async (req, res) => {
       return res.status(400).json({ message: 'E-mail is already registered.' });
     }
 
+
     //Save URL
-    const profilePhoto = req.file ? `/uploads/${req.file.filename}` : null;
+    profilePhoto = req.file ? `/uploads/${req.file.filename}` : null;
+
 
     //Neuen Benutzer erstellen
     const newUser = await User.create({
@@ -57,7 +65,7 @@ router.post('/register', async (req, res) => {
       password,
       birthday,
       gender,
-      profilePhoto,
+      profilePhoto: photo,
     });
 
     res.status(201).json({ message: 'Registration successful!', newUser: { ...newUser, password: undefined } });
@@ -66,24 +74,27 @@ router.post('/register', async (req, res) => {
   }
 });
 
-//Authentifiziert einen Benutzer und gibt ein JWT-TOKEN zurückt
-router.post('/login', async (req, res) => {
-  const { username, password } = req.body;
 
+//Authentifiziert einen Benutzer und gibt ein JWT-TOKEN zurückt
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+ console.log(req.body)
   try {
     const user = await User.findOne({ username });
-    if (!user) return res.status(400).json({ error: 'Invalid credentials' });
+    if (!user) return res.status(400).json({error: "username missed" });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ error: 'Invalid credentials' });
+    if (!isMatch) return res.status(400).json({ error: "Password or Username missed" });
 
     //Erstellen Authentifizierungstokens
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
-    res.json({ token, user: { ...user._doc, password: undefined } }); // Return token and user data without password
+    res.json({ token }); //Geb das Token zurück
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-//module.exports = router;
 export default router;
+
+
+
