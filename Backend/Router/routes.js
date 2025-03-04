@@ -53,7 +53,7 @@ router.post('/register', async (req, res) => {
 
 
     //Save URL
-    const profilePhoto = req.file ? `/uploads/${req.file.filename}` : null;
+    profilePhoto = req.file ? `/uploads/${req.file.filename}` : null;
 
 
     //Neuen Benutzer erstellen
@@ -97,4 +97,4 @@ router.post("/login", async (req, res) => {
 export default router;
 
 
-export default router;
+
