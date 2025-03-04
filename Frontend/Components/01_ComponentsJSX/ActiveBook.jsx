@@ -1,28 +1,20 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faSquarePlus,
-  faChevronRight,
-  faShareNodes,
-} from '@fortawesome/free-solid-svg-icons';
+import '@style/ActiveBookCom.scss';
+import { LoadingBar } from '@components/LoadingBar.jsx';
 
 const ActiveBook = () => {
   return (
     <section className="activeBook">
       <h2>Active Book</h2>
-      <p>{/* TODO: Buchtitel vom Backend einfügen */}Title</p>
-      <p>{/* TODO: Autor vom Backend einfügen */}Author</p>
-      <div className="progress">Progress</div>
-      <button>Update</button>
-      <button>
-        <FontAwesomeIcon icon={faShareNodes} />
-      </button>
-      <img
-        src="/Upload/when-the-moon-hatched-taschenbuch-sarah-a-parker-englisch.jpeg"
-        alt="cover"
-      />
-      <FontAwesomeIcon icon={faSquarePlus} />
-      <FontAwesomeIcon icon={faChevronRight} />
+      <div>
+        <LoadingBar />
+        <p>
+          {/* TODO: Buchtitel vom Backend einfügen */}
+          Title: When the moon hatched
+        </p>
+        <p>{/* TODO: Author vom Backend einfügen */}Author: Sarah A. Parker</p>
+        <img src="/Upload/wtmh.jpeg" alt="cover" />
+      </div>
     </section>
   );
 };

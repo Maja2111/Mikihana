@@ -1,16 +1,17 @@
 // Page die Ziele erstellt
 import React, { useState } from 'react';
 import '@/index.scss';
+import '@pagestyle/Target.scss';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 
 const Target = () => {
-  const [goalType, setGoalType] = useState('book');
+  const [targetType, settargetType] = useState('book');
   const [isRecurring, setIsRecurring] = useState(false);
   const [interval, setInterval] = useState('monthly');
 
-  const handleGoalTypeChange = (event) => {
-    setGoalType(event.target.value);
+  const handletargetTypeChange = (event) => {
+    settargetType(event.target.value);
   };
 
   const handleRecurringToggle = () => {
@@ -23,52 +24,54 @@ const Target = () => {
 
   return (
     <div className="container">
-      <header>
+      <header className="header">
         <Header />
-        <h1>target goal</h1>
-        <p>Set yourself a goal that you want to complete by a certain date!</p>
       </header>
       <main>
+        <h1>your new target</h1>
+        <p>
+          Set yourself a target that you want to complete by a certain date!
+        </p>
         <section className="targetTitle">
-          <input type="text" placeholder="Title angeben" />
+          <input type="text" placeholder="enter title" />
         </section>
         <section className="sectionTwo">
-          <label htmlFor="goalType">Wählen Sie Ihr Ziel:</label>
+          <label htmlFor="targetType">Select your target:</label>
           <select
-            id="goalType"
-            value={goalType}
-            onChange={handleGoalTypeChange}
+            id="targetType"
+            value={targetType}
+            onChange={handletargetTypeChange}
           >
-            <option value="book">Buch</option>
-            <option value="page">Seite</option>
+            <option value="book">book</option>
+            <option value="page">pages</option>
           </select>
           <input
             type="number"
-            placeholder={`Anzahl der ${
-              goalType === 'book' ? 'Bücher' : 'Seiten'
+            placeholder={`Quantity of ${
+              targetType === 'book' ? 'books' : 'pages'
             }`}
           />
         </section>
         <section className="time period">
           <div>
-            <label htmlFor="recurringGoal">Wiederkehrendes Ziel:</label>
+            <label htmlFor="recurringtarget">Recurring target:</label>
             <input
               type="checkbox"
-              id="recurringGoal"
+              id="recurringtarget"
               checked={isRecurring}
               onChange={handleRecurringToggle}
             />
           </div>
           {isRecurring && (
             <div>
-              <label htmlFor="interval">Intervall:</label>
+              <label htmlFor="interval">interval:</label>
               <select
                 id="interval"
                 value={interval}
                 onChange={handleIntervalChange}
               >
-                <option value="monthly">Monatlich</option>
-                <option value="yearly">Jährlich</option>
+                <option value="monthly">monthly</option>
+                <option value="yearly">yearly</option>
               </select>
             </div>
           )}

@@ -1,0 +1,21 @@
+.activeBook {
+  display: flex;
+  gap: 20px;
+  position: relative;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  img {
+    width: 20%;
+    height: 80%;
+    border-radius: 10px;
+    margin-left: 20px;
+    position: absolute;
+    top: 13%;
+    right: 5%;
+  }
+}

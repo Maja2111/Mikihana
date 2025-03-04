@@ -1,0 +1,32 @@
+$primary-color: #662e1c;
+$secondary-color: #ebdcb2;
+$tertiary-color: #c9a66b;
+$iconbar-color: #a58463;
+
+input,
+textarea {
+  text-align: center;
+  padding: 15px;
+  height: 20px;
+  margin: 10px;
+  border-style: none;
+  border-radius: 20px;
+  background-color: $secondary-color;
+}
+
+textarea {
+  height: 150px;
+}
+
+.progressUpdate {
+  position: relative;
+
+  .fa-rectangle-xmark {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: $primary-color;
+  }
+}

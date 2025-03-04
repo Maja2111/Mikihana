@@ -35,17 +35,6 @@ export const RegisterButton = () => {
   );
 };
 
-//Aktualisieren Button auf der Subpage activeBook
-
-export function UpdateButton() {
-  const navigate = useNavigate();
-  return (
-    <button className="MainButtons" onClick={() => navigate('/')}>
-      Update
-    </button>
-  );
-}
-
 // SpeicherButton auf der Subpage Target
 
 export function SaveButton() {

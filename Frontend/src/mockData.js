@@ -122,8 +122,8 @@ export const galleryImages = [
 ];
 
 export const goals = [
-  { id: 1, type: 'Buch', target: 5, interval: 'Monatlich' },
-  { id: 2, type: 'Seite', target: 100, interval: 'Jährlich' },
+  { id: 1, type: 'book', target: 5, interval: 'yearly' },
+  { id: 2, type: 'pages', target: 100, interval: 'monthly' },
 ];
 
 export const loadingData = {
