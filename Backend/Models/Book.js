@@ -1,14 +1,23 @@
-import mongoose from "mongoose";
-import { title } from "process";
+import mongoose, { Schema } from "mongoose";
 
-const BookSchema = new mongoose.Schema({
+//Buch-Schema
+const bookSchema = new mongoose.Schema({
     title: { type: String, require: true  },
-    author: { type: String },
-    description: { type: String },
-    imgeUrl: { type: String },
-    category: { type: String, enum: ['brandnew', 'mustread'], require: true },
+    author: String,
+    description: String,
+    imgeUrl: String,
+    thumnail: String,
 });
 
+//List-Schema
+const listSchema = new mongoose.Schema({
+    userId: { type: String, required: true },
+    books: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
+})
 
-const Book = mongoose.model('Book', BookSchema);
-export default BookSchema;
+
+export const Book = mongoose.model('Book', bookSchema);
+export const Wishlist = mongoose.model('Wishlist', listSchema);
+export const Favourite = mongoose.model('Favourite', listSchema);
+export const UnreadingBook = mongoose.model('UnreadingBook', listSchema);
+export const UserList = mongoose.model('UserList', listSchema);
