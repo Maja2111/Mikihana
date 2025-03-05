@@ -31,17 +31,17 @@ const Searchside = () => {
 
       <main>
         <section className="library-results">
-          <h2>Bibliothek</h2>
+          <h2>library</h2>
           <Gallery items={libraryResults} />
         </section>
 
         <section className="video-library-results">
-          <h2>Videothek</h2>
+          <h2>videolibrary</h2>
           <Gallery items={videoLibraryResults} />
         </section>
 
         <section className="discotheque-results">
-          <h2>Diskothek</h2>
+          <h2>discotheque</h2>
           <Gallery items={discothequeResults} />
         </section>
       </main>

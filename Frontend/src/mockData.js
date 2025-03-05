@@ -97,16 +97,24 @@ export const mediaCards = [
 
 export const carouselImages = [
   {
-    url: '/Upload/Buch.avif',
+    url: '/Upload/Elitäre.jpg',
     alt: 'bookcover',
   },
   {
-    url: '/Upload/Movie.jpgg',
-    alt: 'moviecover',
+    url: '/Upload/Problemkind.jpg',
+    alt: 'bookcover',
   },
   {
-    url: '/Upload/Schallplatte.webp',
-    alt: 'lpcover',
+    url: '/Upload/gefallenerEngel.jpg',
+    alt: 'bookcover',
+  },
+  {
+    url: '/Upload/Winterliebe.jpg',
+    alt: 'bookcover',
+  },
+  {
+    url: '/Upload/Hearts.jpg',
+    alt: 'bookcover',
   },
 ];
 

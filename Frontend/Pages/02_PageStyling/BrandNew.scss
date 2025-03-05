@@ -1,0 +1,22 @@
+$primary-color: #662e1c;
+
+.description {
+  background-image: url('/Upload/transparent-book-illustration-colorful-book-with-watercolor-splashes-and-sun-1710848401206.webp');
+  color: $primary-color; /* Change text color for contrast */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  padding: 20px; /* Add some padding for better text visibility */
+  position: relative; /* Position relative for the overlay */
+}
+
+.description::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(235, 220, 178, 0.5); /* Transparent overlay */
+  z-index: 1; /* Ensure overlay is above the background image */
+}

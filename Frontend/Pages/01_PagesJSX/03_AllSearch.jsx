@@ -22,11 +22,15 @@ const SearchPage = () => {
   const navigate = useNavigate();
 
   const handleNavigateToBrandNew = () => {
-    navigate('/brandnew');
+    if (window.location.pathname !== '/brandnew') {
+      navigate('/allsearch/brandnew');
+    }
   };
 
   const handleNavigateToMustRead = () => {
-    navigate('/mustread');
+    if (window.location.pathname !== '/mustread') {
+      navigate('/allsearch/mustread');
+    }
   };
 
   return (
