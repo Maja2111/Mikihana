@@ -77,39 +77,36 @@ export const discothequeResults = [
 export const mediaCards = [
   {
     id: 1,
-    title: 'Buchcover',
+    title: 'bookcover',
     text: 'Das ist ein Buch.',
-    imageUrl:
-      '/Upload/symbol-fuer-offenes-buch-buchmodell-mit-weissen-seiten_165079-2511.avif',
+    imageUrl: '/Upload/Buch.avif',
   },
   {
     id: 2,
-    title: 'Filmcover',
+    title: 'moviecover',
     text: 'Das ist ein Film.',
-    imageUrl:
-      '/Upload/83987435-filmstreifen-mit-der-filmrolle-und-popcorn-lokalisiert-auf-weißem-hintergrund.jpg',
+    imageUrl: '/Upload/Movie.jpg',
   },
   {
     id: 3,
-    title: 'Musik LP',
+    title: 'musiccover',
     text: 'Das ist eine Musik-LP.',
-    imageUrl:
-      '/Upload/vinyl-schallplatte-square-nussbaum-schwarz_madeindesign_399685_original.webp',
+    imageUrl: '/Upload/Schallplatte.webp',
   },
 ];
 
 export const carouselImages = [
   {
-    url: '/Upload/symbol-fuer-offenes-buch-buchmodell-mit-weissen-seiten_165079-2511.avif',
-    alt: 'Buchcover',
+    url: '/Upload/Buch.avif',
+    alt: 'bookcover',
   },
   {
-    url: '/Upload/83987435-filmstreifen-mit-der-filmrolle-und-popcorn-lokalisiert-auf-weißem-hintergrund.jpg',
-    alt: 'Filmcover',
+    url: '/Upload/Movie.jpgg',
+    alt: 'moviecover',
   },
   {
-    url: '/Upload/vinyl-schallplatte-square-nussbaum-schwarz_madeindesign_399685_original.webp',
-    alt: 'Musik LP',
+    url: '/Upload/Schallplatte.webp',
+    alt: 'lpcover',
   },
 ];
 

@@ -10,7 +10,7 @@ const AllSearchRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<AllSearch />} />
-      <Route path="/allsearch/brandnew" element={<BrandNew />} />
+      <Route path="/brandnew" element={<BrandNew />} />
       <Route path="/mustread" element={<MustRead />} />
     </Routes>
   );
