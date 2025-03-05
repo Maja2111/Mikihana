@@ -1,4 +1,4 @@
-.header {
+.Header {
   & img.logo {
     width: 50px;
     height: 50px;
@@ -6,5 +6,19 @@
     right: 20px;
     top: 20px;
     border-radius: 50%;
+  }
+
+  & .icon-button {
+    position: absolute;
+    top: 20px; // Adjust as needed
+    left: 20px; // Position in the top left corner
+    background: transparent; // Make background transparent
+    border: none; // Remove border
+    cursor: pointer; // Change cursor to pointer
+  }
+
+  & i {
+    font-size: 24px; // Adjust icon size as needed
+    color: #000; // Set icon color
   }
 }
