@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import '@style/Chart.scss';
 
-const ChartSelector = ({ onViewChange }) => {
-  const [selectedView, setSelectedView] = useState('year');
-
+const ChartSelector = ({ onViewChange, selectedView, setSelectedView }) => {
   const handleChange = (event) => {
     const view = event.target.value;
-    setSelectedView(view);
     onViewChange(view);
   };
 
@@ -16,7 +13,7 @@ const ChartSelector = ({ onViewChange }) => {
         <select
           name="changeView"
           id="changeView"
-          value={selectedView}
+          value={selectedView || 'year'}
           onChange={handleChange}
         >
           <option value="year">Year</option>

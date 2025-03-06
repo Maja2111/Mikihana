@@ -1,64 +1,133 @@
-export const pageStats = {
-  year: [
-    { month: 'Jan', value: 200 },
-    { month: 'Feb', value: 400 },
-    { month: 'Mar', value: 540 },
-    { month: 'Apr', value: 800 },
-    { month: 'May', value: 980 },
-    { month: 'Jun', value: 1200 },
-    { month: 'Jul', value: 800 },
-    { month: 'Aug', value: 600 },
-    { month: 'Sep', value: 400 },
-    { month: 'Oct', value: 300 },
-    { month: 'Nov', value: 200 },
-    { month: 'Dec', value: 100 },
-  ],
-  month: (() => {
-    const days = [];
-    const currentDate = new Date();
-    const daysInMonth = new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth() + 1,
-      0
-    ).getDate();
+export const pageStatsYear = [
+  { month: 'Jan', value: 200 },
+  { month: 'Feb', value: 400 },
+  { month: 'Mar', value: 540 },
+  { month: 'Apr', value: 800 },
+  { month: 'May', value: 980 },
+  { month: 'Jun', value: 879 },
+  { month: 'Jul', value: 800 },
+  { month: 'Aug', value: 600 },
+  { month: 'Sep', value: 400 },
+  { month: 'Oct', value: 300 },
+  { month: 'Nov', value: 200 },
+  { month: 'Dec', value: 100 },
+];
 
-    for (let i = 1; i <= daysInMonth; i++) {
-      days.push({ day: i, value: Math.floor(Math.random() * 100) });
-    }
-    return days;
-  })(),
-};
+export const pageStatsMonth = [
+  { day: 1, value: 100 },
+  { day: 2, value: 200 },
+  { day: 3, value: 300 },
+  { day: 4, value: 50 },
+  { day: 5, value: 100 },
+  { day: 6, value: 150 },
+  { day: 7, value: 200 },
+  { day: 8, value: 250 },
+  { day: 9, value: 124 },
+  { day: 10, value: 150 },
+  { day: 11, value: 200 },
+  { day: 12, value: 230 },
+  { day: 13, value: 250 },
+  { day: 14, value: 85 },
+  { day: 15, value: 95 },
+  { day: 16, value: 100 },
+  { day: 17, value: 150 },
+  { day: 18, value: 0 },
+  { day: 19, value: 65 },
+  { day: 20, value: 75 },
+  { day: 21, value: 97 },
+  { day: 22, value: 125 },
+  { day: 23, value: 150 },
+  { day: 24, value: 175 },
+  { day: 25, value: 200 },
+  { day: 26, value: 225 },
+  { day: 27, value: 195 },
+  { day: 28, value: 200 },
+  { day: 29, value: 220 },
+  { day: 30, value: 135 },
+];
 
-export const bookStats = {
-  year: [
-    { month: 'Jan', value: 1 },
-    { month: 'Feb', value: 2 },
-    { month: 'Mar', value: 1 },
-    { month: 'Apr', value: 3 },
-    { month: 'May', value: 2 },
-    { month: 'Jun', value: 4 },
-    { month: 'Jul', value: 3 },
-    { month: 'Aug', value: 2 },
-    { month: 'Sep', value: 1 },
-    { month: 'Oct', value: 2 },
-    { month: 'Nov', value: 3 },
-    { month: 'Dec', value: 4 },
-  ],
-  month: (() => {
-    const days = [];
-    const currentDate = new Date();
-    const daysInMonth = new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth() + 1,
-      0
-    ).getDate();
+// export const pageStatsMonth = [
+//   (() => {
+//     const days = [];
+//     const currentDate = new Date();
+//     const daysInMonth = new Date(
+//       currentDate.getFullYear(),
+//       currentDate.getMonth() + 1,
+//       0
+//     ).getDate();
 
-    for (let i = 1; i <= daysInMonth; i++) {
-      days.push({ day: i, value: Math.floor(Math.random() * 2) });
-    }
-    return days;
-  })(),
-};
+//     for (let i = 1; i <= daysInMonth; i++) {
+//       days.push({ day: i, value: Math.floor(Math.random() * 100) });
+//     }
+//     return days;
+//   })(),
+// ];
+
+export const bookStatsYear = [
+  { month: 'Jan', value: 1 },
+  { month: 'Feb', value: 2 },
+  { month: 'Mar', value: 1 },
+  { month: 'Apr', value: 3 },
+  { month: 'May', value: 2 },
+  { month: 'Jun', value: 4 },
+  { month: 'Jul', value: 3 },
+  { month: 'Aug', value: 2 },
+  { month: 'Sep', value: 1 },
+  { month: 'Oct', value: 2 },
+  { month: 'Nov', value: 3 },
+  { month: 'Dec', value: 4 },
+];
+
+export const bookStatsMonth = [
+  { day: 1, value: 0.3 },
+  { day: 2, value: 0.5 },
+  { day: 3, value: 0.2 },
+  { day: 4, value: 0.6 },
+  { day: 5, value: 0.4 },
+  { day: 6, value: 0.7 },
+  { day: 7, value: 0.8 },
+  { day: 8, value: 0.9 },
+  { day: 9, value: 0.1 },
+  { day: 10, value: 0.2 },
+  { day: 11, value: 0.3 },
+  { day: 12, value: 0.4 },
+  { day: 13, value: 0.5 },
+  { day: 14, value: 0.6 },
+  { day: 15, value: 0.7 },
+  { day: 16, value: 0.8 },
+  { day: 17, value: 0.9 },
+  { day: 18, value: 0.1 },
+  { day: 19, value: 0.2 },
+  { day: 20, value: 0.3 },
+  { day: 21, value: 0.4 },
+  { day: 22, value: 0.5 },
+  { day: 23, value: 0.6 },
+  { day: 24, value: 0.7 },
+  { day: 25, value: 0.8 },
+  { day: 26, value: 0.9 },
+  { day: 27, value: 0.1 },
+  { day: 28, value: 0.2 },
+  { day: 29, value: 0.3 },
+  { day: 30, value: 0.4 },
+];
+
+// export const bookStatsMonth = [
+//   (() => {
+//     const days = [];
+//     const currentDate = new Date();
+//     const daysInMonth = new Date(
+//       currentDate.getFullYear(),
+//       currentDate.getMonth() + 1,
+//       0
+//     ).getDate();
+
+//     for (let i = 1; i <= daysInMonth; i++) {
+//       days.push({ day: i, value: Math.floor(Math.random() * 2) });
+//     }
+//     return days;
+//   })(),
+// ];
+
 export const libraryResults = [
   { id: 1, title: 'Buch 1', image: 'path/to/image1.jpg' },
   { id: 2, title: 'Buch 2', image: 'path/to/image2.jpg' },

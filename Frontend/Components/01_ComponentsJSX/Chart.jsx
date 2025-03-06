@@ -4,28 +4,28 @@ import ChartSelector from '@components/ChartSelector';
 
 const Chart = ({ onViewChange, data, maxValue }) => {
   const isMonthlyView = Array.isArray(data) && data[0]?.day !== undefined;
-  const xAxisLabels = isMonthlyView ? 'Day' : 'Month';
 
   return (
     <div className="chart-wrapper">
       {onViewChange && <ChartSelector onViewChange={onViewChange} />}
       <div className="chart-container">
         <div className="y-axis-labels">
-          {[0, 25, 50, 75, 100].map((value) => (
-            <span key={value}>{value}%</span>
+          {Array.from({ length: maxValue / 100 + 1 }, (_, i) => (
+            <span key={i}>{maxValue - i * 100}</span>
           ))}
         </div>
-        {data.map((stat, index) => (
-          <div
-            key={index}
-            className="chart-bar"
-            style={{ height: `${(stat.value / maxValue) * 100}%` }}
-          >
-            <div className="chart-label">
-              {isMonthlyView ? stat.day : stat.month}
+        {data.map((stat, index) => {
+          const label = isMonthlyView ? stat.day : stat.month;
+          return (
+            <div
+              key={index}
+              className="chart-bar"
+              style={{ height: `${(stat.value / maxValue) * 100}%` }}
+            >
+              <div className="chart-label">{label}</div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <div className="x-axis-label"></div>
     </div>

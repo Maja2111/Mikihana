@@ -15,8 +15,8 @@ $iconbar-color: #a58463;
   transition: background-color 0.3s ease;
 
   & img {
-    width: 30px;
-    height: 30px;
+    width: 40px; // Adjusted for mobile
+    height: auto; // Maintain aspect ratio
   }
 
   &:hover {
@@ -52,6 +52,16 @@ $iconbar-color: #a58463;
 
     .card__text {
       color: #9ca3af;
+    }
+  }
+}
+
+// Media queries for larger screens
+@media (min-width: 768px) {
+  .card {
+    & img {
+      width: 30px; // Original size for larger screens
+      height: 30px; // Maintain original height for larger screens
     }
   }
 }

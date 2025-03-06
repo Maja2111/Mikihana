@@ -1,6 +1,6 @@
 .loading-bar {
-  width: 50%;
-  height: 15px;
+  width: 100%; // Adjusted for mobile
+  height: 10px; // Adjusted for mobile
   background-color: #f0c688;
   border-radius: 4px;
   overflow: hidden;
@@ -13,7 +13,7 @@
 
   &--bars {
     display: flex;
-    gap: 4px;
+    gap: 2px; // Adjusted for mobile
     background-color: transparent;
   }
 
@@ -27,5 +27,12 @@
     &--active {
       background-color: grey;
     }
+  }
+}
+
+// Media queries for larger screens
+@media (min-width: 768px) {
+  .loading-bar {
+    height: 15px; // Original height for larger screens
   }
 }

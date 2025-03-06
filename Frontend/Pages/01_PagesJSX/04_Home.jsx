@@ -1,18 +1,19 @@
-//Entwicklerimporte
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-//Componetensimporte
+// Komponentenimporte
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
-import Chart from '@components/Chart.jsx';
+import PageStatisticsChart from '@components/PageStatisticsChart'; // Import PageStatisticsChart
+import BookStatisticsChart from '@components/BookStatisticsChart'; // Import BookStatisticsChart
 import { LoadingBar } from '@components/LoadingBar.jsx';
 import { LoadingCircle } from '@components/LoadingCircle';
 import { GalleryForReadingBooks } from '@components/GalleryForReadingBooks';
-import { pageStats, bookStats } from '@/mockData.js';
+import { pageStatsYear, pageStatsMonth } from '@/mockData'; // Updated import
+import { bookStatsYear, bookStatsMonth } from '@/mockData'; // Updated import
 
-//Stylingimporte
-import '@/index.scss';
+// Stylingimporte
+import '@/index.scss'; // Korrigierter Import
 import '@pagestyle/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
@@ -20,6 +21,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   const [view, setView] = useState('year');
+  const [bookView, setBookView] = useState('year'); // Added state for book stats view
   const navigate = useNavigate();
 
   const handleNavigateToActiveBook = () => {
@@ -34,21 +36,56 @@ const Home = () => {
     navigate('/home/getTarget');
   };
 
+  useEffect(() => {
+    const links = document.querySelectorAll('.nav__link');
+    const light = document.querySelector('.nav__light');
+
+    function moveLight({ offsetLeft, offsetWidth }) {
+      light.style.left = `${offsetLeft - offsetWidth / 4}px`;
+    }
+
+    function activeLink(linkActive) {
+      links.forEach((link) => {
+        link.classList.remove('active');
+        linkActive.classList.add('active');
+      });
+    }
+
+    links.forEach((link) => {
+      link.addEventListener('mouseenter', () => moveLight(link));
+      link.addEventListener('click', () => activeLink(link));
+    });
+
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener('mouseenter', () => moveLight(link));
+        link.removeEventListener('click', () => activeLink(link));
+      });
+    };
+  }, []);
+
   return (
     <div className="container">
       <header className="header">
         <Header />
-        <nav className="navbar">
-          <ul>
-            <li>
-              <img src="/Upload/Buch.avif" alt="Liberary" />
+        <nav className="nav">
+          <ul className="nav__links">
+            <li className="nav__link active">
+              <a href="#">
+                <i className="bx bx-book"></i> {/* Buch-Icon */}
+              </a>
             </li>
-            <li>
-              <img src="/Upload/Movie.jpg" alt="VideoLiberary" />
+            <li className="nav__link">
+              <a href="#">
+                <i className="bx bx-film"></i> {/* Filmplakat-Icon */}
+              </a>
             </li>
-            <li>
-              <img src="/Upload/Schallplatte.webp" alt="Discotheque" />
+            <li className="nav__link">
+              <a href="#">
+                <i className="bx bx-disc"></i> {/* CD/Schallplatte-Icon */}
+              </a>
             </li>
+            <div className="nav__light"></div>
           </ul>
         </nav>
       </header>
@@ -86,7 +123,7 @@ const Home = () => {
           />
           <FontAwesomeIcon
             icon={faChevronRight}
-            onClick={() => handleNavigateToGetTarget(navigate)}
+            onClick={handleNavigateToGetTarget}
             style={{ cursor: 'pointer' }}
           />
           <LoadingCircle />
@@ -94,20 +131,23 @@ const Home = () => {
 
         <section className="pageStatistic">
           <h2>Page Statistics</h2>
-          <Chart
-            onViewChange={(selectedView) => setView(selectedView)}
-            data={pageStats[view]}
-            maxValue={view === 'year' ? 1000 : 100}
+          <PageStatisticsChart
+            view={view}
+            onViewChange={setView}
+            data={view === 'year' ? pageStatsYear : pageStatsMonth}
           />
         </section>
 
         <section className="booksStatistic">
           <h2>Books Statistics</h2>
-          <Chart
-            onViewChange={(selectedView) => setView(selectedView)}
-            data={bookStats[view]}
-            maxValue={view === 'year' ? 4 : 2}
+          <BookStatisticsChart
+            view={bookView}
+            onViewChange={setBookView}
+            data={bookView === 'year' ? bookStatsYear : bookStatsMonth}
           />
+        </section>
+
+        <section className="gallery">
           <GalleryForReadingBooks />
         </section>
 

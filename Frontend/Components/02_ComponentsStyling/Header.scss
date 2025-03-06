@@ -1,24 +1,45 @@
 .Header {
   & img.logo {
-    width: 50px;
-    height: 50px;
+    width: 40px; // Adjusted for mobile
+    height: 40px; // Adjusted for mobile
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 15px; // Adjusted for mobile
+    top: 15px; // Adjusted for mobile
     border-radius: 50%;
   }
 
   & .icon-button {
     position: absolute;
-    top: 20px; // Adjust as needed
-    left: 20px; // Position in the top left corner
+    top: 15px; // Adjusted for mobile
+    left: 15px; // Adjusted for mobile
     background: transparent; // Make background transparent
     border: none; // Remove border
     cursor: pointer; // Change cursor to pointer
   }
 
   & i {
-    font-size: 24px; // Adjust icon size as needed
+    font-size: 20px; // Adjusted for mobile
     color: #000; // Set icon color
+  }
+}
+
+// Media queries for larger screens
+@media (min-width: 768px) {
+  .Header {
+    & img.logo {
+      width: 50px; // Original size for larger screens
+      height: 50px; // Original size for larger screens
+      right: 20px; // Original position for larger screens
+      top: 20px; // Original position for larger screens
+    }
+
+    & .icon-button {
+      top: 20px; // Original position for larger screens
+      left: 20px; // Original position for larger screens
+    }
+
+    & i {
+      font-size: 24px; // Original size for larger screens
+    }
   }
 }

@@ -1,18 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Nanum+Gothic&family=Tilt+Neon&display=swap');
 
-// Globale Variablen
 $primary-color: #662e1c;
 $secondary-color: #ebdcb2;
 $tertiary-color: #c9a66b;
 $iconbar-color: #a58463;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-// Container für das Layout
 .container {
   font-family: 'Manjari', sans-serif;
   color: $primary-color;
@@ -26,13 +18,13 @@ $iconbar-color: #a58463;
 
 // Header: 1/6 der Höhe
 header {
-  height: 16.6667%; // 1/6 der Höhe
+  height: 10%; // Reduzierte Höhe für den Header
   background-color: $secondary-color; // Explizite Hintergrundfarbe
 }
 
 // Main: 2/3 der Höhe
 main {
-  height: 66.6667%; // 2/3 der Höhe
+  height: 85%; // Erhöhte Höhe für das Main
   background-color: $secondary-color; // Explizite Hintergrundfarbe
   overflow-y: scroll; // Scrollen bei Bedarf
   padding-bottom: 20px;
@@ -40,7 +32,7 @@ main {
 
 // Footer: 1/12 der Höhe (Hälfte der ursprünglichen Höhe)
 footer {
-  height: 8.3333%; // 1/12 der Höhe
+  height: 5%; // Reduzierte Höhe für den Footer
   background-color: $iconbar-color;
   position: fixed;
   bottom: 0;
@@ -58,21 +50,20 @@ section {
 
 h1 {
   font-family: 'Nanum Gothic', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem; // Adjusted for mobile
   text-align: center;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem; // Adjusted for mobile
 }
 
 p {
-  font-size: 1rem;
+  font-size: 0.9rem; // Adjusted for mobile
   padding: 5px;
 }
 
 // Button Variablen
-$secondary-color: #ebdcb2;
 $button-width: 95%;
 $button-height: 20px;
 $button-font-size: 12px;
@@ -103,33 +94,29 @@ $button-margin: 10px;
   }
 }
 
-// Responsive Design
-@media (max-width: 768px) {
-  // Anpassungen für Tablets und kleinere Bildschirme
+// Media queries for larger screens
+@media (min-width: 768px) {
   header {
-    height: 10%; // Reduzierte Höhe für den Header
+    height: 10%; // Originalhöhe für größere Bildschirme
   }
 
   main {
-    height: 85%; // Erhöhte Höhe für das Main
+    height: 85%; // Originalhöhe für größere Bildschirme
   }
 
   footer {
-    height: 5%; // Reduzierte Höhe für den Footer
-  }
-}
-
-@media (max-width: 480px) {
-  // Anpassungen für Mobilgeräte
-  header {
-    height: 8%; // Weitere Reduzierung der Höhe für den Header
+    height: 5%; // Originalhöhe für größere Bildschirme
   }
 
-  main {
-    height: 88%; // Weitere Erhöhung der Höhe für das Main
+  h1 {
+    font-size: 3rem; // Originalgröße für größere Bildschirme
   }
 
-  footer {
-    height: 4%; // Weitere Reduzierung der Höhe für den Footer
+  h2 {
+    font-size: 2rem; // Originalgröße für größere Bildschirme
+  }
+
+  p {
+    font-size: 1rem; // Originalgröße für größere Bildschirme
   }
 }
