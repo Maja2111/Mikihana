@@ -5,10 +5,11 @@ import { useNavigate } from 'react-router-dom';
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
-import ActiveBook from '@components/ActiveBook.jsx';
+import { LoadingBar } from '@components/LoadingBar.jsx';
 
 //Stylingimpore
 import '@pagestyle/ActiveBook.scss';
+import '@pagestyle/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,7 +27,17 @@ const ActiveBookPage = () => {
       </header>
       <main>
         <h1>Your Active Book</h1>
-        <ActiveBook />
+        <section className="activeBook">
+          <div>
+            <h2>Active Book</h2>
+            <i>
+              <img src="/Upload/wtmh.jpeg" alt="cover" />
+            </i>
+            <p>Title: When the moon hatched</p>
+            <p>Author: Sarah A. Parker</p>
+            <LoadingBar />
+          </div>
+        </section>
 
         <section className="progressUpdate">
           <h2>Update Progress</h2>

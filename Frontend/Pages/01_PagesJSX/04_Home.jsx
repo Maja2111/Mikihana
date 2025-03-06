@@ -95,7 +95,9 @@ const Home = () => {
         <section className="activeBook">
           <div>
             <h2>Active Book</h2>
-            <img src="/Upload/wtmh.jpeg" alt="cover" />
+            <i>
+              <img src="/Upload/wtmh.jpeg" alt="cover" />
+            </i>
             <p>Title: When the moon hatched</p>
             <p>Author: Sarah A. Parker</p>
             <LoadingBar />
@@ -103,9 +105,10 @@ const Home = () => {
 
           <FontAwesomeIcon
             icon={faSquarePlus}
-            onClick={handleNavigateToActiveBook}
+            onClick={() => navigate('/home/addActiveBook')}
             style={{ cursor: 'pointer' }}
           />
+
           <FontAwesomeIcon
             icon={faChevronRight}
             onClick={handleNavigateToActiveBook}
@@ -115,7 +118,7 @@ const Home = () => {
 
         <section className="target">
           <h2>Your Reading Goal</h2>
-          <img src="/Upload/Placeholder.webp" alt="placeholder" />
+          <img src="/Upload/Bücherstapel.jpg" alt="placeholder" />
           <FontAwesomeIcon
             icon={faSquarePlus}
             onClick={handleNavigateToTarget}
@@ -126,7 +129,9 @@ const Home = () => {
             onClick={handleNavigateToGetTarget}
             style={{ cursor: 'pointer' }}
           />
-          <LoadingCircle />
+          <div className="loading-circel">
+            <LoadingCircle />
+          </div>
         </section>
 
         <section className="pageStatistic">
@@ -147,8 +152,10 @@ const Home = () => {
           />
         </section>
 
-        <section className="gallery">
-          <GalleryForReadingBooks />
+        <section>
+          <div className="gallery">
+            <GalleryForReadingBooks />
+          </div>
         </section>
 
         <section className="series">

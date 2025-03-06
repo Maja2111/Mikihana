@@ -23,14 +23,14 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  list-style: none; /* Remove bullets from list items */
+  list-style: none;
 }
 
 .nav__links {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  list-style: none; /* Ensure no bullets are shown */
+  list-style: none;
 }
 
 .nav__link a {
@@ -126,65 +126,62 @@
 main {
   margin-top: -100px; /* Abstand zwischen Header und Main verringern */
 }
+
+//section activeBook - Start -
 .activeBook {
-  display: flex;
-  gap: 20px;
-  position: relative;
-  flex-direction: column; // Adjust for mobile
-
-  & > div {
+  div {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  img {
-    width: 20%;
-    height: 80%;
-    border-radius: 10px;
-    position: absolute;
-    top: 10%;
-    right: 20%;
-  }
-
-  .fa-square-plus {
-    position: absolute;
-    top: 15%;
-    right: 5%;
-    cursor: pointer;
-    z-index: 1;
-    transform: translate(50%, -50%);
-  }
-
-  .fa-chevron-right {
-    position: absolute;
-    bottom: 15%;
-    right: 5%;
-    cursor: pointer;
-    z-index: 1;
-    transform: translate(50%, 50%);
+    flex-direction: column;
+    i {
+      text-align: center;
+    }
+    img {
+      width: 30%;
+      border-radius: 20px;
+    }
   }
 }
 
+.fa-square-plus {
+  position: absolute;
+  right: 10%;
+  top: 25%; /* Positionierung des Plus-Symbols */
+  margin: 5px;
+  cursor: pointer;
+  z-index: 1;
+  transform: translate(50%, -50%);
+}
+
+.fa-chevron-right {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  margin: 5px;
+  cursor: pointer;
+  z-index: 1;
+  transform: translate(50%, 50%);
+}
+//section activeBook - Ende -
+
+//page -und booksStatistic werden in den jeweiligen componenten definiert
+
+//section traget - Start -
 .target {
-  display: flex;
-  gap: 20px;
+  display: flex; /* Flexbox aktivieren, um die Elemente nebeneinander anzuzeigen */
+  align-items: center; /* Vertikale Ausrichtung der Elemente */
+  gap: 20px; /* Abstand zwischen Bild und LoadingCircle */
   position: relative;
 
-  & > div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  img {
+    width: 25%; /* Bildbreite anpassen */
+    height: auto; /* Höhe automatisch anpassen */
+    border-radius: 10px;
   }
 
-  img {
-    width: 25%;
-    height: 60%;
-    border-radius: 10px;
-    margin-left: 20px;
-    position: absolute;
-    top: 25%;
-    right: 10%;
+  .loading-circle {
+    /* Hier können Sie spezifische Stile für den LoadingCircle hinzufügen */
+    width: 50px; /* Beispielbreite für den LoadingCircle */
+    height: 50px; /* Beispielhöhe für den LoadingCircle */
   }
 
   .fa-square-plus {
@@ -205,7 +202,15 @@ main {
     transform: translate(50%, 50%);
   }
 }
+//section traget - Ende -
 
+//section gallery - Start -
+.gallery {
+  display: flex;
+  width: 50%;
+}
+
+//section series - Start -
 .series {
   display: flex;
   justify-content: space-between;
@@ -229,3 +234,4 @@ main {
     }
   }
 }
+//section series - Ende -

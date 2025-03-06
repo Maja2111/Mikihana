@@ -6,6 +6,7 @@ import Home from '@pages/04_Home';
 import ActiveBooks from '@pages/04.1_ActiveBook';
 import Target from '@pages/04.3_Target';
 import GetTarget from '@pages/04.2_GetTarget';
+import AddActiveBook from '@pages/04.4_addActiveBook';
 
 const HomeRouter = () => {
   return (
@@ -14,6 +15,8 @@ const HomeRouter = () => {
       <Route path="/activeBook" element={<ActiveBooks />} />
       <Route path="/target" element={<Target />} />
       <Route path="/getTarget" element={<GetTarget />} />
+      <Route path="/addActiveBook" element={<AddActiveBook />} />{' '}
+      {/* Neue Route für das Hinzufügen eines Buches */}
     </Routes>
   );
 };
