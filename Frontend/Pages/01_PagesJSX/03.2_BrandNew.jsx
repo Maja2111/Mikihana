@@ -4,13 +4,9 @@ import '@pagestyle/BrandNew.scss';
 import { Header } from '@components/Header';
 import Carousel from '@components/Carousel';
 import { Footer } from '@components/Footer';
+import { SeachBar } from '@components/SeachBar';
 
 const BrandNew = () => {
-  const handleSearch = (event) => {
-    // Implement search functionality here
-    console.log(event.target.value);
-  };
-
   return (
     <div className="container">
       <header className="header">
@@ -19,14 +15,7 @@ const BrandNew = () => {
       <main>
         <h1>Hello User, books new publications</h1>
         <section>
-          <input
-            type="search"
-            name="brandNewRead"
-            id="brandNewRead"
-            placeholder="Search"
-            aria-label="Search for new books"
-            onChange={handleSearch}
-          />
+          <SeachBar />
           <Carousel />
           <div className="description">
             <p>

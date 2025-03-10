@@ -4,11 +4,12 @@
 
   .gallery-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row; // Changed to row for side-by-side layout
+    //flex-wrap: wrap; // Allow items to wrap to the next line
     margin: -0.25rem;
 
     .gallery-item {
-      width: 100%; // Adjusted for mobile
+      width: 50%; // Adjusted for smaller images in mobile view
       padding: 0.25rem;
       box-sizing: border-box;
 

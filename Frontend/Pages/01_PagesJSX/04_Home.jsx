@@ -72,17 +72,17 @@ const Home = () => {
           <ul className="nav__links">
             <li className="nav__link active">
               <a href="#">
-                <i className="bx bx-book"></i> {/* Buch-Icon */}
+                <i className="bx bx-book"></i>
               </a>
             </li>
             <li className="nav__link">
               <a href="#">
-                <i className="bx bx-film"></i> {/* Filmplakat-Icon */}
+                <i className="bx bx-film"></i>
               </a>
             </li>
             <li className="nav__link">
               <a href="#">
-                <i className="bx bx-disc"></i> {/* CD/Schallplatte-Icon */}
+                <i className="bx bx-disc"></i>
               </a>
             </li>
             <div className="nav__light"></div>
@@ -117,7 +117,7 @@ const Home = () => {
         </section>
 
         <section className="target">
-          <h2>Your Reading Goal</h2>
+          <h2>Your reading target</h2>
           <img src="/Upload/Bücherstapel.jpg" alt="placeholder" />
           <FontAwesomeIcon
             icon={faSquarePlus}
@@ -153,6 +153,7 @@ const Home = () => {
         </section>
 
         <section>
+          <h3>Your reading history</h3>
           <div className="gallery">
             <GalleryForReadingBooks />
           </div>

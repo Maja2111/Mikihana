@@ -9,12 +9,9 @@ $iconbar-color: #a58463;
   width: 100%;
   max-width: 100%; // Adjusted for mobile
   margin: 0 auto;
+  margin-bottom: 20px;
 
   .carousel {
-    border: 2px solid #ccc; /* Add a border to the carousel */
-    border-radius: 10px; /* Round the corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-
     height: 200px; // Adjusted for mobile
     position: relative;
     display: flex;

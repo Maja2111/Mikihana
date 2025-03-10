@@ -20,11 +20,11 @@ const GetTarget = () => {
         <Header />
       </header>
       <main>
-        <h1>your reading goals</h1>
+        <h1>Your reading target</h1>
         <section className="goalsList">
           {goals.map((goal) => (
             <div key={goal.id} className="goalItem">
-              <h3>Goaltitle</h3>
+              <h3>Targettitle</h3>
               <p>
                 <strong>type:</strong> {goal.type}
               </p>

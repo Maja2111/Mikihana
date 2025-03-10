@@ -214,3 +214,13 @@ export const readingBooks = [
   '/Upload/fourth-wing-taschenbuch-rebecca-yarros-englisch.jpeg',
   '/Upload/iron-flame-taschenbuch-rebecca-yarros-englisch.jpeg',
 ];
+
+const books = [
+  { title: 'Book One', author: 'Author One' },
+  { title: 'Book Two', author: 'Author Two' },
+  { title: 'Book Three', author: 'Author Three' },
+  { title: 'Book Four', author: 'Author Four' },
+  { title: 'Book Five', author: 'Author Five' },
+];
+
+export default books;
