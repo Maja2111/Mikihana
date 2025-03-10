@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import '@/index.scss';
+import '@pagestyle/Library.scss';
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
 import { Gallery } from '@components/Gallery';
-import { useNavigate } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,8 +19,8 @@ const Library = () => {
   const handleNavigateToFavourites = () => {
     navigate('/profile/library/favourites');
   };
-  const handleNavigateToUnreadingBooks = () => {
-    navigate('/profile/library/unreadingbooks');
+  const handleNavigateToUnreadBooks = () => {
+    navigate('/profile/library/unreadbooks');
   };
   const handleNavigateToUserList = () => {
     navigate('/profile/library/userlist');
@@ -34,6 +37,7 @@ const Library = () => {
           <h1>Wishlist</h1>
           <Gallery />
           <FontAwesomeIcon
+            id="wishlist"
             icon={faChevronRight}
             onClick={handleNavigateToWishList}
             style={{ cursor: 'pointer' }}
@@ -43,6 +47,7 @@ const Library = () => {
           <h1>Favourites</h1>
           <Gallery />
           <FontAwesomeIcon
+            id="favourites"
             icon={faChevronRight}
             onClick={handleNavigateToFavourites}
             style={{ cursor: 'pointer' }}
@@ -52,8 +57,9 @@ const Library = () => {
           <h1>Unread Books</h1>
           <Gallery />
           <FontAwesomeIcon
+            id="unreadbooks"
             icon={faChevronRight}
-            onClick={handleNavigateToUnreadingBooks}
+            onClick={handleNavigateToUnreadBooks}
             style={{ cursor: 'pointer' }}
           />
         </section>
@@ -61,6 +67,7 @@ const Library = () => {
           <h1>Userlist</h1>
           <Gallery />
           <FontAwesomeIcon
+            id="userlist"
             icon={faChevronRight}
             onClick={handleNavigateToUserList}
             style={{ cursor: 'pointer' }}

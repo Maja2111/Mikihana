@@ -1,5 +1,5 @@
 //Entwickerimporte
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //Componentsimporte
@@ -15,9 +15,25 @@ import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 
 const ActiveBookPage = () => {
   const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleCancelUpdate = () => {
     navigate('/home');
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Hier würde die Logik zum Hinzufügen des Buches stehen
+    // Zum Beispiel ein API-Aufruf
+
+    // Bei Erfolg:
+    setSuccessMessage('Book successfully updated!');
+
+    // Nach 2 Sekunden zurück navigieren
+    setTimeout(() => {
+      navigate(-1); // Navigiert zurück zur vorherigen Seite
+    }, 2000);
   };
 
   return (
@@ -45,19 +61,24 @@ const ActiveBookPage = () => {
             icon={faRectangleXmark}
             onClick={handleCancelUpdate}
           />
-          <label htmlFor="dayofupdate">day of update</label>
-          <input type="date" name="dayofupdate" id="dayofupdate" />
-          <label htmlFor="progress">progress</label>
-          <input type="number" name="pages" id="pages" placeholder="0" />
-          <p>pages out of API</p>
-          <label htmlFor="privatenote">private note</label>
-          <textarea
-            name="note"
-            id="note"
-            placeholder="your thoughts"
-          ></textarea>
-          <button className="clickButton">UPDATE</button>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="dayofupdate">day of update</label>
+            <input type="date" name="dayofupdate" id="dayofupdate" />
+            <label htmlFor="progress">progress</label>
+            <input type="number" name="pages" id="pages" placeholder="0" />
+            <p>pages out of API</p>
+            <label htmlFor="privatenote">private note</label>
+            <textarea
+              name="note"
+              id="note"
+              placeholder="your thoughts"
+            ></textarea>
+            <button type="submit" className="clickButton">
+              UPDATE
+            </button>
+          </form>
         </section>
+        {successMessage && <p className="success-message">{successMessage}</p>}
       </main>
       <footer>
         <Footer />

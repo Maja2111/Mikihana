@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 import { GalleryWithPlaceholder } from '@components/GalleryWithPlaceholder.jsx';
+import { NavigateToLibrary } from '@components/NavigateTo.jsx';
 
 //Stylingimporte
 import '@/index.scss';
@@ -21,6 +22,7 @@ const Wishlist = () => {
         <GalleryWithPlaceholder />
         <Outlet />
       </main>
+      <NavigateToLibrary />
       <footer>
         <Footer />
       </footer>

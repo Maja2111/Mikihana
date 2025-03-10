@@ -6,7 +6,6 @@ import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
-import { EditButton } from '@components/MainButtons.jsx';
 
 const EditProfile = () => {
   return (
@@ -36,7 +35,6 @@ const EditProfile = () => {
           />
           <FontAwesomeIcon icon={faPen} />
         </form>
-        <EditButton />
       </main>
       <footer>
         <Footer />

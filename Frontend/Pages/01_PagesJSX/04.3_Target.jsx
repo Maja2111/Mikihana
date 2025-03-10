@@ -1,9 +1,11 @@
 // Page die Ziele erstellt
 import React, { useState } from 'react';
+
 import '@/index.scss';
 import '@pagestyle/Target.scss';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
+import { NavigateToHome } from '@components/NavigateTo.jsx';
 
 const Target = () => {
   const [targetType, settargetType] = useState('book');
@@ -28,10 +30,8 @@ const Target = () => {
         <Header />
       </header>
       <main>
-        <h1>your new target</h1>
-        <p>
-          Set yourself a target that you want to complete by a certain date!
-        </p>
+        <h1>Your new goal</h1>
+        <p>Set yourself a goal that you want to complete by a certain date!</p>
         <section className="targetTitle">
           <input type="text" placeholder="enter title" />
         </section>
@@ -75,7 +75,9 @@ const Target = () => {
               </select>
             </div>
           )}
+          <button className="clickButton">add new goal</button>
         </section>
+        <NavigateToHome />
       </main>
       <footer>
         <Footer />

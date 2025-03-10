@@ -147,20 +147,20 @@ export const mediaCards = [
   {
     id: 1,
     title: 'bookcover',
-    text: 'Das ist ein Buch.',
-    imageUrl: '/Upload/Buch.avif',
+    text: 'This is a book.',
+    imageUrl: '/Upload/bookforcards.jpeg',
   },
   {
     id: 2,
     title: 'moviecover',
-    text: 'Das ist ein Film.',
-    imageUrl: '/Upload/Movie.jpg',
+    text: 'This is a movie.',
+    imageUrl: '/Upload/movieforCards.jpg',
   },
   {
     id: 3,
     title: 'musiccover',
-    text: 'Das ist eine Musik-LP.',
-    imageUrl: '/Upload/Schallplatte.webp',
+    text: 'This is a musicLP.',
+    imageUrl: '/Upload/musicforCards.avif',
   },
 ];
 

@@ -1,0 +1,15 @@
+.editProfile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.editProfile img {
+  width: 100px; /* Größe des Bildes anpassen */
+  height: auto;
+}
+.profile-icon {
+  position: absolute;
+  top: 80%;
+  left: 60%;
+}

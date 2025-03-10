@@ -10,10 +10,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '@/index.scss';
+import '@pagestyle/EditProfile.scss';
 import { Gallery } from '@components/Gallery.jsx';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 import { handleClick } from '@components/Function.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
 
 const ProfilPage = () => {
   const navigate = useNavigate();
@@ -53,7 +56,12 @@ const ProfilPage = () => {
           onClick={() => handleNavigateToEditProfile(navigate)}
         >
           <h2>Edit Profile</h2>
-          <img src="Frontend/vite-project/Upload/Äffchen.png" alt="Profile" />
+          <img
+            src="/Upload/Äffchen.png"
+            alt="Profile"
+            className="profile-image"
+          />
+          <FontAwesomeIcon icon={faPen} className="profile-icon" />
         </section>
       </main>
 

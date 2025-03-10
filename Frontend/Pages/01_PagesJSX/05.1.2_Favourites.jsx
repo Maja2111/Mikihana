@@ -4,6 +4,7 @@ import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 
 import { GalleryWithPlaceholder } from '@components/GalleryWithPlaceholder.jsx';
+import { NavigateToLibrary } from '@components/NavigateTo.jsx';
 
 const Favourites = () => {
   return (
@@ -15,6 +16,7 @@ const Favourites = () => {
       <main>
         <GalleryWithPlaceholder />
       </main>
+      <NavigateToLibrary />
       <footer>
         <Footer />
       </footer>

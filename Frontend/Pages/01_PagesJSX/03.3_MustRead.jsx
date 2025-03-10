@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+
 import '@/index.scss';
+
 import { Header } from '@components/Header';
 import Carousel from '@components/Carousel';
 import { Footer } from '@components/Footer';
-import { SeachBar } from '@components/SeachBar';
+import { SearchBar } from '@components/SearchBar';
+import { NavigateToAllSerach } from '@components/NavigateTo.jsx';
 
 const MustRead = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <div className="container">
       <header className="header">
@@ -14,7 +19,7 @@ const MustRead = () => {
       <main>
         <section>
           <h1>Here you will find our must-read recommendations.</h1>
-          <SeachBar />
+          <SearchBar />
           <Carousel />
           <div className="description">
             <p>
@@ -26,6 +31,7 @@ const MustRead = () => {
             </p>
           </div>
         </section>
+        <NavigateToAllSerach />
       </main>
       <footer>
         <Footer />

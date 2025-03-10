@@ -8,10 +8,11 @@ import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 import { LoadingCircle } from '@components/LoadingCircle.jsx';
 import { goals } from '@/mockData.js';
+import { NavigateToHome } from '@components/NavigateTo.jsx';
 
 //Stylingimporte
 import '@/index.scss';
-import '@pagestyle/GetTarget.scss';
+import '@pagestyle/Target.scss';
 
 const GetTarget = () => {
   return (
@@ -20,24 +21,25 @@ const GetTarget = () => {
         <Header />
       </header>
       <main>
-        <h1>Your reading target</h1>
+        <h1>Your reading goals</h1>
         <section className="goalsList">
           {goals.map((goal) => (
             <div key={goal.id} className="goalItem">
               <h3>Targettitle</h3>
               <p>
-                <strong>type:</strong> {goal.type}
+                <strong>Type:</strong> {goal.type}
               </p>
               <p>
-                <strong>target:</strong> {goal.target}
+                <strong>Target:</strong> {goal.target}
               </p>
               <p>
-                <strong>interval:</strong> {goal.interval}
+                <strong>Interval:</strong> {goal.interval}
               </p>
               <LoadingCircle />
             </div>
           ))}
         </section>
+        <NavigateToHome />
       </main>
       <footer>
         <Footer />

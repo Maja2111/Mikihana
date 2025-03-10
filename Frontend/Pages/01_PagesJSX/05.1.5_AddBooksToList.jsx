@@ -23,37 +23,41 @@ const AddedBook = () => {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          placeholder="Title"
-          required
-        />
-        <input
-          type="text"
-          name="author"
-          id="author"
-          placeholder="Author"
-          required
-        />
-        <input
-          type="text"
-          name="genre"
-          id="genre"
-          placeholder="Genre"
-          required
-        />
-        <input
-          type="text"
-          name="synopsis"
-          id="synopsis"
-          placeholder="Description"
-          required
-        />
-        <button type="submit">SAVE</button>
-      </form>
+      <section>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="text"
+            name="author"
+            id="author"
+            placeholder="Author"
+            required
+          />
+          <input
+            type="text"
+            name="genre"
+            id="genre"
+            placeholder="Genre"
+            required
+          />
+          <input
+            type="text"
+            name="synopsis"
+            id="synopsis"
+            placeholder="Description"
+            required
+          />
+          <button type="submit" className="clickButton">
+            SAVE
+          </button>
+        </form>
+      </section>
 
       {successMessage && <p className="success-message">{successMessage}</p>}
     </div>

@@ -8,7 +8,7 @@ export function GalleryWithPlaceholder() {
   const navigate = useNavigate();
 
   const handleNavigateToAddBooksToList = () => {
-    navigate('/library/wishlist/add-books-to-list');
+    navigate('/profile/library/wishlist/add-books-to-list');
   };
 
   return (
@@ -26,7 +26,7 @@ export function GalleryWithPlaceholder() {
         >
           <div className="placeholder-content">
             <span>+</span>
-            <p>Neues Buch hinzufügen</p>
+            <p>add new book</p>
           </div>
         </div>
       </div>

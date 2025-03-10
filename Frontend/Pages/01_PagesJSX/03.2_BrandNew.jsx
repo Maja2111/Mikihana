@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '@/index.scss';
 import '@pagestyle/BrandNew.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { Header } from '@components/Header';
 import Carousel from '@components/Carousel';
 import { Footer } from '@components/Footer';
-import { SeachBar } from '@components/SeachBar';
+import { SearchBar } from '@components/SearchBar';
 
 const BrandNew = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+  const handleNavigateToAllSearch = () => {
+    navigate('/allsearch');
+  };
   return (
     <div className="container">
       <header className="header">
@@ -15,7 +23,7 @@ const BrandNew = () => {
       <main>
         <h1>Hello User, books new publications</h1>
         <section>
-          <SeachBar />
+          <SearchBar />
           <Carousel />
           <div className="description">
             <p>
@@ -28,6 +36,10 @@ const BrandNew = () => {
             </p>
           </div>
         </section>
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+          onClick={handleNavigateToAllSearch}
+        />
       </main>
       <footer>
         <Footer />

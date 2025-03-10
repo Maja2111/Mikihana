@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import books from '@/mockData';
 
-export function SeachBar({}) {
+export function SearchBar({}) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (event) => {
