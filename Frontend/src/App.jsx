@@ -6,9 +6,9 @@ import Login from '@pages/01_Login';
 import Registration from '@pages/02_Registration';
 
 // Routerimporte
-import HomeRouter from './Router/HomeRouter';
-import ProfileRouter from './Router/ProfileRouter';
-import AllSearchRouter from './Router/AllSearchRouter';
+import HomeRouter from '@/Router/HomeRouter';
+import ProfileRouter from '@/Router/ProfileRouter';
+import AllSearchRouter from '@/Router/AllSearchRouter';
 
 // Stylingimporte
 import './index.scss';

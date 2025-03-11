@@ -66,7 +66,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
         <nav className="nav">
           <ul className="nav__links">
@@ -119,6 +119,7 @@ const Home = () => {
         <section className="target">
           <h2>Your reading target</h2>
           <img src="/Upload/Bücherstapel.jpg" alt="placeholder" />
+          <LoadingCircle />
           <FontAwesomeIcon
             icon={faSquarePlus}
             onClick={handleNavigateToTarget}
@@ -129,9 +130,6 @@ const Home = () => {
             onClick={handleNavigateToGetTarget}
             style={{ cursor: 'pointer' }}
           />
-          <div className="loading-circel">
-            <LoadingCircle />
-          </div>
         </section>
 
         <section className="pageStatistic">

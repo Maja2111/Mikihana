@@ -2,16 +2,19 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 // Import der Home-Seite und Subpages
-import Home from '@pages/04_Home';
-import ActiveBooks from '@pages/04.1_ActiveBook';
-import Target from '@pages/04.3_Target';
-import GetTarget from '@pages/04.2_GetTarget';
-import AddActiveBook from '@pages/04.4_addActiveBook';
+import Home from '@bookpages/04_Home';
+import MoviesAndSeries from '@moviepages/04_MoviesAndSeries'; // Import for Movies and Series
+import ActiveBooks from '@bookpages/04.1_ActiveBook';
+import Target from '@bookpages/04.3_Target';
+import GetTarget from '@bookpages/04.2_GetTarget';
+import AddActiveBook from '@bookpages/04.4_addActiveBook';
 
 const HomeRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/movies" element={<MoviesAndSeries />} />{' '}
+      {/* New route for Movies and Series */}
       <Route path="/activeBook" element={<ActiveBooks />} />
       <Route path="/target" element={<Target />} />
       <Route path="/getTarget" element={<GetTarget />} />

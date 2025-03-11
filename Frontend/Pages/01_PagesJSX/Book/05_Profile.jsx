@@ -29,7 +29,7 @@ const ProfilPage = () => {
 
   return (
     <div className="container">
-      <header>
+      <header className="header">
         <Header />
       </header>
       <main>

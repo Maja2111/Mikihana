@@ -1,10 +1,6 @@
+@use '@pagestyle/_variables' as *; // Importing color variables
 :root {
   /* COLORS */
-
-  $primary-color: #662e1c;
-  $secondary-color: #ebdcb2;
-  $tertiary-color: #c9a66b;
-  $iconbar-color: #a58463;
 
   --tab-color: $tertiary-color;
   --white-color: $primary-color;
@@ -170,18 +166,19 @@ main {
   display: flex; /* Flexbox aktivieren, um die Elemente nebeneinander anzuzeigen */
   align-items: center; /* Vertikale Ausrichtung der Elemente */
   gap: 20px; /* Abstand zwischen Bild und LoadingCircle */
+  padding: 20px;
   position: relative;
 
   img {
-    width: 25%; /* Bildbreite anpassen */
+    width: 50%; /* Bildbreite anpassen */
     height: auto; /* Höhe automatisch anpassen */
     border-radius: 10px;
   }
 
   .loading-circle {
     /* Hier können Sie spezifische Stile für den LoadingCircle hinzufügen */
-    width: 50px; /* Beispielbreite für den LoadingCircle */
-    height: 50px; /* Beispielhöhe für den LoadingCircle */
+    width: 100px; /* Beispielbreite für den LoadingCircle */
+    height: 100px; /* Beispielhöhe für den LoadingCircle */
   }
 
   .fa-square-plus {

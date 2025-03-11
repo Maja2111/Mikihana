@@ -1,17 +1,14 @@
-$primary-color: #662e1c;
-$secondary-color: #ebdcb2;
-$tertiary-color: #c9a66b;
-$iconbar-color: #a58463;
+@use '@pagestyle/_variables' as *; // Importing color variables
+@use '@pagestyle/_formStyles' as *; // Importing shared form styles
 
-input,
+$iconbar-color: #a58463; // Keeping this specific to this file
+
+input {
+  @extend .form-input; // Using shared input styles
+}
+
 textarea {
-  text-align: center;
-  padding: 15px;
-  height: 20px;
-  margin: 10px;
-  border-style: none;
-  border-radius: 20px;
-  background-color: $secondary-color;
+  @extend .form-textarea; // Using shared textarea styles
 }
 
 textarea {

@@ -1,6 +1,4 @@
-$primary-color: #662e1c;
-$secondary-color: #ebdcb2;
-$tertiary-color: #c9a66b;
+@use '@pagestyle/_variables' as *; // Importing color variables
 
 select {
   padding: 8px 12px;
@@ -13,12 +11,12 @@ select {
   transition: all 0.3s ease;
 
   &:hover {
-    border-color: #662e1c;
+    border-color: $primary-color;
   }
 
   &:focus {
     outline: none;
-    border-color: #662e1c;
+    border-color: $primary-color;
     box-shadow: 0 0 0 2px rgba(102, 46, 28, 0.2);
   }
 }

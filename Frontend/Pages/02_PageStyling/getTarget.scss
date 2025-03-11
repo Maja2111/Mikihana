@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.goalsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.goalItem {
+  display: flex;
+  align-items: center; /* Vertikale Ausrichtung */
+  margin: 10px; /* Abstand zwischen den Elementen */
+  flex-direction: row; /* Elemente nebeneinander anordnen */
+}
+
+.loadingCircle {
+  margin-left: 10px; /* Abstand zwischen dem Text und dem LoadingCircle */
+  align-self: center; /* Zentriert den LoadingCircle vertikal */
+}

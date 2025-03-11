@@ -1,0 +1,47 @@
+@use '@pagestyle/_variables' as vars; // Importing color variables
+
+.button {
+  width: 95%;
+  height: 20px;
+  font-size: 12px;
+  color: #fff;
+  background: linear-gradient(to bottom, #ebdcb2, #c9a66b);
+  border: none;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  padding: 5px;
+  margin: 10px;
+
+  &:hover {
+    color: #000;
+    background: linear-gradient(to bottom, #ebdcb2, #c9a66b);
+    border-color: none;
+  }
+}
+
+.form-input {
+  @extend .button; // Using shared button styles
+  text-align: center;
+  height: 20px;
+  margin: 10px;
+  border-style: none;
+  border-radius: 20px;
+  background-color: vars.$secondary-color; // Updated to use @use syntax
+}
+
+.form-textarea {
+  @extend .button; // Using shared button styles
+  text-align: center;
+  border-style: none;
+  border-radius: 20px;
+  background-color: vars.$secondary-color; // Updated to use @use syntax
+}
+
+input,
+textarea {
+  @extend .form-input; // Using shared input styles
+}
+
+textarea {
+  height: 150px;
+}

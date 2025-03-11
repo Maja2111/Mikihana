@@ -12,7 +12,7 @@ import { NavigateToHome } from '@components/NavigateTo.jsx';
 
 //Stylingimporte
 import '@/index.scss';
-import '@pagestyle/Target.scss';
+import '@pagestyle/getTarget.scss';
 
 const GetTarget = () => {
   return (
@@ -22,10 +22,10 @@ const GetTarget = () => {
       </header>
       <main>
         <h1>Your reading goals</h1>
-        <section className="goalsList">
-          {goals.map((goal) => (
-            <div key={goal.id} className="goalItem">
-              <h3>Targettitle</h3>
+        {goals.map((goal) => (
+          <section key={goal.id} className="goalItem">
+            <h3>Targettitle</h3>
+            <div className="pelements">
               <p>
                 <strong>Type:</strong> {goal.type}
               </p>
@@ -35,10 +35,10 @@ const GetTarget = () => {
               <p>
                 <strong>Interval:</strong> {goal.interval}
               </p>
-              <LoadingCircle />
             </div>
-          ))}
-        </section>
+            <LoadingCircle />
+          </section>
+        ))}
         <NavigateToHome />
       </main>
       <footer>

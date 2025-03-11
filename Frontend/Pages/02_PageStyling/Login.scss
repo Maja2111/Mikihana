@@ -1,4 +1,5 @@
-$secondary-color: #ebdcb2;
+@use '@pagestyle/_variables' as *; // Importing color variables
+@use '@pagestyle/_formStyles' as *; // Importing shared form styles
 
 header {
   margin-bottom: 25%;
@@ -23,12 +24,7 @@ main {
       justify-content: space-between;
       flex-direction: column;
       input {
-        text-align: center;
-        height: 20px;
-        margin: 10px;
-        border-style: none;
-        border-radius: 20px;
-        background-color: $secondary-color;
+        @extend .form-input; // Using shared input styles
       }
     }
   }

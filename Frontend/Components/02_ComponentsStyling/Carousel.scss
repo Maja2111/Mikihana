@@ -1,7 +1,4 @@
-$primary-color: #662e1c;
-$secondary-color: #ebdcb2;
-$tertiary-color: #c9a66b;
-$iconbar-color: #a58463;
+@use '@pagestyle/_variables' as *; // Importing color variables
 
 .carousel-container {
   height: 200px;

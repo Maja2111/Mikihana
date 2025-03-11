@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Nanum+Gothic&family=Tilt+Neon&display=swap');
+@use 'sass:color'; // Importing Sass color module
+@use '@pagestyle/_variables' as *; // Importing color variables
+@use '@pagestyle/_formStyles' as *; // Importing form styles
 
-$primary-color: #662e1c;
-$secondary-color: #ebdcb2;
-$tertiary-color: #c9a66b;
-$iconbar-color: #a58463;
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Nanum+Gothic&family=Tilt+Neon&display=swap');
 
 .container {
   font-family: 'Manjari', sans-serif;
@@ -63,35 +62,8 @@ p {
   padding: 5px;
 }
 
-// Button Variablen
-$button-width: 95%;
-$button-height: 20px;
-$button-font-size: 12px;
-$button-color: #fff;
-$button-hover-color: #000;
-$button-gradient: linear-gradient(to bottom, #ebdcb2, #c9a66b);
-$button-border-radius: 10px;
-$button-transition: all 0.25s ease;
-$button-padding: 5px;
-$button-margin: 10px;
-
 .clickButton {
-  width: $button-width;
-  height: $button-height;
-  font-size: $button-font-size;
-  color: $button-color;
-  background: $button-gradient;
-  border: none;
-  border-radius: $button-border-radius;
-  transition: $button-transition;
-  padding: $button-padding;
-  margin: $button-margin;
-
-  &:hover {
-    color: $button-hover-color;
-    background: $button-gradient;
-    border-color: none;
-  }
+  @extend .button; // Using shared button styles
 }
 
 // Media queries for larger screens

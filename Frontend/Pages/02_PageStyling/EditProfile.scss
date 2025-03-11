@@ -1,3 +1,7 @@
+@use '@pagestyle/_variables' as *; // Importing color variables
+@use '@pagestyle/_formStyles' as *; // Importing shared form styles
+
+// Your existing styles here
 .editProfile {
   position: relative;
   display: flex;
