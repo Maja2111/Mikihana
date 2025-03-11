@@ -29,7 +29,12 @@
   list-style: none;
 }
 
-.nav__link a {
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.nav__link button {
   color: var(--white-color);
   font-size: 2.5rem;
   opacity: 0.5;
@@ -62,11 +67,11 @@
   clip-path: polygon(30% 0, 70% 0, 100% 100%, 0% 100%);
 }
 
-.nav__link.active a {
+.nav__link.active button {
   opacity: 1;
 }
 
-.nav__link.active a .bx-home-alt-2 {
+.nav__link.active button .bx-home-alt-2 {
   color: var(--home-icon-color);
   text-shadow: 0 0 15px var(--home-icon-color), 0 0 30px var(--home-icon-color),
     0 0 45px var(--home-icon-color), 0 0 60px var(--home-icon-color);
@@ -76,7 +81,7 @@
   background-color: var(--home-icon-color);
 }
 
-.nav__link.active a .bx-heart {
+.nav__link.active button .bx-heart {
   color: var(--heart-icon-color);
   text-shadow: 0 0 15px var(--heart-icon-color),
     0 0 30px var(--heart-icon-color), 0 0 45px var(--heart-icon-color),
@@ -87,7 +92,7 @@
   background-color: var(--heart-icon-color);
 }
 
-.nav__link.active a .bx-plus-circle {
+.nav__link.active button .bx-plus-circle {
   color: var(--plus-icon-color);
   text-shadow: 0 0 15px var(--plus-icon-color), 0 0 30px var(--plus-icon-color),
     0 0 45px var(--plus-icon-color), 0 0 60px var(--plus-icon-color);
@@ -97,7 +102,7 @@
   background-color: var(--plus-icon-color);
 }
 
-.nav__link.active a .bx-user {
+.nav__link.active button .bx-user {
   color: var(--user-icon-color);
   text-shadow: 0 0 15px var(--user-icon-color), 0 0 30px var(--user-icon-color),
     0 0 45px var(--user-icon-color), 0 0 60px var(--user-icon-color);
@@ -107,7 +112,7 @@
   background-color: var(--user-icon-color);
 }
 
-.nav__link.active a .bx-bell {
+.nav__link.active button .bx-bell {
   color: var(--bell-icon-color);
   text-shadow: 0 0 15px var(--bell-icon-color), 0 0 30px var(--bell-icon-color),
     0 0 45px var(--bell-icon-color), 0 0 60px var(--bell-icon-color);
@@ -117,12 +122,10 @@
   background-color: var(--bell-icon-color);
 }
 
-/* Main Styling */
-
 main {
   margin-top: -100px; /* Abstand zwischen Header und Main verringern */
 }
-
+//Book stats - Start -
 //section activeBook - Start -
 .activeBook {
   div {
@@ -232,3 +235,13 @@ main {
   }
 }
 //section series - Ende -
+//Book stats - Ende -
+
+//Movie stats - Start -
+.activeSeries {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}

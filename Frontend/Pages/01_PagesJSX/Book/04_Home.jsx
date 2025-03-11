@@ -9,11 +9,12 @@ import BookStatisticsChart from '@components/BookStatisticsChart'; // Import Boo
 import { LoadingBar } from '@components/LoadingBar.jsx';
 import { LoadingCircle } from '@components/LoadingCircle';
 import { GalleryForReadingBooks } from '@components/GalleryForReadingBooks';
-import { pageStatsYear, pageStatsMonth } from '@/mockData'; // Updated import
-import { bookStatsYear, bookStatsMonth } from '@/mockData'; // Updated import
+import { GalleryForwatchMovie } from '@components/GalleryForwatchMovie.jsx';
+import { pageStatsYear, pageStatsMonth } from '@/mockData';
+import { bookStatsYear, bookStatsMonth } from '@/mockData';
 
 // Stylingimporte
-import '@/index.scss'; // Korrigierter Import
+import '@/index.scss';
 import '@pagestyle/Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
@@ -22,6 +23,8 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 const Home = () => {
   const [view, setView] = useState('year');
   const [bookView, setBookView] = useState('year'); // Added state for book stats view
+  const [navState, setNavState] = useState('book'); // State for navigation
+
   const navigate = useNavigate();
 
   const handleNavigateToActiveBook = () => {
@@ -71,19 +74,19 @@ const Home = () => {
         <nav className="nav">
           <ul className="nav__links">
             <li className="nav__link active">
-              <a href="#">
+              <button onClick={() => setNavState('book')}>
                 <i className="bx bx-book"></i>
-              </a>
+              </button>
             </li>
             <li className="nav__link">
-              <a href="#">
+              <button onClick={() => setNavState('movie')}>
                 <i className="bx bx-film"></i>
-              </a>
+              </button>
             </li>
             <li className="nav__link">
-              <a href="#">
+              <button onClick={() => setNavState('music')}>
                 <i className="bx bx-disc"></i>
-              </a>
+              </button>
             </li>
             <div className="nav__light"></div>
           </ul>
@@ -92,83 +95,130 @@ const Home = () => {
 
       <main>
         <h1>Your main area</h1>
-        <section className="activeBook">
-          <div>
-            <h2>Active Book</h2>
-            <i>
-              <img src="/Upload/wtmh.jpeg" alt="cover" />
-            </i>
-            <p>Title: When the moon hatched</p>
-            <p>Author: Sarah A. Parker</p>
-            <LoadingBar />
+        {navState === 'book' && (
+          <>
+            <section className="activeBook">
+              <div>
+                <h2>Active Book</h2>
+                <i>
+                  <img src="/Upload/wtmh.jpeg" alt="cover" />
+                </i>
+                <p>Title: When the moon hatched</p>
+                <p>Author: Sarah A. Parker</p>
+                <LoadingBar />
+              </div>
+
+              <FontAwesomeIcon
+                icon={faSquarePlus}
+                onClick={() => navigate('/home/addActiveBook')}
+                style={{ cursor: 'pointer' }}
+              />
+
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                onClick={handleNavigateToActiveBook}
+                style={{ cursor: 'pointer' }}
+              />
+            </section>
+
+            <section className="target">
+              <h2>Your reading target</h2>
+              <img src="/Upload/Bücherstapel.jpg" alt="placeholder" />
+              <LoadingCircle />
+              <FontAwesomeIcon
+                icon={faSquarePlus}
+                onClick={handleNavigateToTarget}
+                style={{ cursor: 'pointer' }}
+              />
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                onClick={handleNavigateToGetTarget}
+                style={{ cursor: 'pointer' }}
+              />
+            </section>
+
+            <section className="pageStatistic">
+              <h2>Page Statistics</h2>
+              <PageStatisticsChart
+                view={view}
+                onViewChange={setView}
+                data={view === 'year' ? pageStatsYear : pageStatsMonth}
+              />
+            </section>
+
+            <section className="booksStatistic">
+              <h2>Books Statistics</h2>
+              <BookStatisticsChart
+                view={bookView}
+                onViewChange={setBookView}
+                data={bookView === 'year' ? bookStatsYear : bookStatsMonth}
+              />
+            </section>
+
+            <section>
+              <h3>Your reading history</h3>
+              <div className="gallery">
+                <GalleryForReadingBooks />
+              </div>
+            </section>
+
+            <section className="series">
+              <h2>Series</h2>
+              <h3>days in a row </h3>
+              <div>
+                <p className="number">20</p>
+                <p>current series</p>
+              </div>
+              <div>
+                <p className="number">52</p>
+                <p>longest series</p>
+              </div>
+            </section>
+          </>
+        )}
+
+        {navState === 'movie' && (
+          <div className="movieSection">
+            <section className="activeSeries">
+              <div>
+                <h2>Active Series</h2>
+                <i>
+                  <img
+                    src="/Upload/theRookie.jpg"
+                    alt="The Rookie Season three"
+                  />
+                </i>
+                <p>Title: The Rookie</p>
+                <p>Season: 3</p>
+                <p>Episode: 1</p>
+
+                <LoadingBar />
+                <FontAwesomeIcon
+                  icon={faSquarePlus}
+                  style={{ cursor: 'pointer' }}
+                />
+                <FontAwesomeIcon
+                  icon={faChevronRight}
+                  style={{ cursor: 'pointer' }}
+                />
+              </div>
+            </section>
+
+            <section className="watchHistory">
+              <h3>Your watch history</h3>
+              <div className="gallery">
+                <GalleryForwatchMovie />
+              </div>
+            </section>
           </div>
+        )}
 
-          <FontAwesomeIcon
-            icon={faSquarePlus}
-            onClick={() => navigate('/home/addActiveBook')}
-            style={{ cursor: 'pointer' }}
-          />
-
-          <FontAwesomeIcon
-            icon={faChevronRight}
-            onClick={handleNavigateToActiveBook}
-            style={{ cursor: 'pointer' }}
-          />
-        </section>
-
-        <section className="target">
-          <h2>Your reading target</h2>
-          <img src="/Upload/Bücherstapel.jpg" alt="placeholder" />
-          <LoadingCircle />
-          <FontAwesomeIcon
-            icon={faSquarePlus}
-            onClick={handleNavigateToTarget}
-            style={{ cursor: 'pointer' }}
-          />
-          <FontAwesomeIcon
-            icon={faChevronRight}
-            onClick={handleNavigateToGetTarget}
-            style={{ cursor: 'pointer' }}
-          />
-        </section>
-
-        <section className="pageStatistic">
-          <h2>Page Statistics</h2>
-          <PageStatisticsChart
-            view={view}
-            onViewChange={setView}
-            data={view === 'year' ? pageStatsYear : pageStatsMonth}
-          />
-        </section>
-
-        <section className="booksStatistic">
-          <h2>Books Statistics</h2>
-          <BookStatisticsChart
-            view={bookView}
-            onViewChange={setBookView}
-            data={bookView === 'year' ? bookStatsYear : bookStatsMonth}
-          />
-        </section>
-
-        <section>
-          <h3>Your reading history</h3>
-          <div className="gallery">
-            <GalleryForReadingBooks />
-          </div>
-        </section>
-
-        <section className="series">
-          <h2>Series</h2>
-          <h3>days in a row </h3>
-          <div>
-            <p className="number">20</p>
-            <p>current series</p>
-          </div>
-          <div>
-            <p className="number">52</p>
-            <p>longest series</p>
-          </div>
-        </section>
+        {navState === 'music' && (
+          <section className="musicSection">
+            <h2>Your Music Section</h2>
+            {/* Add content for music here */}
+          </section>
+        )}
       </main>
 
       <footer>
