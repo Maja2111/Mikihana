@@ -4,6 +4,17 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
+//navigation zurück zum Login -> Impressum
+export function NavigateToLogin() {
+  const navigate = useNavigate();
+  const handleNavigateToLogin = () => {
+    navigate('/');
+  };
+  return (
+    <FontAwesomeIcon icon={faChevronLeft} onClick={handleNavigateToLogin} />
+  );
+}
+
 //navigation zurück zur Home Seite -> activeBooks, getTarget, target
 export function NavigateToHome() {
   const navigate = useNavigate();

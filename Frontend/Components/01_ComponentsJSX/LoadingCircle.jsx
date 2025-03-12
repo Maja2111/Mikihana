@@ -1,6 +1,6 @@
 import React from 'react';
 import '@style/LoadingCircle.scss';
-import { loadingData } from '../../src/mockData';
+import { loadingData } from '@/mockData';
 
 export const LoadingCircle = () => {
   return (

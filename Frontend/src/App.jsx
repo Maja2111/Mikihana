@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // Pageimporte
 import Login from '@pages/01_Login';
 import Registration from '@pages/02_Registration';
+import Impressum from '@pages/06_Impressum';
 
 // Routerimporte
 import HomeRouter from '@/Router/HomeRouter';
@@ -17,8 +18,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Hauptseiten */}
         <Route path="/" element={<Login />} />
+        <Route path="/impressum" element={<Impressum />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/home/*" element={<HomeRouter />} />
         <Route path="/profile/*" element={<ProfileRouter />} />

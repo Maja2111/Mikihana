@@ -30,31 +30,34 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
 
-    const handleLogin = async () => {
-        const username = document.querySelector('input[placeholder="USERNAME"]').value;
-        const password = document.querySelector('input[placeholder="PASSWORD"]').value;
+  const handleLogin = async () => {
+    const username = document.querySelector(
+      'input[placeholder="USERNAME"]'
+    ).value;
+    const password = document.querySelector(
+      'input[placeholder="PASSWORD"]'
+    ).value;
 
-        try {
-            const response = await fetch('http://localhost:4001/api/users/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }),
-            });
+    try {
+      const response = await fetch('http://localhost:4001/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
 
-            const data = await response.json();
+      const data = await response.json();
 
-            if (!response.ok) {
-                throw new Error(data.error || 'Login failed');
-            }
+      if (!response.ok) {
+        throw new Error(data.error || 'Login failed');
+      }
 
-            alert('Login successful! Redirecting to home page.');
-            navigate('/home');
-        } catch (error) {
-            alert(`Error: ${error.message}`);
-        }
-
+      alert('Login successful! Redirecting to home page.');
+      navigate('/home');
+    } catch (error) {
+      alert(`Error: ${error.message}`);
+    }
   };
 
   const handleToRegisterPage = () => {
@@ -70,6 +73,10 @@ const Login = () => {
       // TODO: Implementiere die Logik zum Senden der E-Mail an das Backend
       alert('An email has been sent to reset your password.');
     }
+  };
+
+  const handleNavigateToImpressum = () => {
+    navigate('/impressum');
   };
 
   return (
@@ -88,7 +95,12 @@ const Login = () => {
               className="profilePicture"
             />
           </p>
-          <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              handleLogin();
+            }}
+          >
             <input type="text" placeholder="USERNAME" />
             <input type="password" placeholder="PASSWORD" />
           </form>
@@ -111,11 +123,17 @@ const Login = () => {
           Don't have an account? Register here!
         </button>
       </main>
+
       <footer>
-        <p>
-          <FontAwesomeIcon icon={faCopyright} />
-          Copyright 2025 Mikihana
-        </p>
+        <div>
+          <div className="impressum" onClick={handleNavigateToImpressum}>
+            Impressum
+          </div>
+          <p>
+            <FontAwesomeIcon icon={faCopyright} />
+            Copyright 2025 Mikihana
+          </p>
+        </div>
       </footer>
     </div>
   );

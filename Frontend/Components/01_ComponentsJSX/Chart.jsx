@@ -3,7 +3,7 @@ import '@style/Chart.scss';
 import ChartSelector from '@components/ChartSelector';
 
 const Chart = ({ onViewChange, data, maxValue }) => {
-  const isMonthlyView = Array.isArray(data) && data[0]?.day !== undefined;
+  const isMonthlyView = Array.isArray(data) && data[0]?.week !== undefined;
 
   return (
     <div className="chart-wrapper">
@@ -15,7 +15,7 @@ const Chart = ({ onViewChange, data, maxValue }) => {
           ))}
         </div>
         {data.map((stat, index) => {
-          const label = isMonthlyView ? stat.day : stat.month;
+          const label = isMonthlyView ? stat.week : stat.month;
           return (
             <div
               key={index}
