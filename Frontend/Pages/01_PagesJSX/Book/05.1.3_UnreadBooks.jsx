@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
-import { GalleryWithPlaceholder } from '@components/GalleryWithPlaceholder.jsx';
+import { GalleryWithPlaceholder } from '@components/Gallery.jsx';
 import { NavigateToLibrary } from '@components/NavigateTo.jsx';
 import { readingBooks } from '@/mockData.js'; // Assuming readingBooks is defined in mockData.js
 

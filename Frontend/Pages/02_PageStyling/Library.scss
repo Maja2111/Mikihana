@@ -1,12 +1,19 @@
+#wishlist,
+#favourites,
+#unreadbooks,
+#userlist {
+  position: absolute;
+}
+
 #wishlist {
-  top: 25%;
+  top: 23%;
 }
 #favourites {
-  top: 50%;
+  top: 43%;
 }
 #unreadbooks {
-  top: 75%;
+  top: 63%;
 }
 #userlist {
-  top: 100%;
+  top: 83%;
 }

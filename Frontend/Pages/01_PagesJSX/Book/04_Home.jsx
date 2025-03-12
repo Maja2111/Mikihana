@@ -4,15 +4,15 @@ import { useNavigate } from 'react-router-dom';
 // Komponentenimporte
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
-import PageStatisticsChart from '@components/PageStatisticsChart'; // Import PageStatisticsChart
-import BookStatisticsChart from '@components/BookStatisticsChart'; // Import BookStatisticsChart
-import SeriesStatisticsChart from '@components/SeriesStatisticsChart';
+import { PageStatisticsChart } from '@components/StatisticChart.jsx'; // Import PageStatisticsChart
+import { BookStatisticsChart } from '@components/StatisticChart.jsx'; // Import BookStatisticsChart
+import { SeriesStatisticsChart } from '@components/StatisticChart.jsx';
 import { LoadingBar } from '@components/LoadingBar.jsx';
-import { LoadingCircle } from '@components/LoadingCircle';
-import { GalleryForReadingBooks } from '@components/GalleryForReadingBooks';
-import { GalleryForwatchMovie } from '@components/GalleryForwatchMovie.jsx';
-import { pageStatsYear, pageStatsMonth } from '@/mockData';
-import { bookStatsYear, bookStatsMonth } from '@/mockData';
+import { LoadingCircle } from '@components/LoadingCircle.jsx';
+import { GalleryForReadingBooks } from '@components/Gallery.jsx';
+import { GalleryForwatchMovie } from '@components/Gallery.jsx';
+import { pageStatsYear, pageStatsMonth } from '@/mockData.js';
+import { bookStatsYear, bookStatsMonth } from '@/mockData.js';
 import { seriesStatsYear, seriesStatsMonth } from '@/mockDataMovie.js';
 
 // Stylingimporte

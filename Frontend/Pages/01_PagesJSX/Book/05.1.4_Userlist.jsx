@@ -2,7 +2,7 @@ import React from 'react';
 import '@/index.scss';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
-import { GalleryWithPlaceholder } from '@components/GalleryWithPlaceholder.jsx';
+import { GalleryWithPlaceholder } from '@components/Gallery.jsx';
 import { NavigateToLibrary } from '@components/NavigateTo.jsx';
 
 const Userlist = () => {
