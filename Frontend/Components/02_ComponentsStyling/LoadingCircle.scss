@@ -1,3 +1,5 @@
+@use '@pagestyle/_variables' as *; // Importing color variables
+
 .loading-circle {
   position: relative;
   width: 80px; // Adjusted for mobile
@@ -32,7 +34,7 @@
   &__percentage {
     font-size: 16px; // Adjusted for mobile
     font-weight: bold;
-    color: #f0c688;
+    color: $primary-color;
     z-index: 1;
     position: absolute;
     top: 50%;

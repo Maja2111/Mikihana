@@ -42,12 +42,12 @@ const ProfilPage = () => {
         </section>
 
         <section className="videoLibrary" onClick={handleClick}>
-          <h2>Videolibrary</h2>
+          <h2>Video library</h2>
           <Gallery />
         </section>
 
-        <section className="discotheque" onClick={handleClick}>
-          <h2>Discotheque</h2>
+        <section className="musicLibrary" onClick={handleClick}>
+          <h2>Music library</h2>
           <Gallery />
         </section>
 

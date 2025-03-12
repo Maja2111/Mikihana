@@ -239,9 +239,15 @@ main {
 
 //Movie stats - Start -
 .activeSeries {
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+  div {
+    display: flex;
+    flex-direction: column;
+    i {
+      text-align: center;
+    }
+    img {
+      width: 50%;
+      border-radius: 20px;
+    }
   }
 }

@@ -6,12 +6,14 @@ import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 import PageStatisticsChart from '@components/PageStatisticsChart'; // Import PageStatisticsChart
 import BookStatisticsChart from '@components/BookStatisticsChart'; // Import BookStatisticsChart
+import SeriesStatisticsChart from '@components/SeriesStatisticsChart';
 import { LoadingBar } from '@components/LoadingBar.jsx';
 import { LoadingCircle } from '@components/LoadingCircle';
 import { GalleryForReadingBooks } from '@components/GalleryForReadingBooks';
 import { GalleryForwatchMovie } from '@components/GalleryForwatchMovie.jsx';
 import { pageStatsYear, pageStatsMonth } from '@/mockData';
 import { bookStatsYear, bookStatsMonth } from '@/mockData';
+import { seriesStatsYear, seriesStatsMonth } from '@/mockDataMovie.js';
 
 // Stylingimporte
 import '@/index.scss';
@@ -202,6 +204,15 @@ const Home = () => {
                   style={{ cursor: 'pointer' }}
                 />
               </div>
+            </section>
+
+            <section className="seriesStatistic">
+              <h2>Series Statistics</h2>
+              <SeriesStatisticsChart
+                view={view}
+                onViewChange={setView}
+                data={view === 'year' ? seriesStatsYear : seriesStatsMonth}
+              />
             </section>
 
             <section className="watchHistory">
