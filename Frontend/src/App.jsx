@@ -1,31 +1,53 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useContext } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from 'react-router-dom';
 
-// Pageimporte
-import Login from '@pages/01_Login';
+//Stylingsimporte
+import '@/index.scss';
+
+import { LoginContext } from '@components/isLoggedIn.jsx';
+
+//Pageimporte
+import Login from '@pages/01_Login.jsx';
 import Registration from '@pages/02_Registration';
 import Impressum from '@pages/06_Impressum';
 
-// Routerimporte
-import HomeRouter from '@/Router/HomeRouter';
-import ProfileRouter from '@/Router/ProfileRouter';
-import AllSearchRouter from '@/Router/AllSearchRouter';
+//Routerimporte
+import HomeRouter from './Router/HomeRouter';
+import ProfileRouter from './Router/ProfileRouter';
+import AllSearchRouter from './Router/AllSearchRouter';
 
-// Stylingimporte
-import './index.scss';
-
+// Private Route Komponente
+const PrivateLayout = ({ element, ...rest }) => {
+  const { isLoggedIn } = useContext(LoginContext);
+  return <> {isLoggedIn ? element : <Navigate to="/" />} </>;
+};
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/impressum" element={<Impressum />} />
         <Route path="/register" element={<Registration />} />
-        <Route path="/home/*" element={<HomeRouter />} />
-        <Route path="/profile/*" element={<ProfileRouter />} />
-        <Route path="/allsearch/*" element={<AllSearchRouter />} />
+        <Route path="/impressum" element={<Impressum />} />
+
+        <Route
+          path="/home/*"
+          element={<PrivateLayout element={<HomeRouter />} />}
+        />
+        <Route
+          path="/profile/*"
+          element={<PrivateLayout element={<ProfileRouter />} />}
+        />
+        <Route
+          path="/search/*"
+          element={<PrivateLayout element={<AllSearchRouter />} />}
+        />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 

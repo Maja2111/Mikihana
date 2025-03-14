@@ -12,12 +12,12 @@
  * weiterführung zur Registrierung
  */
 
-//Entwicklerimporte
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
+import { LoginContext } from '@components/isLoggedIn.jsx';
 
 //Styingimporte
 import '@/index.scss';
@@ -28,25 +28,20 @@ import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 const Login = () => {
   const navigate = useNavigate();
+  const { setIsLoggedIn } = useContext(LoginContext);
   const [email, setEmail] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Zustand für den Login-Status
-
-  // Überprüfen des Login-Status beim Laden der Komponente
-  useEffect(() => {
-    // Hier könnte eine Logik stehen, um den Login-Status zu überprüfen
-    // Zum Beispiel: setIsLoggedIn(true) oder false basierend auf Authentifizierung
-  }, []);
 
   const handleLogin = async () => {
     const username = document.querySelector(
       'input[placeholder="USERNAME"]'
-    ).value;
+    ).value; // Abfrage des Benutzernamens
     const password = document.querySelector(
       'input[placeholder="PASSWORD"]'
     ).value;
 
     try {
       const response = await fetch('http://localhost:4001/api/users/login', {
+        // Sende die Login-Anfrage
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -60,12 +55,17 @@ const Login = () => {
         throw new Error(data.error || 'Login failed');
       }
 
-      alert('Login successful! Redirecting to home page.');
+      alert('Login successful! Redirecting to home page.'); // Erfolgreiche Anmeldung
+      navigate('/home'); // Navigation zur Home-Seite
       setIsLoggedIn(true); // Setze den Login-Status auf true
-      navigate('/home');
     } catch (error) {
-      alert(`Error: ${error.message}`);
+      alert(`Error: ${error.message}`); // Zeige Fehlermeldung an
     }
+    // useEffect(() => {
+    //   if (!isLoggedIn) {
+    //     navigate('/'); // Umleitung zur Anmeldeseite, wenn der Benutzer nicht eingeloggt ist
+    //   }
+    // }, [isLoggedIn, navigate]);
   };
 
   const handleToRegisterPage = () => {
@@ -87,68 +87,62 @@ const Login = () => {
     navigate('/impressum');
   };
 
-  // Wenn der Benutzer nicht eingeloggt ist, wird die Navigation ausgeblendet
-  if (!isLoggedIn) {
-    return (
-      <div className="container">
-        <header className="header">
-          <Header />
-        </header>
-        <main>
-          <h1>Welcome to Mikihana, your App for Books and more!</h1>
-          <section>
-            <h2>USER LOGIN</h2>
-            <p>
-              <img
-                src="/Upload/Äffchen.png"
-                alt="profilepicture"
-                className="profilePicture"
-              />
-            </p>
-            <form
-              onSubmit={(event) => {
-                event.preventDefault();
-                handleLogin();
-              }}
-            >
-              <input type="text" placeholder="USERNAME" />
-              <input type="password" placeholder="PASSWORD" />
-            </form>
-            <button className="clickButton" onClick={handleLogin}>
-              LOGIN
-            </button>
-          </section>
-          <p
-            onClick={handleForgotPassword}
-            style={{
-              cursor: 'pointer',
-              color: 'blue',
-              textDecoration: 'underline',
-              marginBottom: '1rem',
+  return (
+    <div className="container">
+      <header className="header">
+        <Header />
+      </header>
+      <main>
+        <h1>Welcome to Mikihana, your App for Books and more!</h1>
+        <section>
+          <h2>USER LOGIN</h2>
+          <p>
+            <img
+              src="/Upload/Äffchen.png"
+              alt="profilepicture"
+              className="profilePicture"
+            />
+          </p>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              handleLogin();
             }}
           >
-            Forgot password? Click here!
-          </p>
-          <button className="clickButton" onClick={handleToRegisterPage}>
-            Don't have an account? Register here!
+            <input type="text" placeholder="USERNAME" />
+            <input type="password" placeholder="PASSWORD" />
+          </form>
+          <button className="clickButton" onClick={handleLogin}>
+            LOGIN
           </button>
-        </main>
+        </section>
+        <p
+          onClick={handleForgotPassword}
+          style={{
+            cursor: 'pointer',
+            color: 'blue',
+            textDecoration: 'underline',
+            marginBottom: '1rem',
+          }}
+        >
+          Forgot password? Click here!
+        </p>
+        <button className="clickButton" onClick={handleToRegisterPage}>
+          Don't have an account? Register here!
+        </button>
+      </main>
 
-        <footer id="loginFooter">
-          <div className="impressum" onClick={handleNavigateToImpressum}>
-            Impressum
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faCopyright} />
-            Copyright 2025 Mikihana
-          </div>
-        </footer>
-      </div>
-    );
-  }
-
-  // Wenn der Benutzer eingeloggt ist, kann die Navigation angezeigt werden
-  return null; // Hier können Sie die Navigation oder andere Inhalte zurückgeben
+      <footer id="loginFooter">
+        <div className="impressum" onClick={handleNavigateToImpressum}>
+          Impressum
+        </div>
+        <div>
+          <FontAwesomeIcon icon={faCopyright} />
+          Copyright 2025 Mikihana
+        </div>
+      </footer>
+    </div>
+  );
 };
 
 export default Login;

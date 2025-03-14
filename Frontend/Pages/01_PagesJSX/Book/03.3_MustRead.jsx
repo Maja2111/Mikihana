@@ -10,7 +10,6 @@ import { NavigateToAllSerach } from '@components/NavigateTo.jsx';
 
 const MustRead = () => {
   const [searchTerm, setSearchTerm] = useState('');
-
   return (
     <div className="container">
       <header className="header">
