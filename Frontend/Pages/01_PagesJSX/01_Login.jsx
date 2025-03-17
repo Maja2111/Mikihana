@@ -55,6 +55,8 @@ const Login = () => {
         throw new Error(data.error || 'Login failed');
       }
 
+      //  localStorage.setItem('authToken', data.token);
+
       alert('Login successful! Redirecting to home page.'); // Erfolgreiche Anmeldung
       navigate('/home'); // Navigation zur Home-Seite
       setIsLoggedIn(true); // Setze den Login-Status auf true

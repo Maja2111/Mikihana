@@ -9,13 +9,34 @@ export const LoginProvider = (props) => {
   const [userName, setUserName] = useState('');
 
   // useEffect(() => {
-  //   if (Cookies.get('isLoggedIn')) setIsLoggedIn(true);
-  //   if (Cookies.get('userName') && Cookies.get('userPassword')) {
-  //     setUserName(Cookies.get('userName'));
-  //     setUserPassword(Cookies.get('userPassword'));
+  //   const token = localStorage.getItem('authToken');
+  //   if (token) {
+  //     console.log(`token:${token}`);
+  //     verifyToken(token);
+  //   } else {
+  //     console.log(`token empty`);
   //   }
-  // }, [isLoggedIn]);
+  // }, []);
 
+  // const verifyToken = async (token) => {
+  //   try {
+  //     const response = await fetch('http://localhost:4001/api/users/login', {
+  //       method: 'POST',
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+
+  //     if (response.ok) {
+  //       navigate('/home'); //verify token - pass
+  //     } else {
+  //       localStorage.removeItem('authToken'); //error destroy token
+  //     }
+  //   } catch (error) {
+  //     console.error('Token verification error:', error);
+  //     localStorage.removeItem('authToken'); //error destroy token
+  //   }
+  // };
   return (
     <LoginContext.Provider
       value={{
@@ -26,51 +47,5 @@ export const LoginProvider = (props) => {
     >
       {props.children}
     </LoginContext.Provider>
-  );
-};
-
-export const LogoutContext = createContext();
-
-export const LogoutContextProvider = (props) => {
-  const navigate = useNavigate();
-
-  const [isAuth, setIsAuth] = useState(false);
-  const { login } = useContext(LoginContext);
-  const [isLoggedOut, setIsLoggedOut] = login;
-
-  const logoutHandler = async () => {
-    const response = await axios.post(
-      'http://localhost:4000/logout',
-      {},
-      { withCredentials: true }
-    );
-    console.log('responseInLoginContext', response);
-    setIsLoggedOut(false);
-
-    Cookies.remove('email');
-    navigate('/');
-  };
-
-  return (
-    <LogoutContext.Provider
-      value={{
-        auth: [isAuth, setIsAuth],
-        logout: logoutHandler,
-      }}
-    >
-      {props.children}
-    </LogoutContext.Provider>
-  );
-};
-
-export const RegisterContext = createContext();
-
-export const RegisterContextProvider = (props) => {
-  const [isRegistered, setIsRegistered] = useState(false);
-
-  return (
-    <RegisterContext.Provider value={[isRegistered, setIsRegistered]}>
-      {props.children}
-    </RegisterContext.Provider>
   );
 };
