@@ -92,3 +92,57 @@ p {
     font-size: 1rem; // Originalgröße für größere Bildschirme
   }
 }
+
+// Media queries for 820x1180
+@media (min-width: 820px) {
+  header {
+    height: 12%; // Adjusted height for this screen size
+  }
+
+  main {
+    height: 80%; // Adjusted height for this screen size
+  }
+
+  footer {
+    height: 8%; // Adjusted height for this screen size
+  }
+
+  h1 {
+    font-size: 2.5rem; // Adjusted font size for this screen size
+  }
+
+  h2 {
+    font-size: 1.8rem; // Adjusted font size for this screen size
+  }
+
+  p {
+    font-size: 0.95rem; // Adjusted font size for this screen size
+  }
+}
+
+// Media queries for 912x1368
+@media (min-width: 912px) {
+  header {
+    height: 11%; // Adjusted height for this screen size
+  }
+
+  main {
+    height: 82%; // Adjusted height for this screen size
+  }
+
+  footer {
+    height: 7%; // Adjusted height for this screen size
+  }
+
+  h1 {
+    font-size: 2.8rem; // Adjusted font size for this screen size
+  }
+
+  h2 {
+    font-size: 1.9rem; // Adjusted font size for this screen size
+  }
+
+  p {
+    font-size: 1rem; // Adjusted font size for this screen size
+  }
+}
