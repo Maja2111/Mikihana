@@ -112,24 +112,24 @@ router.post('/favourite', async (req, res) => {
 
 
 //Route: Unreading Books
-router.post('/unreadingBook' ,async (req, res) => {
+router.post('/unreadBooks' ,async (req, res) => {
     const { userId, bookId } = req.body;
 
     try{
-        let unreadingBooks = await UnreadingBook.findOne({ userId });
+        let unreadBooks = await UnreadBook.findOne({ userId });
 
-        if(!unreadingBooks) {
-            //Wenn noch keine UnreadingBooks vorhanden ist, erstellen eine neue Samblung
-            unreadingBooks = new UnreadingBook({ userId, books: [bookId] });
+        if(!unreadBooks) {
+            //Wenn noch keine UnreadingBooks vorhanden ist, erstellen eine neue Sammlung
+            unreadBooks = new unreadBooks({ userId, books: [bookId] });
         } else {
             //Wenn das Buch nicht schon inde Liste ist, füge es hin zu
-            if(!unreadingBooks.books.includes(bookId)){
-                unreadingBooks.books.push(bookId);
+            if(!unreadBooks.books.includes(bookId)){
+                unreadBooks.books.push(bookId);
             }
         }
 
-        await unreadingBooks.save();
-        res.status(201).json(unreadingBooks);
+        await unreadBooks.save();
+        res.status(201).json(unreadBooks);
 
     }catch(error){
         res.status(500).json({ message:'Error saving UnreadingBooks', error})
