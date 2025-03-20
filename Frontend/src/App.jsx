@@ -28,11 +28,14 @@ const PrivateLayout = ({ element, ...rest }) => {
 };
 const App = () => {
   return (
+    
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Registration />} />
+
         <Route path="/impressum" element={<Impressum />} />
+
 
         <Route
           path="/home/*"
@@ -48,6 +51,7 @@ const App = () => {
         />
       </Routes>
     </Router>
+  
   );
 };
 
