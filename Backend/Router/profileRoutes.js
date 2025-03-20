@@ -35,6 +35,72 @@ const fetchGoogleBooks = async (query, startIndex = 0, maxResults = 40) => {
     }
 };
 
+//SOM
+async function getBookDetail(id) {
+	try {
+		const response = await axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`);
+		return response.data;
+	} catch (err) {
+		return { message: 'Error retreiving Books', error: err };
+	}
+}
+
+async function checkBookExist(bookId) {
+	let book = await Book.findOne({ bookId: bookId });
+	if (!book) {
+		try {
+			const data = await getBookDetail(bookId);
+			console.log(`bookData:${JSON.stringify(data, null, 2)}`);
+			book = new Book({
+				bookId: data.id,
+				title: data.volumeInfo.title,
+				isbn: data.volumeInfo.industryIdentifiers[0].identifier,
+				isbn: data.volumeInfo.industryIdentifiers
+					? data.volumeInfo.industryIdentifiers[0].identifier
+					: null,
+				authors: data.volumeInfo.authors
+					? data.volumeInfo.authors.join(", ")
+					: null,
+				description: data.volumeInfo.description,
+				imgeUrl: data.volumeInfo.imageLinks
+					? data.volumeInfo.imageLinks.thumbnail
+					: null,
+				thumnail: data.volumeInfo.imageLinks
+					? data.volumeInfo.imageLinks.smallThumbnail
+					: null,
+			});
+			await book.save();
+		} catch (error) {
+			console.error(`err:${error}`)
+		}
+	}
+	return book;
+}
+
+async function createReadingGoal(userId, bookId, targetType, quantity, recurring, recurringInterval, endDate, note) {
+	try {
+		let book = await checkBookExist(bookId);
+
+		const readingGoal = new ReadingGoal({
+			userId: userId,
+			book: book._id,
+			targetType: targetType,
+			quantity: quantity,
+			recurring: recurring,
+			recurringInterval: recurringInterval,
+			endDate: endDate,
+			note: note,
+		});
+		await readingGoal.save();
+		console.log("Reading goal created:", readingGoal);
+		return readingGoal;
+	} catch (error) {
+		console.error("Error creating reading goal:", error);
+		throw error;
+	}
+}
+
+
 //Route : Bücher Suchen
 router.get('/searchBooks/:query/:startIndex', async (req, res) => {
     const { query, startIndex } = req.params;
@@ -69,16 +135,25 @@ router.post('/wishlist', async(req, res) => {
     try{
         let wishlist = await Wishlist.findOne({ userId });
 
-        if (!wishlist) {
-            wishlist = new wishlist({ userId, books: [bookId] })
-        } else {
-            if (!wishlist.books.includes(bookId)) {
-                wishlist.books.push(bookId);
-            }
-        }
+        let book;
+		if (bookId) { book = await checkBookExist(bookId); }
 
-        await wishlist.save();
-        res.status(201).json(wishlist);
+        if (!wishlist) {
+			if (book) {
+				wishlist = new Wishlist({ userId, books: [book] });
+				await wishlist.save();
+			} else {
+				wishlist = { userId: userId, books: [] };		//return empty list
+			}
+		} else {
+			if (!wishlist.books.some(item => item._id.equals(book._id))) {
+				wishlist.books.push(book);
+				await wishlist.save();
+			}
+		}
+
+		res.status(201).json(wishlist);
+
 
     }catch(error){
         res.status(500).json({  message: 'Error saving Wishlist', error});
@@ -93,16 +168,24 @@ router.post('/favourite', async (req, res) => {
     try{
         let favourite = await Favourite.findOne({ userId });
 
-        if (!favourite) {
-            favourite = new Favourite({ userId, books: [bookId] });
-        }else  {
-            if (!favourite.books.includes(bookId)) {
-                favourite.books.push(bookId);
-            }
-        }
+        let book;
+		if (bookId) { book = await checkBookExist(bookId); }
 
-        await favourite.save();
-        res.status(201).json(favourite);
+		if (!favourite) {
+			if (book) {
+				favourite = new Favourite({ userId, books: [book] });
+				await favourite.save();
+			} else {
+				favourite = { userId: userId, books: [] };		//return empty list
+			}
+		} else {
+			if (!favourite.books.some(item => item._id.equals(book._id))) {
+				favourite.books.push(book);
+				await favourite.save();
+			}
+		}
+
+		res.status(201).json(favourite);
 
     }catch(error) {
         res.status(500).json({ message: 'Error saving Favourite', error });
@@ -118,18 +201,25 @@ router.post('/unreadBooks' ,async (req, res) => {
     try{
         let unreadBooks = await UnreadBook.findOne({ userId });
 
-        if(!unreadBooks) {
-            //Wenn noch keine UnreadingBooks vorhanden ist, erstellen eine neue Sammlung
-            unreadBooks = new unreadBooks({ userId, books: [bookId] });
-        } else {
-            //Wenn das Buch nicht schon inde Liste ist, füge es hin zu
-            if(!unreadBooks.books.includes(bookId)){
-                unreadBooks.books.push(bookId);
-            }
-        }
+        //SOM
+		let book;
+		if (bookId) { book = await checkBookExist(bookId); }
 
-        await unreadBooks.save();
-        res.status(201).json(unreadBooks);
+		if (!unreadBooks) {
+			if (book) {
+				unreadBooks = new UnreadingBook({ userId, books: [book] });
+				await unreadBooks.save();
+			} else {
+				unreadBooks = { userId: userId, books: [] };		//return empty list
+			}
+		} else {
+			if (!unreadBooks.books.some(item => item._id.equals(book._id))) {
+				unreadBooks.books.push(book);
+				await unreadBooks.save();
+			}
+		}
+
+		res.status(201).json(unreadBooks);
 
     }catch(error){
         res.status(500).json({ message:'Error saving UnreadingBooks', error})
@@ -144,18 +234,25 @@ router.post('/userList', async (req,res) => {
     try{
         let userList = await UserList.findOne({ userId });
 
-        if(!userList) {
-            //Wenn keine UserList vorhanden ist, erstelle eine neue Liste
-            userList = new UserList({ userId, books:  [bookId] });
-        } else {
-            //Wenn das Buch noch nicht in der Liste ist, füge es hinzu
-            if(!userList.books.includes(bookId)){
-                userList.books.push(bookId);
-            }
-        }
+        //SOM
+		let book;
+		if (bookId) { book = await checkBookExist(bookId); }
 
-        await userList.save();
-        res.status(201).json(userList)
+		if (!userList) {
+			if (book) {
+				userList = new UserList({ userId, books: [book] });
+				await userList.save();
+			} else {
+				userList = { userId: userId, books: [] };		//return empty list
+			}
+		} else {
+			if (!userList.books.some(item => item._id.equals(book._id))) {
+				userList.books.push(book);
+				await userList.save();
+			}
+		}
+
+		res.status(201).json(userList);
 
     }catch(err){
         res.status(500).json({ message: 'Error saving UserList', error: err.message })
@@ -171,32 +268,16 @@ router.post('/addBookToList', async (req, res) => {
     try{
         let list;
 
-        if(listType === 'wishlist'){
-            list = await Wishlist.findOne({ userId });
-        }else if (listType === 'favourite'){
-            list = await Favourite.findOne({ userId });
-        }else if(listType === 'unreadingBook'){
-            list = await UnreadingBook.findOne({ userId });
+        if (listType === 'wishlist') {
+			list = await Wishlist.findOne({ userId }).populate('books');		//SOM
+		} else if (listType === 'favourite') {
+			list = await Favourite.findOne({ userId }).populate('books');		//SOM
+		} else if (listType === 'unreadingBook') {
+			list = await UnreadingBook.findOne({ userId }).populate('books');	
         } else {
-            //Wenn der listType ungültig ist, gebe eine Fehlermeldung zurück
-            return res.status(400).json({ message: 'Ungültiger listType' });
-        }
-
-        if(!list) {
-            //Wenn die Liste nicht existiert, erstelle eine neue Liste basierend auf dem List-type
-            if(listType === 'Wishlist') {
-                list = new Wishlist({ userId, books: [bookId] });
-            }else if(listType === 'favourite'){
-                list = new Favourite({ userId, books: [bookId] })
-            }else if (listType === 'unreadingBook') {
-                list = new UnreadingBook({ userId, books: [bookId] })
-            }
-        } else {
-            //Wenn das Buch nicht schon in der Liste ist, füge es hinzu
-            if(!list.books.includes(bookId)) {
-                list.books.push(bookId);
-            }
-        }
+			//Wenn der listType ungültig ist, gebe eine Fehlermeldung zurück
+			return res.status(400).json({ message: 'Ungültiger listType' });
+		}
 
         await list.save();
         res.status(201).json(list);
