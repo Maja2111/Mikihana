@@ -1,24 +1,24 @@
 import React, { useState, useContext } from 'react';
-import { NavStateContext } from '@components/NavStateContext'; // Importing context for navState
 import { useNavigate } from 'react-router-dom';
-import { Header } from '@components/Header.jsx';
-import { Footer } from '@components/Footer.jsx';
+
 import '@/index.scss';
 import '@pagestyle/addActiveBook.scss';
+
+import { Header } from '@components/Header.jsx';
+import { Footer } from '@components/Footer.jsx';
 
 const AddActiveSeries = () => {
   const [title, setTitle] = useState('');
   const [season, setSeason] = useState('');
   const [episode, setEpisode] = useState('');
-  const { navState } = useContext(NavStateContext); // Accessing navState from context
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Hier können Sie die Logik zum Hinzufügen des Buches implementieren
-    // Zum Beispiel: ein API-Call, um das Buch zu speichern
+    // Hier können Sie die Logik zum Hinzufügen einer serie implementieren
+    // Zum Beispiel: ein API-Call, um die Serie zu speichern
 
-    // Nach dem Hinzufügen des Buches zur aktiven Home-Seite navigieren, wenn navState movie ist
+    // Nach dem Hinzufügen der Serie zur aktiven Home-Seite navigieren, wenn navState movie ist
     if (navState === 'movie') {
       navigate('/activeSeries'); // Navigating to active series if navState is movie
     } else {

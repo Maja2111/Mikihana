@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Header } from '@components/Header.jsx';
-import { Footer } from '@components/Footer.jsx';
+
 import '@/index.scss';
 import '@pagestyle/addActiveBook.scss';
+
+import { Header } from '@components/Header.jsx';
+import { Footer } from '@components/Footer.jsx';
 
 const AddActiveBook = () => {
   const [title, setTitle] = useState('');

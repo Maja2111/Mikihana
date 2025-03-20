@@ -25,7 +25,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 const Home = () => {
   const [view, setView] = useState('year');
   const [bookView, setBookView] = useState('year'); // Added state for book stats view
-  const [navState, setNavState] = useState('book'); // State for navigation
+  const [navState, setNavState] = useState('book'); // Added state for nav state
 
   const navigate = useNavigate();
   //Bookhome
