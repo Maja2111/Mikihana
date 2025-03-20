@@ -12,7 +12,7 @@
  * weiterführung zur Registrierung
  */
 
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //Componentsimporte
@@ -40,7 +40,7 @@ const Login = () => {
     ).value;
 
     try {
-      const response = await fetch('http://localhost:4001/api/users/login', {
+      const response = await fetch('http://localhost:4001/api/users/login/', {
         // Sende die Login-Anfrage
         method: 'POST',
         headers: {
@@ -55,7 +55,7 @@ const Login = () => {
         throw new Error(data.error || 'Login failed');
       }
 
-      //  localStorage.setItem('authToken', data.token);
+      //localStorage.setItem('authToken', data.token);
 
       alert('Login successful! Redirecting to home page.'); // Erfolgreiche Anmeldung
       navigate('/home'); // Navigation zur Home-Seite
@@ -88,6 +88,7 @@ const Login = () => {
   const handleNavigateToImpressum = () => {
     navigate('/impressum');
   };
+
 
   return (
     <div className="container">
