@@ -54,7 +54,7 @@ button {
 }
 
 .nav__light::before {
-  content: '';
+  //content: '';
   width: 5em;
   height: 7em;
   position: absolute;
@@ -249,5 +249,14 @@ main {
       width: 50%;
       border-radius: 20px;
     }
+  }
+}
+
+//Movie stats - Ende -
+
+//Music stats - Start -
+.musicSection {
+  img {
+    border-radius: 20px;
   }
 }

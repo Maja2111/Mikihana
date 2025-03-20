@@ -1,4 +1,6 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+
 import '@/index.scss';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
@@ -13,7 +15,8 @@ const Userlist = () => {
         <h1>your list</h1>
       </header>
       <main>
-        <GalleryWithPlaceholder />
+        <GalleryWithPlaceholder listType="userlist" />
+        <Outlet />
       </main>
       <NavigateToLibrary />
       <footer>

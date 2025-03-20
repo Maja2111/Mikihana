@@ -29,7 +29,7 @@ export function NavigateToHome() {
 }
 
 //navigation zurück zur AllSearch Seite -> Brandnew, mustread
-export function NavigateToAllSerach() {
+export function NavigateToAllSearch() {
   const navigate = useNavigate();
   const handleNavigateToAllSearch = () => {
     navigate('/allsearch');
@@ -48,5 +48,16 @@ export function NavigateToLibrary() {
 
   return (
     <FontAwesomeIcon icon={faChevronLeft} onClick={handleNavigateToLibrary} />
+  );
+}
+
+//navigation zurück zur profile Seite -> library
+export function NavigateToProfile() {
+  const navigate = useNavigate();
+  const handleNavigateToProfile = () => {
+    navigate('/profile');
+  };
+  return (
+    <FontAwesomeIcon icon={faChevronLeft} onClick={handleNavigateToProfile} />
   );
 }

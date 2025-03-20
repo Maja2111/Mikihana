@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '@/index.scss';
 
 const AddedBook = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // Hier würde die Logik zum Hinzufügen des Buches stehen
-    // Zum Beispiel ein API-Aufruf
-
+    const newBook = {
+      title: event.target.title.value,
+      author: event.target.author.value,
+      genre: event.target.genre.value,
+      synopsis: event.target.synopsis.value,
+    };
     // Bei Erfolg:
     setSuccessMessage('Book successfully added!');
-
-    // Nach 2 Sekunden zurück navigieren
-    setTimeout(() => {
-      navigate(-1); // Navigiert zurück zur vorherigen Seite
-    }, 2000);
+    const from = location.state?.from || '/default-path'; // Fallback-Pfad
+    navigate(from);
   };
 
   return (

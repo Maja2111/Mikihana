@@ -40,7 +40,7 @@ const Login = () => {
     ).value;
 
     try {
-      const response = await fetch('http://localhost:4001/api/users/login/', {
+      const response = await fetch('http://localhost:4001/api/users/login', {
         // Sende die Login-Anfrage
         method: 'POST',
         headers: {

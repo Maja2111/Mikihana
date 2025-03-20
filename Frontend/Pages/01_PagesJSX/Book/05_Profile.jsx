@@ -9,21 +9,30 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '@/index.scss';
-import '@pagestyle/EditProfile.scss';
+
 import { Gallery } from '@components/Gallery.jsx';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
-import { handleClick } from '@components/Function.jsx';
+
+import '@/index.scss';
+import '@pagestyle/EditProfile.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 
 const ProfilPage = () => {
   const navigate = useNavigate();
-  const handleNavigateToLibrary = (navigate) => {
+  const handleNavigateToLibrary = () => {
     navigate('/profile/library');
   };
-  const handleNavigateToEditProfile = (navigate) => {
+
+  const handleNavigateToVideolibrary = () => {
+    navigate('/profile/videolibrary');
+  };
+  const handleNavigateToMusiclibrary = () => {
+    navigate('/profile/musiclibrary');
+  };
+
+  const handleNavigateToEditProfile = () => {
     navigate('/profile/edit-profile');
   };
 
@@ -33,20 +42,23 @@ const ProfilPage = () => {
         <Header />
       </header>
       <main>
-        <section
-          className="library"
-          onClick={() => handleNavigateToLibrary(navigate)}
-        >
+        <section className="library" onClick={handleNavigateToLibrary}>
           <h2>Library</h2>
           <Gallery />
         </section>
 
-        <section className="videoLibrary" onClick={handleClick}>
+        <section
+          className="videoLibrary"
+          onClick={handleNavigateToVideolibrary}
+        >
           <h2>Video library</h2>
           <Gallery />
         </section>
 
-        <section className="musicLibrary" onClick={handleClick}>
+        <section
+          className="musicLibrary"
+          onClick={handleNavigateToMusiclibrary}
+        >
           <h2>Music library</h2>
           <Gallery />
         </section>

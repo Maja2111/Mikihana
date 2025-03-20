@@ -12,66 +12,65 @@ import { NavigateToProfile } from '@components/NavigateTo.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-const Library = () => {
+const VideoLibrary = () => {
   const navigate = useNavigate();
 
-  const handleNavigateToWishList = () => {
-    navigate('/profile/library/wishlist');
+  const handleNavigateToVideoWatchlist = () => {
+    navigate('/profile/video-library/video-watchlist');
   };
-  const handleNavigateToFavourites = () => {
-    navigate('/profile/library/favourites');
+  const handleNavigateToVideoFavorites = () => {
+    navigate('/profile/ video-library/video-favorites');
   };
-  const handleNavigateToUnreadBooks = () => {
-    navigate('/profile/library/unreadbooks');
+  const handleNavigateToUnwatch = () => {
+    navigate('/profile/video-library/unwatch');
   };
-  const handleNavigateToUserList = () => {
-    navigate('/profile/library/userlist');
+  const handleNavigateToVideoUserList = () => {
+    navigate('/profile/video-library/video-user-list');
   };
-
   return (
     <div className="container">
       <header>
         <Header />
-        <h1>Library</h1>
+        <h1>Video library</h1>
       </header>
       <main>
-        <section className="wishlist">
-          <h2>wishlist</h2>
+        <section className="videoLibrary">
+          <h2>watchlist</h2>
           <Gallery />
           <FontAwesomeIcon
-            id="wishlist"
+            id="watchlist"
             icon={faChevronRight}
-            onClick={handleNavigateToWishList}
+            onClick={handleNavigateToVideoWatchlist}
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="favourites">
+        <section className="VideoFavourites">
           <h2>favourites</h2>
           <Gallery />
           <FontAwesomeIcon
-            id="favourites"
+            id="video-favourites"
             icon={faChevronRight}
-            onClick={handleNavigateToFavourites}
+            onClick={handleNavigateToVideoFavorites}
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="unreadBooks">
-          <h2>unread books</h2>
+        <section className="unwatch">
+          <h2>unwatch list</h2>
           <Gallery />
           <FontAwesomeIcon
-            id="unreadbooks"
+            id="unwatch"
             icon={faChevronRight}
-            onClick={handleNavigateToUnreadBooks}
+            onClick={handleNavigateToUnwatch}
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="userlist">
+        <section className="video-userlist">
           <h2>userlist</h2>
           <Gallery />
           <FontAwesomeIcon
-            id="userlist"
+            id="video-userlist"
             icon={faChevronRight}
-            onClick={handleNavigateToUserList}
+            onClick={handleNavigateToVideoUserList}
             style={{ cursor: 'pointer' }}
           />
         </section>
@@ -84,4 +83,4 @@ const Library = () => {
   );
 };
 
-export default Library;
+export default VideoLibrary;

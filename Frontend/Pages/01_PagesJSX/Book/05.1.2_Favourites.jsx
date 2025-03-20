@@ -1,5 +1,7 @@
 import React from 'react';
 import '@/index.scss';
+import { Outlet } from 'react-router-dom';
+
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 
@@ -14,7 +16,8 @@ const Favourites = () => {
         <h1>Your Favourites</h1>
       </header>
       <main>
-        <GalleryWithPlaceholder />
+        <GalleryWithPlaceholder listType="favourites" />
+        <Outlet />
       </main>
       <NavigateToLibrary />
       <footer>

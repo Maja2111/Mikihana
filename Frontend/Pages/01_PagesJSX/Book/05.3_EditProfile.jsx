@@ -14,9 +14,6 @@ const EditProfile = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Hier würde die Logik zum Hinzufügen des Buches stehen
-    // Zum Beispiel ein API-Aufruf
-
     // Bei Erfolg:
     setSuccessMessage('update successfully!');
 

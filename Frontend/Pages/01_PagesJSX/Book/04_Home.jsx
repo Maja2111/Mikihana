@@ -28,7 +28,7 @@ const Home = () => {
   const [navState, setNavState] = useState('book'); // State for navigation
 
   const navigate = useNavigate();
-
+  //Bookhome
   const handleNavigateToActiveBook = () => {
     navigate('/home/activeBook');
   };
@@ -39,6 +39,11 @@ const Home = () => {
 
   const handleNavigateToGetTarget = () => {
     navigate('/home/getTarget');
+  };
+
+  //Moviehome
+  const handleNavigateToActiveSeries = () => {
+    navigate('/home/activeSeries');
   };
 
   useEffect(() => {
@@ -183,7 +188,7 @@ const Home = () => {
           <div className="movieSection">
             <section className="activeSeries">
               <div>
-                <h2>Active Series</h2>
+                <h2>Active series</h2>
                 <i>
                   <img
                     src="/Upload/theRookie.jpg"
@@ -197,10 +202,12 @@ const Home = () => {
                 <LoadingBar />
                 <FontAwesomeIcon
                   icon={faSquarePlus}
+                  onClick={() => navigate('/home/addActiveSeries')}
                   style={{ cursor: 'pointer' }}
                 />
                 <FontAwesomeIcon
                   icon={faChevronRight}
+                  onClick={handleNavigateToActiveSeries}
                   style={{ cursor: 'pointer' }}
                 />
               </div>
@@ -226,8 +233,8 @@ const Home = () => {
 
         {navState === 'music' && (
           <section className="musicSection">
-            <h2>Your Music Section</h2>
-            {/* Add content for music here */}
+            <h2>Your music section</h2>
+            <img src="/Upload/coming soon.png" alt="coming soon" />
           </section>
         )}
       </main>

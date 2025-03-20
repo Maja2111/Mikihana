@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '@style/Gallery.scss';
 import { galleryImages, readingBooks } from '@/mockData.js';
 import { galleryImagesMovie } from '@/mockDataMovie.js';
@@ -18,11 +18,15 @@ export function Gallery() {
   );
 }
 
-export function GalleryWithPlaceholder() {
+export function GalleryWithPlaceholder({ listType }) {
   const navigate = useNavigate();
 
   const handleNavigateToAddBooksToList = () => {
-    navigate('/profile/library/wishlist/add-books-to-list');
+    const currentPath = window.location.pathname;
+    const targetPath = `/profile/library/${listType}/add-books-to-list`;
+    navigate(targetPath, {
+      state: { from: currentPath },
+    });
   };
 
   return (

@@ -27,6 +27,8 @@ export default defineConfig({
         './Pages/01_PagesJSX/MoviesAndSeries/'
       ),
 
+      '@musicpages': path.resolve(__dirname, './Pages/01_PagesJSX/Music/'),
+
       // @assets/ verweist auf das Upload-Verzeichnis
       '@img': path.resolve(__dirname, './Upload/'),
     },

@@ -1,19 +1,36 @@
 #wishlist,
 #favourites,
 #unreadbooks,
-#userlist {
+#userlist,
+#watchlist,
+#video-favourites,
+#unwatch,
+#video-userlist {
   position: absolute;
+  left: 86%;
 }
 
-#wishlist {
-  top: 23%;
+#wishlist,
+#watchlist {
+  top: 24%;
 }
-#favourites {
-  top: 43%;
+#favourites,
+#video-favourites {
+  top: 46%;
 }
-#unreadbooks {
-  top: 63%;
+#unreadbooks,
+#unwatch {
+  top: 69%;
 }
-#userlist {
-  top: 83%;
+#userlist,
+#video-userlist {
+  top: 92%;
+}
+
+#coming-soon {
+  border-radius: 20px;
+}
+
+main {
+  margin-bottom: 20px;
 }

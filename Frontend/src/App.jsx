@@ -10,6 +10,7 @@ import {
 import '@/index.scss';
 
 import { LoginContext } from '@components/isLoggedIn.jsx';
+import { LoginProvider } from '@components/isLoggedIn.jsx';
 
 //Pageimporte
 import Login from '@pages/01_Login.jsx';
@@ -45,7 +46,7 @@ const App = () => {
             element={<PrivateLayout element={<ProfileRouter />} />}
           />
           <Route
-            path="/search/*"
+            path="/allsearch/*"
             element={<PrivateLayout element={<AllSearchRouter />} />}
           />
         </Routes>

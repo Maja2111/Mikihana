@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import '@/index.scss';
@@ -7,13 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { Header } from '@components/Header';
-import Carousel from '@components/Carousel';
 import { Footer } from '@components/Footer';
 import { SearchBar } from '@components/SearchBar';
+import { Carousel } from '@components/Carousel';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
-const BrandNew = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+const BrandNewMovie = () => {
   const navigate = useNavigate();
   return (
     <div className="container">
@@ -21,14 +20,14 @@ const BrandNew = () => {
         <Header />
       </header>
       <main>
-        <h1>Hello user, books new publications</h1>
+        <h1>Hello user, welcome to our brand new movies and series</h1>
         <section>
-          <SearchBar search={search} setSearch={setSearch} />
+          <SearchBar />
           <Carousel />
           <div className="description">
             <p>
               {' '}
-              {/*aus dem Backend die Beschreibung der Bücher, die gerade neu erschienen sind, holen*/}
+              {/*aus dem Backend die Beschreibung der Filme und Serien, die gerade neu erschienen sind, holen*/}
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia
               nesciunt itaque enim corrupti culpa? Porro maiores, fuga
               veritatis, dolores cumque possimus laborum error dignissimos ex,
@@ -47,5 +46,4 @@ const BrandNew = () => {
     </div>
   );
 };
-
-export default BrandNew;
+export default BrandNewMovie;

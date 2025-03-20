@@ -18,12 +18,6 @@ export const LoginProvider = (props) => {
   const verifyToken = async (token) => {
     try {
       console.log(`verifyToken`);
-      const response = await fetch('http://localhost:4001/api/users/login', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
       setIsLoggedIn(true);
     } catch (error) {
       console.error('Token verification error:', error);

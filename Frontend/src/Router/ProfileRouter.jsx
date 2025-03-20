@@ -11,6 +11,9 @@ import Userlist from '@bookpages/05.1.4_Userlist.jsx';
 import EditProfile from '@bookpages/05.3_EditProfile.jsx';
 import AddedBook from '@bookpages/05.1.5_AddBooksToList.jsx';
 
+import VideoLibrary from '@moviepages/VideoLibrary.jsx';
+import MusicLibrary from '@musicpages/MusicLibrary.jsx';
+
 const ProfileRouter = () => {
   return (
     <Routes>
@@ -22,8 +25,12 @@ const ProfileRouter = () => {
       <Route path="/library/favourites" element={<Favourites />}>
         <Route path="add-books-to-list" element={<AddedBook />} />
       </Route>
-      <Route path="/library/unreadbooks" element={<UnreadBooks />} />
-      <Route path="/library/userlist" element={<Userlist />} />
+      <Route path="/library/unreadbooks" element={<UnreadBooks />}>
+        <Route path="add-books-to-list" element={<AddedBook />} />
+      </Route>
+      <Route path="/library/userlist" element={<Userlist />}>
+        <Route path="add-books-to-list" element={<AddedBook />} />
+      </Route>
       <Route path="/videolibrary" element={<VideoLibrary />} />
       <Route path="/musiclibrary" element={<MusicLibrary />} />
       <Route path="/edit-profile" element={<EditProfile />} />
