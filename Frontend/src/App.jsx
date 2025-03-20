@@ -28,30 +28,29 @@ const PrivateLayout = ({ element, ...rest }) => {
 };
 const App = () => {
   return (
-    
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Registration />} />
+    <LoginProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
 
-        <Route path="/impressum" element={<Impressum />} />
+          <Route path="/impressum" element={<Impressum />} />
 
-
-        <Route
-          path="/home/*"
-          element={<PrivateLayout element={<HomeRouter />} />}
-        />
-        <Route
-          path="/profile/*"
-          element={<PrivateLayout element={<ProfileRouter />} />}
-        />
-        <Route
-          path="/search/*"
-          element={<PrivateLayout element={<AllSearchRouter />} />}
-        />
-      </Routes>
-    </Router>
-  
+          <Route
+            path="/home/*"
+            element={<PrivateLayout element={<HomeRouter />} />}
+          />
+          <Route
+            path="/profile/*"
+            element={<PrivateLayout element={<ProfileRouter />} />}
+          />
+          <Route
+            path="/search/*"
+            element={<PrivateLayout element={<AllSearchRouter />} />}
+          />
+        </Routes>
+      </Router>
+    </LoginProvider>
   );
 };
 

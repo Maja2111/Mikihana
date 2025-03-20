@@ -19,9 +19,13 @@ const ProfileRouter = () => {
       <Route path="/library/wishlist/" element={<Wishlist />}>
         <Route path="add-books-to-list" element={<AddedBook />} />
       </Route>
-      <Route path="/library/favourites" element={<Favourites />} />
+      <Route path="/library/favourites" element={<Favourites />}>
+        <Route path="add-books-to-list" element={<AddedBook />} />
+      </Route>
       <Route path="/library/unreadbooks" element={<UnreadBooks />} />
       <Route path="/library/userlist" element={<Userlist />} />
+      <Route path="/videolibrary" element={<VideoLibrary />} />
+      <Route path="/musiclibrary" element={<MusicLibrary />} />
       <Route path="/edit-profile" element={<EditProfile />} />
     </Routes>
   );

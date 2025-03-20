@@ -28,7 +28,7 @@ import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { setIsLoggedIn } = useContext(LoginContext);
+  const loginData = useContext(LoginContext);
   const [email, setEmail] = useState('');
 
   const handleLogin = async () => {
@@ -55,20 +55,21 @@ const Login = () => {
         throw new Error(data.error || 'Login failed');
       }
 
-      //localStorage.setItem('authToken', data.token);
+      localStorage.setItem('authToken', data.token);
+      loginData.setIsLoggedIn(true); // Setze den Login-Status auf true
 
       alert('Login successful! Redirecting to home page.'); // Erfolgreiche Anmeldung
       navigate('/home'); // Navigation zur Home-Seite
-      setIsLoggedIn(true); // Setze den Login-Status auf true
     } catch (error) {
       alert(`Error: ${error.message}`); // Zeige Fehlermeldung an
     }
-    // useEffect(() => {
-    //   if (!isLoggedIn) {
-    //     navigate('/'); // Umleitung zur Anmeldeseite, wenn der Benutzer nicht eingeloggt ist
-    //   }
-    // }, [isLoggedIn, navigate]);
   };
+
+  useEffect(() => {
+    if (loginData.isLoggedIn) {
+      navigate('/home'); // Umleitung zur Anmeldeseite, wenn der Benutzer nicht eingeloggt ist
+    }
+  }, [loginData, navigate]);
 
   const handleToRegisterPage = () => {
     navigate('/register');
@@ -88,7 +89,6 @@ const Login = () => {
   const handleNavigateToImpressum = () => {
     navigate('/impressum');
   };
-
 
   return (
     <div className="container">
