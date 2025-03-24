@@ -9,8 +9,9 @@ import {
 //Stylingsimporte
 import '@/index.scss';
 
-import { LoginContext } from '@components/isLoggedIn.jsx';
-import { LoginProvider } from '@components/isLoggedIn.jsx';
+import { LoginContext } from '@context/isLoggedIn.jsx';
+import { LoginProvider } from '@context/isLoggedIn.jsx';
+import { NavProvider } from '@context/navContext.jsx';
 
 //Pageimporte
 import Login from '@pages/01_Login.jsx';
@@ -30,27 +31,29 @@ const PrivateLayout = ({ element, ...rest }) => {
 const App = () => {
   return (
     <LoginProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Registration />} />
+      <NavProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/register" element={<Registration />} />
 
-          <Route path="/impressum" element={<Impressum />} />
+            <Route path="/impressum" element={<Impressum />} />
 
-          <Route
-            path="/home/*"
-            element={<PrivateLayout element={<HomeRouter />} />}
-          />
-          <Route
-            path="/profile/*"
-            element={<PrivateLayout element={<ProfileRouter />} />}
-          />
-          <Route
-            path="/allsearch/*"
-            element={<PrivateLayout element={<AllSearchRouter />} />}
-          />
-        </Routes>
-      </Router>
+            <Route
+              path="/home/*"
+              element={<PrivateLayout element={<HomeRouter />} />}
+            />
+            <Route
+              path="/profile/*"
+              element={<PrivateLayout element={<ProfileRouter />} />}
+            />
+            <Route
+              path="/allsearch/*"
+              element={<PrivateLayout element={<AllSearchRouter />} />}
+            />
+          </Routes>
+        </Router>
+      </NavProvider>
     </LoginProvider>
   );
 };

@@ -14,10 +14,10 @@ export default defineConfig({
       //@style/ verweist auf das style-Verzeichnis
       '@style': path.resolve(__dirname, './Components/02_ComponentsStyling'),
 
-      '@pages': path.resolve(__dirname, './Pages/01_PagesJSX/'),
+      '@pages': path.resolve(__dirname, './Pages/01_PagesJSX'),
 
       // @bookpages/ verweist auf das Pages-Verzeichnis
-      '@bookpages': path.resolve(__dirname, './Pages/01_PagesJSX/Book/'),
+      '@bookpages': path.resolve(__dirname, './Pages/01_PagesJSX/Book'),
 
       //@pagestyle/ verweist auf das pagestyle-Verzeichnis
       '@pagestyle': path.resolve(__dirname, './Pages/02_PageStyling'),
@@ -27,10 +27,12 @@ export default defineConfig({
         './Pages/01_PagesJSX/MoviesAndSeries/'
       ),
 
-      '@musicpages': path.resolve(__dirname, './Pages/01_PagesJSX/Music/'),
+      '@musicpages': path.resolve(__dirname, './Pages/01_PagesJSX/Music'),
 
       // @assets/ verweist auf das Upload-Verzeichnis
-      '@img': path.resolve(__dirname, './Upload/'),
+      '@img': path.resolve(__dirname, './Upload'),
+
+      '@context': path.resolve(__dirname, './src/Context'),
     },
   },
 });

@@ -1,19 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import '@/index.scss';
 import '@pagestyle/BrandNew.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
 import { SearchBar } from '@components/SearchBar';
-import { Carousel } from '@components/Carousel';
+import { MovieCarousel } from '@components/Carousel';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const BrandNewMovie = () => {
-  const navigate = useNavigate();
   return (
     <div className="container">
       <header className="header">
@@ -23,7 +19,7 @@ const BrandNewMovie = () => {
         <h1>Hello user, welcome to our brand new movies and series</h1>
         <section>
           <SearchBar />
-          <Carousel />
+          <MovieCarousel />
           <div className="description">
             <p>
               {' '}
@@ -35,10 +31,7 @@ const BrandNewMovie = () => {
             </p>
           </div>
         </section>
-        <FontAwesomeIcon
-          icon={faChevronLeft}
-          onClick={<NavigateToAllSearch />}
-        />
+        <NavigateToAllSearch />
       </main>
       <footer>
         <Footer />

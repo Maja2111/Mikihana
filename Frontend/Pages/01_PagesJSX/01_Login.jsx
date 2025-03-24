@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom';
 
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
-import { LoginContext } from '@components/isLoggedIn.jsx';
+import { LoginContext } from '@context/isLoggedIn.jsx';
 
 //Styingimporte
 import '@/index.scss';

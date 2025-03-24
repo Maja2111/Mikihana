@@ -9,7 +9,6 @@ import { SearchBar } from '@components/SearchBar';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const MustWatch = () => {
-  const [search, setSearch] = useState('');
   return (
     <div className="container">
       <header className="header">
@@ -18,7 +17,7 @@ const MustWatch = () => {
       <main>
         <section>
           <h1>Here you will find the most popular movies and series</h1>
-          <SearchBar search={search} setSearch={setSearch} />
+          <SearchBar />
           <Carousel />
           <div className="description">
             <p>
@@ -30,10 +29,7 @@ const MustWatch = () => {
             </p>
           </div>
         </section>
-        <FontAwesomeIcon
-          icon={faChevronLeft}
-          onClick={<NavigateToAllSearch />}
-        />
+        <NavigateToAllSearch />
       </main>
       <footer>
         <Footer />

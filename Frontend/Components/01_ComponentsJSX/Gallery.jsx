@@ -20,6 +20,7 @@ export function Gallery() {
 
 export function GalleryWithPlaceholder({ listType }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavigateToAddBooksToList = () => {
     const currentPath = window.location.pathname;

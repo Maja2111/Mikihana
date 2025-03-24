@@ -42,29 +42,53 @@ const SearchPage = () => {
         <section>
           <h1>BRANDNEW</h1>
           <div className="cardcontainer">
-            {mediaCards.map((card) => (
-              <Cards
-                key={card.id}
-                onClickHandler={handleNavigateToBrandNew}
-                title={card.title}
-                text={card.text}
-                imageUrl={card.imageUrl}
-              />
-            ))}
+            <Cards
+              key={mediaCards[0].id}
+              onClickHandler={() => navigate('/allsearch/brandnew')}
+              title={mediaCards[0].title}
+              text={mediaCards[0].text}
+              imageUrl={mediaCards[0].imageUrl}
+            />
+            <Cards
+              key={mediaCards[1].id}
+              onClickHandler={() => navigate('/allsearch/brandnewmovie')}
+              title={mediaCards[1].title}
+              text={mediaCards[1].text}
+              imageUrl={mediaCards[1].imageUrl}
+            />
+            <Cards
+              key={mediaCards[2].id}
+              onClickHandler={() => navigate('/allsearch/brandnewmusic')}
+              title={mediaCards[2].title}
+              text={mediaCards[2].text}
+              imageUrl={mediaCards[2].imageUrl}
+            />
           </div>
         </section>
         <section>
           <h1>MUST HAVE</h1>
           <div className="cardcontainer">
-            {mediaCards.map((card) => (
-              <Cards
-                key={card.id}
-                onClickHandler={handleNavigateToMustRead}
-                title={card.title}
-                text={card.text}
-                imageUrl={card.imageUrl}
-              />
-            ))}
+            <Cards
+              key={mediaCards[0].id}
+              onClickHandler={() => navigate('/allsearch/mustread')}
+              title={mediaCards[0].title}
+              text={mediaCards[0].text}
+              imageUrl={mediaCards[0].imageUrl}
+            />
+            <Cards
+              key={mediaCards[1].id}
+              onClickHandler={() => navigate('/allsearch/mustwatch')}
+              title={mediaCards[1].title}
+              text={mediaCards[1].text}
+              imageUrl={mediaCards[1].imageUrl}
+            />
+            <Cards
+              key={mediaCards[2].id}
+              onClickHandler={() => navigate('/allsearch/mustlisten')}
+              title={mediaCards[2].title}
+              text={mediaCards[2].text}
+              imageUrl={mediaCards[2].imageUrl}
+            />
           </div>
         </section>
       </main>

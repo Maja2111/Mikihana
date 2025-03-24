@@ -58,3 +58,11 @@ export const seriesStatsMonth = [
   // { day: 29, value: 220 },
   // { day: 30, value: 135 },
 ];
+
+export const carouselImagesMovie = [
+  '/Upload/snowwhite.webp',
+  '/Upload/micky.jpg',
+  '/Upload/heldin.jpg',
+  '/Upload/CA.jpg',
+  '/Upload/Putin.jpg',
+];

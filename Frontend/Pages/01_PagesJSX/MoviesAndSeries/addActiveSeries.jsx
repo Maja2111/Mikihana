@@ -20,7 +20,7 @@ const AddActiveSeries = () => {
 
     // Nach dem Hinzufügen der Serie zur aktiven Home-Seite navigieren, wenn navState movie ist
     if (navState === 'movie') {
-      navigate('/activeSeries'); // Navigating to active series if navState is movie
+      navigate('/updateactiveseries'); // Navigating to active series if navState is movie
     } else {
       navigate('/home'); // Default navigation to home
     }

@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { LoginProvider } from '@components/isLoggedIn.jsx';
+import { LoginProvider } from '@context/isLoggedIn.jsx';
 import '@/index.scss';
 import App from '@/App.jsx';
 

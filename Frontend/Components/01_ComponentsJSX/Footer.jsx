@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import '@style/Footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -6,41 +7,45 @@ import { useNavigate } from 'react-router-dom';
 
 export const Footer = () => {
   const navigate = useNavigate();
-  const [activeItem, setActiveItem] = useState('/Home'); // Track the active item
+  let location = useLocation();
 
   return (
     <div className="footer">
       <nav className="Iconbar">
         <li>
           <FontAwesomeIcon
-            className={`home ${activeItem === '/Home' ? 'active' : ''}`}
+            className={`home ${
+              location.pathname.includes('home') ? 'active' : ''
+            }`}
             icon={faHouse}
             onClick={() => {
-              setActiveItem('/Home'); // Set active item
-              navigate('/Home');
+              location.pathname.includes('home');
+              navigate('/home');
             }}
           />
         </li>
         <li>
           <FontAwesomeIcon
             className={`allSearch ${
-              activeItem === '/AllSearch' ? 'active' : ''
+              location.pathname.includes('allSearch') ? 'active' : ''
             }`}
             icon={faMagnifyingGlass}
             onClick={() => {
-              setActiveItem('/AllSearch'); // Set active item
-              navigate('/AllSearch');
+              location.pathname.includes('allSearch');
+              navigate('/allSearch');
             }}
           />
         </li>
         <li>
           <img
-            className={`monkey ${activeItem === '/Profile' ? 'active' : ''}`}
+            className={`monkey ${
+              location.pathname.includes('profile') ? 'active' : ''
+            }`}
             src="/Upload/Äffchen.png"
             alt="Profile"
             onClick={() => {
-              setActiveItem('/Profile'); // Set active item
-              navigate('/Profile');
+              location.pathname.includes('profile');
+              navigate('/profile');
             }}
           />
         </li>

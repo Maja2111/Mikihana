@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Komponentenimporte
@@ -14,6 +14,7 @@ import { GalleryForwatchMovie } from '@components/Gallery.jsx';
 import { pageStatsYear, pageStatsMonth } from '@/mockData.js';
 import { bookStatsYear, bookStatsMonth } from '@/mockData.js';
 import { seriesStatsYear, seriesStatsMonth } from '@/mockDataMovie.js';
+import { NavContext } from '@context/navContext.jsx';
 
 // Stylingimporte
 import '@/index.scss';
@@ -25,12 +26,16 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 const Home = () => {
   const [view, setView] = useState('year');
   const [bookView, setBookView] = useState('year'); // Added state for book stats view
-  const [navState, setNavState] = useState('book'); // Added state for nav state
+  const { navState, setNavState } = useContext(NavContext);
 
   const navigate = useNavigate();
   //Bookhome
-  const handleNavigateToActiveBook = () => {
+  const handleNavigateToUpdateActiveBook = () => {
     navigate('/home/activeBook');
+  };
+
+  const handleNavigateToAddActiveBook = () => {
+    navigate('/home/addActiveBook');
   };
 
   const handleNavigateToTarget = () => {
@@ -42,8 +47,12 @@ const Home = () => {
   };
 
   //Moviehome
-  const handleNavigateToActiveSeries = () => {
-    navigate('/home/activeSeries');
+  const handleNavigateToUpdateActiveSeries = () => {
+    navigate('/home/updateActiveSeries');
+  };
+
+  const handleNavigateToAddActiveSeries = () => {
+    navigate('/home/addActiveSeries');
   };
 
   useEffect(() => {
@@ -117,13 +126,13 @@ const Home = () => {
 
               <FontAwesomeIcon
                 icon={faSquarePlus}
-                onClick={() => navigate('/home/addActiveBook')}
+                onClick={handleNavigateToAddActiveBook}
                 style={{ cursor: 'pointer' }}
               />
 
               <FontAwesomeIcon
                 icon={faChevronRight}
-                onClick={handleNavigateToActiveBook}
+                onClick={handleNavigateToUpdateActiveBook}
                 style={{ cursor: 'pointer' }}
               />
             </section>
@@ -202,12 +211,12 @@ const Home = () => {
                 <LoadingBar />
                 <FontAwesomeIcon
                   icon={faSquarePlus}
-                  onClick={() => navigate('/home/addActiveSeries')}
+                  onClick={handleNavigateToAddActiveSeries}
                   style={{ cursor: 'pointer' }}
                 />
                 <FontAwesomeIcon
                   icon={faChevronRight}
-                  onClick={handleNavigateToActiveSeries}
+                  onClick={handleNavigateToUpdateActiveSeries}
                   style={{ cursor: 'pointer' }}
                 />
               </div>
