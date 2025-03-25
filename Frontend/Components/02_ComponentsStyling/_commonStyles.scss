@@ -1,0 +1,16 @@
+.header {
+  /* Gemeinsame Stile für den Header */
+  margin-bottom: 25%;
+}
+
+.loadingCircle {
+  /* Gemeinsame Stile für den Ladeindikator */
+  margin-left: 10px; /* Abstand zwischen dem Text und dem LoadingCircle */
+  align-self: center; /* Zentriert den LoadingCircle vertikal */
+}
+
+.profilePicture {
+  /* Gemeinsame Stile für das Profilbild */
+  width: 100px; /* Größe des Bildes anpassen */
+  height: auto;
+}

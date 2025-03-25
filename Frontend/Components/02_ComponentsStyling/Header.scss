@@ -23,23 +23,23 @@
   }
 }
 
-// Media queries for larger screens
-@media (min-width: 768px) {
+// Media query for iPad Air
+@media (min-width: 820px) and (max-height: 1180px) {
   .Header {
     & img.logo {
-      width: 50px; // Original size for larger screens
-      height: 50px; // Original size for larger screens
-      right: 20px; // Original position for larger screens
-      top: 20px; // Original position for larger screens
+      width: 60px; // Adjusted size for iPad Air
+      height: 60px; // Adjusted size for iPad Air
+      right: 25px; // Adjusted position for iPad Air
+      top: 25px; // Adjusted position for iPad Air
     }
 
     & .icon-button {
-      top: 20px; // Original position for larger screens
-      left: 20px; // Original position for larger screens
+      top: 25px; // Adjusted position for iPad Air
+      left: 25px; // Adjusted position for iPad Air
     }
 
     & i {
-      font-size: 24px; // Original size for larger screens
+      font-size: 26px; // Adjusted size for iPad Air
     }
   }
 }

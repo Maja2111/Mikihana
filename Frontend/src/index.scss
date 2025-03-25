@@ -72,35 +72,8 @@ p {
   }
 }
 
-// Media queries for larger screens
-@media (min-width: 768px) {
-  header {
-    height: 10%; // Originalhöhe für größere Bildschirme
-  }
-
-  main {
-    height: 85%; // Originalhöhe für größere Bildschirme
-  }
-
-  footer {
-    height: 5%; // Originalhöhe für größere Bildschirme
-  }
-
-  h1 {
-    font-size: 3rem; // Originalgröße für größere Bildschirme
-  }
-
-  h2 {
-    font-size: 2rem; // Originalgröße für größere Bildschirme
-  }
-
-  p {
-    font-size: 1rem; // Originalgröße für größere Bildschirme
-  }
-}
-
-// Media queries for 820x1180
-@media (min-width: 820px) {
+//iPad Air
+@media (min-width: 820px) and (max-height: 1180px) {
   header {
     height: 12%; // Adjusted height for this screen size
   }
@@ -111,6 +84,7 @@ p {
 
   footer {
     height: 8%; // Adjusted height for this screen size
+    width: 98%;
   }
 
   h1 {
@@ -126,8 +100,8 @@ p {
   }
 }
 
-// Media queries for 912x1368
-@media (min-width: 912px) {
+//Desktopansicht
+@media (min-width: 1280px) and (min-height: 800px) {
   header {
     height: 11%; // Adjusted height for this screen size
   }

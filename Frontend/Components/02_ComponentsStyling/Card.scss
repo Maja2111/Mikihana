@@ -53,12 +53,12 @@
   }
 }
 
-// Media queries for larger screens
-@media (min-width: 768px) {
+// Media query for iPad Air
+@media (min-width: 820px) and (max-height: 1180px) {
   .card {
     & img {
-      width: 30px; // Original size for larger screens
-      height: 30px; // Maintain original height for larger screens
+      width: 40px; // Adjusted size for iPad Air
+      height: 40px; // Maintain adjusted height for iPad Air
     }
   }
 }

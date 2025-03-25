@@ -1,0 +1,22 @@
+@use '@pagestyle/_variables' as *; // Importing color variables
+
+select {
+  padding: 8px 12px;
+  border-style: none;
+  border-radius: 4px;
+  background-color: $secondary-color;
+  font-size: 14px;
+  color: $primary-color;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba(102, 46, 28, 0.2);
+  }
+}
