@@ -152,24 +152,45 @@ export const discothequeResults = [
   { id: 2, title: 'Musik 2', image: 'path/to/image6.jpg' },
 ];
 
-export const mediaCards = [
+export const mediaCardsNew = [
   {
     id: 1,
-    title: 'bookcover',
-    text: 'This is a book.',
-    imageUrl: '/Upload/bookforcards.jpeg',
+    title: 'New Books',
+    text: 'discover new books',
+    imageUrl: '/Upload/ÄffchenBook.jpg',
   },
   {
     id: 2,
-    title: 'moviecover',
-    text: 'This is a movie.',
-    imageUrl: '/Upload/movieforCards.jpg',
+    title: 'New Movies',
+    text: 'discover new movies',
+    imageUrl: '/Upload/ÄffchenMovie.jpg',
   },
   {
     id: 3,
-    title: 'musiccover',
-    text: 'This is a musicLP.',
-    imageUrl: '/Upload/musicforCards.avif',
+    title: 'New Music',
+    text: 'discover new music',
+    imageUrl: '/Upload/ÄffchenMusic.jpg',
+  },
+];
+
+export const mediaCardsMust = [
+  {
+    id: 1,
+    title: 'Must Reads',
+    text: 'discover the must reads',
+    imageUrl: '/Upload/ÄffchenBook.jpg',
+  },
+  {
+    id: 2,
+    title: 'Must Watch',
+    text: 'discover the must watch',
+    imageUrl: '/Upload/ÄffchenMovie.jpg',
+  },
+  {
+    id: 3,
+    title: 'Must Listen',
+    text: 'discover the must listen',
+    imageUrl: '/Upload/ÄffchenMusic.jpg',
   },
 ];
 

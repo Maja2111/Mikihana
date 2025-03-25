@@ -66,6 +66,12 @@ p {
   @extend .button; // Using shared button styles
 }
 
+.mustListen {
+  img {
+    border-radius: 20px;
+  }
+}
+
 // Media queries for larger screens
 @media (min-width: 768px) {
   header {

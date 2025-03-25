@@ -15,17 +15,17 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 const VideoLibrary = () => {
   const navigate = useNavigate();
 
-  const handleNavigateToVideoWatchlist = () => {
-    navigate('/profile/video-library/video-watchlist');
+  const handleNavigateToWatchlist = () => {
+    navigate('/profile/videolibrary/watchlist');
   };
-  const handleNavigateToVideoFavorites = () => {
-    navigate('/profile/ video-library/video-favorites');
+  const handleNavigateToWatchFavorites = () => {
+    navigate('/profile/videolibrary/watchfavorites');
   };
-  const handleNavigateToUnwatch = () => {
-    navigate('/profile/video-library/unwatch');
+  const handleNavigateToUnwatchList = () => {
+    navigate('/profile/videolibrary/unwatchlist');
   };
-  const handleNavigateToVideoUserList = () => {
-    navigate('/profile/video-library/video-user-list');
+  const handleNavigateToMovieUserList = () => {
+    navigate('/profile/videolibrary/movieuserlist');
   };
   return (
     <div className="container">
@@ -40,7 +40,7 @@ const VideoLibrary = () => {
           <FontAwesomeIcon
             id="watchlist"
             icon={faChevronRight}
-            onClick={handleNavigateToVideoWatchlist}
+            onClick={handleNavigateToWatchlist}
             style={{ cursor: 'pointer' }}
           />
         </section>
@@ -50,7 +50,7 @@ const VideoLibrary = () => {
           <FontAwesomeIcon
             id="video-favourites"
             icon={faChevronRight}
-            onClick={handleNavigateToVideoFavorites}
+            onClick={handleNavigateToWatchFavorites}
             style={{ cursor: 'pointer' }}
           />
         </section>
@@ -60,7 +60,7 @@ const VideoLibrary = () => {
           <FontAwesomeIcon
             id="unwatch"
             icon={faChevronRight}
-            onClick={handleNavigateToUnwatch}
+            onClick={handleNavigateToUnwatchList}
             style={{ cursor: 'pointer' }}
           />
         </section>
@@ -70,7 +70,7 @@ const VideoLibrary = () => {
           <FontAwesomeIcon
             id="video-userlist"
             icon={faChevronRight}
-            onClick={handleNavigateToVideoUserList}
+            onClick={handleNavigateToMovieUserList}
             style={{ cursor: 'pointer' }}
           />
         </section>

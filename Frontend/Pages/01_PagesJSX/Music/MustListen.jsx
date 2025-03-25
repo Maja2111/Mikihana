@@ -13,7 +13,7 @@ const MustListen = () => {
         <Header />
       </header>
       <main>
-        <section>
+        <section className="mustListen">
           <h1>
             Here you will find our recommendations for music you should have
             heard.{' '}

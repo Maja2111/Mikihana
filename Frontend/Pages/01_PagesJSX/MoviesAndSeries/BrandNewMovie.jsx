@@ -6,7 +6,7 @@ import '@pagestyle/BrandNew.scss';
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
 import { SearchBar } from '@components/SearchBar';
-import { MovieCarousel } from '@components/Carousel';
+import { MovieCarousel } from '@components/Carousel.jsx';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const BrandNewMovie = () => {

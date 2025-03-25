@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import '@/index.scss';
 import '@pagestyle/BrandNew.scss';
@@ -15,7 +14,7 @@ const BrandNewMusic = () => {
         <Header />
       </header>
       <main>
-        <section>
+        <section className="brandNewMusic">
           <h1>Hello user, welcome to brand new music</h1>
           <img src="/Upload/coming soon.png" alt="coming soon" />
         </section>

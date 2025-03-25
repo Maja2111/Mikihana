@@ -1,3 +1,11 @@
+export const galleryWithPlaceholderMovie = [
+  '/Upload/bttf.jpg',
+  '/Upload/DerSpitzname.jpg',
+  '/Upload/gotg.jpg',
+  '/Upload/hf.jpg',
+  '/Upload/noah.webp',
+];
+
 export const galleryImagesMovie = [
   '/Upload/dr.Who.webp',
   '/Upload/friends.avif',
@@ -6,6 +14,13 @@ export const galleryImagesMovie = [
   '/Upload/Warehouse13.jpg',
 ];
 
+export const carouselImagesMovie = [
+  { url: '/Upload/snowwhite.webp', alt: 'Snow White' },
+  { url: '/Upload/micky.jpg', alt: 'Micky17' },
+  { url: '/Upload/heldin.jpg', alt: 'Heldin' },
+  { url: '/Upload/CA.jpg', alt: 'Captain America' },
+  { url: '/Upload/Putin.jpg', alt: 'Putin' },
+];
 export const seriesStatsYear = [
   { month: 'Jan', value: 25 },
   { month: 'Feb', value: 50 },
@@ -57,12 +72,4 @@ export const seriesStatsMonth = [
   // { day: 28, value: 200 },
   // { day: 29, value: 220 },
   // { day: 30, value: 135 },
-];
-
-export const carouselImagesMovie = [
-  '/Upload/snowwhite.webp',
-  '/Upload/micky.jpg',
-  '/Upload/heldin.jpg',
-  '/Upload/CA.jpg',
-  '/Upload/Putin.jpg',
 ];

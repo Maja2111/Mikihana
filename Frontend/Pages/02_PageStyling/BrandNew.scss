@@ -20,3 +20,9 @@ $primary-color: #662e1c;
   background-color: rgba(235, 220, 178, 0.5); /* Transparent overlay */
   z-index: 1; /* Ensure overlay is above the background image */
 }
+
+.brandNewMusic {
+  img {
+    border-radius: 20px;
+  }
+}

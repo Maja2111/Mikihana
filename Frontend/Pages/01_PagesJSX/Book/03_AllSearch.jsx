@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { Header } from '@components/Header';
 import { Cards } from '@components/Cards';
 import { Footer } from '@components/Footer';
-import { mediaCards } from '@/mockData';
+import { mediaCardsNew, mediaCardsMust } from '@/mockData';
 
 //Stylingimporte
 import '@pagestyle/AllSearch.scss';
@@ -43,25 +43,25 @@ const SearchPage = () => {
           <h1>BRANDNEW</h1>
           <div className="cardcontainer">
             <Cards
-              key={mediaCards[0].id}
+              key={mediaCardsNew[0].id}
               onClickHandler={() => navigate('/allsearch/brandnew')}
-              title={mediaCards[0].title}
-              text={mediaCards[0].text}
-              imageUrl={mediaCards[0].imageUrl}
+              title={mediaCardsNew[0].title}
+              text={mediaCardsNew[0].text}
+              imageUrl={mediaCardsNew[0].imageUrl}
             />
             <Cards
-              key={mediaCards[1].id}
+              key={mediaCardsNew[1].id}
               onClickHandler={() => navigate('/allsearch/brandnewmovie')}
-              title={mediaCards[1].title}
-              text={mediaCards[1].text}
-              imageUrl={mediaCards[1].imageUrl}
+              title={mediaCardsNew[1].title}
+              text={mediaCardsNew[1].text}
+              imageUrl={mediaCardsNew[1].imageUrl}
             />
             <Cards
-              key={mediaCards[2].id}
+              key={mediaCardsNew[2].id}
               onClickHandler={() => navigate('/allsearch/brandnewmusic')}
-              title={mediaCards[2].title}
-              text={mediaCards[2].text}
-              imageUrl={mediaCards[2].imageUrl}
+              title={mediaCardsNew[2].title}
+              text={mediaCardsNew[2].text}
+              imageUrl={mediaCardsNew[2].imageUrl}
             />
           </div>
         </section>
@@ -69,25 +69,25 @@ const SearchPage = () => {
           <h1>MUST HAVE</h1>
           <div className="cardcontainer">
             <Cards
-              key={mediaCards[0].id}
+              key={mediaCardsMust[0].id}
               onClickHandler={() => navigate('/allsearch/mustread')}
-              title={mediaCards[0].title}
-              text={mediaCards[0].text}
-              imageUrl={mediaCards[0].imageUrl}
+              title={mediaCardsMust[0].title}
+              text={mediaCardsMust[0].text}
+              imageUrl={mediaCardsMust[0].imageUrl}
             />
             <Cards
-              key={mediaCards[1].id}
+              key={mediaCardsMust[1].id}
               onClickHandler={() => navigate('/allsearch/mustwatch')}
-              title={mediaCards[1].title}
-              text={mediaCards[1].text}
-              imageUrl={mediaCards[1].imageUrl}
+              title={mediaCardsMust[1].title}
+              text={mediaCardsMust[1].text}
+              imageUrl={mediaCardsMust[1].imageUrl}
             />
             <Cards
-              key={mediaCards[2].id}
+              key={mediaCardsMust[2].id}
               onClickHandler={() => navigate('/allsearch/mustlisten')}
-              title={mediaCards[2].title}
-              text={mediaCards[2].text}
-              imageUrl={mediaCards[2].imageUrl}
+              title={mediaCardsMust[2].title}
+              text={mediaCardsMust[2].text}
+              imageUrl={mediaCardsMust[2].imageUrl}
             />
           </div>
         </section>

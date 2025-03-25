@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import '@style/Carousel.scss';
@@ -16,17 +16,6 @@ export function Carousel() {
       return newIndex;
     });
   };
-
-  // useEffect(() => {
-  //   // TODO: Fetch images from backend API
-  //   // Example:
-  //   // const fetchImages = async () => {
-  //   //   const response = await fetch('/api/images');
-  //   //   const data = await response.json();
-  //   //   setImages(data);
-  //   // };
-  //   // fetchImages();
-  // }, []);
 
   return (
     <div className="carousel-container">

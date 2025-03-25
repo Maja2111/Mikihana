@@ -12,8 +12,12 @@
   transition: background-color 0.3s ease;
 
   & img {
-    width: 40px; // Adjusted for mobile
+    width: 50%; // Adjusted for mobile
     height: auto; // Maintain aspect ratio
+    margin: 10px 0;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 6px 24px 2px rgba(0, 0, 0, 0.83);
+    box-shadow: 10px 6px 24px 2px rgba(0, 0, 0, 0.83);
   }
 
   &__title {
