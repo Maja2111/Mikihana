@@ -1,9 +1,3 @@
-/**
- * @description:
- * search page
- * header: Logo und suchleiste
- * main: 2 sections
- */
 //Entwicklerimporte
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +11,6 @@ import { mediaCardsNew, mediaCardsMust } from '@/mockData';
 //Stylingimporte
 import '@pagestyle/AllSearch.scss';
 import '@/index.scss';
-
 const SearchPage = () => {
   const navigate = useNavigate();
 
@@ -35,11 +28,11 @@ const SearchPage = () => {
 
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
-        <section>
+      <main className="main">
+        <section className="section">
           <h1>BRANDNEW</h1>
           <div className="cardcontainer">
             <Cards
@@ -65,7 +58,7 @@ const SearchPage = () => {
             />
           </div>
         </section>
-        <section>
+        <section className="section">
           <h1>MUST HAVE</h1>
           <div className="cardcontainer">
             <Cards

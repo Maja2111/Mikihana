@@ -4,16 +4,16 @@
 @use '@style/_commonStyles' as *; // Importing shared common styles
 @use '@style/_flexboxUtilities' as *; // Importing shared flexbox utilities
 
-header {
-  margin-bottom: 25%;
+.Header {
+  margin-top: 5%;
 }
 
-main {
+.main {
   h1 {
     font-size: 2rem;
   }
 
-  section {
+  .section {
     @extend .flex-column; // Using shared flex column styles
     .profilePicture {
       @extend .profilePicture; // Using shared profile picture styles
@@ -41,11 +41,11 @@ p {
 
 // Media query for iPad Air
 @media (min-width: 820px) and (max-height: 1180px) {
-  header {
+  .Header {
     margin-bottom: 20%; /* Adjusted margin for iPad Air */
   }
 
-  main {
+  .main {
     h1 {
       font-size: 2.5rem; /* Adjusted font size for iPad Air */
     }

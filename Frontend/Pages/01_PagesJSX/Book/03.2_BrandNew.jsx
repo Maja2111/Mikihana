@@ -12,12 +12,12 @@ import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 const BrandNew = () => {
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
+      <main className="main">
         <h1>Hello user, books new publications</h1>
-        <section>
+        <section className="section">
           <SearchBar />
           <Carousel />
           <div className="description">

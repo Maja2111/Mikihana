@@ -11,6 +11,7 @@ import { LoadingBar } from '@components/LoadingBar.jsx';
 import { LoadingCircle } from '@components/LoadingCircle.jsx';
 import { GalleryForReadingBooks } from '@components/Gallery.jsx';
 import { GalleryForwatchMovie } from '@components/Gallery.jsx';
+import { Gallery } from '@components/Gallery.jsx';
 import { pageStatsYear, pageStatsMonth } from '@/mockData.js';
 import { bookStatsYear, bookStatsMonth } from '@/mockData.js';
 import { seriesStatsYear, seriesStatsMonth } from '@/mockDataMovie.js';
@@ -86,39 +87,38 @@ const Home = () => {
   return (
     <div className="container">
       <header>
-        <Header />
-        <nav className="nav">
-          <ul className="nav__links">
-            <li className="nav__link active">
-              <button onClick={() => setNavState('book')}>
-                <i className="bx bx-book"></i>
-              </button>
-            </li>
-            <li className="nav__link">
-              <button onClick={() => setNavState('movie')}>
-                <i className="bx bx-film"></i>
-              </button>
-            </li>
-            <li className="nav__link">
-              <button onClick={() => setNavState('music')}>
-                <i className="bx bx-disc"></i>
-              </button>
-            </li>
-            <div className="nav__light"></div>
-          </ul>
-        </nav>
+        <Header>
+          <nav className="nav">
+            <ul className="nav__links">
+              <li className="nav__link active">
+                <button onClick={() => setNavState('book')}>
+                  <i className="bx bx-book"></i>
+                </button>
+              </li>
+              <li className="nav__link">
+                <button onClick={() => setNavState('movie')}>
+                  <i className="bx bx-film"></i>
+                </button>
+              </li>
+              <li className="nav__link">
+                <button onClick={() => setNavState('music')}>
+                  <i className="bx bx-disc"></i>
+                </button>
+              </li>
+              <div className="nav__light"></div>
+            </ul>
+          </nav>
+        </Header>
       </header>
 
-      <main>
+      <main className="main">
         <h1>Your main area</h1>
         {navState === 'book' && (
           <>
-            <section className="activeBook">
+            <section className="activeBook section">
               <div>
                 <h2>Active Book</h2>
-                <i>
-                  <img src="/Upload/wtmh.jpeg" alt="cover" />
-                </i>
+                <Gallery />
                 <p>Title: When the moon hatched</p>
                 <p>Author: Sarah A. Parker</p>
                 <LoadingBar />
@@ -137,7 +137,7 @@ const Home = () => {
               />
             </section>
 
-            <section className="target">
+            <section className="target section">
               <h2>Your reading target</h2>
               <img src="/Upload/Bücherstapel.jpg" alt="placeholder" />
               <LoadingCircle />
@@ -153,7 +153,7 @@ const Home = () => {
               />
             </section>
 
-            <section className="pageStatistic">
+            <section className="pageStatistic section">
               <h2>Page Statistics</h2>
               <PageStatisticsChart
                 view={view}
@@ -162,7 +162,7 @@ const Home = () => {
               />
             </section>
 
-            <section className="booksStatistic">
+            <section className="booksStatistic section">
               <h2>Books Statistics</h2>
               <BookStatisticsChart
                 view={bookView}
@@ -171,14 +171,14 @@ const Home = () => {
               />
             </section>
 
-            <section>
+            <section className="section">
               <h3>Your reading history</h3>
               <div className="gallery">
                 <GalleryForReadingBooks />
               </div>
             </section>
 
-            <section className="series">
+            <section className="series section">
               <h2>Series</h2>
               <h3>days in a row </h3>
               <div>
@@ -195,7 +195,7 @@ const Home = () => {
 
         {navState === 'movie' && (
           <div className="movieSection">
-            <section className="activeSeries">
+            <section className="activeSeries section">
               <div>
                 <h2>Active series</h2>
                 <i>
@@ -222,7 +222,7 @@ const Home = () => {
               </div>
             </section>
 
-            <section className="seriesStatistic">
+            <section className="seriesStatistic section">
               <h2>Series Statistics</h2>
               <SeriesStatisticsChart
                 view={view}
@@ -231,7 +231,7 @@ const Home = () => {
               />
             </section>
 
-            <section className="watchHistory">
+            <section className="watchHistory section">
               <h3>Your watch history</h3>
               <div className="gallery">
                 <GalleryForwatchMovie />
@@ -241,7 +241,7 @@ const Home = () => {
         )}
 
         {navState === 'music' && (
-          <section className="musicSection">
+          <section className="musicSection section">
             <h2>Your music section</h2>
             <img src="/Upload/coming soon.png" alt="coming soon" />
           </section>

@@ -84,12 +84,12 @@ const Registeration = () => {
 
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
+      <main className="main">
         <h1>Welcome to Mikihana, your App for Books and more!</h1>
-        <section>
+        <section className="section">
           <h2>REGISTRATION</h2>
           <p>
             <img

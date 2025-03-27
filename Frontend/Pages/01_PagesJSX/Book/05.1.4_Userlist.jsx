@@ -16,7 +16,7 @@ const Userlist = () => {
         <Header />
         <h1>your list</h1>
       </header>
-      <main>
+      <main className="main">
         <GalleryWithPlaceholder listType="userlist" />
         <Outlet />
       </main>

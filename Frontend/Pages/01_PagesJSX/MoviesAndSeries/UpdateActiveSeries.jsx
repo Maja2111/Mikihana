@@ -38,12 +38,12 @@ const ActiveSeriesPage = () => {
 
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
+      <main className="main">
         <h1>Your active series</h1>
-        <section className="activeBook">
+        <section className="activeBook section">
           <div>
             <h2>active series</h2>
             <i>
@@ -56,7 +56,7 @@ const ActiveSeriesPage = () => {
           </div>
         </section>
 
-        <section className="progressUpdate">
+        <section className="progressUpdate section">
           <h2>Update Progress</h2>
           <FontAwesomeIcon
             icon={faRectangleXmark}

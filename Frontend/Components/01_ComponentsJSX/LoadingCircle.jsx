@@ -1,8 +1,19 @@
 import React from 'react';
 import '@style/LoadingCircle.scss';
-import { loadingData } from '@/mockData';
 
 export const LoadingCircle = () => {
+  const [loadingData, setLoadingData] = useState('');
+  useEffect(() => {
+    const fetchProgress = async () => {
+      try {
+        const response = await fetch('/api/progress');
+        const data = await response.json();
+      } catch (error) {
+        console.error('Error fetching progress:', error);
+      }
+    };
+    fetchProgress();
+  }, []);
   return (
     <div className="loading-circle">
       <div

@@ -18,7 +18,7 @@ const Watchlist = () => {
         <Header />
         <h1>Your watchlist</h1>
       </header>
-      <main>
+      <main className="main">
         <GalleryWithPlaceholderMovie listType="watchlist" />
         <Outlet />
       </main>

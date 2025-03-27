@@ -38,17 +38,17 @@ const ProfilPage = () => {
 
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
-        <section className="library" onClick={handleNavigateToLibrary}>
+      <main className="main">
+        <section className="library section" onClick={handleNavigateToLibrary}>
           <h2>Library</h2>
           <Gallery />
         </section>
 
         <section
-          className="videoLibrary"
+          className="videoLibrary section"
           onClick={handleNavigateToVideolibrary}
         >
           <h2>Video library</h2>
@@ -56,7 +56,7 @@ const ProfilPage = () => {
         </section>
 
         <section
-          className="musicLibrary"
+          className="musicLibrary section"
           onClick={handleNavigateToMusiclibrary}
         >
           <h2>Music library</h2>
@@ -64,7 +64,7 @@ const ProfilPage = () => {
         </section>
 
         <section
-          className="editProfile"
+          className="editProfile section"
           onClick={() => handleNavigateToEditProfile(navigate)}
         >
           <h2>Edit Profile</h2>

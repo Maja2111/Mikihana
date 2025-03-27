@@ -11,7 +11,11 @@ export function NavigateToLogin() {
     navigate('/');
   };
   return (
-    <FontAwesomeIcon icon={faChevronLeft} onClick={handleNavigateToLogin} />
+    <FontAwesomeIcon
+      className="icon"
+      icon={faChevronLeft}
+      onClick={handleNavigateToLogin}
+    />
   );
 }
 
@@ -24,7 +28,11 @@ export function NavigateToHome() {
   };
 
   return (
-    <FontAwesomeIcon icon={faChevronLeft} onClick={handleNavigateToHome} />
+    <FontAwesomeIcon
+      className="icon"
+      icon={faChevronLeft}
+      onClick={handleNavigateToHome}
+    />
   );
 }
 
@@ -35,7 +43,11 @@ export function NavigateToAllSearch() {
     navigate('/allsearch');
   };
   return (
-    <FontAwesomeIcon icon={faChevronLeft} onClick={handleNavigateToAllSearch} />
+    <FontAwesomeIcon
+      className="icon"
+      icon={faChevronLeft}
+      onClick={handleNavigateToAllSearch}
+    />
   );
 }
 
@@ -47,7 +59,11 @@ export function NavigateToLibrary() {
   };
 
   return (
-    <FontAwesomeIcon icon={faChevronLeft} onClick={handleNavigateToLibrary} />
+    <FontAwesomeIcon
+      className="icon"
+      icon={faChevronLeft}
+      onClick={handleNavigateToLibrary}
+    />
   );
 }
 
@@ -58,6 +74,10 @@ export function NavigateToProfile() {
     navigate('/profile');
   };
   return (
-    <FontAwesomeIcon icon={faChevronLeft} onClick={handleNavigateToProfile} />
+    <FontAwesomeIcon
+      className="icon"
+      icon={faChevronLeft}
+      onClick={handleNavigateToProfile}
+    />
   );
 }

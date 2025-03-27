@@ -34,8 +34,8 @@ const Library = () => {
         <Header />
         <h1>Library</h1>
       </header>
-      <main>
-        <section className="wishlist">
+      <main className="main">
+        <section className="wishlist section">
           <h2>wishlist</h2>
           <Gallery />
           <FontAwesomeIcon
@@ -45,7 +45,7 @@ const Library = () => {
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="favourites">
+        <section className="favourites section">
           <h2>favourites</h2>
           <Gallery />
           <FontAwesomeIcon
@@ -55,7 +55,7 @@ const Library = () => {
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="unreadBooks">
+        <section className="unreadBooks section">
           <h2>unread books</h2>
           <Gallery />
           <FontAwesomeIcon
@@ -65,7 +65,7 @@ const Library = () => {
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="userlist">
+        <section className="userlist section">
           <h2>userlist</h2>
           <Gallery />
           <FontAwesomeIcon

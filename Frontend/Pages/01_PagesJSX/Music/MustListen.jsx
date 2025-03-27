@@ -9,11 +9,11 @@ import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 const MustListen = () => {
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
-        <section className="mustListen">
+      <main className="main">
+        <section className="mustListen section">
           <h1>
             Here you will find our recommendations for music you should have
             heard.{' '}

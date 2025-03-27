@@ -10,11 +10,11 @@ import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 const BrandNewMusic = () => {
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
-        <section className="brandNewMusic">
+      <main className="main">
+        <section className="brandNewMusic section">
           <h1>Hello user, welcome to brand new music</h1>
           <img src="/Upload/coming soon.png" alt="coming soon" />
         </section>

@@ -27,7 +27,7 @@ const AddedMovie = () => {
       <header>
         <Header />
       </header>
-      <section>
+      <section className="section">
         <form onSubmit={handleSubmit}>
           <input type="text" name="title" placeholder="Title" required />
           <input type="text" name="genre" placeholder="Genre" required />

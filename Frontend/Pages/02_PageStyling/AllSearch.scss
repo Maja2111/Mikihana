@@ -1,18 +1,10 @@
-.header {
-  margin-top: 20%;
-}
-
-section {
+.section {
   margin: 20px;
 }
 
 // Media query for iPad Air
 @media (min-width: 820px) and (max-height: 1180px) {
-  .header {
-    margin-top: 15%; // Adjusted margin for iPad Air
-  }
-
-  section {
+  .section {
     margin: 15px; // Adjusted margin for iPad Air
   }
 }

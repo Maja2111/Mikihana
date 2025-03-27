@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import '@style/Carousel.scss';
-import { carouselImages } from '@/mockData.js';
-import { carouselImagesMovie } from '@/mockDataMovie.js';
 
 export function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [carouselImages, setCarouselImages] = useState([]);
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await fetch('/api/searchBooks/example-query/0'); // Using 'example-query' as a placeholder
+        const data = await response.json();
+        setCarouselImages(data);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+      }
+    };
+
+    fetchBooks();
+  }, []);
 
   const handleNavigation = (direction) => {
     setCurrentIndex((prevIndex) => {
@@ -30,8 +43,8 @@ export function Carousel() {
 
         <div className="carousel-center">
           <img
-            src={carouselImages[currentIndex].url}
-            alt={carouselImages[currentIndex].alt}
+            src={carouselImages[currentIndex]?.imageUrl}
+            alt={carouselImages[currentIndex]?.title}
             className="carousel-item"
           />
         </div>

@@ -10,11 +10,11 @@ import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 const Impressum = () => {
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
-        <section>
+      <main className="main">
+        <section className="section">
           <h2>Impressum</h2>
           <p>
             Mikihana <br />
@@ -40,7 +40,7 @@ const Impressum = () => {
             Sabine Weber
           </p>
           <p>
-            Quelle: <a href="https://www.juraforum.de">Klick mich</a>
+            Quelle: <a href="https://www.juraforum.de">click me</a>
           </p>
         </section>
         <NavigateToLogin />

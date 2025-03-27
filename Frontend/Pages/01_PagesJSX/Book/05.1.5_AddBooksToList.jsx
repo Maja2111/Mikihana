@@ -29,7 +29,7 @@ const AddedBook = () => {
       <header>
         <Header />
       </header>
-      <section>
+      <section className="section">
         <form onSubmit={handleSubmit}>
           <input
             type="text"

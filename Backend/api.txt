@@ -1,0 +1,55 @@
+[routes.js]
+post	/register
+get		/verify/:token
+post	/login
+post	/forgot-password
+post	/reset-password/:token
+
+[profileRoutes.js]
+get		/profile
+get		/searchBooks/:query/:startIndex
+get		/getBookDetails/:id
+post	/wishlist
+post	/favourite
+post	/unreadBooks
+post	/userList
+post	/addBookToList
+
+
+[headers]
+headers: {Authorization: `Bearer ${token}`,},
+
+
+[DESIGN]
+getActiveBook				ret:ARR
+addActiveBook				BOOK-model
+progressActiveBook	PROGRESS-model
+getReadingTarget		ret:ARR
+addReadingTarget		TARGET-model
+getPageStatistics		year,month		ret:ARR
+getBookStatistics		year,month		ret:ARR
+getReadingHistory		ret:ARR
+getWishlist					ret:ARR
+setWishlist					bookID
+getFavourites				ret:ARR
+setFavourites				bookID
+getUnreadBooks			ret:ARR
+getUserlist					ret:ARR
+getProfile					ret:USER-model
+
+
+[DB ที่มีตอนนี้]
+books
+favourites
+unreadingbooks
+userlists					เอามาเก็บ activeBook
+users
+userverifications
+wishlists
+
+[DB ที่ต้องเพิ่ม]
+Progress					ต้องออกแบบใหม่ ใช้แสดงสถิติ
+ReadingGoal				ต้องออกแบบใหม่
+
+
+

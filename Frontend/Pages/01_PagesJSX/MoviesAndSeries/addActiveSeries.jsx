@@ -32,7 +32,7 @@ const AddActiveSeries = () => {
         <Header />
       </header>
       <div className="add-active-book">
-        <section>
+        <section className="section">
           <h2>add new active series</h2>
           <form onSubmit={handleSubmit}>
             <div>

@@ -18,7 +18,7 @@ const Wishlist = () => {
         <Header />
         <h1>Your Wishlist</h1>
       </header>
-      <main>
+      <main className="main">
         <GalleryWithPlaceholder listType="wishlist" />
         <Outlet />
       </main>

@@ -16,7 +16,7 @@ const WatchFavorites = () => {
         <Header />
         <h1>Your watchfavorites</h1>
       </header>
-      <main>
+      <main className="main">
         <GalleryWithPlaceholderMovie listType="watchfavorites" />
         <Outlet />
       </main>

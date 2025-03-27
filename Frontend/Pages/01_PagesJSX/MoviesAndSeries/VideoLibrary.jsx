@@ -33,8 +33,8 @@ const VideoLibrary = () => {
         <Header />
         <h1>Video library</h1>
       </header>
-      <main>
-        <section className="videoLibrary">
+      <main className="main">
+        <section className="videoLibrary section">
           <h2>watchlist</h2>
           <Gallery />
           <FontAwesomeIcon
@@ -44,7 +44,7 @@ const VideoLibrary = () => {
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="VideoFavourites">
+        <section className="VideoFavourites section">
           <h2>favourites</h2>
           <Gallery />
           <FontAwesomeIcon
@@ -54,7 +54,7 @@ const VideoLibrary = () => {
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="unwatch">
+        <section className="unwatch section">
           <h2>unwatch list</h2>
           <Gallery />
           <FontAwesomeIcon
@@ -64,7 +64,7 @@ const VideoLibrary = () => {
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="video-userlist">
+        <section className="video-userlist section">
           <h2>userlist</h2>
           <Gallery />
           <FontAwesomeIcon

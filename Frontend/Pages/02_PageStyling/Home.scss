@@ -123,9 +123,8 @@ button {
   background-color: var(--bell-icon-color);
 }
 
-main {
-  margin-top: -100px; /* Abstand zwischen Header und Main verringern */
-}
+/* ------------ MENU Ende------------ */
+
 //Book stats - Start -
 //section activeBook - Start -
 .activeBook {
@@ -264,11 +263,15 @@ main {
 
 // Media query for iPad Air
 @media (min-width: 820px) and (max-height: 1180px) {
-  .header {
-    font-size: 2.5rem; /* Adjusted font size for iPad Air */
-  }
-
   .content {
-    padding: 30px; /* Adjusted padding for iPad Air */
+    padding: 40px; /* Adjusted padding for iPad Air */
+  }
+  .activeBook {
+    .fa-square-plus {
+      top: 10%;
+    }
+    .fa-chevron-right {
+      top: 20%;
+    }
   }
 }

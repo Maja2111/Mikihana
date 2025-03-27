@@ -16,7 +16,7 @@ const UnreadBooks = () => {
         <Header />
         <h1>Your unread books</h1>
       </header>
-      <main>
+      <main className="main">
         <GalleryWithPlaceholder listType="unreadbooks" />
         <Outlet />
       </main>

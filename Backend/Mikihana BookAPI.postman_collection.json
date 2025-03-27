@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "fe9cddf9-de04-42e4-99e7-b837d40bf565",
+		"name": "Mikihana BookAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32645286"
+	},
+	"item": [
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY3ZDMyNWIxZmJkNjJiODhmZjc3YTI0ZSIsImZpcnN0TmFtZSI6ImJiYiIsImxhc3ROYW1lIjoiYmJiIiwidXNlcm5hbWUiOiJiYmIiLCJlbWFpbCI6ImJiYkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDVsdlVFemMwR2ZjUXRibXRMUU9ack9MQlZINnhrczFxcE0wcXFFbnBIZVl6dTliUkdzeTdPIiwiYmlydGhkYXkiOiIyMDIzLTEyLTMxVDAwOjAwOjAwLjAwMFoiLCJnZW5kZXIiOiJmZW1hbGUiLCJ2ZXJpZmllZCI6dHJ1ZSwidmVyaWZpY2F0aW9uVG9rZW4iOm51bGwsInByb2ZpbGVQaG90byI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyNS0wMy0xM1QxODozNjozMy44OTFaIiwidXBkYXRlZEF0IjoiMjAyNS0wMy0xM1QxODozNzoyNC42NzNaIiwiX192IjowfSwiaWF0IjoxNzQyMzUyMTAxfQ._0X6wlxMJVFmrTXXXLTIjybC8h_2niMsgf5urkncLlM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{api-host}/api/profile/profile",
+							"host": [
+								"{api-host}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "wishlist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"67d31f5cff048716a83e7587\",\r\n    \"bookId\":\"BZncDgAAQBAJ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-host}}/{{uri-profile}}/wishlist",
+							"host": [
+								"{{api-host}}"
+							],
+							"path": [
+								"{{uri-profile}}",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "favourite",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"67d31f5cff048716a83e7587\",\r\n    \"bookId\":\"BZncDgAAQBAJ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-host}}/{{uri-profile}}/favourite",
+							"host": [
+								"{{api-host}}"
+							],
+							"path": [
+								"{{uri-profile}}",
+								"favourite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unreadBooks",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"67d31f5cff048716a83e7587\",\r\n    \"bookId\":\"BZncDgAAQBAJ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-host}}/{{uri-profile}}/unreadBooks",
+							"host": [
+								"{{api-host}}"
+							],
+							"path": [
+								"{{uri-profile}}",
+								"unreadBooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userList",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"67d31f5cff048716a83e7587\",\r\n    \"bookId\":\"BZncDgAAQBAJ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-host}}/{{uri-profile}}/userList",
+							"host": [
+								"{{api-host}}"
+							],
+							"path": [
+								"{{uri-profile}}",
+								"userList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "progress",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"67d31f5cff048716a83e7587\",\r\n    \"bookId\":\"BZncDgAAQBAJ\",\r\n    \"progress\": 51\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-host}}/{{uri-profile}}/progress",
+							"host": [
+								"{{api-host}}"
+							],
+							"path": [
+								"{{uri-profile}}",
+								"progress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readingGoal",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"67d31f5cff048716a83e7587\",\r\n    \"bookId\":\"BZncDgAAQBAJ\",\r\n    \"targetType\": \"books\",\r\n    \"quantity\": 10,\r\n    \"recurring\": true,\r\n    \"recurringInterval\": \"yearly\",\r\n    \"note\": \"abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-host}}/{{uri-profile}}/readingGoal",
+							"host": [
+								"{{api-host}}"
+							],
+							"path": [
+								"{{uri-profile}}",
+								"readingGoal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addBookToList",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"67d31f5cff048716a83e7587\",\r\n    \"listType\": \"favourite\",\r\n    \"bookId\":\"BZncDgAAQBAJ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-host}}/{{uri-profile}}/addBookToList",
+							"host": [
+								"{{api-host}}"
+							],
+							"path": [
+								"{{uri-profile}}",
+								"addBookToList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "searchBookskDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api-host}}/{{uri-profile}}/searchBooks/NodeJS/0",
+					"host": [
+						"{{api-host}}"
+					],
+					"path": [
+						"{{uri-profile}}",
+						"searchBooks",
+						"NodeJS",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api-host}}/{{uri-profile}}/getBookDetails/CwBwDQAAQBAJ",
+					"host": [
+						"{{api-host}}"
+					],
+					"path": [
+						"{{uri-profile}}",
+						"getBookDetails",
+						"CwBwDQAAQBAJ"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api-host",
+			"value": "http://localhost:4001",
+			"type": "string"
+		},
+		{
+			"key": "uri-profile",
+			"value": "api/profile",
+			"type": "string"
+		},
+		{
+			"key": "uri-user",
+			"value": "api/users",
+			"type": "string"
+		}
+	]
+}

@@ -15,7 +15,7 @@ const Favourites = () => {
         <Header />
         <h1>Your Favourites</h1>
       </header>
-      <main>
+      <main className="main">
         <GalleryWithPlaceholder listType="favourites" />
         <Outlet />
       </main>

@@ -16,7 +16,7 @@ const MovieUserlist = () => {
         <Header />
         <h1>your list</h1>
       </header>
-      <main>
+      <main className="main">
         <GalleryWithPlaceholderMovie listType="movieuserlist" />
         <Outlet />
       </main>

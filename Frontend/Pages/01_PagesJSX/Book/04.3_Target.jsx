@@ -26,16 +26,16 @@ const Target = () => {
 
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
+      <main className="main">
         <h1>Your new goal</h1>
         <p>Set yourself a goal that you want to complete by a certain date!</p>
-        <section className="targetTitle">
+        <section className="targetTitle section">
           <input type="text" placeholder="enter title" />
         </section>
-        <section className="sectionTwo">
+        <section className="sectionTwo section">
           <label htmlFor="targetType">Select your target:</label>
           <select
             id="targetType"
@@ -52,7 +52,7 @@ const Target = () => {
             }`}
           />
         </section>
-        <section className="time period">
+        <section className="timePeriod section">
           <div>
             <label htmlFor="recurringtarget">Recurring target:</label>
             <input

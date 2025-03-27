@@ -16,7 +16,7 @@ const UnwatchList = () => {
         <Header />
         <h1>Your unwatched list</h1>
       </header>
-      <main>
+      <main className="main">
         <GalleryWithPlaceholderMovie listType="unwatchlist" />
         <Outlet />
       </main>

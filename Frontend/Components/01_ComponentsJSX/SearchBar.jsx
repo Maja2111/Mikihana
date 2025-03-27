@@ -1,38 +1,41 @@
-import React from 'react';
-import { useState } from 'react';
-import books from '@/mockData';
+import React, { useState } from 'react';
 
-export function SearchBar({}) {
+export function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
+  const handleSearch = async (event) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+
+    if (term) {
+      try {
+        const response = await fetch(`/searchBooks/:query/:startIndex`);
+        const data = await response.json();
+        setSearchResults(data || []); // Sicherstellen, dass es ein Array gibt
+      } catch (error) {
+        console.error('API fetch failed', error);
+      }
+    } else {
+      setSearchResults([]);
+    }
   };
-  const filteredBooks = books.filter((book) =>
-    book.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+
   return (
     <>
       <input
+        className="search"
         type="search"
-        name="brandNewRead"
-        id="brandNewRead"
+        name="search"
+        id="search"
         placeholder="search"
-        aria-label="search to Must-Reads"
+        aria-label="search"
         onChange={handleSearch}
       />
       <div className="results">
-        {' '}
-        {/* Hier werden die Suchergebnisse angezeigt */}
-        {searchTerm &&
-          filteredBooks.map(
-            (
-              book,
-              index // Ergebnisse nur anzeigen, wenn eine Suchanfrage gestellt wurde
-            ) => (
-              <div key={index}>{book.title}</div> // Rendern der gefilterten Bücher
-            )
-          )}
+        {searchResults.map((book, index) => (
+          <div key={index}>{book.title}</div>
+        ))}
       </div>
     </>
   );

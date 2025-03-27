@@ -13,9 +13,9 @@ const MusicLibrary = () => {
       <header>
         <Header />
       </header>
-      <main>
+      <main className="main">
         <h2>Music library</h2>
-        <section>
+        <section className="section">
           <img
             id="coming-soon"
             src="/Upload/coming soon.png"

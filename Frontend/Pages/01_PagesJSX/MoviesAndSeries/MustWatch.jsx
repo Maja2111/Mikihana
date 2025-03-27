@@ -11,11 +11,11 @@ import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 const MustWatch = () => {
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
-        <section>
+      <main className="main">
+        <section className="section">
           <h1>Here you will find the most popular movies and series</h1>
           <SearchBar />
           <Carousel />

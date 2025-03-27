@@ -20,10 +20,6 @@ select {
   @extend select; // Using shared select styles
 }
 
-.header {
-  @extend .header; // Using shared header styles
-}
-
 .loadingCircle {
   @extend .loadingCircle; // Using shared loading circle styles
 }

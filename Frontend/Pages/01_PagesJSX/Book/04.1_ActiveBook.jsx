@@ -38,12 +38,12 @@ const ActiveBookPage = () => {
 
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
+      <main className="main">
         <h1>Your Active Book</h1>
-        <section className="activeBook">
+        <section className="activeBook section">
           <div>
             <h2>Active Book</h2>
             <i>
@@ -55,7 +55,7 @@ const ActiveBookPage = () => {
           </div>
         </section>
 
-        <section className="progressUpdate">
+        <section className="progressUpdate section">
           <h2>Update Progress</h2>
           <FontAwesomeIcon
             icon={faRectangleXmark}

@@ -24,11 +24,11 @@ const EditProfile = () => {
   };
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
       <main>
-        <section className="editProfile">
+        <section className="editProfile section">
           <h1>Edit Profil </h1>
           {/*verbindung zum Backend um das Profilbild zu ändern */}
           <img src="/Upload/Äffchen.png" alt="Äffchen" />

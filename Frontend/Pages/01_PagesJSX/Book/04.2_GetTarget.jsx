@@ -17,13 +17,13 @@ import '@pagestyle/getTarget.scss';
 const GetTarget = () => {
   return (
     <div className="container">
-      <header className="header">
+      <header>
         <Header />
       </header>
-      <main>
+      <main className="main">
         <h1>Your reading goals</h1>
         {goals.map((goal) => (
-          <section key={goal.id} className="goalItem">
+          <section key={goal.id} className="goalItem section">
             <h3>Targettitle</h3>
             <div className="pelements">
               <p>
