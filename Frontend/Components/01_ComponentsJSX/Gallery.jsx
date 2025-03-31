@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '@style/Gallery.scss';
+import { readingBooks } from '@/mockData';
 import {
   galleryImagesMovie,
   galleryWithPlaceholderMovie,
 } from '@/mockDataMovie.js';
 
-let [galleryImages, setGalleryImages] = useState([]);
 //allgemeine Gallery -> 05_Profile, 05.1_Library,
 export function Gallery() {
+  const [galleryImages, setGalleryImages] = useState([]);
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch('/api/searchBooks/example-query/0'); // Using 'example-query' as a placeholder
+        const response = await fetch(
+          `${
+            import.meta.env.VITE_BASE_URL
+          }/api/profile/searchBooks/example-query/0`
+        ); // Using 'example-query' as a placeholder
         const data = await response.json();
-        setGalleryImages(data);
+        if (response.status === 200) setGalleryImages(data);
       } catch (error) {
         console.error('Error fetching books:', error);
       }
@@ -40,10 +45,13 @@ export function Gallery() {
 export function GalleryWithPlaceholder({ listType }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const [galleryImages, setGalleryImages] = useState([]);
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch('/api/searchBooks/example-query/0'); // Using 'example-query' as a placeholder
+        const response = await fetch(
+          `${import.meta.env.VITE_BASE_URL}/api/searchBooks/example-query/0`
+        ); // Using 'example-query' as a placeholder
         const data = await response.json();
         setGalleryImages(data);
       } catch (error) {
@@ -87,19 +95,6 @@ export function GalleryWithPlaceholder({ listType }) {
 
 //Home - section readingHistory
 export function GalleryForReadingBooks() {
-  useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const response = await fetch('/api/searchBooks/example-query/0'); // Using 'example-query' as a placeholder
-        const data = await response.json();
-        setGalleryImages(data);
-      } catch (error) {
-        console.error('Error fetching books:', error);
-      }
-    };
-
-    fetchBooks();
-  }, []);
   return (
     <div className="gallery-container">
       <div className="gallery-grid">

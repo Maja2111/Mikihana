@@ -12,6 +12,7 @@ import { LoadingCircle } from '@components/LoadingCircle.jsx';
 import { GalleryForReadingBooks } from '@components/Gallery.jsx';
 import { GalleryForwatchMovie } from '@components/Gallery.jsx';
 import { Gallery } from '@components/Gallery.jsx';
+import { Carousel } from '@components/Carousel.jsx';
 import { pageStatsYear, pageStatsMonth } from '@/mockData.js';
 import { bookStatsYear, bookStatsMonth } from '@/mockData.js';
 import { seriesStatsYear, seriesStatsMonth } from '@/mockDataMovie.js';
@@ -118,7 +119,7 @@ const Home = () => {
             <section className="activeBook section">
               <div>
                 <h2>Active Book</h2>
-                <Gallery />
+                <Carousel />
                 <p>Title: When the moon hatched</p>
                 <p>Author: Sarah A. Parker</p>
                 <LoadingBar />

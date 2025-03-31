@@ -6,13 +6,20 @@ import '@style/Carousel.scss';
 export function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselImages, setCarouselImages] = useState([]);
+  console.log(typeof carouselImages);
 
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch('/api/searchBooks/example-query/0'); // Using 'example-query' as a placeholder
+        const response = await fetch(
+          `${
+            import.meta.env.VITE_BASE_URL
+          }/api/profile/searchBooks/example-query/0`
+        );
         const data = await response.json();
-        setCarouselImages(data);
+        console.log('Fetched data:', data); // Log the fetched data
+        if (response.status === 200)
+          setCarouselImages(Array.isArray(data) ? data : Object.values(data));
       } catch (error) {
         console.error('Error fetching books:', error);
       }

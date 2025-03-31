@@ -19,7 +19,7 @@ export const Header = ({ children }) => {
   };
 
   return (
-    <header>
+    <div className="container">
       <div className="Header">
         {location.pathname !== '/' &&
           location.pathname !== '/registration' && ( // Conditionally render button
@@ -30,6 +30,6 @@ export const Header = ({ children }) => {
         <img src="/Upload/Logo Cayenne.png" alt="logo" className="logo" />
       </div>
       {children}
-    </header>
+    </div>
   );
 };

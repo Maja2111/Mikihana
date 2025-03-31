@@ -10,7 +10,7 @@
   color: $primary-color;
   background-color: $secondary-color;
   width: 100%;
-  min-height: 100vh; // Statt height für bessere Browser-Kompatibilität
+  min-height: 50vh; // Statt height für bessere Browser-Kompatibilität
   display: flex;
   flex-direction: column;
   overflow: hidden; // Verhindert Scrollbalken bei festen Elementen
@@ -24,19 +24,8 @@
   padding-bottom: 20px;
 }
 
-// Footer: 1/12 der Höhe (Hälfte der ursprünglichen Höhe)
-footer {
-  height: 5%; // Reduzierte Höhe für den Footer
-  background-color: $iconbar-color;
-  position: fixed;
-  bottom: 0;
-  width: 96%;
-  z-index: 1000;
-}
-
 // Sektionen mit border-radius und Abstand
 .section {
-  margin: 20px;
   border-radius: 10px;
   padding: 15px;
   background-color: $tertiary-color;
@@ -73,11 +62,6 @@ p {
     height: 80%; // Adjusted height for this screen size
   }
 
-  footer {
-    height: 8%; // Adjusted height for this screen size
-    width: 98%;
-  }
-
   h1 {
     font-size: 2.5rem; // Adjusted font size for this screen size
   }
@@ -93,16 +77,8 @@ p {
 
 //Desktopansicht
 @media (min-width: 1280px) and (min-height: 800px) {
-  header {
-    height: 11%; // Adjusted height for this screen size
-  }
-
   .main {
     height: 82%; // Adjusted height for this screen size
-  }
-
-  footer {
-    height: 7%; // Adjusted height for this screen size
   }
 
   h1 {
