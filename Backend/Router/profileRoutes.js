@@ -12,6 +12,7 @@ import {
 } from '../Models/Book.js';
 import { User } from '../Models/User.js';
 import authMiddleware from '../Middleware/middleware.js';
+import { data } from 'react-router-dom';
 
 dotenv.config();
 
@@ -22,7 +23,8 @@ router.get('/profile', authMiddleware, async (req, res) => {
 });
 
 //Google Books API URL
-const googleBooksAPI = process.env.GOOGLE_BOOKS_API_KEY; //SOM
+const googleBooksAPI =
+  'https://www.googleapis.com/books/v1/volumes?key=AIzaSyDH6ZVxSe8UVqaqDxOOJ2T8rRi0Qdn3tE8';
 
 //Eine generische Funktion zum Arufen von Büchern von Google Books API
 const fetchGoogleBooks = async (query, startIndex = 0, maxResults = 40) => {
@@ -32,13 +34,25 @@ const fetchGoogleBooks = async (query, startIndex = 0, maxResults = 40) => {
         q: query,
         startIndex: startIndex,
         maxResults: maxResults,
-        key: process.env.GOOGLE_BOOKS_API_KEY,
+        // key: process.env.GOOGLE_BOOKS_API_KEY,
       },
     });
-    return response.data.items;
+    return response.data.items.map(mapGoogleBooks);
   } catch (err) {
+    console.error(err);
     throw new Error('Error retreiving Google Books');
   }
+};
+
+const mapGoogleBooks = (googleBook) => {
+  // console.log(JSON.stringify(googleBook.volumeInfo.imageLinks, null, 2));
+  return new Book({
+    //description: googleBook.volumeInfo.description,
+    title: googleBook.volumeInfo.title,
+    author: googleBook.volumeInfo.authors?.pop(),
+    //pageCount: googleBook.volumeInfo.pageCount,
+    imageUrl: googleBook.volumeInfo.imageLinks.smallThumbnail,
+  });
 };
 
 //SOM
