@@ -2,11 +2,10 @@
 @use '@pagestyle/_variables' as *; // Importing color variables
 
 .Header {
-  height: 10%; // Reduzierte Höhe für den Header
   background-color: $secondary-color; // Explizite Hintergrundfarbe
   & img.logo {
-    width: 40px; // Adjusted for mobile
-    height: 40px; // Adjusted for mobile
+    width: 50px; // Adjusted for mobile
+    height: 50px; // Adjusted for mobile
     position: absolute;
     right: 15px; // Adjusted for mobile
     top: 15px; // Adjusted for mobile

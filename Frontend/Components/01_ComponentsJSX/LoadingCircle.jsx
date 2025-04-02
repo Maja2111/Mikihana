@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react'; // Import useEffect and useS
 import '@style/LoadingCircle.scss';
 
 export const LoadingCircle = () => {
-  const [loadingData, setLoadingData] = useState({ circle: { progress: 0 } }); // Initialize with a default structure
+  const [loadingData, setLoadingData] = useState({ circle: { progress: 40 } }); // Initialize with a default structure
   useEffect(() => {
     const fetchProgress = async () => {
       try {
-        const response = await fetch('/api/progress');
-        const text = await response.text(); // Get response as text
-        console.log('Response:', text); // Log the response
-        const data = JSON.parse(text); // Parse the text as JSON
+        const response = await fetch(
+          `${import.meta.env.VITE_BASE_URL}/api/profile/progress`
+        );
+        const data = await response.json();
         setLoadingData(data); // Set the loadingData with the fetched data
       } catch (error) {
         console.error('Error fetching progress:', error);
       }
     };
-
     fetchProgress();
   }, []);
   return (

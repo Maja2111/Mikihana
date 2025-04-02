@@ -1,13 +1,16 @@
+@use '@pagestyle/_variables' as *;
+
 .loading-bar {
   width: 100%; // Adjusted for mobile
   height: 10px; // Adjusted for mobile
-  background-color: #f0c688;
+  background-color: $secondary-color;
   border-radius: 4px;
   overflow: hidden;
+  margin-top: 20px;
 
   &__progress {
     height: 100%;
-    background-color: grey;
+    background-color: $primary-color;
     transition: width 0.3s ease;
   }
 
@@ -20,12 +23,12 @@
   &__bar {
     flex: 1;
     height: 100%;
-    background-color: #f0c688;
+    background-color: $secondary-color;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 
     &--active {
-      background-color: grey;
+      background-color: $primary-color;
     }
   }
 }

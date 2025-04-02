@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
+import { Carousel } from '@components/Carousel.jsx';
 import { LoadingBar } from '@components/LoadingBar.jsx';
 
 //Stylingimpore
@@ -46,11 +47,7 @@ const ActiveBookPage = () => {
         <section className="activeBook section">
           <div>
             <h2>Active Book</h2>
-            <i>
-              <img src="/Upload/wtmh.jpeg" alt="cover" />
-            </i>
-            <p>Title: When the moon hatched</p>
-            <p>Author: Sarah A. Parker</p>
+            <Carousel />
             <LoadingBar />
           </div>
         </section>
@@ -58,6 +55,7 @@ const ActiveBookPage = () => {
         <section className="progressUpdate section">
           <h2>Update Progress</h2>
           <FontAwesomeIcon
+            className="exitIcon"
             icon={faRectangleXmark}
             onClick={handleCancelUpdate}
           />

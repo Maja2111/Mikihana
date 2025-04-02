@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
+import { ResultsModal } from '@components/ResultsModal';
+import { libraryResults } from '@/mockData'; // Import der Mock-Daten
+
+import '@style/SearchBar.scss';
 
 export function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Zustand für das Modal
 
-  const handleSearch = async (event) => {
+  const handleSearch = (event) => {
     const term = event.target.value;
     setSearchTerm(term);
 
     if (term) {
-      try {
-        const response = await fetch(`/searchBooks/:query/:startIndex`);
-        const data = await response.json();
-        setSearchResults(data || []); // Sicherstellen, dass es ein Array gibt
-      } catch (error) {
-        console.error('API fetch failed', error);
-      }
+      // Filtere die Mock-Daten basierend auf dem Suchbegriff
+      const filteredResults = libraryResults.filter((book) =>
+        book.title.toLowerCase().includes(term.toLowerCase())
+      );
+      setSearchResults(filteredResults); // Setze die gefilterten Ergebnisse
+      setIsModalOpen(true); // Modal öffnen, wenn Ergebnisse vorhanden sind
     } else {
       setSearchResults([]);
+      setIsModalOpen(false); // Modal schließen, wenn kein Suchbegriff vorhanden ist
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Funktion zum Schließen des Modals
   };
 
   return (
@@ -32,11 +41,9 @@ export function SearchBar() {
         aria-label="search"
         onChange={handleSearch}
       />
-      <div className="results">
-        {searchResults.map((book, index) => (
-          <div key={index}>{book.title}</div>
-        ))}
-      </div>
+      {isModalOpen && (
+        <ResultsModal results={searchResults} onClose={closeModal} />
+      )}
     </>
   );
 }

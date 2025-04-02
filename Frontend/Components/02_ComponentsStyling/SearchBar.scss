@@ -1,0 +1,30 @@
+@use '@pagestyle/_variables' as *; // Importing color variables
+
+/* Search Bar Styles */
+.search {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  background-color: $secondary-color;
+  transition: border-color 0.3s;
+}
+
+.search:focus {
+  border-color: $tertiary-color; /* Change to your theme color */
+}
+
+/* Results Modal Styles */
+.modal {
+  position: fixed;
+  width: 50%;
+  height: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $secondary-color;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it appears above other content */
+}

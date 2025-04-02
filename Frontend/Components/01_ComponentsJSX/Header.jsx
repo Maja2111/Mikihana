@@ -19,7 +19,7 @@ export const Header = ({ children }) => {
   };
 
   return (
-    <div className="container">
+    <div>
       <div className="Header">
         {location.pathname !== '/' &&
           location.pathname !== '/registration' && ( // Conditionally render button

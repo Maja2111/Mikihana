@@ -12,7 +12,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 12px solid #e0e0e0; // Adjusted for mobile
+    border: 12px solid $secondary-color; // Adjusted for mobile
     border-radius: 50%;
     box-sizing: border-box;
 
@@ -24,7 +24,7 @@
       width: 100%;
       height: 100%;
       border: 12px solid transparent; // Adjusted for mobile
-      border-top-color: #f0c688;
+      border-top-color: $primary-color;
       border-radius: 50%;
       transform: rotate(calc(var(--progress) * 3.6deg));
       transition: transform 0.3s ease;

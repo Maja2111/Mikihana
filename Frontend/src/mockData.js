@@ -138,8 +138,17 @@ export const bookStatsMonth = [
 // ];
 
 export const libraryResults = [
-  { id: 1, title: 'Buch 1', image: 'path/to/image1.jpg' },
-  { id: 2, title: 'Buch 2', image: 'path/to/image2.jpg' },
+  {
+    id: 1,
+    title: 'Die Flüsse von London',
+    image:
+      '/Upload/die-fluesse-von-london-graphic-novel-taschenbuch-ben-aaronovitch.jpeg',
+  },
+  {
+    id: 2,
+    title: 'Iron Flame',
+    image: '/Upload/iron-flame-taschenbuch-rebecca-yarros-englisch.jpeg',
+  },
 ];
 
 export const videoLibraryResults = [

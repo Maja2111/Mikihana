@@ -1,4 +1,4 @@
-$primary-color: #662e1c;
+@use '@pagestyle/_variables' as *;
 
 .description {
   background-image: url('/Upload/transparent-book-illustration-colorful-book-with-watercolor-splashes-and-sun-1710848401206.webp');
@@ -19,21 +19,4 @@ $primary-color: #662e1c;
   bottom: 0;
   background-color: rgba(235, 220, 178, 0.5); /* Transparent overlay */
   z-index: 1; /* Ensure overlay is above the background image */
-}
-
-.brandNewMusic {
-  img {
-    border-radius: 20px;
-  }
-}
-
-// Media query for iPad Air
-@media (min-width: 820px) and (max-height: 1180px) {
-  .description {
-    padding: 30px; /* Adjusted padding for iPad Air */
-  }
-
-  .brandNewMusic img {
-    width: 60%; /* Adjusted width for iPad Air */
-  }
 }

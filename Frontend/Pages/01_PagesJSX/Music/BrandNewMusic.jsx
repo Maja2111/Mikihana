@@ -1,7 +1,6 @@
 import React from 'react';
 
 import '@/index.scss';
-import '@pagestyle/BrandNew.scss';
 
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';

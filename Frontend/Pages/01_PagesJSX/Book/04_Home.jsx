@@ -11,7 +11,6 @@ import { LoadingBar } from '@components/LoadingBar.jsx';
 import { LoadingCircle } from '@components/LoadingCircle.jsx';
 import { GalleryForReadingBooks } from '@components/Gallery.jsx';
 import { GalleryForwatchMovie } from '@components/Gallery.jsx';
-import { Gallery } from '@components/Gallery.jsx';
 import { Carousel } from '@components/Carousel.jsx';
 import { pageStatsYear, pageStatsMonth } from '@/mockData.js';
 import { bookStatsYear, bookStatsMonth } from '@/mockData.js';
@@ -120,18 +119,18 @@ const Home = () => {
               <div>
                 <h2>Active Book</h2>
                 <Carousel />
-                <p>Title: When the moon hatched</p>
-                <p>Author: Sarah A. Parker</p>
                 <LoadingBar />
               </div>
 
               <FontAwesomeIcon
+                className="addIcon"
                 icon={faSquarePlus}
                 onClick={handleNavigateToAddActiveBook}
                 style={{ cursor: 'pointer' }}
               />
 
               <FontAwesomeIcon
+                className="navigateIcon"
                 icon={faChevronRight}
                 onClick={handleNavigateToUpdateActiveBook}
                 style={{ cursor: 'pointer' }}
@@ -143,11 +142,13 @@ const Home = () => {
               <img src="/Upload/Bücherstapel.jpg" alt="placeholder" />
               <LoadingCircle />
               <FontAwesomeIcon
+                className="addIcon"
                 icon={faSquarePlus}
                 onClick={handleNavigateToTarget}
                 style={{ cursor: 'pointer' }}
               />
               <FontAwesomeIcon
+                className="navigateIcon"
                 icon={faChevronRight}
                 onClick={handleNavigateToGetTarget}
                 style={{ cursor: 'pointer' }}
@@ -211,11 +212,13 @@ const Home = () => {
 
                 <LoadingBar />
                 <FontAwesomeIcon
+                  className="addIcon"
                   icon={faSquarePlus}
                   onClick={handleNavigateToAddActiveSeries}
                   style={{ cursor: 'pointer' }}
                 />
                 <FontAwesomeIcon
+                  className="navigateIcon"
                   icon={faChevronRight}
                   onClick={handleNavigateToUpdateActiveSeries}
                   style={{ cursor: 'pointer' }}

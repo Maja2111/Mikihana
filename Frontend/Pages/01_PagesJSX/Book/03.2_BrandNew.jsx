@@ -1,12 +1,12 @@
 import React from 'react';
 
 import '@/index.scss';
-import '@pagestyle/BrandNew.scss';
 
 import { Header } from '@components/Header';
-import { Carousel } from '@components/Carousel';
+import { Carousel } from '@components/Carousel.jsx';
 import { Footer } from '@components/Footer';
 import { SearchBar } from '@components/SearchBar';
+import Description from '@components/Description.jsx';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const BrandNew = () => {
@@ -20,16 +20,7 @@ const BrandNew = () => {
         <section className="section">
           <SearchBar />
           <Carousel />
-          <div className="description">
-            <p>
-              {' '}
-              {/*aus dem Backend die Beschreibung der Bücher, die gerade neu erschienen sind, holen*/}
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia
-              nesciunt itaque enim corrupti culpa? Porro maiores, fuga
-              veritatis, dolores cumque possimus laborum error dignissimos ex,
-              iste quidem dolore? Ex, similique?
-            </p>
-          </div>
+          <Description />
         </section>
         <NavigateToAllSearch />
       </main>

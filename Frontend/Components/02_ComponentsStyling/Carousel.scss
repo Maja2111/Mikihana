@@ -25,8 +25,18 @@
       .carousel-item {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         transition: transform 0.3s ease;
+      }
+      .carouselimg {
+        width: 80px;
+        height: 100px;
+        border-radius: 10%;
+        position: absolute;
+        left: 35%;
+      }
+      .bookinfo {
+        margin-top: 40%;
       }
     }
 
@@ -39,12 +49,12 @@
       ); /* Set background color to $secondary-color with transparency */
       height: 100%; /* Adjust height to match the image */
       position: absolute;
-      top: 50%;
+      top: 25%;
       transform: translateY(-50%);
       border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      border-radius: 10px;
+      width: 35px;
+      height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -68,10 +78,10 @@
   .indicators {
     margin-top: 10px; /* Add space above indicators */
     position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 35%;
+    top: 5.8rem;
     display: flex;
+    flex-direction: row;
     gap: 0.5rem;
 
     span {

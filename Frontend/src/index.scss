@@ -1,7 +1,6 @@
 @use 'sass:color'; // Importing Sass color module
 @use '@pagestyle/_variables' as *; // Importing color variables
 @use '@pagestyle/_formStyles' as *; // Importing form styles
-@use '@style/_flexboxUtilities' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&family=Nanum+Gothic&family=Tilt+Neon&display=swap');
 
@@ -21,13 +20,12 @@
   height: 85%; // Erhöhte Höhe für das Main
   background-color: $secondary-color; // Explizite Hintergrundfarbe
   overflow-y: scroll; // Scrollen bei Bedarf
-  padding-bottom: 20px;
 }
 
 // Sektionen mit border-radius und Abstand
 .section {
   border-radius: 10px;
-  padding: 15px;
+  padding: 20px;
   background-color: $tertiary-color;
 }
 
@@ -50,9 +48,21 @@ p {
   @extend .button; // Using shared button styles
 }
 
+.brandNewMusic,
 .mustListen {
   img {
     border-radius: 20px;
+  }
+}
+
+.horizontalList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  img {
+    width: 60px;
   }
 }
 

@@ -9,6 +9,8 @@
 
 /* ------------ MENU ------------ */
 .nav {
+  position: absolute;
+  top: -60px;
   background-color: var(--tab-color);
   width: 80%;
   height: 5%;
@@ -125,41 +127,29 @@ button {
 
 /* ------------ MENU Ende------------ */
 
+.addIcon,
+.navigateIcon {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.addIcon {
+  left: 10%;
+}
+.navigateIcon {
+  left: 80%;
+}
 //Book stats - Start -
 //section activeBook - Start -
+
 .activeBook {
   div {
     display: flex;
     flex-direction: column;
-    i {
-      text-align: center;
-    }
-    img {
-      width: 30%;
-      border-radius: 20px;
-    }
   }
 }
 
-.fa-square-plus {
-  position: absolute;
-  right: 10%;
-  top: 25%; /* Positionierung des Plus-Symbols */
-  margin: 5px;
-  cursor: pointer;
-  z-index: 1;
-  transform: translate(50%, -50%);
-}
-
-.fa-chevron-right {
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  margin: 5px;
-  cursor: pointer;
-  z-index: 1;
-  transform: translate(50%, 50%);
-}
 //section activeBook - Ende -
 
 //page -und booksStatistic werden in den jeweiligen componenten definiert
@@ -173,42 +163,12 @@ button {
   position: relative;
 
   img {
-    width: 50%; /* Bildbreite anpassen */
+    width: 40%; /* Bildbreite anpassen */
     height: auto; /* Höhe automatisch anpassen */
     border-radius: 10px;
   }
-
-  .loading-circle {
-    /* Hier können Sie spezifische Stile für den LoadingCircle hinzufügen */
-    width: 100px; /* Beispielbreite für den LoadingCircle */
-    height: 100px; /* Beispielhöhe für den LoadingCircle */
-  }
-
-  .fa-square-plus {
-    position: absolute;
-    top: 15%;
-    right: 5%;
-    cursor: pointer;
-    z-index: 1;
-    transform: translate(50%, -50%);
-  }
-
-  .fa-chevron-right {
-    position: absolute;
-    bottom: 15%;
-    right: 5%;
-    cursor: pointer;
-    z-index: 1;
-    transform: translate(50%, 50%);
-  }
 }
 //section traget - Ende -
-
-//section gallery - Start -
-.gallery {
-  display: flex;
-  width: 50%;
-}
 
 //section series - Start -
 .series {
@@ -238,8 +198,8 @@ button {
 //Book stats - Ende -
 
 //Movie stats - Start -
-.activeSeries {
-  div {
+.movieSection {
+  .activeSeries {
     display: flex;
     flex-direction: column;
     i {
@@ -248,6 +208,10 @@ button {
     img {
       width: 50%;
       border-radius: 20px;
+    }
+    .addIcon,
+    .navigateIcon {
+      top: 35%;
     }
   }
 }

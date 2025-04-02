@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { carouselImagesMovie } from '@/mockDataMovie.js';
 import '@style/Carousel.scss';
 
 export function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselImages, setCarouselImages] = useState([]);
-  console.log(typeof carouselImages);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -17,9 +17,8 @@ export function Carousel() {
           }/api/profile/searchBooks/example-query/0`
         );
         const data = await response.json();
-        console.log('Fetched data:', data); // Log the fetched data
-        if (response.status === 200)
-          setCarouselImages(Array.isArray(data) ? data : Object.values(data));
+        console.log('Fetched data:', data);
+        if (response.status === 200) setCarouselImages(data.slice(0, 5));
       } catch (error) {
         console.error('Error fetching books:', error);
       }
@@ -52,8 +51,12 @@ export function Carousel() {
           <img
             src={carouselImages[currentIndex]?.imageUrl}
             alt={carouselImages[currentIndex]?.title}
-            className="carousel-item"
+            className="carouselimg"
           />
+          <div className="bookinfo">
+            <p>Title: {carouselImages[currentIndex]?.title}</p>
+            <p>Author: {carouselImages[currentIndex]?.author}</p>
+          </div>
         </div>
 
         <button
@@ -105,7 +108,7 @@ export function MovieCarousel() {
           <img
             src={carouselImagesMovie[currentIndex].url}
             alt={carouselImagesMovie[currentIndex].alt}
-            className="carousel-item"
+            className="carouselimg"
           />
         </div>
 

@@ -10,7 +10,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Gallery } from '@components/Gallery.jsx';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 
@@ -44,7 +43,7 @@ const ProfilPage = () => {
       <main className="main">
         <section className="library section" onClick={handleNavigateToLibrary}>
           <h2>Library</h2>
-          <Gallery />
+          <img src="/Upload/Äffchen mit Buch.svg" alt="" />
         </section>
 
         <section
@@ -52,7 +51,7 @@ const ProfilPage = () => {
           onClick={handleNavigateToVideolibrary}
         >
           <h2>Video library</h2>
-          <Gallery />
+          <img src="/Upload/Äffchen schaut film .svg" alt="" />
         </section>
 
         <section
@@ -60,7 +59,8 @@ const ProfilPage = () => {
           onClick={handleNavigateToMusiclibrary}
         >
           <h2>Music library</h2>
-          <Gallery />
+
+          <img src="/Upload/Äffchen hört Musik.svg" alt="" />
         </section>
 
         <section
