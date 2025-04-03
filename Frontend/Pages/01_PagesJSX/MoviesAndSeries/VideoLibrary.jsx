@@ -6,7 +6,12 @@ import '@pagestyle/Library.scss';
 
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
-import { Gallery } from '@components/Gallery';
+import {
+  GalleryForwatchMovie,
+  GalleryForMovieFavorites,
+  GalleryForMovieUnwatch,
+  GalleryForMovieUserlist,
+} from '@components/Gallery.jsx';
 import { NavigateToProfile } from '@components/NavigateTo.jsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -34,9 +39,9 @@ const VideoLibrary = () => {
         <h1>Video library</h1>
       </header>
       <main className="main">
-        <section className="videoLibrary section">
+        <section className="watchlist section">
           <h2>watchlist</h2>
-          <Gallery />
+          <GalleryForwatchMovie />
           <FontAwesomeIcon
             id="watchlist"
             icon={faChevronRight}
@@ -44,9 +49,9 @@ const VideoLibrary = () => {
             style={{ cursor: 'pointer' }}
           />
         </section>
-        <section className="VideoFavourites section">
+        <section className="videoFavourites section">
           <h2>favourites</h2>
-          <Gallery />
+          <GalleryForMovieFavorites />
           <FontAwesomeIcon
             id="video-favourites"
             icon={faChevronRight}
@@ -56,7 +61,7 @@ const VideoLibrary = () => {
         </section>
         <section className="unwatch section">
           <h2>unwatch list</h2>
-          <Gallery />
+          <GalleryForMovieUnwatch />
           <FontAwesomeIcon
             id="unwatch"
             icon={faChevronRight}
@@ -66,7 +71,7 @@ const VideoLibrary = () => {
         </section>
         <section className="video-userlist section">
           <h2>userlist</h2>
-          <Gallery />
+          <GalleryForMovieUserlist />
           <FontAwesomeIcon
             id="video-userlist"
             icon={faChevronRight}

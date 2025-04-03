@@ -12,6 +12,33 @@ export const galleryImagesMovie = [
   '/Upload/ER.jpg',
   '/Upload/BB.jpeg',
   '/Upload/Warehouse13.jpg',
+  '/Upload/designatedSurivor.jpg',
+  '/Upload/Raya.jpeg',
+  '/Upload/ratatouille.jpeg',
+  '/Upload/kingsman.jpg',
+];
+export const galleryImagesMovieFavorites = [
+  '/Upload/CA.jpg',
+  '/Upload/Warehouse13.jpg',
+  '/Upload/eiskalteEngel.jpg',
+  '/Upload/theNightAgent.webp',
+  '/Upload/Pushing Daisies.jpg',
+];
+
+export const galleryImagesMovieUnwatch = [
+  '/Upload/codeblack.jpg',
+  '/Upload/Vaina 2.jpeg',
+  '/Upload/You.webp',
+  '/Upload/Rookie7.jpg',
+  '/Upload/wicked.jpg',
+];
+
+export const galleryImagesMovieUserlist = [
+  '/Upload/WandaVision.jpg',
+  '/Upload/Hawkeye.jpg',
+  '/Upload/blackPanther.jpg',
+  '/Upload/avengersEndgame.jpg',
+  '/Upload/agentCarter.jpg',
 ];
 
 export const carouselImagesMovie = [
@@ -21,6 +48,7 @@ export const carouselImagesMovie = [
   { url: '/Upload/CA.jpg', alt: 'Captain America' },
   { url: '/Upload/Putin.jpg', alt: 'Putin' },
 ];
+
 export const seriesStatsYear = [
   { month: 'Jan', value: 25 },
   { month: 'Feb', value: 50 },

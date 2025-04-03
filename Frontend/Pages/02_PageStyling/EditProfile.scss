@@ -7,21 +7,27 @@
 
 // Your existing styles here
 .editProfile {
-  @extend .flex-container; // Using shared flex container styles
+  display: block; // Change from flex-container to block
   position: relative;
-}
 
-.editProfile img {
-  width: 100px; /* Größe des Bildes anpassen */
-  height: auto;
+  form {
+    display: flex;
+    flex-direction: column; // Stack elements vertically
+  }
+
+  input,
+  select {
+    margin-bottom: 15px; // Add space between elements
+  }
+
+  img {
+    width: 100px; /* Größe des Bildes anpassen */
+    height: auto;
+  }
 }
 
 select {
   @extend select; // Using shared select styles
-}
-
-.loadingCircle {
-  @extend .loadingCircle; // Using shared loading circle styles
 }
 
 .library,

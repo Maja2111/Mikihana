@@ -20,6 +20,7 @@
   height: 85%; // Erhöhte Höhe für das Main
   background-color: $secondary-color; // Explizite Hintergrundfarbe
   overflow-y: scroll; // Scrollen bei Bedarf
+  padding-bottom: 1rem; //Abstrand zum Footer
 }
 
 // Sektionen mit border-radius und Abstand

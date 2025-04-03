@@ -9,8 +9,10 @@ import { BookStatisticsChart } from '@components/StatisticChart.jsx'; // Import 
 import { SeriesStatisticsChart } from '@components/StatisticChart.jsx';
 import { LoadingBar } from '@components/LoadingBar.jsx';
 import { LoadingCircle } from '@components/LoadingCircle.jsx';
-import { GalleryForReadingBooks } from '@components/Gallery.jsx';
-import { GalleryForwatchMovie } from '@components/Gallery.jsx';
+import {
+  GalleryForReadingBooks,
+  GalleryForwatchMovie,
+} from '@components/Gallery.jsx';
 import { Carousel } from '@components/Carousel.jsx';
 import { pageStatsYear, pageStatsMonth } from '@/mockData.js';
 import { bookStatsYear, bookStatsMonth } from '@/mockData.js';

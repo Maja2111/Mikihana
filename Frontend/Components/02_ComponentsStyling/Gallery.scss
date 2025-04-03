@@ -1,72 +1,126 @@
 .gallery-container {
-  margin: 0 auto;
-  padding: 1rem; // Adjusted for mobile
-
-  .gallery-grid {
-    display: flex;
-    flex-direction: row; // Changed to row for side-by-side layout
-    //flex-wrap: wrap; // Allow items to wrap to the next line
-    margin: -0.25rem;
-
-    .gallery-item {
-      width: 50%; // Adjusted for smaller images in mobile view
-      padding: 0.25rem;
-      box-sizing: border-box;
-
-      img {
-        width: 50px;
-        height: auto; // Maintain aspect ratio
-        object-fit: cover;
-        border-radius: 8px;
-      }
-    }
-
-    .placeholder-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #f0f0f0;
-      border: 2px dashed #ccc;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: #e0e0e0;
-        border-color: #999;
-      }
-
-      .placeholder-content {
-        text-align: center;
-        color: #666;
-
-        span {
-          font-size: 1.5rem; // Adjusted for mobile
-          font-weight: bold;
-          display: block;
-          margin-bottom: 0.5rem;
-        }
-
-        p {
-          margin: 0;
-          font-size: 0.8rem; // Adjusted for mobile
-        }
-      }
-    }
-  }
+  display: flex; /* Flexbox für zentrierte Ausrichtung */
+  justify-content: center; /* Horizontale Zentrierung */
+  align-items: center; /* Vertikale Zentrierung */
+  min-height: 50vh; /* Höhe des Containers auf die Hälfte reduzieren */
 }
 
-// Media query for iPad Air
-@media (min-width: 820px) and (max-height: 1180px) {
-  .gallery-item {
-    width: 50%; // Adjusted width for iPad Air
-  }
+.gallery-grid {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
 
-  .placeholder-content span {
-    font-size: 1.5rem; // Adjusted size for iPad Air
-  }
+.gallery-item {
+  padding: 0;
+  flex: calc(0.1 + (var(--active-lerp, 0) * 1));
+  transition: flex 0.2s ease;
+}
 
-  .placeholder-content p {
-    font-size: 0.8rem; // Adjusted size for iPad Air
-  }
+.gallery-item img {
+  max-width: 100%; /* Bilder auf die Breite des Containers anpassen */
+  width: auto; /* Höhe automatisch anpassen */
+  height: 300px; /* Höhe automatisch anpassen */
+  object-fit: cover;
+  transition: all 0.2s ease;
+}
+
+.gallery-grid:is(:hover, :focus-within) .gallery-item img {
+  opacity: calc(0.1 + (var(--active-lerp, 0) * 0.9));
+  filter: grayscale(calc(1 - var(--active-lerp, 0)));
+}
+
+:root {
+  --lerp-0: 1;
+  --lerp-1: 0.5787037;
+  --lerp-2: 0.2962963;
+  --lerp-3: 0.125;
+  --lerp-4: 0.037037;
+  --lerp-5: 0.0046296;
+  --lerp-6: 0;
+}
+
+a {
+  outline-offset: 4px;
+}
+
+.gallery-item:is(:hover, :focus-within) {
+  --active-lerp: var(--lerp-0);
+  z-index: 7;
+}
+
+.gallery-item:has(+ .gallery-item:is(:hover, :focus-within)),
+.gallery-item:is(:hover, :focus-within) + .gallery-item {
+  --active-lerp: var(--lerp-1);
+  z-index: 6;
+}
+
+.gallery-item:has(+ .gallery-item + .gallery-item:is(:hover, :focus-within)),
+.gallery-item:is(:hover, :focus-within) + .gallery-item + .gallery-item {
+  --active-lerp: var(--lerp-2);
+  z-index: 5;
+}
+
+.gallery-item:has(
+    + .gallery-item + .gallery-item + .gallery-item:is(:hover, :focus-within)
+  ),
+.gallery-item:is(:hover, :focus-within)
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item {
+  --active-lerp: var(--lerp-3);
+  z-index: 4;
+}
+
+.gallery-item:has(
+    + .gallery-item
+      + .gallery-item
+      + .gallery-item
+      + .gallery-item:is(:hover, :focus-within)
+  ),
+.gallery-item:is(:hover, :focus-within)
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item {
+  --active-lerp: var(--lerp-4);
+  z-index: 3;
+}
+
+.gallery-item:has(
+    + .gallery-item
+      + .gallery-item
+      + .gallery-item
+      + .gallery-item
+      + .gallery-item:is(:hover, :focus-within)
+  ),
+.gallery-item:is(:hover, :focus-within)
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item {
+  --active-lerp: var(--lerp-5);
+  z-index: 2;
+}
+
+.gallery-item:has(
+    + .gallery-item
+      + .gallery-item
+      + .gallery-item
+      + .gallery-item
+      + .gallery-item
+      + .gallery-item:is(:hover, :focus-within)
+  ),
+.gallery-item:is(:hover, :focus-within)
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item
+  + .gallery-item {
+  --active-lerp: var(--lerp-6);
+  z-index: 1;
 }
