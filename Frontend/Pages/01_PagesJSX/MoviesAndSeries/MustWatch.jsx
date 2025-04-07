@@ -7,10 +7,11 @@ import { Header } from '@components/Header';
 import { Carousel } from '@components/Carousel';
 import { Footer } from '@components/Footer';
 import { SearchBar } from '@components/SearchBar';
+import Description from '@components/Description.jsx';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const MustWatch = () => {
-  const { color } = useColor();
+  const { colorScheme } = useColor();
   return (
     <div className={`container ${colorScheme}-theme`}>
       <header>
@@ -21,15 +22,7 @@ const MustWatch = () => {
           <h1>Here you will find the most popular movies and series</h1>
           <SearchBar />
           <Carousel />
-          <div className="description">
-            <p>
-              {/* Beschreibung der Filme und Serien, die man gesehen haben sollte */}
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia
-              nesciunt itaque enim corrupti culpa? Porro maiores, fuga
-              veritatis, dolores cumque possimus laborum error dignissimos ex,
-              iste quidem dolore? Ex, similique?
-            </p>
-          </div>
+          <Description />
         </section>
         <NavigateToAllSearch />
       </main>

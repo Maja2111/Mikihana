@@ -16,18 +16,58 @@ export function Gallery() {
 
   useEffect(() => {
     const fetchBooks = async () => {
+      const searchTerms = [
+        'fiction',
+        'science',
+        'history',
+        'art',
+        'technology',
+      ]; // Stabile Suchbegriffe
+      const randomTerm =
+        searchTerms[Math.floor(Math.random() * searchTerms.length)];
+      const randomStartIndex = Math.floor(Math.random() * 10); // Kleinere Range (0-9)
+
       try {
         const response = await fetch(
           `${
             import.meta.env.VITE_BASE_URL
-          }/api/profile/searchBooks/example-query/0`
-        ); // Using 'example-query' as a placeholder
+          }/api/profile/searchBooks/${randomTerm}/${randomStartIndex}`
+        );
+
+        if (!response.ok) throw new Error('API request failed');
+
         const data = await response.json();
-        if (response.status === 200) {
-          setGalleryImages(data);
+
+        if (data.error) {
+          console.error('API error:', data.error);
+          // Fallback zu Mock-Daten
+          setGalleryImages([
+            { imageUrl: '/Upload/coming soon.png' },
+            { imageUrl: '/Upload/coming soon.png' },
+            { imageUrl: '/Upload/coming soon.png' },
+            { imageUrl: '/Upload/coming soon.png' },
+            { imageUrl: '/Upload/coming soon.png' },
+          ]);
+          return;
         }
+
+        // Sicherstellen dass wir ein Array mit gültigen imageUrl haben
+        const validBooks = data.filter((book) => book?.imageUrl);
+        if (validBooks.length === 0) throw new Error('No valid books found');
+
+        // Zufällige Auswahl
+        const shuffled = [...validBooks].sort(() => 0.5 - Math.random());
+        setGalleryImages(shuffled.slice(0, 5));
       } catch (error) {
         console.error('Error fetching books:', error);
+        // Fallback zu Mock-Daten
+        setGalleryImages([
+          { imageUrl: '/Upload/coming soon.png' },
+          { imageUrl: '/Upload/coming soon.png' },
+          { imageUrl: '/Upload/coming soon.png' },
+          { imageUrl: '/Upload/coming soon.png' },
+          { imageUrl: '/Upload/coming soon.png' },
+        ]);
       }
     };
 
@@ -39,7 +79,14 @@ export function Gallery() {
       <div className="gallery-grid">
         {galleryImages.map((image, index) => (
           <div key={index} className="gallery-item">
-            <img alt={`gallery-${index}`} src={image} />
+            <img
+              alt={`gallery-${index}`}
+              src={image?.imageUrl || '/Upload/coming soon.png'}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/Upload/coming soon.png';
+              }}
+            />
           </div>
         ))}
       </div>
@@ -56,10 +103,13 @@ export function GalleryWithPlaceholder({ listType }) {
     const fetchBooks = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_BASE_URL}/api/searchBooks/example-query/0`
+          `${
+            import.meta.env.VITE_BASE_URL
+          }/api/profile/searchBooks/example-query/1`
         ); // Using 'example-query' as a placeholder
         const data = await response.json();
-        setGalleryImages(data);
+        console.log('Fetched data:', data);
+        setGalleryImages(data.slice(0, 5));
       } catch (error) {
         console.error('Error fetching books:', error);
       }
@@ -81,7 +131,14 @@ export function GalleryWithPlaceholder({ listType }) {
       <div className="gallery-grid">
         {galleryImages.map((image, index) => (
           <div key={index} className="gallery-item">
-            <img alt={`gallery-${index}`} src={image} />
+            <img
+              alt={`gallery-${index}`}
+              src={image?.imageUrl || '/Upload/coming soon.png'}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/Upload/coming soon.png';
+              }}
+            />
           </div>
         ))}
         {/* Platzhalter für neues Buch */}

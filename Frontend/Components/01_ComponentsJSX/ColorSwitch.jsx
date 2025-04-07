@@ -10,7 +10,7 @@ const ColorSwitch = () => {
 
   return (
     <div>
-      <label htmlFor="color-scheme">Choose you style:</label>
+      <label htmlFor="color-scheme">Choose your style:</label>
       <select
         id="color-scheme"
         onChange={handleColorChange}

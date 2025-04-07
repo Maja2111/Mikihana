@@ -12,7 +12,7 @@ import { useColor } from '@context/ColorContext';
 import '@/index.scss';
 
 const UnreadBooks = () => {
-  const { color } = useColor();
+  const { colorScheme } = useColor();
   return (
     <div className={`container ${colorScheme}-theme`}>
       <header>

@@ -45,13 +45,12 @@ const fetchGoogleBooks = async (query, startIndex = 0, maxResults = 40) => {
 };
 
 const mapGoogleBooks = (googleBook) => {
-  // console.log(JSON.stringify(googleBook.volumeInfo.imageLinks, null, 2));
   return new Book({
-    //description: googleBook.volumeInfo.description,
     title: googleBook.volumeInfo.title,
     author: googleBook.volumeInfo.authors?.pop(),
-    //pageCount: googleBook.volumeInfo.pageCount,
-    imageUrl: googleBook.volumeInfo.imageLinks.smallThumbnail,
+    imageUrl:
+      googleBook.volumeInfo.imageLinks?.smallThumbnail ||
+      '/Upload/coming soon.png',
   });
 };
 

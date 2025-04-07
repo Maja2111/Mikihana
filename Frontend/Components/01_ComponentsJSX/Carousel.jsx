@@ -4,9 +4,26 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { carouselImagesMovie } from '@/mockDataMovie.js';
 import '@style/Carousel.scss';
 
-export function Carousel() {
+export function Carousel({ onBookChange }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselImages, setCarouselImages] = useState([]);
+
+  useEffect(() => {
+    if (carouselImages.length > 0 && onBookChange) {
+      const currentBook = carouselImages[currentIndex];
+      const googleBooksId = currentBook?.imageUrl?.match(/id=([^&]+)/)?.[1];
+
+      if (googleBooksId) {
+        onBookChange({
+          ...currentBook,
+          id: googleBooksId, // WICHTIG: Nur die Google Books ID verwenden
+        });
+      } else {
+        console.error('Could not extract Google Books ID from:', currentBook);
+        onBookChange(null);
+      }
+    }
+  }, [currentIndex, carouselImages, onBookChange]);
 
   useEffect(() => {
     const fetchBooks = async () => {
