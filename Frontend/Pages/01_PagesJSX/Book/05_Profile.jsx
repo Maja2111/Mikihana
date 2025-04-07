@@ -1,25 +1,18 @@
-/**
- * @description:
- * Profil Page
- * Logo Header
- * h2 und section klickbar
- * 3 Cards je sections - 3 sections -> Cards als Components
- * Edit Profile
- */
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useColor } from '@context/ColorContext'; // Importing useColor
 
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 
 import '@/index.scss';
-import '@pagestyle/EditProfile.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 
 const ProfilPage = () => {
   const navigate = useNavigate();
+  const { colorScheme } = useColor(); // Using colorScheme from context
+
   const handleNavigateToLibrary = () => {
     navigate('/profile/library');
   };
@@ -36,7 +29,7 @@ const ProfilPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>
@@ -65,7 +58,7 @@ const ProfilPage = () => {
 
         <section
           className="editProfile section"
-          onClick={() => handleNavigateToEditProfile(navigate)}
+          onClick={handleNavigateToEditProfile}
         >
           <h2>Edit Profile</h2>
           <img
@@ -76,7 +69,6 @@ const ProfilPage = () => {
           <FontAwesomeIcon icon={faPen} className="profile-icon" />
         </section>
       </main>
-
       <footer>
         <Footer />
       </footer>

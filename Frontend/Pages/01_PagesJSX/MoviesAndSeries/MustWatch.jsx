@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useColor } from '@context/ColorContext';
 
 import '@/index.scss';
 
@@ -9,8 +10,9 @@ import { SearchBar } from '@components/SearchBar';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const MustWatch = () => {
+  const { color } = useColor();
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

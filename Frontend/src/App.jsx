@@ -12,6 +12,7 @@ import '@/index.scss';
 import { LoginContext } from '@context/isLoggedIn.jsx';
 import { LoginProvider } from '@context/isLoggedIn.jsx';
 import { NavProvider } from '@context/navContext.jsx';
+import { ColorProvider } from '@context/ColorContext'; // Importing ColorProvider
 
 //Pageimporte
 import Login from '@pages/01_Login.jsx';
@@ -28,31 +29,34 @@ const PrivateLayout = ({ element, ...rest }) => {
   const { isLoggedIn } = useContext(LoginContext);
   return <> {isLoggedIn ? element : <Navigate to="/" />} </>;
 };
+
 const App = () => {
   return (
     <LoginProvider>
       <NavProvider>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/register" element={<Registration />} />
-
-            <Route path="/impressum" element={<Impressum />} />
-
-            <Route
-              path="/home/*"
-              element={<PrivateLayout element={<HomeRouter />} />}
-            />
-            <Route
-              path="/profile/*"
-              element={<PrivateLayout element={<ProfileRouter />} />}
-            />
-            <Route
-              path="/allsearch/*"
-              element={<PrivateLayout element={<AllSearchRouter />} />}
-            />
-          </Routes>
-        </Router>
+        <ColorProvider>
+          {' '}
+          {/* Wrapping Router with ColorProvider */}
+          <Router>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/register" element={<Registration />} />
+              <Route path="/impressum" element={<Impressum />} />
+              <Route
+                path="/home/*"
+                element={<PrivateLayout element={<HomeRouter />} />}
+              />
+              <Route
+                path="/profile/*"
+                element={<PrivateLayout element={<ProfileRouter />} />}
+              />
+              <Route
+                path="/allsearch/*"
+                element={<PrivateLayout element={<AllSearchRouter />} />}
+              />
+            </Routes>
+          </Router>
+        </ColorProvider>
       </NavProvider>
     </LoginProvider>
   );

@@ -1,9 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import '@/index.scss';
-import '@pagestyle/Library.scss';
-
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
 import {
@@ -14,10 +11,15 @@ import {
 } from '@components/Gallery.jsx';
 import { NavigateToProfile } from '@components/NavigateTo.jsx';
 
+import { useColor } from '@context/ColorContext';
+
+import '@/index.scss';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const VideoLibrary = () => {
+  const { colorScheme } = useColor();
   const navigate = useNavigate();
 
   const handleNavigateToWatchlist = () => {
@@ -33,7 +35,7 @@ const VideoLibrary = () => {
     navigate('/profile/videolibrary/movieuserlist');
   };
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
         <h1>Video library</h1>

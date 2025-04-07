@@ -2,6 +2,7 @@ import React from 'react';
 
 import '@/index.scss';
 
+import { useColor } from '@context/ColorContext';
 import { Header } from '@components/Header';
 import { Carousel } from '@components/Carousel.jsx';
 import { Footer } from '@components/Footer';
@@ -10,8 +11,9 @@ import Description from '@components/Description.jsx';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const BrandNew = () => {
+  const { colorScheme } = useColor();
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

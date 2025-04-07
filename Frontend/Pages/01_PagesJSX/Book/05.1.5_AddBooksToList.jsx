@@ -3,9 +3,13 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
+
+import { useColor } from '@context/ColorContext';
+
 import '@/index.scss';
 
 const AddedBook = () => {
+  const { colorScheme } = useColor();
   const location = useLocation();
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState('');
@@ -25,7 +29,7 @@ const AddedBook = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

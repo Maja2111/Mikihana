@@ -4,9 +4,12 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
 
+import { useColor } from '@context/ColorContext';
+
 import '@/index.scss';
 
 const AddedMovie = () => {
+  const { colorScheme } = useColor();
   const location = useLocation();
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState('');
@@ -23,7 +26,7 @@ const AddedMovie = () => {
     navigate(from);
   };
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

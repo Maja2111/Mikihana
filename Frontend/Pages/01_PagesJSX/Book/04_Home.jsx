@@ -17,7 +17,9 @@ import { Carousel } from '@components/Carousel.jsx';
 import { pageStatsYear, pageStatsMonth } from '@/mockData.js';
 import { bookStatsYear, bookStatsMonth } from '@/mockData.js';
 import { seriesStatsYear, seriesStatsMonth } from '@/mockDataMovie.js';
+
 import { NavContext } from '@context/navContext.jsx';
+import { useColor } from '@context/ColorContext';
 
 // Stylingimporte
 import '@/index.scss';
@@ -27,6 +29,7 @@ import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
+  const { colorScheme } = useColor();
   const [view, setView] = useState('year');
   const [bookView, setBookView] = useState('year'); // Added state for book stats view
   const { navState, setNavState } = useContext(NavContext);
@@ -87,7 +90,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header>
           <nav className="nav">

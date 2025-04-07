@@ -2,3 +2,33 @@ $primary-color: #662e1c;
 $secondary-color: #ebdcb2;
 $tertiary-color: #c9a66b;
 $iconbar-color: #a58463;
+
+// Zusätzliche Farbschemata
+
+.green-theme {
+  --primary-color-green: #021c1e;
+  --secondary-color-green: #6fb98f;
+  --tertiary-color-green: #8bc34a;
+  --iconbar-color-green: #2c7873;
+}
+
+.rose-theme {
+  --primary-color-rose: #725f65;
+  --secondary-color-rose: #fee1e3;
+  --tertiary-color-rose: #f5a4b7;
+  --iconbar-color-rose: #beb9cf;
+}
+
+.blue-theme {
+  --primary-color-blue: #2f2e33; // Beispiel für eine farbenfrohe Farbe
+  --secondary-color-blue: #e0e5df; // Beispiel für eine farbenfrohe Farbe
+  --tertiary-color-blue: #d5d6d2; // Beispiel für eine farb
+  --iconbar-color-blue: #3a5199; // Beispiel für eine farbenf
+}
+
+.grey-theme {
+  --primary-color-grey: #9fa4a8; // Beispiel für ein minimalistisches Farbschema
+  --secondary-color-grey: #e2e1e6; // Beispiel für ein minimalistisches Farbschema
+  --tertiary-color-grey: #cecac7; // Beispiel für ein minimalistisches
+  --iconbar-color-grey: #acb1b4; // Beispiel für ein minimalistisches
+}

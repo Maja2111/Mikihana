@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'; // Import useEffect and useState
-import '@style/LoadingCircle.scss';
+import '@style/_loadingStyles.scss';
 
 export const LoadingCircle = () => {
   const [loadingData, setLoadingData] = useState({ circle: { progress: 40 } }); // Initialize with a default structure

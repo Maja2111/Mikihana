@@ -1,0 +1,136 @@
+.loading-circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 12px solid var(--secondary-color);
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: 100%;
+      height: 100%;
+      border: 12px solid transparent;
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      transform: rotate(calc(var(--progress) * 3.6deg));
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__percentage {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color);
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.loading-bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 20px;
+
+  &__progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+
+  &--bars {
+    display: flex;
+    gap: 2px;
+    background-color: transparent;
+  }
+
+  &__bar {
+    flex: 1;
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &--active {
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+// Theme styles bleiben gleich wie zuvor
+.green-theme {
+  .loading-circle {
+    &__progress::before {
+      border-top-color: var(--primary-color-green);
+    }
+    &__percentage {
+      color: var(--primary-color-green);
+    }
+  }
+  .loading-bar__progress,
+  .loading-bar__bar--active {
+    background-color: var(--primary-color-green);
+  }
+}
+
+.rose-theme {
+  .loading-circle {
+    &__progress::before {
+      border-top-color: var(--primary-color-rose);
+    }
+    &__percentage {
+      color: var(--primary-color-rose);
+    }
+  }
+  .loading-bar__progress,
+  .loading-bar__bar--active {
+    background-color: var(--primary-color-rose);
+  }
+}
+
+.blue-theme {
+  .loading-circle {
+    &__progress::before {
+      border-top-color: var(--primary-color-blue);
+    }
+    &__percentage {
+      color: var(--primary-color-blue);
+    }
+  }
+  .loading-bar__progress,
+  .loading-bar__bar--active {
+    background-color: var(--primary-color-blue);
+  }
+}
+
+.grey-theme {
+  .loading-circle {
+    &__progress::before {
+      border-top-color: var(--primary-color-grey);
+    }
+    &__percentage {
+      color: var(--primary-color-grey);
+    }
+  }
+  .loading-bar__progress,
+  .loading-bar__bar--active {
+    background-color: var(--primary-color-grey);
+  }
+}

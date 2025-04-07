@@ -2,7 +2,9 @@
   display: flex; /* Flexbox für zentrierte Ausrichtung */
   justify-content: center; /* Horizontale Zentrierung */
   align-items: center; /* Vertikale Zentrierung */
-  min-height: 50vh; /* Höhe des Containers auf die Hälfte reduzieren */
+  min-height: 10vh;
+  margin: 0;
+  padding: 0;
 }
 
 .gallery-grid {
@@ -14,22 +16,28 @@
 }
 
 .gallery-item {
+  height: 150px;
   padding: 0;
-  flex: calc(0.1 + (var(--active-lerp, 0) * 1));
+  flex: calc(1 + (var(--active-lerp, 0) * 1));
   transition: flex 0.2s ease;
 }
 
 .gallery-item img {
   max-width: 100%; /* Bilder auf die Breite des Containers anpassen */
-  width: auto; /* Höhe automatisch anpassen */
-  height: 300px; /* Höhe automatisch anpassen */
-  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
   transition: all 0.2s ease;
+  border-radius: 20px;
 }
 
 .gallery-grid:is(:hover, :focus-within) .gallery-item img {
   opacity: calc(0.1 + (var(--active-lerp, 0) * 0.9));
   filter: grayscale(calc(1 - var(--active-lerp, 0)));
+}
+
+.gallery-item:is(:hover :focus-within) {
+  flex: calc(0.1 + (var(--active-lerp, 0) * 1));
 }
 
 :root {

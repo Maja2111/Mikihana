@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '@/index.scss';
-
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
 import { SearchBar } from '@components/SearchBar';
@@ -9,9 +7,14 @@ import Description from '@components/Description.jsx';
 import { MovieCarousel } from '@components/Carousel.jsx';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
+import { useColor } from '@context/ColorContext';
+
+import '@/index.scss';
+
 const BrandNewMovie = () => {
+  const { colorScheme } = useColor();
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

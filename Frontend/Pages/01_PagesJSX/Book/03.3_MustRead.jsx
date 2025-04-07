@@ -2,6 +2,7 @@ import React from 'react';
 
 import '@/index.scss';
 
+import { useColor } from '@context/ColorContext';
 import { Header } from '@components/Header';
 import { Carousel } from '@components/Carousel';
 import { Footer } from '@components/Footer';
@@ -9,8 +10,9 @@ import { SearchBar } from '@components/SearchBar';
 import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const MustRead = () => {
+  const { colorScheme } = useColor();
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
 import { LoginContext } from '@context/isLoggedIn.jsx';
+import { useColor } from '@context/ColorContext';
 
 //Styingimporte
 import '@/index.scss';
@@ -27,6 +28,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 const Login = () => {
+  const { colorScheme } = useColor();
   const navigate = useNavigate();
   const loginData = useContext(LoginContext);
   const [email, setEmail] = useState('');
@@ -91,7 +93,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

@@ -20,3 +20,31 @@ select {
     box-shadow: 0 0 0 2px rgba(102, 46, 28, 0.2);
   }
 }
+
+.green-theme {
+  select {
+    color: var(--primary-color-green);
+    background: var(--secondary-color-green);
+  }
+}
+
+.rose-theme {
+  select {
+    color: var(--primary-color-rose);
+    background: var(--secondary-color-rose);
+  }
+}
+
+.blue-theme {
+  select {
+    color: var(--primary-color-blue);
+    background: var(--secondary-color-blue);
+  }
+}
+
+.grey-theme {
+  select {
+    color: var(--primary-color-grey);
+    background: var(--secondary-color-grey);
+  }
+}

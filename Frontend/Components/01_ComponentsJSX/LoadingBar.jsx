@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '@style/LoadingBar.scss';
+import '@style/_loadingStyles.scss';
 
 export const LoadingBar = () => {
   const [loadingData, setLoadingData] = useState({ bar: { progress: 20 } }); // Initialize with a default structure

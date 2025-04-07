@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
+import { useColor } from '@context/ColorContext';
 
 //Stylingimporte
 import '@/index.scss';
@@ -17,6 +18,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 const Registeration = () => {
+  const { colorScheme } = useColor();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
@@ -83,7 +85,7 @@ const Registeration = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

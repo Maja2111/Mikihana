@@ -3,11 +3,14 @@ import React, { useState } from 'react';
 
 import '@/index.scss';
 import '@pagestyle/Target.scss';
+
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 import { NavigateToHome } from '@components/NavigateTo.jsx';
+import { useColor } from '@context/ColorContext';
 
 const Target = () => {
+  const { color } = useColor();
   const [targetType, settargetType] = useState('book');
   const [isRecurring, setIsRecurring] = useState(false);
   const [interval, setInterval] = useState('monthly');
@@ -25,7 +28,7 @@ const Target = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

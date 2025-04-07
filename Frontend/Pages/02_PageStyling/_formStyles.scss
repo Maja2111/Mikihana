@@ -1,4 +1,5 @@
 @use '@pagestyle/_variables' as vars; // Importing color variables
+@use './theme' as theme; // Importing themes
 
 .button {
   width: 95%;
@@ -34,7 +35,6 @@
   text-align: center;
   border-style: none;
   border-radius: 20px;
-  background-color: vars.$secondary-color; // Updated to use @use syntax
 }
 
 input,
@@ -44,4 +44,41 @@ textarea {
 
 textarea {
   height: 150px;
+}
+
+// Theme styles
+.green-theme {
+  .form-input,
+  .form-textarea,
+  .button {
+    color: var(--primary-color-green);
+    background: var(--secondary-color-green);
+  }
+}
+
+.rose-theme {
+  .form-input,
+  .form-textarea,
+  .button {
+    color: var(--primary-color-rose);
+    background: var(--secondary-color-rose);
+  }
+}
+
+.blue-theme {
+  .form-input,
+  .form-textarea,
+  .button {
+    color: var(--primary-color-blue);
+    background: var(--secondary-color-blue);
+  }
+}
+
+.grey-theme {
+  .form-input,
+  .form-textarea,
+  .button {
+    color: var(--primary-color-grey);
+    background: var(--secondary-color-grey);
+  }
 }

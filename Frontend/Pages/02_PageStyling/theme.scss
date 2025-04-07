@@ -1,0 +1,22 @@
+@use '@pagestyle/_variables' as *; // Importing color variables
+
+// Theme styles using CSS Custom Properties
+.green-theme {
+  color: var(--primary-color-green);
+  background-color: var(--secondary-color-green);
+}
+
+.rose-theme {
+  color: var(--primary-color-rose);
+  background-color: var(--secondary-color-rose);
+}
+
+.blue-theme {
+  color: var(--primary-color-blue);
+  background-color: var(--secondary-color-blue);
+}
+
+.grey-theme {
+  color: var(--primary-color-grey);
+  background-color: var(--secondary-color-grey);
+}

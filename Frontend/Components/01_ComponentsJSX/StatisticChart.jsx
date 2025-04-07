@@ -1,5 +1,5 @@
 import React from 'react';
-import '@style/Chart.scss';
+import '@style/_chartStyles.scss';
 
 export function ChartSelector({ onViewChange, selectedView, setSelectedView }) {
   const handleChange = (event) => {

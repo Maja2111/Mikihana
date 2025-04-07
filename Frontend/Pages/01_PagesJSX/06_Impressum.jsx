@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useColor } from '@context/ColorContext';
 import { Header } from '@components/Header';
 import { NavigateToLogin } from '@components/NavigateTo.jsx';
 
@@ -8,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 const Impressum = () => {
+  const { color } = useColor();
   return (
     <div className="container">
       <header>

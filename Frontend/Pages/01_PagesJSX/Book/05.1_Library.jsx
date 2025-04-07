@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useColor } from '@context/ColorContext'; // Importing useColor
 
 import '@/index.scss';
-import '@pagestyle/Library.scss';
 
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
@@ -14,6 +14,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Library = () => {
   const navigate = useNavigate();
+  const { colorScheme } = useColor(); // Using colorScheme from context
 
   const handleNavigateToWishList = () => {
     navigate('/profile/library/wishlist');
@@ -29,7 +30,7 @@ const Library = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
         <h1>Library</h1>

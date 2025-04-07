@@ -9,14 +9,16 @@ import { Footer } from '@components/Footer.jsx';
 import { LoadingCircle } from '@components/LoadingCircle.jsx';
 import { goals } from '@/mockData.js';
 import { NavigateToHome } from '@components/NavigateTo.jsx';
+import { useColor } from '@context/ColorContext';
 
 //Stylingimporte
 import '@/index.scss';
 import '@pagestyle/getTarget.scss';
 
 const GetTarget = () => {
+  const { colorScheme } = useColor();
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 import '@style/Footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
+
+import { useColor } from '@context/ColorContext';
 
 export const Footer = () => {
+  const { colorScheme } = useColor();
   const navigate = useNavigate();
   let location = useLocation();
 
   return (
-    <div className="Footer">
+    <div className={`Footer ${colorScheme}-theme`}>
       <nav className="Iconbar">
         <li>
           <FontAwesomeIcon

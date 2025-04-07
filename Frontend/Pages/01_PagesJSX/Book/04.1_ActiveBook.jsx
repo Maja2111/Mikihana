@@ -8,6 +8,8 @@ import { Footer } from '@components/Footer.jsx';
 import { Carousel } from '@components/Carousel.jsx';
 import { LoadingBar } from '@components/LoadingBar.jsx';
 
+import { useColor } from '@context/ColorContext';
+
 //Stylingimpore
 import '@pagestyle/ActiveBook.scss';
 import '@pagestyle/Home.scss';
@@ -15,6 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 
 const ActiveBookPage = () => {
+  const { colorScheme } = useColor();
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -38,7 +41,7 @@ const ActiveBookPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

@@ -6,13 +6,16 @@ import { useNavigate } from 'react-router-dom';
 import { Header } from '@components/Header';
 import { Cards } from '@components/Cards';
 import { Footer } from '@components/Footer';
+import { useColor } from '@context/ColorContext';
 import { mediaCardsNew, mediaCardsMust } from '@/mockData';
 
 //Stylingimporte
 import '@pagestyle/AllSearch.scss';
 import '@/index.scss';
+
 const SearchPage = () => {
   const navigate = useNavigate();
+  const { colorScheme } = useColor();
 
   const handleNavigateToBrandNew = () => {
     if (window.location.pathname !== '/brandnew') {
@@ -27,7 +30,7 @@ const SearchPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

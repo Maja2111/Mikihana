@@ -7,7 +7,10 @@ import '@pagestyle/addActiveBook.scss';
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
 
+import { useColor } from '@context/ColorContext';
+
 const AddActiveSeries = () => {
+  const { colorScheme } = useColor();
   const [title, setTitle] = useState('');
   const [season, setSeason] = useState('');
   const [episode, setEpisode] = useState('');
@@ -27,7 +30,7 @@ const AddActiveSeries = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>

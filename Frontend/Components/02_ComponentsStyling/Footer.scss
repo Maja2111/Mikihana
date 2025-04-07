@@ -26,6 +26,30 @@
     }
   }
 
+  .green-theme {
+    .Iconbar {
+      background-color: var(--iconbar-color-green);
+    }
+  }
+
+  .rose-theme {
+    .Iconbar {
+      background-color: var(--iconbar-color-rose);
+    }
+  }
+
+  .blue-theme {
+    .Iconbar {
+      background-color: var(--iconbar-color-blue);
+    }
+  }
+
+  .grey-theme {
+    .Iconbar {
+      background-color: var(--iconbar-color-grey);
+    }
+  }
+
   .home,
   .allSearch,
   .monkey {

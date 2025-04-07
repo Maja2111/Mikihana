@@ -8,14 +8,10 @@ export const galleryWithPlaceholderMovie = [
 
 export const galleryImagesMovie = [
   '/Upload/dr.Who.webp',
-  '/Upload/friends.avif',
   '/Upload/ER.jpg',
-  '/Upload/BB.jpeg',
   '/Upload/Warehouse13.jpg',
   '/Upload/designatedSurivor.jpg',
   '/Upload/Raya.jpeg',
-  '/Upload/ratatouille.jpeg',
-  '/Upload/kingsman.jpg',
 ];
 export const galleryImagesMovieFavorites = [
   '/Upload/CA.jpg',
@@ -28,7 +24,6 @@ export const galleryImagesMovieFavorites = [
 export const galleryImagesMovieUnwatch = [
   '/Upload/codeblack.jpg',
   '/Upload/Vaina 2.jpeg',
-  '/Upload/You.webp',
   '/Upload/Rookie7.jpg',
   '/Upload/wicked.jpg',
 ];
