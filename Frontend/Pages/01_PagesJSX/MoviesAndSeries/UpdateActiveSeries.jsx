@@ -1,6 +1,6 @@
-//Entwickerimporte
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
@@ -18,6 +18,7 @@ import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 const ActiveSeriesPage = () => {
   const { colorScheme } = useColor();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleCancelUpdate = () => {
@@ -27,11 +28,11 @@ const ActiveSeriesPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Hier würde die Logik zum Hinzufügen des Buches stehen
+    // Hier würde die Logik zum Hinzufügen einer Serie stehen
     // Zum Beispiel ein API-Aufruf
 
     // Bei Erfolg:
-    setSuccessMessage('Series successfully updated!');
+    setSuccessMessage(t('updateActiveSeries.successMessage'));
 
     // Nach 2 Sekunden zurück navigieren
     setTimeout(() => {
@@ -45,10 +46,10 @@ const ActiveSeriesPage = () => {
         <Header />
       </header>
       <main className="main">
-        <h1>Your active series</h1>
+        <h1>{t('updateActiveSeries.pageTitle')}</h1>
         <section className="activeBook section">
           <div>
-            <h2>active series</h2>
+            <h2>{t('updateActiveSeries.sectionTitle')}</h2>
             <i>
               <img src="/Upload/theRookie.jpg" alt="cover" />
             </i>
@@ -60,25 +61,29 @@ const ActiveSeriesPage = () => {
         </section>
 
         <section className="progressUpdate section">
-          <h2>Update Progress</h2>
+          <h2>{t('updateActiveSeries.updateTitle')}</h2>
           <FontAwesomeIcon
             icon={faRectangleXmark}
             onClick={handleCancelUpdate}
           />
           <form onSubmit={handleSubmit}>
-            <label htmlFor="dayofupdate">day of update</label>
+            <label htmlFor="dayofupdate">
+              {t('updateActiveSeries.updateDate')}
+            </label>
             <input type="date" name="dayofupdate" id="dayofupdate" />
-            <label htmlFor="progress">progress</label>
+            <label htmlFor="progress">{t('updateActiveSeries.progress')}</label>
             <input type="number" name="pages" id="pages" placeholder="0" />
             <p>pages out of API</p>
-            <label htmlFor="privatenote">private note</label>
+            <label htmlFor="privatenote">
+              {t('updateActiveSeries.privateNote')}
+            </label>
             <textarea
               name="note"
               id="note"
-              placeholder="your thoughts"
+              placeholder={t('updateActiveSeries.notePlaceholder')}
             ></textarea>
             <button type="submit" className="clickButton">
-              UPDATE
+              {t('updateActiveSeries.updateButton')}
             </button>
           </form>
         </section>

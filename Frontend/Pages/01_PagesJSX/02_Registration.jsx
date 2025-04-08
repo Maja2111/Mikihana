@@ -7,6 +7,7 @@
 //Entwicklerimporte
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
@@ -20,6 +21,7 @@ import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 const Registeration = () => {
   const { colorScheme } = useColor();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -90,9 +92,9 @@ const Registeration = () => {
         <Header />
       </header>
       <main className="main">
-        <h1>Welcome to Mikihana, your App for Books and more!</h1>
+        <h1>{t('registration.welcome')}</h1>
         <section className="section">
-          <h2>REGISTRATION</h2>
+          <h2>{t('registration.title')}</h2>
           <p>
             <img
               src="/Upload/Äffchen.png"
@@ -104,7 +106,7 @@ const Registeration = () => {
             <input
               type="text"
               name="firstName"
-              placeholder="FIRST NAME"
+              placeholder={t('registration.firstName')}
               value={formData.firstName}
               onChange={handleInputChange}
               required
@@ -112,7 +114,7 @@ const Registeration = () => {
             <input
               type="text"
               name="lastName"
-              placeholder="LAST NAME"
+              placeholder={t('registration.lastName')}
               value={formData.lastName}
               onChange={handleInputChange}
               required
@@ -120,7 +122,7 @@ const Registeration = () => {
             <input
               type="text"
               name="username"
-              placeholder="USERNAME"
+              placeholder={t('registration.username')}
               value={formData.username}
               onChange={handleInputChange}
               required
@@ -128,7 +130,7 @@ const Registeration = () => {
             <input
               type="email"
               name="email"
-              placeholder="EMAIL ADDRESS"
+              placeholder={t('registration.email')}
               value={formData.email}
               onChange={handleInputChange}
               required
@@ -136,7 +138,7 @@ const Registeration = () => {
             <input
               type="password"
               name="password"
-              placeholder="PASSWORD"
+              placeholder={t('registration.password')}
               value={formData.password}
               onChange={handleInputChange}
               required
@@ -144,7 +146,7 @@ const Registeration = () => {
             <input
               type="password"
               name="passwordRepeat"
-              placeholder="REPEAT PASSWORD"
+              placeholder={t('registration.repeatPassword')}
               value={formData.passwordRepeat}
               onChange={handleInputChange}
               required
@@ -152,7 +154,7 @@ const Registeration = () => {
             <input
               type="date"
               name="birthday"
-              placeholder="TT.MM.JJJJ"
+              placeholder={t('registration.birthday')}
               value={formData.birthday}
               onChange={handleInputChange}
               required
@@ -164,13 +166,13 @@ const Registeration = () => {
               onChange={handleInputChange}
               required
             >
-              <option value="">GENDER</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Diverse</option>
+              <option value="">{t('registration.gender')}</option>
+              <option value="male">{t('registration.genderMale')}</option>
+              <option value="female">{t('registration.genderFemale')}</option>
+              <option value="other">{t('registration.genderOther')}</option>
             </select>
             <button type="submit" className="clickButton">
-              REGISTER
+              {t('registration.button')}
             </button>
           </form>
         </section>
@@ -178,7 +180,7 @@ const Registeration = () => {
       <footer>
         <p>
           <FontAwesomeIcon icon={faCopyright} />
-          Copyright 2025 Mikihana
+          {t('footer.copyright')}
         </p>
       </footer>
     </div>

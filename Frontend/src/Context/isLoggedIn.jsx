@@ -1,39 +1,23 @@
-import React, { useState, createContext, useContext, useEffect } from 'react';
+import React, { useState, createContext } from 'react';
 
 export const LoginContext = createContext();
 
-export const LoginProvider = (props) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+export const LoginProvider = ({ children }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    Boolean(localStorage.getItem('authToken'))
+  );
   const [userName, setUserName] = useState('');
-
-  useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      console.log(`token:${token}`);
-      verifyToken(token);
-    } else {
-      console.log(`token empty`);
-    }
-  }, []);
-  const verifyToken = async (token) => {
-    try {
-      console.log(`verifyToken`);
-      setIsLoggedIn(true);
-    } catch (error) {
-      console.error('Token verification error:', error);
-      localStorage.removeItem('authToken'); //error destroy token
-    }
-  };
 
   return (
     <LoginContext.Provider
       value={{
         isLoggedIn,
         setIsLoggedIn,
-        userName: [userName, setUserName],
+        userName,
+        setUserName,
       }}
     >
-      {props.children}
+      {children}
     </LoginContext.Provider>
   );
 };

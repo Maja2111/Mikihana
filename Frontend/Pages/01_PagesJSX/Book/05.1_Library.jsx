@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useColor } from '@context/ColorContext'; // Importing useColor
+import { useColor } from '@context/ColorContext';
+import { useTranslation } from 'react-i18next';
 
 import '@/index.scss';
 
@@ -14,7 +15,8 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Library = () => {
   const navigate = useNavigate();
-  const { colorScheme } = useColor(); // Using colorScheme from context
+  const { colorScheme } = useColor();
+  const { t } = useTranslation();
 
   const handleNavigateToWishList = () => {
     navigate('/profile/library/wishlist');
@@ -33,11 +35,11 @@ const Library = () => {
     <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
-        <h1>Library</h1>
+        <h1>{t('library.title')}</h1>
       </header>
       <main className="main">
         <section className="wishlist section">
-          <h2>wishlist</h2>
+          <h2>{t('library.wishlist')}</h2>
           <Gallery />
           <FontAwesomeIcon
             id="wishlist"
@@ -47,7 +49,7 @@ const Library = () => {
           />
         </section>
         <section className="favourites section">
-          <h2>favourites</h2>
+          <h2>{t('library.favourites')}</h2>
           <Gallery />
           <FontAwesomeIcon
             id="favourites"
@@ -57,7 +59,7 @@ const Library = () => {
           />
         </section>
         <section className="unreadBooks section">
-          <h2>unread books</h2>
+          <h2>{t('library.unreadBooks')}</h2>
           <Gallery />
           <FontAwesomeIcon
             id="unreadbooks"
@@ -67,7 +69,7 @@ const Library = () => {
           />
         </section>
         <section className="userlist section">
-          <h2>userlist</h2>
+          <h2>{t('library.userlist')}</h2>
           <Gallery />
           <FontAwesomeIcon
             id="userlist"

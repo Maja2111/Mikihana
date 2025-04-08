@@ -11,6 +11,7 @@ import { useColor } from '@context/ColorContext';
 
 const Target = () => {
   const { color } = useColor();
+  const { t } = useTranslation();
   const [targetType, settargetType] = useState('book');
   const [isRecurring, setIsRecurring] = useState(false);
   const [interval, setInterval] = useState('monthly');
@@ -33,31 +34,35 @@ const Target = () => {
         <Header />
       </header>
       <main className="main">
-        <h1>Your new goal</h1>
-        <p>Set yourself a goal that you want to complete by a certain date!</p>
+        <h1>{t('target.title')}</h1>
+        <p>{t('target.description')}</p>
         <section className="targetTitle section">
-          <input type="text" placeholder="enter title" />
+          <input type="text" placeholder={t('target.titlePlaceholder')} />
         </section>
         <section className="sectionTwo section">
-          <label htmlFor="targetType">Select your target:</label>
+          <label htmlFor="targetType">{t('target.selectTarget')}</label>
           <select
             id="targetType"
             value={targetType}
             onChange={handletargetTypeChange}
           >
-            <option value="book">book</option>
-            <option value="page">pages</option>
+            <option value="book">{t('target.book')}</option>
+            <option value="page">{t('target.pages')}</option>
           </select>
           <input
             type="number"
-            placeholder={`Quantity of ${
-              targetType === 'book' ? 'books' : 'pages'
-            }`}
+            placeholder={t(
+              targetType === 'book'
+                ? 'target.quantityBooks'
+                : 'target.quantityPages'
+            )}
           />
         </section>
         <section className="timePeriod section">
           <div>
-            <label htmlFor="recurringtarget">Recurring target:</label>
+            <label htmlFor="recurringtarget">
+              {t('target.recurringTarget')}
+            </label>
             <input
               type="checkbox"
               id="recurringtarget"
@@ -67,18 +72,18 @@ const Target = () => {
           </div>
           {isRecurring && (
             <div>
-              <label htmlFor="interval">interval:</label>
+              <label htmlFor="interval">{t('target.interval')}</label>
               <select
                 id="interval"
                 value={interval}
                 onChange={handleIntervalChange}
               >
-                <option value="monthly">monthly</option>
-                <option value="yearly">yearly</option>
+                <option value="monthly">{t('target.monthly')}</option>
+                <option value="yearly">{t('target.yearly')}</option>
               </select>
             </div>
           )}
-          <button className="clickButton">add new goal</button>
+          <button className="clickButton">{t('target.addGoal')}</button>
         </section>
         <NavigateToHome />
       </main>

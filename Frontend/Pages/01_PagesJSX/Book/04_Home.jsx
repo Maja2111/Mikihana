@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // Komponentenimporte
 import { Header } from '@components/Header.jsx';
@@ -30,6 +31,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   const [view, setView] = useState('year');
   const [bookView, setBookView] = useState('year'); // Added state for book stats view
   const { navState, setNavState } = useContext(NavContext);
@@ -117,12 +119,12 @@ const Home = () => {
       </header>
 
       <main className="main">
-        <h1>Your main area</h1>
+        <h1>{t('home.title')}</h1>
         {navState === 'book' && (
           <>
             <section className="activeBook section">
               <div>
-                <h2>Active Book</h2>
+                <h2>{t('home.activeBook')}</h2>
                 <Carousel />
                 <LoadingBar />
               </div>
@@ -143,7 +145,7 @@ const Home = () => {
             </section>
 
             <section className="target section">
-              <h2>Your reading target</h2>
+              <h2>{t('home.readingTarget')}</h2>
               <img src="/Upload/Bücherstapel.jpg" alt="placeholder" />
               <LoadingCircle />
               <FontAwesomeIcon
@@ -161,7 +163,7 @@ const Home = () => {
             </section>
 
             <section className="pageStatistic section">
-              <h2>Page Statistics</h2>
+              <h2>{t('home.pageStats')}</h2>
               <PageStatisticsChart
                 view={view}
                 onViewChange={setView}
@@ -170,7 +172,7 @@ const Home = () => {
             </section>
 
             <section className="booksStatistic section">
-              <h2>Books Statistics</h2>
+              <h2>{t('home.bookStats')}</h2>
               <BookStatisticsChart
                 view={bookView}
                 onViewChange={setBookView}
@@ -179,22 +181,21 @@ const Home = () => {
             </section>
 
             <section className="section">
-              <h3>Your reading history</h3>
+              <h3>{t('home.readingHistory')}</h3>
               <div className="gallery">
                 <GalleryForReadingBooks />
               </div>
             </section>
 
             <section className="series section">
-              <h2>Series</h2>
-              <h3>days in a row </h3>
+              <h2>{t('home.series')}</h2>
+              <h3>{t('home.daysInRow')}</h3>
               <div>
-                <p className="number">20</p>
-                <p>current series</p>
+                <p>{t('home.currentSeries')}</p>
               </div>
               <div>
                 <p className="number">52</p>
-                <p>longest series</p>
+                <p>{t('home.longestSeries')}</p>
               </div>
             </section>
           </>
@@ -204,16 +205,15 @@ const Home = () => {
           <div className="movieSection">
             <section className="activeSeries section">
               <div>
-                <h2>Active series</h2>
-                <i>
-                  <img
-                    src="/Upload/theRookie.jpg"
-                    alt="The Rookie Season three"
-                  />
-                </i>
-                <p>Title: The Rookie</p>
-                <p>Season: 3</p>
-                <p>Episode: 1</p>
+                <h2>{t('home.activeSeries')}</h2>
+
+                <img
+                  src="/Upload/theRookie.jpg"
+                  alt="The Rookie Season three"
+                />
+                <p>{t('home.seriesTitle')}: The Rookie</p>
+                <p>{t('home.season')}: 3</p>
+                <p>{t('home.episode')}: 1</p>
 
                 <LoadingBar />
                 <FontAwesomeIcon
@@ -232,7 +232,7 @@ const Home = () => {
             </section>
 
             <section className="seriesStatistic section">
-              <h2>Series Statistics</h2>
+              <h2>{t('home.seriesStats')}</h2>
               <SeriesStatisticsChart
                 view={view}
                 onViewChange={setView}
@@ -241,7 +241,7 @@ const Home = () => {
             </section>
 
             <section className="watchHistory section">
-              <h3>Your watch history</h3>
+              <h3>{t('home.watchHistory')}</h3>
               <div className="gallery">
                 <GalleryForwatchMovie />
               </div>
@@ -251,7 +251,7 @@ const Home = () => {
 
         {navState === 'music' && (
           <section className="musicSection section">
-            <h2>Your music section</h2>
+            <h2>{t('home.musicSection')}</h2>
             <img src="/Upload/coming soon.png" alt="coming soon" />
           </section>
         )}

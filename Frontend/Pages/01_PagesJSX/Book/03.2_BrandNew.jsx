@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import '@/index.scss';
 
@@ -12,6 +13,7 @@ import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const BrandNew = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   const [currentBookId, setCurrentBookId] = useState(null);
 
   const handleBookChange = (book) => {
@@ -25,7 +27,7 @@ const BrandNew = () => {
         <Header />
       </header>
       <main className="main">
-        <h1>Hello user, books new publications</h1>
+        <h1>{t('brandNew.welcomeMessage')}</h1>
         <section className="section">
           <SearchBar />
           <Carousel onBookChange={handleBookChange} />

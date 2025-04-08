@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import { Header } from '@components/Header';
@@ -10,6 +11,7 @@ import '@/index.scss';
 
 const AddedMovie = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState('');
@@ -21,7 +23,7 @@ const AddedMovie = () => {
       synopsis: event.target.synopsis.value,
     };
     // Bei Erfolg:
-    setSuccessMessage('Movie successfully added!');
+    setSuccessMessage(t('addMovie.successMessage'));
     const from = location.state?.from || '/default-path'; // Fallback-Pfad
     navigate(from);
   };
@@ -32,10 +34,24 @@ const AddedMovie = () => {
       </header>
       <section className="section">
         <form onSubmit={handleSubmit}>
-          <input type="text" name="title" placeholder="Title" required />
-          <input type="text" name="genre" placeholder="Genre" required />
-          <textarea type="text" name="synopsis" placeholder="Description" />
-          <button type="submit">SAVE</button>
+          <input
+            type="text"
+            name="title"
+            placeholder={t('addMovie.titlePlaceholder')}
+            required
+          />
+          <input
+            type="text"
+            name="genre"
+            placeholder={t('addMovie.genrePlaceholder')}
+            required
+          />
+          <textarea
+            type="text"
+            name="synopsis"
+            placeholder={t('addMovie.descriptionPlaceholder')}
+          />
+          <button type="submit">{t('addMovie.saveButton')}</button>
         </form>
       </section>
       {successMessage && <p className="success-message">{successMessage}</p>}

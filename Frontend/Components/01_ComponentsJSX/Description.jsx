@@ -8,12 +8,14 @@ const Description = ({ bookId }) => {
   const { truncatedText, isTruncated } = useMemo(() => {
     if (!description) return { truncatedText: '', isTruncated: false };
 
-    const lines = description.split('\n').filter((line) => line.trim() !== '');
-    const shouldTruncate = lines.length > 5;
+    const sentences = description
+      .split('\n')
+      .filter((sentence) => sentence.trim() !== '');
+    const shouldTruncate = sentences.length > 5;
 
     return {
       truncatedText: shouldTruncate
-        ? lines.slice(0, 5).join('\n') + '\n...'
+        ? sentences.slice(0, 5).join('\n') + '\n...'
         : description,
       isTruncated: shouldTruncate,
     };
@@ -47,7 +49,9 @@ const Description = ({ bookId }) => {
 
   return (
     <div className="description">
-      <p style={{ whiteSpace: 'pre-line' }}>{displayText || 'Loading...'}</p>
+      <p style={{ whiteSpace: 'pre-sentence' }}>
+        {displayText || 'Loading...'}
+      </p>
       {isTruncated && (
         <button
           onClick={() => setShowFullText(!showFullText)}

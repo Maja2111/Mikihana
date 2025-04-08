@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import '@/index.scss';
 import '@pagestyle/addActiveBook.scss';
@@ -11,6 +12,7 @@ import { useColor } from '@context/ColorContext';
 
 const AddActiveBook = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const navigate = useNavigate();
@@ -31,7 +33,7 @@ const AddActiveBook = () => {
       </header>
       <div className="add-active-book">
         <section className="section">
-          <h2>add new active book</h2>
+          <h2>{t('addActiveBook.title')}</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <input
@@ -39,7 +41,7 @@ const AddActiveBook = () => {
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
                 required
-                placeholder="title"
+                placeholder={t('addActiveBook.titlePlaceholder')}
               />
             </div>
             <div>
@@ -48,11 +50,11 @@ const AddActiveBook = () => {
                 value={author}
                 onChange={(event) => setAuthor(event.target.value)}
                 required
-                placeholder="author"
+                placeholder={t('addActiveBook.authorPlaceholder')}
               />
             </div>
             <button type="submit" className="clickButton">
-              ADD NEW ACTIVE BOOK
+              {t('addActiveBook.submitButton')}
             </button>
           </form>
         </section>

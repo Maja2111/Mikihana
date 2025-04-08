@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import '@/index.scss';
 import '@pagestyle/addActiveBook.scss';
@@ -14,6 +15,7 @@ const AddActiveSeries = () => {
   const [title, setTitle] = useState('');
   const [season, setSeason] = useState('');
   const [episode, setEpisode] = useState('');
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -36,7 +38,7 @@ const AddActiveSeries = () => {
       </header>
       <div className="add-active-book">
         <section className="section">
-          <h2>add new active series</h2>
+          <h2>{t('addActiveSeries.title')}</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <input
@@ -44,7 +46,7 @@ const AddActiveSeries = () => {
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
                 required
-                placeholder="title"
+                placeholder={t('addActiveSeries.seriesTitle')}
               />
             </div>
             <div>
@@ -53,7 +55,7 @@ const AddActiveSeries = () => {
                 value={season}
                 onChange={(event) => setSeason(event.target.value)}
                 required
-                placeholder="season"
+                placeholder={t('addActiveSeries.season')}
               />
             </div>
             <div>
@@ -62,12 +64,12 @@ const AddActiveSeries = () => {
                 value={episode}
                 onChange={(event) => setEpisode(event.target.value)}
                 required
-                placeholder="episode"
+                placeholder={t('addActiveSeries.episode')}
               />
             </div>
 
             <button type="submit" className="clickButton">
-              ADD NEW ACTIVE series
+              {t('addActiveSeries.button')}
             </button>
           </form>
         </section>

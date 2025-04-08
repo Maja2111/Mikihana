@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useColor } from '@context/ColorContext'; // Importing useColor
+import { useColor } from '@context/ColorContext';
+import { useTranslation } from 'react-i18next';
 
 import { Header } from '@components/Header.jsx';
 import { Footer } from '@components/Footer.jsx';
@@ -11,7 +12,8 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 
 const ProfilPage = () => {
   const navigate = useNavigate();
-  const { colorScheme } = useColor(); // Using colorScheme from context
+  const { colorScheme } = useColor();
+  const { t } = useTranslation();
 
   const handleNavigateToLibrary = () => {
     navigate('/profile/library');
@@ -35,7 +37,7 @@ const ProfilPage = () => {
       </header>
       <main className="main">
         <section className="library section" onClick={handleNavigateToLibrary}>
-          <h2>Library</h2>
+          <h2>{t('profile.library')}</h2>
           <img src="/Upload/Äffchen mit Buch.svg" alt="" />
         </section>
 
@@ -43,7 +45,7 @@ const ProfilPage = () => {
           className="videoLibrary section"
           onClick={handleNavigateToVideolibrary}
         >
-          <h2>Video library</h2>
+          <h2>{t('profile.videoLibrary')}</h2>
           <img src="/Upload/Äffchen schaut film .svg" alt="" />
         </section>
 
@@ -51,7 +53,7 @@ const ProfilPage = () => {
           className="musicLibrary section"
           onClick={handleNavigateToMusiclibrary}
         >
-          <h2>Music library</h2>
+          <h2>{t('profile.musicLibrary')}</h2>
 
           <img src="/Upload/Äffchen hört Musik.svg" alt="" />
         </section>
@@ -60,7 +62,7 @@ const ProfilPage = () => {
           className="editProfile section"
           onClick={handleNavigateToEditProfile}
         >
-          <h2>Edit Profile</h2>
+          <h2>{t('profile.editProfile')}</h2>
           <img
             src="/Upload/Äffchen.png"
             alt="Profile"

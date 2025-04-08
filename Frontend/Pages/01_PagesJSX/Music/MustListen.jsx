@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import '@/index.scss';
 import { useColor } from '@context/ColorContext';
@@ -8,6 +9,7 @@ import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const MustListen = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   return (
     <div className={`container ${colorScheme}-theme`}>
       <header>
@@ -15,10 +17,7 @@ const MustListen = () => {
       </header>
       <main className="main">
         <section className="mustListen section">
-          <h1>
-            Here you will find our recommendations for music you should have
-            heard.{' '}
-          </h1>
+          <h1>{t('mustListen.description')}</h1>
           <img src="/Upload/coming soon.png" alt="coming soon" />
         </section>
         <NavigateToAllSearch />

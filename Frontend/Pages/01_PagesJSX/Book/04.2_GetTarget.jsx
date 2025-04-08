@@ -2,6 +2,7 @@
 
 // Entwicklerimporte
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 //Componetsimporte
 import { Header } from '@components/Header.jsx';
@@ -17,25 +18,26 @@ import '@pagestyle/getTarget.scss';
 
 const GetTarget = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   return (
     <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>
       <main className="main">
-        <h1>Your reading goals</h1>
+        <h1>{t('getTarget.title')}</h1>
         {goals.map((goal) => (
           <section key={goal.id} className="goalItem section">
-            <h3>Targettitle</h3>
+            <h3>{t('getTarget.targetTitle')}</h3>
             <div className="pelements">
               <p>
-                <strong>Type:</strong> {goal.type}
+                <strong>{t('getTarget.type')}:</strong> {goal.type}
               </p>
               <p>
-                <strong>Target:</strong> {goal.target}
+                <strong>{t('getTarget.target')}:</strong> {goal.target}
               </p>
               <p>
-                <strong>Interval:</strong> {goal.interval}
+                <strong>{t('getTarget.interval')}:</strong> {goal.interval}
               </p>
             </div>
             <LoadingCircle />

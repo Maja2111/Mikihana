@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import '@/index.scss';
 
@@ -12,6 +13,7 @@ import Description from '@components/Description.jsx';
 
 const MustRead = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   const [currentBookId, setCurrentBookId] = useState(null);
 
   const handleBookChange = (book) => {
@@ -26,7 +28,7 @@ const MustRead = () => {
       </header>
       <main className="main">
         <section className="section">
-          <h1>Here you will find our must-read recommendations.</h1>
+          <h1>{t('mustRead.welcomeMessage')}</h1>
           <SearchBar />
           <Carousel onBookChange={handleBookChange} />
           <Description bookId={currentBookId} />

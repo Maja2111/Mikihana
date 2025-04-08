@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import '@/index.scss';
 import { useColor } from '@context/ColorContext';
@@ -8,6 +9,7 @@ import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const BrandNewMusic = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   return (
     <div className={`container ${colorScheme}-theme`}>
       <header>
@@ -15,7 +17,7 @@ const BrandNewMusic = () => {
       </header>
       <main className="main">
         <section className="brandNewMusic section">
-          <h1>Hello user, welcome to brand new music</h1>
+          <h1>{t('brandNewMusic.welcomeMessage')}</h1>
           <img src="/Upload/coming soon.png" alt="coming soon" />
         </section>
         <NavigateToAllSearch />

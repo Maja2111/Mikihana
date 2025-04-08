@@ -1,6 +1,7 @@
 //Entwickerimporte
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
@@ -18,6 +19,7 @@ import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 
 const ActiveBookPage = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -46,40 +48,42 @@ const ActiveBookPage = () => {
         <Header />
       </header>
       <main className="main">
-        <h1>Your Active Book</h1>
+        <h1>{t('activeBook.title')}</h1>
         <section className="activeBook section">
           <div>
-            <h2>Active Book</h2>
+            <h2>{t('activeBook.activeBook')}</h2>
             <Carousel />
             <LoadingBar />
           </div>
         </section>
 
         <section className="progressUpdate section">
-          <h2>Update Progress</h2>
+          <h2>{t('activeBook.updateProgress')}</h2>
           <FontAwesomeIcon
             className="exitIcon"
             icon={faRectangleXmark}
             onClick={handleCancelUpdate}
           />
           <form onSubmit={handleSubmit}>
-            <label htmlFor="dayofupdate">day of update</label>
+            <label htmlFor="dayofupdate">{t('activeBook.dayOfUpdate')}</label>
             <input type="date" name="dayofupdate" id="dayofupdate" />
-            <label htmlFor="progress">progress</label>
+            <label htmlFor="progress">{t('activeBook.progress')}</label>
             <input type="number" name="pages" id="pages" placeholder="0" />
-            <p>pages out of API</p>
-            <label htmlFor="privatenote">private note</label>
+            <p>{t('activeBook.pagesOutOf')}</p>
+            <label htmlFor="privatenote">{t('activeBook.privateNote')}</label>
             <textarea
               name="note"
               id="note"
-              placeholder="your thoughts"
+              placeholder={t('activeBook.thoughtsPlaceholder')}
             ></textarea>
             <button type="submit" className="clickButton">
-              UPDATE
+              {t('activeBook.updateButton')}
             </button>
           </form>
         </section>
-        {successMessage && <p className="success-message">{successMessage}</p>}
+        {successMessage && (
+          <p className="success-message">{t('activeBook.successMessage')}</p>
+        )}
       </main>
       <footer>
         <Footer />

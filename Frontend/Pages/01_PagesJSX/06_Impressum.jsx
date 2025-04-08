@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useTranslation } from 'react-i18next';
 import { useColor } from '@context/ColorContext';
 import { Header } from '@components/Header';
 import { NavigateToLogin } from '@components/NavigateTo.jsx';
@@ -10,6 +10,7 @@ import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 const Impressum = () => {
   const { color } = useColor();
+  const { t } = useTranslation();
   return (
     <div className="container">
       <header>
@@ -17,23 +18,11 @@ const Impressum = () => {
       </header>
       <main className="main">
         <section className="section">
-          <h2>Impressum</h2>
+          <h2>{t('impressum.title')}</h2>
+          <p dangerouslySetInnerHTML={{ __html: t('impressum.address') }} />
+          <p dangerouslySetInnerHTML={{ __html: t('impressum.contact') }} />
           <p>
-            Mikihana <br />
-            Vulkanstraße 1 <br />
-            10367 Berlin
-          </p>
-          <p>
-            Telefon: 01731658347
-            <br />
-            E-Mail:{' '}
-            <a href="mailto:sabine.weber@dci-student.org.">
-              sabine.weber@dci-student.org.
-            </a>
-            <br />
-          </p>
-          <p>
-            <strong>Vertreten durch:</strong>
+            <strong>{t('impressum.representedBy')}</strong>
             <br />
             Danny Wild
             <br />
@@ -41,16 +30,14 @@ const Impressum = () => {
             <br />
             Sabine Weber
           </p>
-          <p>
-            Quelle: <a href="https://www.juraforum.de">click me</a>
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: t('impressum.source') }} />
         </section>
         <NavigateToLogin />
       </main>
       <footer>
         <p>
           <FontAwesomeIcon icon={faCopyright} />
-          Copyright 2025 Mikihana
+          {t('impressum.copyright')}
         </p>
       </footer>
     </div>

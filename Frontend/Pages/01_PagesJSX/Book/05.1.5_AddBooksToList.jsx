@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import { Header } from '@components/Header';
@@ -10,6 +11,7 @@ import '@/index.scss';
 
 const AddedBook = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState('');
@@ -23,7 +25,7 @@ const AddedBook = () => {
       synopsis: event.target.synopsis.value,
     };
     // Bei Erfolg:
-    setSuccessMessage('Book successfully added!');
+    setSuccessMessage(t('addBooksToList.successMessage'));
     const from = location.state?.from || '/default-path'; // Fallback-Pfad
     navigate(from);
   };
@@ -39,31 +41,31 @@ const AddedBook = () => {
             type="text"
             name="title"
             id="title"
-            placeholder="Title"
+            placeholder={t('addBooksToList.titlePlaceholder')}
             required
           />
           <input
             type="text"
             name="author"
             id="author"
-            placeholder="Author"
+            placeholder={t('addBooksToList.authorPlaceholder')}
             required
           />
           <input
             type="text"
             name="genre"
             id="genre"
-            placeholder="Genre"
+            placeholder={t('addBooksToList.genrePlaceholder')}
             required
           />
           <input
             type="text"
             name="synopsis"
             id="synopsis"
-            placeholder="Description"
+            placeholder={t('addBooksToList.descriptionPlaceholder')}
           />
           <button type="submit" className="clickButton">
-            SAVE
+            {t('addBooksToList.saveButton')}
           </button>
         </form>
       </section>

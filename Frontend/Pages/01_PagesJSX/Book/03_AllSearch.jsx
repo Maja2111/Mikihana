@@ -1,6 +1,7 @@
 //Entwicklerimporte
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 //Compontensimporte
 import { Header } from '@components/Header';
@@ -29,6 +30,8 @@ const SearchPage = () => {
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className={`container ${colorScheme}-theme`}>
       <header>
@@ -36,7 +39,7 @@ const SearchPage = () => {
       </header>
       <main className="main">
         <section className="section">
-          <h1>BRANDNEW</h1>
+          <h1>{t('AllSearch.brandNew')}</h1>
           <div className="cardcontainer">
             <Cards
               key={mediaCardsNew[0].id}
@@ -62,7 +65,7 @@ const SearchPage = () => {
           </div>
         </section>
         <section className="section">
-          <h1>MUST HAVE</h1>
+          <h1>{t('AllSearch.mustHave')}</h1>
           <div className="cardcontainer">
             <Cards
               key={mediaCardsMust[0].id}

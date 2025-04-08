@@ -1,5 +1,6 @@
 import React from 'react';
 import { useColor } from '@context/ColorContext';
+import { useTranslation } from 'react-i18next';
 
 import '@/index.scss';
 
@@ -12,6 +13,7 @@ import { NavigateToAllSearch } from '@components/NavigateTo.jsx';
 
 const MustWatch = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   return (
     <div className={`container ${colorScheme}-theme`}>
       <header>
@@ -19,7 +21,7 @@ const MustWatch = () => {
       </header>
       <main className="main">
         <section className="section">
-          <h1>Here you will find the most popular movies and series</h1>
+          <h1>{t('mustWatch.description')}</h1>
           <SearchBar />
           <Carousel />
           <Description />

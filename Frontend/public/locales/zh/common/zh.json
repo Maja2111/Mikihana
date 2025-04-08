@@ -1,0 +1,210 @@
+{
+  "language": "语言",
+  "AllSearch": {
+    "brandNew": "新品",
+    "mustHave": "必备"
+  },
+  "login": {
+    "welcome": "欢迎使用Mikihana，您的图书和更多应用！",
+    "title": "用户登录",
+    "username": "用户名",
+    "password": "密码",
+    "button": "登录",
+    "forgotPassword": "忘记密码？点击这里！",
+    "registerPrompt": "没有账户？立即注册！"
+  },
+  "registration": {
+    "welcome": "欢迎使用Mikihana，您的图书和更多应用！",
+    "title": "注册",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "username": "用户名",
+    "email": "电子邮件地址",
+    "password": "密码",
+    "repeatPassword": "重复密码",
+    "birthday": "日.月.年",
+    "gender": "性别",
+    "genderMale": "男",
+    "genderFemale": "女",
+    "genderOther": "其他",
+    "button": "注册"
+  },
+  "home": {
+    "title": "您的主区域",
+    "activeBook": "当前书籍",
+    "readingTarget": "阅读目标",
+    "pageStats": "页面统计",
+    "bookStats": "书籍统计",
+    "readingHistory": "阅读历史",
+    "series": "系列",
+    "daysInRow": "连续天数",
+    "currentSeries": "当前系列",
+    "longestSeries": "最长系列",
+    "activeSeries": "当前剧集",
+    "seriesTitle": "标题",
+    "season": "季",
+    "episode": "集",
+    "seriesStats": "剧集统计",
+    "watchHistory": "观看历史",
+    "musicSection": "音乐专区"
+  },
+  "activeBook": {
+    "title": "您当前阅读的书籍",
+    "activeBook": "当前书籍",
+    "updateProgress": "更新进度",
+    "dayOfUpdate": "更新日期",
+    "progress": "进度",
+    "pagesOutOf": "页数/总页数",
+    "privateNote": "私人笔记",
+    "thoughtsPlaceholder": "您的想法",
+    "updateButton": "更新",
+    "successMessage": "书籍更新成功！"
+  },
+  "brandNew": {
+    "welcomeMessage": "新着情報はこちら"
+  },
+  "mustRead": {
+    "welcomeMessage": "ここでは、必読のお薦めを紹介する。"
+  },
+  "profile": {
+    "library": "图书库",
+    "videoLibrary": "视频库",
+    "musicLibrary": "音乐库",
+    "editProfile": "编辑个人资料"
+  },
+
+  "target": {
+    "title": "您的新目标",
+    "description": "为自己设定一个目标，在特定日期前完成！",
+    "titlePlaceholder": "输入标题",
+    "selectTarget": "选择您的目标：",
+    "book": "书籍",
+    "pages": "页数",
+    "quantityBooks": "书籍数量",
+    "quantityPages": "页数数量",
+    "recurringTarget": "重复目标：",
+    "interval": "间隔：",
+    "monthly": "每月",
+    "yearly": "每年",
+    "addGoal": "添加新目标"
+  },
+  "editProfile": {
+    "title": "编辑个人资料",
+    "username": "用户名",
+    "email": "电子邮件地址",
+    "password": "密码",
+    "repeatPassword": "重复密码",
+    "phoneNumber": "电话号码",
+    "saveButton": "保存更改",
+    "successMessage": "更新成功！"
+  },
+  "library": {
+    "title": "图书馆",
+    "wishlist": "愿望清单",
+    "favourites": "收藏夹",
+    "unreadBooks": "未读书籍",
+    "userlist": "用户列表"
+  },
+  "wishlist": {
+    "title": "您的愿望清单"
+  },
+  "getTarget": {
+    "title": "您的阅读目标",
+    "targetTitle": "目标标题",
+    "type": "类型",
+    "target": "目标",
+    "interval": "间隔"
+  },
+  "addActiveBook": {
+    "title": "添加新的活跃书籍",
+    "titlePlaceholder": "标题",
+    "authorPlaceholder": "作者",
+    "submitButton": "添加新的活跃书籍"
+  },
+  "favourites": {
+    "title": "您的收藏"
+  },
+  "unreadBooks": {
+    "title": "您未读的书籍"
+  },
+  "addBooksToList": {
+    "titlePlaceholder": "标题",
+    "authorPlaceholder": "作者",
+    "genrePlaceholder": "类型",
+    "descriptionPlaceholder": "描述",
+    "saveButton": "保存",
+    "successMessage": "书籍添加成功！"
+  },
+  "userlist": {
+    "title": "您的列表"
+  },
+  "watchlist": {
+    "title": "您的观看列表"
+  },
+  "watchFavorites": {
+    "title": "您的最爱"
+  },
+  "unwatchList": {
+    "title": "您未观看的列表"
+  },
+  "movieUserlist": {
+    "title": "您的电影列表"
+  },
+  "addMovie": {
+    "titlePlaceholder": "标题",
+    "genrePlaceholder": "类型",
+    "descriptionPlaceholder": "描述",
+    "saveButton": "保存",
+    "successMessage": "电影添加成功！"
+  },
+  "footer": {
+    "impressum": "法律声明",
+    "copyright": "版权所有 2025 Mikihana"
+  },
+  "videoLibrary": {
+    "title": "视频库"
+  },
+  "addActiveSeries": {
+    "title": "添加活跃剧集",
+    "seriesTitle": "剧集标题",
+    "season": "季",
+    "episode": "集",
+    "button": "添加新的活跃剧集"
+  },
+  "brandNewMovie": {
+    "title": "最新电影",
+    "welcomeMessage": "查看我们的最新发布"
+  },
+  "mustWatch": {
+    "title": "必看推荐",
+    "description": "不要错过这些高度推荐的电影和剧集"
+  },
+  "updateActiveSeries": {
+    "pageTitle": "你正在追的剧集",
+    "sectionTitle": "活跃剧集",
+    "updateTitle": "更新进度",
+    "updateDate": "更新日期",
+    "progress": "进度",
+    "privateNote": "私人笔记",
+    "notePlaceholder": "你的想法",
+    "updateButton": "更新",
+    "successMessage": "剧集更新成功！"
+  },
+  "brandNewMusic": {
+    "welcomeMessage": "你好用户，欢迎来到全新音乐"
+  },
+  "mustListen": {
+    "description": "在这里您将找到我们推荐的必听音乐"
+  },
+  "musicLibrary": {
+    "title": "音乐库"
+  },
+  "impressum": {
+    "title": "法律声明",
+    "address": "Mikihana<br>Vulkanstraße 1<br>10367 柏林",
+    "contact": "电话: 01731658347<br>电子邮件: <a href=\"mailto:sabine.weber@dci-student.org\">sabine.weber@dci-student.org</a>",
+    "representedBy": "代表:",
+    "copyright": "版权所有 2025 Mikihana",
+    "source": "来源: <a href=\"https://www.juraforum.de\">点击这里</a>"
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
@@ -20,6 +21,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const VideoLibrary = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleNavigateToWatchlist = () => {
@@ -38,11 +40,11 @@ const VideoLibrary = () => {
     <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
-        <h1>Video library</h1>
+        <h1>{t('videoLibrary.title')}</h1>
       </header>
       <main className="main">
         <section className="watchlist section">
-          <h2>watchlist</h2>
+          <h2>{t('watchlist.title')}</h2>
           <GalleryForwatchMovie />
           <FontAwesomeIcon
             id="watchlist"
@@ -52,7 +54,7 @@ const VideoLibrary = () => {
           />
         </section>
         <section className="videoFavourites section">
-          <h2>favourites</h2>
+          <h2>{t('watchFavorites.title')}</h2>
           <GalleryForMovieFavorites />
           <FontAwesomeIcon
             id="video-favourites"
@@ -62,7 +64,7 @@ const VideoLibrary = () => {
           />
         </section>
         <section className="unwatch section">
-          <h2>unwatch list</h2>
+          <h2>{t('unwatchList.title')}</h2>
           <GalleryForMovieUnwatch />
           <FontAwesomeIcon
             id="unwatch"
@@ -72,7 +74,7 @@ const VideoLibrary = () => {
           />
         </section>
         <section className="video-userlist section">
-          <h2>userlist</h2>
+          <h2>{t('movieUserlist.title')}</h2>
           <GalleryForMovieUserlist />
           <FontAwesomeIcon
             id="video-userlist"

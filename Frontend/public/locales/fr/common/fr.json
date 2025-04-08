@@ -1,0 +1,209 @@
+{
+  "language": "Langue",
+  "AllSearch": {
+    "brandNew": "NOUVEAUTÉS",
+    "mustHave": "INDISPENSABLES"
+  },
+  "login": {
+    "welcome": "Bienvenue sur Mikihana, votre application pour les livres et plus encore!",
+    "title": "CONNEXION UTILISATEUR",
+    "username": "NOM D'UTILISATEUR",
+    "password": "MOT DE PASSE",
+    "button": "SE CONNECTER",
+    "forgotPassword": "Mot de passe oublié? Cliquez ici!",
+    "registerPrompt": "Pas encore de compte? Inscrivez-vous ici!"
+  },
+  "registration": {
+    "welcome": "Bienvenue sur Mikihana, votre application pour les livres et plus encore!",
+    "title": "INSCRIPTION",
+    "firstName": "PRÉNOM",
+    "lastName": "NOM",
+    "username": "NOM D'UTILISATEUR",
+    "email": "ADRESSE E-MAIL",
+    "password": "MOT DE PASSE",
+    "repeatPassword": "RÉPÉTER LE MOT DE PASSE",
+    "birthday": "JJ.MM.AAAA",
+    "gender": "GENRE",
+    "genderMale": "Masculin",
+    "genderFemale": "Féminin",
+    "genderOther": "Autre",
+    "button": "S'INSCRIRE"
+  },
+  "home": {
+    "title": "Votre espace principal",
+    "activeBook": "Livre actif",
+    "readingTarget": "Votre objectif de lecture",
+    "pageStats": "Statistiques des pages",
+    "bookStats": "Statistiques des livres",
+    "readingHistory": "Votre historique de lecture",
+    "series": "Série",
+    "daysInRow": "jours consécutifs",
+    "currentSeries": "série actuelle",
+    "longestSeries": "série la plus longue",
+    "activeSeries": "Série active",
+    "seriesTitle": "Titre",
+    "season": "Saison",
+    "episode": "Épisode",
+    "seriesStats": "Statistiques des séries",
+    "watchHistory": "Votre historique de visionnage",
+    "musicSection": "Votre section musique"
+  },
+  "activeBook": {
+    "title": "Votre livre actif",
+    "activeBook": "Livre actif",
+    "updateProgress": "Mettre à jour la progression",
+    "dayOfUpdate": "jour de mise à jour",
+    "progress": "progression",
+    "pagesOutOf": "pages sur",
+    "privateNote": "note privée",
+    "thoughtsPlaceholder": "vos pensées",
+    "updateButton": "METTRE À JOUR",
+    "successMessage": "Livre mis à jour avec succès!"
+  },
+  "brandNew": {
+    "welcomeMessage": "tu trouveras ici tes nouvelles publications"
+  },
+  "mustRead": {
+    "welcomeMessage": "Vous trouverez ici nos recommandations de lecture incontournables."
+  },
+  "profile": {
+    "library": "Bibliothèque",
+    "videoLibrary": "Vidéothèque",
+    "musicLibrary": "Collection musicale",
+    "editProfile": "Modifier le profil"
+  },
+  "target": {
+    "title": "Votre nouvel objectif",
+    "description": "Fixez-vous un objectif que vous souhaitez atteindre à une date donnée !",
+    "titlePlaceholder": "entrez le titre",
+    "selectTarget": "Sélectionnez votre objectif :",
+    "book": "livre",
+    "pages": "pages",
+    "quantityBooks": "Quantité de livres",
+    "quantityPages": "Quantité de pages",
+    "recurringTarget": "Objectif récurrent :",
+    "interval": "intervalle :",
+    "monthly": "mensuel",
+    "yearly": "annuel",
+    "addGoal": "ajouter un nouvel objectif"
+  },
+  "editProfile": {
+    "title": "Modifier le profil",
+    "username": "Nom d'utilisateur",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "repeatPassword": "Répéter le mot de passe",
+    "phoneNumber": "Numéro de téléphone",
+    "saveButton": "Enregistrer les modifications",
+    "successMessage": "Mise à jour réussie !"
+  },
+  "library": {
+    "title": "Bibliothèque",
+    "wishlist": "liste de souhaits",
+    "favourites": "favoris",
+    "unreadBooks": "livres non lus",
+    "userlist": "liste d'utilisateurs"
+  },
+  "wishlist": {
+    "title": "Votre liste de souhaits"
+  },
+  "getTarget": {
+    "title": "Vos objectifs de lecture",
+    "targetTitle": "Titre de l'objectif",
+    "type": "Type",
+    "target": "Objectif",
+    "interval": "Intervalle"
+  },
+  "addActiveBook": {
+    "title": "Ajouter un nouveau livre actif",
+    "titlePlaceholder": "Titre",
+    "authorPlaceholder": "Auteur",
+    "submitButton": "AJOUTER UN NOUVEAU LIVRE ACTIF"
+  },
+  "favourites": {
+    "title": "Vos favoris"
+  },
+  "unreadBooks": {
+    "title": "Vos livres non lus"
+  },
+  "addBooksToList": {
+    "titlePlaceholder": "Titre",
+    "authorPlaceholder": "Auteur",
+    "genrePlaceholder": "Genre",
+    "descriptionPlaceholder": "Description",
+    "saveButton": "ENREGISTRER",
+    "successMessage": "Livre ajouté avec succès !"
+  },
+  "userlist": {
+    "title": "Votre liste"
+  },
+  "watchlist": {
+    "title": "Votre liste de surveillance"
+  },
+  "watchFavorites": {
+    "title": "Vos favoris"
+  },
+  "unwatchList": {
+    "title": "Votre liste non visionnée"
+  },
+  "movieUserlist": {
+    "title": "Votre liste de films"
+  },
+  "addMovie": {
+    "titlePlaceholder": "Titre",
+    "genrePlaceholder": "Genre",
+    "descriptionPlaceholder": "Description",
+    "saveButton": "ENREGISTRER",
+    "successMessage": "Film ajouté avec succès !"
+  },
+  "footer": {
+    "impressum": "Mentions légales",
+    "copyright": "Copyright 2025 Mikihana"
+  },
+  "videoLibrary": {
+    "title": "Bibliothèque vidéo"
+  },
+  "addActiveSeries": {
+    "title": "Ajouter une série active",
+    "seriesTitle": "Titre de la série",
+    "season": "Saison",
+    "episode": "Épisode",
+    "button": "AJOUTER UNE NOUVELLE SÉRIE ACTIVE"
+  },
+  "brandNewMovie": {
+    "title": "Nouveaux Films",
+    "welcomeMessage": "Découvrez nos dernières sorties"
+  },
+  "mustWatch": {
+    "title": "À ne pas manquer",
+    "description": "Ne manquez pas ces films et séries hautement recommandés"
+  },
+  "updateActiveSeries": {
+    "pageTitle": "Vos séries actives",
+    "sectionTitle": "série active",
+    "updateTitle": "Mettre à jour la progression",
+    "updateDate": "date de mise à jour",
+    "progress": "progression",
+    "privateNote": "note privée",
+    "notePlaceholder": "vos pensées",
+    "updateButton": "METTRE À JOUR",
+    "successMessage": "Série mise à jour avec succès !"
+  },
+  "brandNewMusic": {
+    "welcomeMessage": "Bonjour utilisateur, bienvenue dans la nouvelle musique"
+  },
+  "mustListen": {
+    "description": "Vous trouverez ici nos recommandations de musique à écouter absolument"
+  },
+  "musicLibrary": {
+    "title": "Bibliothèque musicale"
+  },
+  "impressum": {
+    "title": "Mentions légales",
+    "address": "Mikihana<br>Vulkanstraße 1<br>10367 Berlin",
+    "contact": "Téléphone: 01731658347<br>Email: <a href=\"mailto:sabine.weber@dci-student.org\">sabine.weber@dci-student.org</a>",
+    "representedBy": "Représenté par:",
+    "copyright": "Copyright 2025 Mikihana",
+    "source": "Source: <a href=\"https://www.juraforum.de\">click me</a>"
+  }
+}

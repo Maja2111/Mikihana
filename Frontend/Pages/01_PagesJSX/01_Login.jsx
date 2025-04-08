@@ -14,6 +14,7 @@
 
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
@@ -32,6 +33,7 @@ const Login = () => {
   const navigate = useNavigate();
   const loginData = useContext(LoginContext);
   const [email, setEmail] = useState('');
+  const { t } = useTranslation();
 
   const handleLogin = async () => {
     const username = document.querySelector(
@@ -98,9 +100,9 @@ const Login = () => {
         <Header />
       </header>
       <main className="main">
-        <h1>Welcome to Mikihana, your App for Books and more!</h1>
+        <h1>{t('login.welcome')}</h1>
         <section className="section">
-          <h2>USER LOGIN</h2>
+          <h2>{t('login.title')}</h2>
           <p>
             <img
               src="/Upload/Äffchen.png"
@@ -114,11 +116,11 @@ const Login = () => {
               handleLogin();
             }}
           >
-            <input type="text" placeholder="USERNAME" />
-            <input type="password" placeholder="PASSWORD" />
+            <input type="text" placeholder={t('login.username')} />
+            <input type="password" placeholder={t('login.password')} />
           </form>
           <button className="clickButton" onClick={handleLogin}>
-            LOGIN
+            {t('login.button')}
           </button>
         </section>
         <p
@@ -130,20 +132,20 @@ const Login = () => {
             marginBottom: '1rem',
           }}
         >
-          Forgot password? Click here!
+          {t('login.forgotPassword')}
         </p>
         <button className="clickButton" onClick={handleToRegisterPage}>
-          Don't have an account? Register here!
+          {t('login.registerPrompt')}
         </button>
       </main>
 
       <footer id="loginFooter">
         <div className="impressum" onClick={handleNavigateToImpressum}>
-          Impressum
+          {t('footer.impressum')}
         </div>
         <div>
           <FontAwesomeIcon icon={faCopyright} />
-          Copyright 2025 Mikihana
+          {t('footer.copyright')}
         </div>
       </footer>
     </div>

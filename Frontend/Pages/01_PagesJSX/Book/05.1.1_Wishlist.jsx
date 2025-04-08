@@ -1,6 +1,7 @@
 //Entwicklerimporte
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 //Componentsimporte
 import { Header } from '@components/Header.jsx';
@@ -15,11 +16,12 @@ import '@/index.scss';
 
 const Wishlist = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   return (
     <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
-        <h1>Your Wishlist</h1>
+        <h1>{t('wishlist.title')}</h1>
       </header>
       <main className="main">
         <GalleryWithPlaceholder listType="wishlist" />

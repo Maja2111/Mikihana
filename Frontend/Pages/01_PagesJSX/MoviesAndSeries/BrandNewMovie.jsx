@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Header } from '@components/Header';
 import { Footer } from '@components/Footer';
@@ -13,13 +14,14 @@ import '@/index.scss';
 
 const BrandNewMovie = () => {
   const { colorScheme } = useColor();
+  const { t } = useTranslation();
   return (
     <div className={`container ${colorScheme}-theme`}>
       <header>
         <Header />
       </header>
       <main className="main">
-        <h1>Hello user, welcome to our brand new movies and series</h1>
+        <h1>{t('brandNewMovie.welcomeMessage')}</h1>
         <section className="section">
           <SearchBar />
           <MovieCarousel />

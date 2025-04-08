@@ -1,0 +1,209 @@
+{
+  "language": "Language",
+  "AllSearch": {
+    "brandNew": "BRANDNEW",
+    "mustHave": "MUST HAVE"
+  },
+  "login": {
+    "welcome": "Welcome to Mikihana, your App for Books and more!",
+    "title": "USER LOGIN",
+    "username": "USERNAME",
+    "password": "PASSWORD",
+    "button": "LOGIN",
+    "forgotPassword": "Forgot password? Click here!",
+    "registerPrompt": "Don't have an account? Register here!"
+  },
+  "registration": {
+    "welcome": "Welcome to Mikihana, your App for Books and more!",
+    "title": "REGISTRATION",
+    "firstName": "FIRST NAME",
+    "lastName": "LAST NAME",
+    "username": "USERNAME",
+    "email": "EMAIL ADDRESS",
+    "password": "PASSWORD",
+    "repeatPassword": "REPEAT PASSWORD",
+    "birthday": "DD.MM.YYYY",
+    "gender": "GENDER",
+    "genderMale": "Male",
+    "genderFemale": "Female",
+    "genderOther": "Diverse",
+    "button": "REGISTER"
+  },
+  "home": {
+    "title": "Your main area",
+    "activeBook": "Active Book",
+    "readingTarget": "Your reading target",
+    "pageStats": "Page Statistics",
+    "bookStats": "Books Statistics",
+    "readingHistory": "Your reading history",
+    "series": "Series",
+    "daysInRow": "days in a row",
+    "currentSeries": "current series",
+    "longestSeries": "longest series",
+    "activeSeries": "Active series",
+    "seriesTitle": "Title",
+    "season": "Season",
+    "episode": "Episode",
+    "seriesStats": "Series Statistics",
+    "watchHistory": "Your watch history",
+    "musicSection": "Your music section"
+  },
+  "activeBook": {
+    "title": "Your Active Book",
+    "activeBook": "Active Book",
+    "updateProgress": "Update Progress",
+    "dayOfUpdate": "day of update",
+    "progress": "progress",
+    "pagesOutOf": "pages out of",
+    "privateNote": "private note",
+    "thoughtsPlaceholder": "your thoughts",
+    "updateButton": "UPDATE",
+    "successMessage": "Book successfully updated!"
+  },
+  "brandNew": {
+    "welcomeMessage": "Here you can find your new releases"
+  },
+  "mustRead": {
+    "welcomeMessage": "Here you will find our must-read recommendations."
+  },
+  "profile": {
+    "library": "Library",
+    "videoLibrary": "Video library",
+    "musicLibrary": "Music library",
+    "editProfile": "Edit Profile"
+  },
+  "target": {
+    "title": "Your new goal",
+    "description": "Set yourself a goal that you want to complete by a certain date!",
+    "titlePlaceholder": "enter title",
+    "selectTarget": "Select your target:",
+    "book": "book",
+    "pages": "pages",
+    "quantityBooks": "Quantity of books",
+    "quantityPages": "Quantity of pages",
+    "recurringTarget": "Recurring target:",
+    "interval": "interval:",
+    "monthly": "monthly",
+    "yearly": "yearly",
+    "addGoal": "add new goal"
+  },
+  "editProfile": {
+    "title": "Edit Profile",
+    "username": "Username",
+    "email": "Email address",
+    "password": "Password",
+    "repeatPassword": "Repeat password",
+    "phoneNumber": "Phone number",
+    "saveButton": "Save changes",
+    "successMessage": "Update successful!"
+  },
+  "library": {
+    "title": "Library",
+    "wishlist": "wishlist",
+    "favourites": "favourites",
+    "unreadBooks": "unread books",
+    "userlist": "userlist"
+  },
+  "wishlist": {
+    "title": "Your Wishlist"
+  },
+  "getTarget": {
+    "title": "Your reading goals",
+    "targetTitle": "Target title",
+    "type": "Type",
+    "target": "Target",
+    "interval": "Interval"
+  },
+  "addActiveBook": {
+    "title": "Add new active book",
+    "titlePlaceholder": "Title",
+    "authorPlaceholder": "Author",
+    "submitButton": "ADD NEW ACTIVE BOOK"
+  },
+  "favourites": {
+    "title": "Your Favourites"
+  },
+  "unreadBooks": {
+    "title": "Your unread books"
+  },
+  "addBooksToList": {
+    "titlePlaceholder": "Title",
+    "authorPlaceholder": "Author",
+    "genrePlaceholder": "Genre",
+    "descriptionPlaceholder": "Description",
+    "saveButton": "SAVE",
+    "successMessage": "Book successfully added!"
+  },
+  "userlist": {
+    "title": "Your list"
+  },
+  "watchlist": {
+    "title": "Your watchlist"
+  },
+  "watchFavorites": {
+    "title": "Your favorites"
+  },
+  "unwatchList": {
+    "title": "Your unwatched list"
+  },
+  "movieUserlist": {
+    "title": "Your movie list"
+  },
+  "addMovie": {
+    "titlePlaceholder": "Title",
+    "genrePlaceholder": "Genre",
+    "descriptionPlaceholder": "Description",
+    "saveButton": "SAVE",
+    "successMessage": "Movie successfully added!"
+  },
+  "footer": {
+    "impressum": "Impressum",
+    "copyright": "Copyright 2025 Mikihana"
+  },
+  "videoLibrary": {
+    "title": "Video library"
+  },
+  "addActiveSeries": {
+    "title": "Add active series",
+    "seriesTitle": "Series title",
+    "season": "Season",
+    "episode": "Episode",
+    "button": "ADD NEW ACTIVE SERIES"
+  },
+  "brandNewMovie": {
+    "title": "Brand New Movies",
+    "welcomeMessage": "Check out our latest releases"
+  },
+  "mustWatch": {
+    "title": "Must Watch",
+    "description": "Don't miss these highly recommended movies and series"
+  },
+  "updateActiveSeries": {
+    "pageTitle": "Your active series",
+    "sectionTitle": "active series",
+    "updateTitle": "Update Progress",
+    "updateDate": "day of update",
+    "progress": "progress",
+    "privateNote": "private note",
+    "notePlaceholder": "your thoughts",
+    "updateButton": "UPDATE",
+    "successMessage": "Series successfully updated!"
+  },
+  "brandNewMusic": {
+    "welcomeMessage": "Hello user, welcome to brand new music"
+  },
+  "mustListen": {
+    "description": "Here you will find our recommendations for music you should have heard"
+  },
+  "musicLibrary": {
+    "title": "Music library"
+  },
+  "impressum": {
+    "title": "Legal Notice",
+    "address": "Mikihana<br>Vulkanstraße 1<br>10367 Berlin",
+    "contact": "Phone: 01731658347<br>Email: <a href=\"mailto:sabine.weber@dci-student.org\">sabine.weber@dci-student.org</a>",
+    "representedBy": "Represented by:",
+    "copyright": "Copyright 2025 Mikihana",
+    "source": "Source: <a href=\"https://www.juraforum.de\">click me</a>"
+  }
+}
